@@ -7,6 +7,17 @@
       name="description"
       content="Search all Toronto MLS® real estate listings for sale. Find Toronto houses, townhouses and condo homes for sale—updated daily."
     />
+    <link rel="preload" href="./fonts/AlbertSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+<script>
+  // Ensure the font is available to the canvas text engine
+  const ready = document.fonts?.load?.('400 12px "Albert Sans"')
+    .catch(() => {})  // older browsers without FontFaceSet
+
+  Promise.resolve(ready).then(() => {
+    initCharts(); // call your chart setup AFTER font is loaded
+  });
+</script>
     <link rel="canonical" href="https:home.ca/" />
     <title>Home.ca</title>
 
