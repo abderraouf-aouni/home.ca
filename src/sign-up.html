@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Search all Toronto MLS® real estate listings for sale. Find Toronto houses, townhouses and condo homes for sale—updated daily."
+    />
+    <link rel="canonical" href="https:home.ca/" />
+    <title>Home.ca</title>
+
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="min-h-screen grid lg:grid-cols-2">
+      <section class="flex flex-col">
+        <main
+          class="flex flex-col w-[90%] max-w-[335px] mx-auto py-21.5 md:py-[20vh]"
+        >
+          <img
+            class="w-27.75 md:w-41.75 logo-not-sign-in self-center"
+            src="images/logo-desktop.svg"
+            alt="Home.ca logo"
+          />
+          <h1 class="text-[1.75rem] text-center mt-12.25">Create an account</h1>
+
+          <div class="space-y-2 mt-6">
+            <button
+              class="w-full border border-muted-7 rounded-md py-3.25 flex items-center gap-1.5 justify-center font-semibold"
+            >
+              <img class="w-5" src="images/google-dark-icon.svg" alt="" />
+              Sign up with Google
+            </button>
+
+            <button
+              class="w-full border border-muted-7 rounded-md py-3.25 flex items-center gap-1.5 justify-center font-semibold"
+            >
+              <img class="w-5" src="images/microsoft-dark-icon.svg" alt="" />
+              Sign up with Microsoft
+            </button>
+
+            <button
+              class="w-full border border-muted-7 rounded-md py-3.25 flex items-center gap-1.5 justify-center font-semibold"
+            >
+              <img class="w-5" src="images/apple-dark-icon.svg" alt="" />
+              Sign up with Apple
+            </button>
+          </div>
+
+          <div class="relative my-8">
+            <div class="absolute inset-0 flex items-center">
+              <div class="w-full border-t border-muted-4"></div>
+            </div>
+            <div class="relative flex justify-center text-xs">
+              <span class="bg-white px-3 text-muted-1">
+                Or sign up using your email
+              </span>
+            </div>
+          </div>
+
+          <form action="#" method="POST">
+            <div>
+              <label for="email" class="block text-sm font-medium text-muted-6"
+                >Email address</label
+              >
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                placeholder="john_johnson@gmail.com"
+                class="text-sm mt-1.5 block w-full rounded-md border border-muted-3 py-2 px-2.5 outline-secondary"
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="font-semibold text-white bg-third flex justify-center w-full rounded bg-brand py-3.25 mt-6"
+            >
+              Sign Up
+            </button>
+
+            <p class="text-xs leading-tight text-muted-1 mt-4">
+              By creating an account, you agree to this app’s
+              <a href="#" class="underline text-body">Terms</a> and
+              <a href="#" class="underline text-body">Privacy Policy</a>.
+            </p>
+          </form>
+
+          <p class="text-xs leading-tight text-center text-muted-1 mt-6">
+            Have an account?
+            <a href="#" class="underline text-body">Log in</a>
+          </p>
+        </main>
+      </section>
+
+      <section class="hidden lg:flex items-center bg-sixth pl-12.75">
+        <img class="w-full" src="images/sign-up-thumb.webp" alt="" />
+      </section>
+    </div>
+  </body>
+</html>

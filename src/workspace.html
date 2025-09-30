@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Search all Toronto MLS® real estate listings for sale. Find Toronto houses, townhouses and condo homes for sale—updated daily."
+    />
+    <link rel="canonical" href="https:home.ca/" />
+    <title>Home.ca</title>
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://api.mapbox.com" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link href="./output.css" rel="stylesheet" />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/ag-charts-community/dist/umd/ag-charts-community.js"></script>
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <symbol id="chevron-icon" viewBox="0 0 143 143">
+        <path
+          d="M92.271 108.385C104.439 103.623 114.564 94.7647 120.9 83.3371C127.236 71.9095 129.387 58.6292 126.98 45.7861C124.574 32.943 117.761 21.3421 107.717 12.9838C97.6737 4.62551 85.0284 0.0337097 71.9618 0.000184721C58.8952 -0.0333403 46.2264 4.49351 36.1399 12.8002C26.0535 21.1068 19.1816 32.6726 16.7091 45.5032C14.2367 58.3338 16.3188 71.625 22.5963 83.0849C28.8738 94.5448 38.9532 103.455 51.0967 108.28L59.6847 86.6627C52.5742 83.8378 46.6722 78.6204 42.9965 71.9101C39.3207 65.1998 38.1016 57.4173 39.5493 49.9044C40.997 42.3916 45.0208 35.6193 50.9269 30.7554C56.8329 25.8915 64.251 23.2408 71.9021 23.2605C79.5531 23.2801 86.9575 25.9688 92.8386 30.8629C98.7196 35.7571 102.709 42.5499 104.118 50.0701C105.527 57.5903 104.268 65.3665 100.558 72.0578C96.8475 78.7491 90.9189 83.9362 83.794 86.7245L92.271 108.385Z"
+        />
+        <path
+          d="M49.3059 138.052C56.4181 141.166 64.0991 142.771 71.8633 142.765C79.6275 142.759 87.3059 141.141 94.4131 138.016L83.5688 113.359C79.8727 114.984 75.8795 115.825 71.8418 115.828C67.804 115.832 63.8095 114.997 60.1109 113.377L49.3059 138.052Z"
+        />
+      </symbol>
+    </svg>
+
+    <header
+      class="hidden lg:flex mx-auto py-1.75 px-2 md:px-8 justify-between items-center"
+    >
+      <div class="flex gap-4 items-center">
+        <button id="hamburger" class="grid space-y-1">
+          <span class="w-4.75 h-0.5 bg-muted-8"></span>
+          <span class="w-4.75 h-0.5 bg-muted-8"></span>
+          <span class="w-4.75 h-0.5 bg-muted-8"></span>
+        </button>
+        <a class="pt-1.5" href="#">
+          <img
+            class="w-27.75"
+            src="images/logo-desktop.svg"
+            alt="Home.ca logo"
+          />
+        </a>
+
+        <form action="" class="h-full">
+          <div class="h-full relative flex">
+            <input
+              id="header-search"
+              class="peer w-43.5 h-full text-sm font-semibold py-0.5 pl-2 pr-5.5 outline-secondary"
+              aria-label="Search by address"
+              title="Search by address"
+              type="text"
+              placeholder="402 Spring Gate Blvd."
+            />
+            <img
+              class="peer-focus:hidden absolute pointer-events-none top-1/2 -translate-y-1/2 right-1"
+              src="images/amplifier-icon.svg "
+              alt=""
+            />
+          </div>
+        </form>
+      </div>
+
+      <div class="flex gap-4">
+        <div
+          id="view-switch"
+          class="flex items-center rounded-full bg-third p-0.5"
+        >
+          <button
+            data-view="insights"
+            class="switch-btn-view active-tab transition-colors"
+          >
+            Insights
+          </button>
+
+          <button data-view="map" class="switch-btn-view transition-colors">
+            Map
+          </button>
+        </div>
+
+        <div class="flex-center-v gap-1">
+          <button
+            class="h-9 w-9 flex-center relative"
+            aria-label="Open messages"
+          >
+            <img class="w-4.5" src="images/messages-icon.svg" alt="" />
+            <div
+              class="w-4 h-4 flex-center absolute top-0.25 right-0.5 rounded-full bg-white"
+            >
+              <span
+                class="w-3 h-3 flex-center rounded-full bg-primary text-[0.5625rem] text-white"
+                >9</span
+              >
+            </div>
+          </button>
+
+          <button
+            class="h-9 w-9 flex-center relative"
+            aria-label="check your cart"
+          >
+            <img class="w-4.5" src="images/shopping-cart-icon.svg" alt="" />
+
+            <div
+              class="w-4 h-4 flex-center absolute top-0.25 right-0.5 rounded-full bg-white"
+            >
+              <span
+                class="w-3 h-3 flex-center rounded-full bg-primary text-[0.5625rem] text-white"
+                >9</span
+              >
+            </div>
+          </button>
+
+          <!-- User Profile Image -->
+          <button
+            class="h-9 w-9 rounded-full flex-center relative"
+            aria-label="your profile settings"
+          >
+            <img
+              class="w-7.5"
+              src="images/Profile-image.png"
+              alt="User profile"
+            />
+            <svg
+              class="absolute w-full"
+              viewBox="0 0 36 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M36 18C36 27.9411 27.9411 36 18 36C8.05887 36 0 27.9411 0 18C0 8.05887 8.05887 0 18 0C27.9411 0 36 8.05887 36 18ZM1.08 18C1.08 27.3447 8.65534 34.92 18 34.92C27.3447 34.92 34.92 27.3447 34.92 18C34.92 8.65534 27.3447 1.08 18 1.08C8.65534 1.08 1.08 8.65534 1.08 18Z"
+                fill="#F5F5F5"
+              />
+              <path
+                d="M18 0C21.6544 4.35788e-08 25.2223 1.11234 28.2293 3.18914C31.2363 5.26594 33.5399 8.2088 34.8338 11.6265L33.8238 12.0089C32.6075 8.79627 30.4421 6.02998 27.6155 4.07779C24.789 2.1256 21.4352 1.08 18 1.08V0Z"
+                fill="#FF603F"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- search-modal -->
+
+    <div
+      id="search-modal"
+      class="fixed hidden inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-start justify-center pt-5 px-5"
+      aria-hidden="true"
+    >
+      <form class="w-full max-w-[657px] mt-8 relative" action="#" method="GET">
+        <div class="relative">
+          <input
+            type="text"
+            id="search-modal-input"
+            name="q"
+            placeholder="Address, Neighborhood, City, Postal Code"
+            class="peer w-full h-16 md:h-20.5 text-sm md:text-[1.125rem] placeholder-muted-8 rounded-full pl-5 pr-15 pt-2.5 md:pr-18.5 bg-white shadow-[0_12px_35px_0_rgba(0,0,0,0.10)] border border-muted-3 focus:outline-none rounded-t-[2.4375rem] rounded-b-none border-b-0"
+          />
+
+          <button
+            class="flex w-8 h-8 absolute top-5.25 md:top-7.5 right-4.5 items-center justify-center rounded-full bg-muted-2"
+            aria-label="close"
+            id="search-modal-close"
+          >
+            <img
+              class="w-4 peer-focus:hidden"
+              src="images/close-icon.svg"
+              alt=""
+            />
+          </button>
+          <div
+            id="search-dropdown"
+            class="w-full text-left absolute z-40 top-full left-0 rounded-b-[2.4375rem] border border-muted-3 bg-white shadow-[0_12px_35px_rgba(0,0,0,0.10)]"
+          >
+            <div class="px-2.5 py-4 space-y-2.5">
+              <h3 class="text-sm px-2.5">Favorites</h3>
+              <ul class="space-y-2 mt-2">
+                <li
+                  class="flex items-center justify-between p-2 rounded-lg hover:bg-muted-2 cursor-pointer group gap-1.5"
+                >
+                  <div class="flex items-center gap-2.5">
+                    <div
+                      class="w-11.5 h-11.5 rounded-full bg-muted-2 flex justify-center items-center group-hover:bg-white"
+                    >
+                      <svg
+                        class="w-6 h-6"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M7.32295 8.4597C7.36645 8.22445 7.45405 7.9994 7.5821 7.7973C7.9755 7.1763 8.3959 6.5664 8.80705 5.97375L8.9266 5.8015C9.96295 4.30859 10.9154 2.93642 11.3696 1.67357C11.5491 1.17421 12.0936 0.873076 12.6294 1.05202C14.2488 1.59284 15.2083 3.38056 14.6914 5.05985L13.6735 8.36825H19.6641C20.7793 8.36825 21.8288 9.16125 21.9781 10.3279C22.0502 10.8921 21.9069 11.4204 21.6246 11.8465C22.1533 12.2554 22.4966 12.8935 22.4966 13.6183C22.4966 14.4978 21.9917 15.2507 21.2603 15.6188C21.4108 15.9189 21.4966 16.2579 21.4966 16.6183C21.4966 17.4666 21.0274 18.2025 20.3357 18.5855C20.424 18.791 20.479 19.0145 20.4932 19.2498C20.564 20.4487 19.522 21.3683 18.4021 21.3683H12.4966C10.4322 21.3683 8.85855 20.9778 7.79275 20.5806C7.67395 20.5363 7.46185 20.4754 7.25555 20.4149C6.5597 16.4125 6.5822 12.4657 7.32295 8.4597Z"
+                          fill="#B3B3B3"
+                          class="group-hover:fill-third"
+                        />
+                        <path
+                          d="M6.00595 21.8683H3.73137C3.08272 21.8683 2.48531 21.4503 2.29623 20.808C1.23972 17.2197 1.22947 13.5537 2.29622 9.9291C2.48518 9.28725 3.08231 8.8683 3.73137 8.8683H5.72855C5.00855 13.215 5.101 17.5079 6.00595 21.8683Z"
+                          fill="#B3B3B3"
+                          class="group-hover:fill-third"
+                        />
+                      </svg>
+                    </div>
+
+                    <div class="heading grid">
+                      <span class="text-sm">456 Thorn Avenue</span>
+                      <span class="text-xs text-muted-6"
+                        >Buffalo, NY 14223</span
+                      >
+                    </div>
+                  </div>
+
+                  <span
+                    class="text-[0.625rem] text-muted-6 pl-1.25 pr-3 py-0.5 rounded bg-muted-2 group-hover:bg-white flex items-center gap-1"
+                    ><span class="w-1.5 h-1.5 rounded-full bg-third"></span>
+                    For Sale
+                  </span>
+                </li>
+                <li
+                  class="flex items-center justify-between p-2 rounded-lg hover:bg-muted-2 cursor-pointer group gap-1.5"
+                >
+                  <div class="flex items-center gap-2.5">
+                    <div
+                      class="w-11.5 h-11.5 rounded-full bg-muted-2 flex justify-center items-center group-hover:bg-white"
+                    >
+                      <svg
+                        class="w-6 h-6"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M7.32295 8.4597C7.36645 8.22445 7.45405 7.9994 7.5821 7.7973C7.9755 7.1763 8.3959 6.5664 8.80705 5.97375L8.9266 5.8015C9.96295 4.30859 10.9154 2.93642 11.3696 1.67357C11.5491 1.17421 12.0936 0.873076 12.6294 1.05202C14.2488 1.59284 15.2083 3.38056 14.6914 5.05985L13.6735 8.36825H19.6641C20.7793 8.36825 21.8288 9.16125 21.9781 10.3279C22.0502 10.8921 21.9069 11.4204 21.6246 11.8465C22.1533 12.2554 22.4966 12.8935 22.4966 13.6183C22.4966 14.4978 21.9917 15.2507 21.2603 15.6188C21.4108 15.9189 21.4966 16.2579 21.4966 16.6183C21.4966 17.4666 21.0274 18.2025 20.3357 18.5855C20.424 18.791 20.479 19.0145 20.4932 19.2498C20.564 20.4487 19.522 21.3683 18.4021 21.3683H12.4966C10.4322 21.3683 8.85855 20.9778 7.79275 20.5806C7.67395 20.5363 7.46185 20.4754 7.25555 20.4149C6.5597 16.4125 6.5822 12.4657 7.32295 8.4597Z"
+                          fill="#B3B3B3"
+                          class="group-hover:fill-third"
+                        />
+                        <path
+                          d="M6.00595 21.8683H3.73137C3.08272 21.8683 2.48531 21.4503 2.29623 20.808C1.23972 17.2197 1.22947 13.5537 2.29622 9.9291C2.48518 9.28725 3.08231 8.8683 3.73137 8.8683H5.72855C5.00855 13.215 5.101 17.5079 6.00595 21.8683Z"
+                          fill="#B3B3B3"
+                          class="group-hover:fill-third"
+                        />
+                      </svg>
+                    </div>
+
+                    <div class="heading grid">
+                      <span class="text-sm">123 Thorn Street</span>
+                      <span class="text-xs text-muted-6"
+                        >San Diego, CA 92103</span
+                      >
+                    </div>
+                  </div>
+
+                  <span
+                    class="text-[0.625rem] text-muted-6 pl-1.25 pr-3 py-0.5 rounded bg-muted-2 group-hover:bg-white flex items-center gap-1"
+                  >
+                    <span class="w-1.5 h-1.5 rounded-full bg-eighth"></span>
+                    For Rent
+                  </span>
+                </li>
+                <li
+                  class="flex items-center justify-between p-2 rounded-lg hover:bg-muted-2 cursor-pointer group gap-1.5"
+                >
+                  <div class="flex items-center gap-2.5">
+                    <div
+                      class="w-11.5 h-11.5 rounded-full bg-muted-2 flex justify-center items-center group-hover:bg-white"
+                    >
+                      <svg
+                        class="w-6 h-6"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M7.32295 8.4597C7.36645 8.22445 7.45405 7.9994 7.5821 7.7973C7.9755 7.1763 8.3959 6.5664 8.80705 5.97375L8.9266 5.8015C9.96295 4.30859 10.9154 2.93642 11.3696 1.67357C11.5491 1.17421 12.0936 0.873076 12.6294 1.05202C14.2488 1.59284 15.2083 3.38056 14.6914 5.05985L13.6735 8.36825H19.6641C20.7793 8.36825 21.8288 9.16125 21.9781 10.3279C22.0502 10.8921 21.9069 11.4204 21.6246 11.8465C22.1533 12.2554 22.4966 12.8935 22.4966 13.6183C22.4966 14.4978 21.9917 15.2507 21.2603 15.6188C21.4108 15.9189 21.4966 16.2579 21.4966 16.6183C21.4966 17.4666 21.0274 18.2025 20.3357 18.5855C20.424 18.791 20.479 19.0145 20.4932 19.2498C20.564 20.4487 19.522 21.3683 18.4021 21.3683H12.4966C10.4322 21.3683 8.85855 20.9778 7.79275 20.5806C7.67395 20.5363 7.46185 20.4754 7.25555 20.4149C6.5597 16.4125 6.5822 12.4657 7.32295 8.4597Z"
+                          fill="#B3B3B3"
+                          class="group-hover:fill-third"
+                        />
+                        <path
+                          d="M6.00595 21.8683H3.73137C3.08272 21.8683 2.48531 21.4503 2.29623 20.808C1.23972 17.2197 1.22947 13.5537 2.29622 9.9291C2.48518 9.28725 3.08231 8.8683 3.73137 8.8683H5.72855C5.00855 13.215 5.101 17.5079 6.00595 21.8683Z"
+                          fill="#B3B3B3"
+                          class="group-hover:fill-third"
+                        />
+                      </svg>
+                    </div>
+
+                    <div class="heading grid">
+                      <span class="text-sm">789 Thornhill Road</span>
+                      <span class="text-xs text-muted-6"
+                        >Toronto, ON M4G 3V3</span
+                      >
+                    </div>
+                  </div>
+
+                  <span
+                    class="text-[0.625rem] text-muted-6 pl-1.25 pr-3 py-0.5 rounded bg-muted-2 group-hover:bg-white flex items-center gap-1"
+                  >
+                    <span class="w-1.5 h-1.5 rounded-full bg-eighth"></span>
+                    For Rent
+                  </span>
+                </li>
+              </ul>
+              <h3 class="text-sm px-2.5">Recent</h3>
+              <ul class="space-y-2 mt-2">
+                <li
+                  class="flex items-center justify-between p-2 rounded-lg hover:bg-muted-2 cursor-pointer group gap-1.5"
+                >
+                  <div class="flex items-center gap-2.5">
+                    <div
+                      class="w-11.5 h-11.5 rounded-full bg-muted-2 flex justify-center items-center group-hover:bg-white"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12.0002 1.4C10.6014 1.4002 9.21686 1.68108 7.92859 2.22602C6.64032 2.77096 5.47449 3.56887 4.50016 4.5725V2.15C4.50016 1.73579 4.16438 1.4 3.75016 1.4C3.33595 1.4 3.00016 1.73579 3.00016 2.15V7.4H8.25016C8.66438 7.4 9.00016 7.06421 9.00016 6.65C9.00016 6.23579 8.66438 5.9 8.25016 5.9H5.31016C6.71718 4.33647 8.6274 3.31515 10.7091 3.0134C12.7907 2.71166 14.9123 3.14856 16.7054 4.24823C18.4984 5.3479 19.8497 7.04086 20.5245 9.0331C21.1992 11.0253 21.1549 13.191 20.3992 15.1539C19.6434 17.1169 18.224 18.7531 16.3875 19.7785C14.5509 20.8039 12.4132 21.1536 10.3457 20.7669C8.27809 20.3803 6.41127 19.2816 5.06941 17.6618C3.88777 16.2354 3.17894 14.4843 3.02976 12.6501C2.99617 12.237 2.66372 11.9 2.24932 11.9C1.83557 11.9 1.49738 12.2358 1.52687 12.6485C1.65645 14.4617 2.25506 16.2149 3.26973 17.7335C4.42349 19.4602 6.06336 20.806 7.98199 21.6007C9.90061 22.3955 12.0118 22.6034 14.0486 22.1982C16.0854 21.7931 17.9563 20.7931 19.4248 19.3246C20.8932 17.8562 21.8933 15.9852 22.2984 13.9484C22.7036 11.9116 22.4956 9.80045 21.7009 7.88182C20.9062 5.9632 19.5604 4.32332 17.8337 3.16957C16.1069 2.01581 14.0769 1.4 12.0002 1.4Z"
+                          fill="#B3B3B3"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M12.0002 1C14.156 1 16.2634 1.63927 18.0559 2.83698C19.8484 4.03469 21.2455 5.73704 22.0704 7.72875C22.8954 9.72046 23.1113 11.9121 22.6907 14.0265C22.2701 16.1409 21.232 18.0831 19.7076 19.6075C18.1832 21.1319 16.241 22.17 14.1266 22.5906C12.0123 23.0111 9.82063 22.7953 7.82891 21.9703C5.8372 21.1453 4.13485 19.7482 2.93714 17.9557C1.88382 16.3793 1.2624 14.5593 1.12789 12.6771C1.08049 12.0138 1.6229 11.5 2.24932 11.5C2.89267 11.5 3.37969 12.0181 3.42845 12.6177C3.571 14.3703 4.24832 16.0437 5.37744 17.4067C6.65967 18.9545 8.44352 20.0043 10.4192 20.3738C12.3949 20.7432 14.4375 20.4091 16.1925 19.4293C17.9474 18.4495 19.3037 16.8859 20.0259 15.0102C20.748 13.1345 20.7904 11.0651 20.1456 9.16142C19.5008 7.25772 18.2096 5.64 16.4962 4.58921C14.7829 3.53842 12.7556 3.12093 10.7664 3.40927C9.09102 3.65212 7.53182 4.3828 6.27827 5.5H8.25016C8.88529 5.5 9.40016 6.01487 9.40016 6.65C9.40016 7.28513 8.88529 7.8 8.25016 7.8H2.60016V2.15C2.60016 1.51487 3.11504 1 3.75016 1C4.38529 1 4.90016 1.51487 4.90016 2.15V3.64525C5.7569 2.90416 6.72589 2.30045 7.77275 1.85762C9.11031 1.29184 10.5479 1.00021 12.0002 1ZM4.90016 4.18193C4.76353 4.30838 4.63014 4.43861 4.50016 4.5725V2.15C4.50016 1.73579 4.16438 1.4 3.75016 1.4C3.33595 1.4 3.00016 1.73579 3.00016 2.15V7.4H8.25016C8.66438 7.4 9.00016 7.06421 9.00016 6.65C9.00016 6.23579 8.66438 5.9 8.25016 5.9H5.31016C5.43396 5.76243 5.56166 5.62906 5.69303 5.5C7.05466 4.16231 8.81056 3.2886 10.7091 3.0134C12.7907 2.71166 14.9123 3.14856 16.7054 4.24823C18.4984 5.3479 19.8497 7.04086 20.5245 9.0331C21.1992 11.0253 21.1549 13.191 20.3992 15.1539C19.6434 17.1169 18.224 18.7531 16.3875 19.7785C14.5509 20.8039 12.4132 21.1536 10.3457 20.7669C8.27809 20.3803 6.41127 19.2816 5.06941 17.6618C3.88777 16.2354 3.17894 14.4843 3.02976 12.6501C2.99617 12.237 2.66372 11.9 2.24932 11.9C1.83557 11.9 1.49738 12.2358 1.52687 12.6485C1.65645 14.4617 2.25506 16.2149 3.26973 17.7335C4.42349 19.4602 6.06336 20.806 7.98199 21.6007C9.90061 22.3955 12.0118 22.6034 14.0486 22.1982C16.0854 21.7931 17.9563 20.7931 19.4248 19.3246C20.8932 17.8562 21.8933 15.9852 22.2984 13.9484C22.7036 11.9116 22.4956 9.80045 21.7009 7.88182C20.9062 5.9632 19.5604 4.32332 17.8337 3.16957C16.1069 2.01581 14.0769 1.4 12.0002 1.4C10.6014 1.4002 9.21686 1.68108 7.92859 2.22602C6.81218 2.69826 5.78772 3.36048 4.90016 4.18193Z"
+                          fill="#B3B3B3"
+                        />
+                      </svg>
+                    </div>
+
+                    <div class="heading grid">
+                      <span class="text-sm">123 Thorn Street</span>
+                      <span class="text-xs text-muted-6"
+                        >San Diego, CA 92103</span
+                      >
+                    </div>
+                  </div>
+
+                  <span
+                    class="text-[0.625rem] text-muted-6 pl-1.25 pr-3 py-0.5 rounded bg-muted-2 group-hover:bg-white flex items-center gap-1"
+                  >
+                    <span class="w-1.5 h-1.5 rounded-full bg-eighth"></span>
+                    For Rent
+                  </span>
+                </li>
+                <li
+                  class="flex items-center justify-between p-2 rounded-lg hover:bg-muted-2 cursor-pointer group gap-1.5"
+                >
+                  <div class="flex items-center gap-2.5">
+                    <div
+                      class="w-11.5 h-11.5 rounded-full bg-muted-2 flex justify-center items-center group-hover:bg-white"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12.0002 1.4C10.6014 1.4002 9.21686 1.68108 7.92859 2.22602C6.64032 2.77096 5.47449 3.56887 4.50016 4.5725V2.15C4.50016 1.73579 4.16438 1.4 3.75016 1.4C3.33595 1.4 3.00016 1.73579 3.00016 2.15V7.4H8.25016C8.66438 7.4 9.00016 7.06421 9.00016 6.65C9.00016 6.23579 8.66438 5.9 8.25016 5.9H5.31016C6.71718 4.33647 8.6274 3.31515 10.7091 3.0134C12.7907 2.71166 14.9123 3.14856 16.7054 4.24823C18.4984 5.3479 19.8497 7.04086 20.5245 9.0331C21.1992 11.0253 21.1549 13.191 20.3992 15.1539C19.6434 17.1169 18.224 18.7531 16.3875 19.7785C14.5509 20.8039 12.4132 21.1536 10.3457 20.7669C8.27809 20.3803 6.41127 19.2816 5.06941 17.6618C3.88777 16.2354 3.17894 14.4843 3.02976 12.6501C2.99617 12.237 2.66372 11.9 2.24932 11.9C1.83557 11.9 1.49738 12.2358 1.52687 12.6485C1.65645 14.4617 2.25506 16.2149 3.26973 17.7335C4.42349 19.4602 6.06336 20.806 7.98199 21.6007C9.90061 22.3955 12.0118 22.6034 14.0486 22.1982C16.0854 21.7931 17.9563 20.7931 19.4248 19.3246C20.8932 17.8562 21.8933 15.9852 22.2984 13.9484C22.7036 11.9116 22.4956 9.80045 21.7009 7.88182C20.9062 5.9632 19.5604 4.32332 17.8337 3.16957C16.1069 2.01581 14.0769 1.4 12.0002 1.4Z"
+                          fill="#B3B3B3"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M12.0002 1C14.156 1 16.2634 1.63927 18.0559 2.83698C19.8484 4.03469 21.2455 5.73704 22.0704 7.72875C22.8954 9.72046 23.1113 11.9121 22.6907 14.0265C22.2701 16.1409 21.232 18.0831 19.7076 19.6075C18.1832 21.1319 16.241 22.17 14.1266 22.5906C12.0123 23.0111 9.82063 22.7953 7.82891 21.9703C5.8372 21.1453 4.13485 19.7482 2.93714 17.9557C1.88382 16.3793 1.2624 14.5593 1.12789 12.6771C1.08049 12.0138 1.6229 11.5 2.24932 11.5C2.89267 11.5 3.37969 12.0181 3.42845 12.6177C3.571 14.3703 4.24832 16.0437 5.37744 17.4067C6.65967 18.9545 8.44352 20.0043 10.4192 20.3738C12.3949 20.7432 14.4375 20.4091 16.1925 19.4293C17.9474 18.4495 19.3037 16.8859 20.0259 15.0102C20.748 13.1345 20.7904 11.0651 20.1456 9.16142C19.5008 7.25772 18.2096 5.64 16.4962 4.58921C14.7829 3.53842 12.7556 3.12093 10.7664 3.40927C9.09102 3.65212 7.53182 4.3828 6.27827 5.5H8.25016C8.88529 5.5 9.40016 6.01487 9.40016 6.65C9.40016 7.28513 8.88529 7.8 8.25016 7.8H2.60016V2.15C2.60016 1.51487 3.11504 1 3.75016 1C4.38529 1 4.90016 1.51487 4.90016 2.15V3.64525C5.7569 2.90416 6.72589 2.30045 7.77275 1.85762C9.11031 1.29184 10.5479 1.00021 12.0002 1ZM4.90016 4.18193C4.76353 4.30838 4.63014 4.43861 4.50016 4.5725V2.15C4.50016 1.73579 4.16438 1.4 3.75016 1.4C3.33595 1.4 3.00016 1.73579 3.00016 2.15V7.4H8.25016C8.66438 7.4 9.00016 7.06421 9.00016 6.65C9.00016 6.23579 8.66438 5.9 8.25016 5.9H5.31016C5.43396 5.76243 5.56166 5.62906 5.69303 5.5C7.05466 4.16231 8.81056 3.2886 10.7091 3.0134C12.7907 2.71166 14.9123 3.14856 16.7054 4.24823C18.4984 5.3479 19.8497 7.04086 20.5245 9.0331C21.1992 11.0253 21.1549 13.191 20.3992 15.1539C19.6434 17.1169 18.224 18.7531 16.3875 19.7785C14.5509 20.8039 12.4132 21.1536 10.3457 20.7669C8.27809 20.3803 6.41127 19.2816 5.06941 17.6618C3.88777 16.2354 3.17894 14.4843 3.02976 12.6501C2.99617 12.237 2.66372 11.9 2.24932 11.9C1.83557 11.9 1.49738 12.2358 1.52687 12.6485C1.65645 14.4617 2.25506 16.2149 3.26973 17.7335C4.42349 19.4602 6.06336 20.806 7.98199 21.6007C9.90061 22.3955 12.0118 22.6034 14.0486 22.1982C16.0854 21.7931 17.9563 20.7931 19.4248 19.3246C20.8932 17.8562 21.8933 15.9852 22.2984 13.9484C22.7036 11.9116 22.4956 9.80045 21.7009 7.88182C20.9062 5.9632 19.5604 4.32332 17.8337 3.16957C16.1069 2.01581 14.0769 1.4 12.0002 1.4C10.6014 1.4002 9.21686 1.68108 7.92859 2.22602C6.81218 2.69826 5.78772 3.36048 4.90016 4.18193Z"
+                          fill="#B3B3B3"
+                        />
+                      </svg>
+                    </div>
+
+                    <div class="heading grid">
+                      <span class="text-sm">789 Thornhill Road</span>
+                      <span class="text-xs text-muted-6"
+                        >Toronto, ON M4G 3V3</span
+                      >
+                    </div>
+                  </div>
+
+                  <span
+                    class="text-[0.625rem] text-muted-6 pl-1.25 pr-3 py-0.5 rounded bg-muted-2 group-hover:bg-white flex items-center gap-1"
+                  >
+                    <span class="w-1.5 h-1.5 rounded-full bg-eighth"></span>
+                    For Rent
+                  </span>
+                </li>
+                <li
+                  class="flex items-center justify-between p-2 rounded-lg hover:bg-muted-2 cursor-pointer group gap-1.5"
+                >
+                  <div class="flex items-center gap-2.5">
+                    <div
+                      class="w-11.5 h-11.5 rounded-full bg-muted-2 flex justify-center items-center group-hover:bg-white"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12.0002 1.4C10.6014 1.4002 9.21686 1.68108 7.92859 2.22602C6.64032 2.77096 5.47449 3.56887 4.50016 4.5725V2.15C4.50016 1.73579 4.16438 1.4 3.75016 1.4C3.33595 1.4 3.00016 1.73579 3.00016 2.15V7.4H8.25016C8.66438 7.4 9.00016 7.06421 9.00016 6.65C9.00016 6.23579 8.66438 5.9 8.25016 5.9H5.31016C6.71718 4.33647 8.6274 3.31515 10.7091 3.0134C12.7907 2.71166 14.9123 3.14856 16.7054 4.24823C18.4984 5.3479 19.8497 7.04086 20.5245 9.0331C21.1992 11.0253 21.1549 13.191 20.3992 15.1539C19.6434 17.1169 18.224 18.7531 16.3875 19.7785C14.5509 20.8039 12.4132 21.1536 10.3457 20.7669C8.27809 20.3803 6.41127 19.2816 5.06941 17.6618C3.88777 16.2354 3.17894 14.4843 3.02976 12.6501C2.99617 12.237 2.66372 11.9 2.24932 11.9C1.83557 11.9 1.49738 12.2358 1.52687 12.6485C1.65645 14.4617 2.25506 16.2149 3.26973 17.7335C4.42349 19.4602 6.06336 20.806 7.98199 21.6007C9.90061 22.3955 12.0118 22.6034 14.0486 22.1982C16.0854 21.7931 17.9563 20.7931 19.4248 19.3246C20.8932 17.8562 21.8933 15.9852 22.2984 13.9484C22.7036 11.9116 22.4956 9.80045 21.7009 7.88182C20.9062 5.9632 19.5604 4.32332 17.8337 3.16957C16.1069 2.01581 14.0769 1.4 12.0002 1.4Z"
+                          fill="#B3B3B3"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M12.0002 1C14.156 1 16.2634 1.63927 18.0559 2.83698C19.8484 4.03469 21.2455 5.73704 22.0704 7.72875C22.8954 9.72046 23.1113 11.9121 22.6907 14.0265C22.2701 16.1409 21.232 18.0831 19.7076 19.6075C18.1832 21.1319 16.241 22.17 14.1266 22.5906C12.0123 23.0111 9.82063 22.7953 7.82891 21.9703C5.8372 21.1453 4.13485 19.7482 2.93714 17.9557C1.88382 16.3793 1.2624 14.5593 1.12789 12.6771C1.08049 12.0138 1.6229 11.5 2.24932 11.5C2.89267 11.5 3.37969 12.0181 3.42845 12.6177C3.571 14.3703 4.24832 16.0437 5.37744 17.4067C6.65967 18.9545 8.44352 20.0043 10.4192 20.3738C12.3949 20.7432 14.4375 20.4091 16.1925 19.4293C17.9474 18.4495 19.3037 16.8859 20.0259 15.0102C20.748 13.1345 20.7904 11.0651 20.1456 9.16142C19.5008 7.25772 18.2096 5.64 16.4962 4.58921C14.7829 3.53842 12.7556 3.12093 10.7664 3.40927C9.09102 3.65212 7.53182 4.3828 6.27827 5.5H8.25016C8.88529 5.5 9.40016 6.01487 9.40016 6.65C9.40016 7.28513 8.88529 7.8 8.25016 7.8H2.60016V2.15C2.60016 1.51487 3.11504 1 3.75016 1C4.38529 1 4.90016 1.51487 4.90016 2.15V3.64525C5.7569 2.90416 6.72589 2.30045 7.77275 1.85762C9.11031 1.29184 10.5479 1.00021 12.0002 1ZM4.90016 4.18193C4.76353 4.30838 4.63014 4.43861 4.50016 4.5725V2.15C4.50016 1.73579 4.16438 1.4 3.75016 1.4C3.33595 1.4 3.00016 1.73579 3.00016 2.15V7.4H8.25016C8.66438 7.4 9.00016 7.06421 9.00016 6.65C9.00016 6.23579 8.66438 5.9 8.25016 5.9H5.31016C5.43396 5.76243 5.56166 5.62906 5.69303 5.5C7.05466 4.16231 8.81056 3.2886 10.7091 3.0134C12.7907 2.71166 14.9123 3.14856 16.7054 4.24823C18.4984 5.3479 19.8497 7.04086 20.5245 9.0331C21.1992 11.0253 21.1549 13.191 20.3992 15.1539C19.6434 17.1169 18.224 18.7531 16.3875 19.7785C14.5509 20.8039 12.4132 21.1536 10.3457 20.7669C8.27809 20.3803 6.41127 19.2816 5.06941 17.6618C3.88777 16.2354 3.17894 14.4843 3.02976 12.6501C2.99617 12.237 2.66372 11.9 2.24932 11.9C1.83557 11.9 1.49738 12.2358 1.52687 12.6485C1.65645 14.4617 2.25506 16.2149 3.26973 17.7335C4.42349 19.4602 6.06336 20.806 7.98199 21.6007C9.90061 22.3955 12.0118 22.6034 14.0486 22.1982C16.0854 21.7931 17.9563 20.7931 19.4248 19.3246C20.8932 17.8562 21.8933 15.9852 22.2984 13.9484C22.7036 11.9116 22.4956 9.80045 21.7009 7.88182C20.9062 5.9632 19.5604 4.32332 17.8337 3.16957C16.1069 2.01581 14.0769 1.4 12.0002 1.4C10.6014 1.4002 9.21686 1.68108 7.92859 2.22602C6.81218 2.69826 5.78772 3.36048 4.90016 4.18193Z"
+                          fill="#B3B3B3"
+                        />
+                      </svg>
+                    </div>
+
+                    <div class="heading grid">
+                      <span class="text-sm">789 Thornhill Road</span>
+                      <span class="text-xs text-muted-6"
+                        >Toronto, ON M4G 3V3</span
+                      >
+                    </div>
+                  </div>
+
+                  <span
+                    class="text-[0.625rem] text-muted-6 pl-1.25 pr-3 py-0.5 rounded bg-muted-2 group-hover:bg-white flex items-center gap-1"
+                  >
+                    <span class="w-1.5 h-1.5 rounded-full bg-ninth"></span>
+                    Pre-Const
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- side-bar -->
+    <aside
+      id="sidebar"
+      class="hidden min-w-93.75 h-screen pt-4 px-5 pb-3.5 bg-white rounded-lg lg:flex flex-col overflow-y-auto leading-tight fixed top-0 z-999 transition-transform duration-300 -translate-x-full"
+    >
+      <header class="flex items-center justify-between">
+        <h2 class="text-2xl">Menu</h2>
+        <div class="flex items-center gap-2.75">
+          <div class="dropdown" x-data="{ open: false }">
+            <button
+              @click="open = !open"
+              @keydown.escape="open = false"
+              aria-haspopup="true"
+              :aria-expanded="open"
+              aria-label="More options for Knowing Your Home"
+              class="bg-muted-2"
+              :class="{ 'bg-muted-7': open }"
+            >
+              <img src="images/three-points-icon.svg" alt="" />
+            </button>
+
+            <!-- Dropdown -->
+            <ul
+              x-show="open"
+              x-transition
+              @click.away="open = false"
+              role="menu"
+              aria-label="Manage Finances options"
+              class="menu"
+            >
+              <li role="none">
+                <a href="#" role="menuitem" class="menu-item">
+                  <img src="images/add-info-icon.svg" alt="" />
+                  Add info
+                </a>
+              </li>
+              <li role="none">
+                <a href="#" role="menuitem" class="menu-item">
+                  <img src="images/edit-icon.svg" alt="" />
+                  Edit
+                </a>
+              </li>
+              <li role="none">
+                <a href="#" role="menuitem" class="menu-item">
+                  <img src="images/view-details-icon.svg" alt="" />
+                  View Details
+                </a>
+              </li>
+            </ul>
+          </div>
+          <button
+            aria-label="Search"
+            class="w-8 h-8 rounded-full bg-muted-2 flex-center"
+          >
+            <img class="w-5" src="images/amplifier-dark-icon.svg" alt="" />
+          </button>
+          <button
+            id="close-sidebar"
+            aria-label="Close"
+            class="w-8 h-8 rounded-full bg-muted-2 flex-center"
+          >
+            <img class="w-5" src="images/close-icon.svg" alt="" />
+          </button>
+        </div>
+      </header>
+
+      <section class="mt-6">
+        <h3 class="text-base text-muted-1">Claimed Property</h3>
+
+        <ul class="space-y-2 mt-4">
+          <li
+            class="flex items-center justify-between bg-muted-2 py-2 px-2.5 rounded-lg"
+          >
+            <div class="flex items-center gap-2.5">
+              <div class="w-11.5 h-11.5 bg-white rounded-full flex-center">
+                <svg class="chevron-icon static w-6.5 h-6.5 fill-third">
+                  <use href="#chevron-icon" />
+                </svg>
+              </div>
+
+              <div class="heading">
+                <p class="text-sm">402 Spring Gate Blvd</p>
+                <p class="text-xs text-muted-6">San Diego, CA 92003</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2.5">
+              <span
+                class="text-xs heading text-third px-2.75 py-0.75 rounded bg-fourth flex items-center gap-0.5"
+              >
+                <svg class="chevron-icon static w-2.5 h-2.5 fill-third">
+                  <use href="#chevron-icon" />
+                </svg>
+                <span>45</span>
+              </span>
+              <button
+                aria-label="Delete"
+                class="text-gray-400 hover:text-red-500"
+              >
+                <img class="w-6" src="images/delete-icon.svg" alt="" />
+              </button>
+            </div>
+          </li>
+
+          <li class="flex items-center justify-between py-2 px-2.5 rounded-lg">
+            <div class="flex items-center gap-2.5">
+              <div class="w-11.5 h-11.5 bg-muted-2 rounded-full flex-center">
+                <svg class="chevron-icon static w-6.5 h-6.5 fill-third">
+                  <use href="#chevron-icon" />
+                </svg>
+              </div>
+
+              <div class="heading">
+                <p class="text-sm">402 Spring Gate Blvd</p>
+                <p class="text-xs text-muted-6">San Diego, CA 92003</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2.5">
+              <span
+                class="text-xs heading text-third px-2.75 py-0.75 rounded bg-fourth flex items-center gap-0.5"
+              >
+                <svg class="chevron-icon static w-2.5 h-2.5 fill-third">
+                  <use href="#chevron-icon" />
+                </svg>
+                <span>24</span>
+              </span>
+              <button aria-label="Delete">
+                <img class="w-6" src="images/delete-icon.svg" alt="" />
+              </button>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="mt-4 mb-17">
+        <h2 class="text-2xl">History</h2>
+
+        <h3 class="text-base text-muted-1 mt-4">Today</h3>
+
+        <ul class="space-y-1 mt-2">
+          <li
+            class="flex items-center justify-between bg-muted-2 py-2 px-2.5 rounded-lg"
+          >
+            <span>402 Spring Gate Blvd Update</span>
+            <div class="flex items-center gap-2">
+              <button aria-label="Delete">
+                <img class="w-6" src="images/delete-icon.svg" alt="" />
+              </button>
+              <label class="map-toggle inline-flex items-center cursor-pointer">
+                <input type="checkbox" class="sr-only peer" checked />
+                <span
+                  class="w-11 h-6 bg-muted-3 peer-checked:bg-eighth rounded-full relative transition-colors before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-5 before:h-5 before:bg-muted-9 before:rounded-full peer-checked:before:translate-x-5 peer-checked:before:bg-white before:transition-transform"
+                ></span>
+              </label>
+            </div>
+          </li>
+          <li class="flex items-center justify-between py-2 px-2.5 rounded-lg">
+            <span>Vaughan, ON</span>
+            <div class="flex items-center gap-2">
+              <button aria-label="Delete">
+                <img class="w-6" src="images/delete-icon.svg" alt="" />
+              </button>
+              <label class="map-toggle inline-flex items-center cursor-pointer">
+                <input type="checkbox" class="sr-only peer" />
+                <span
+                  class="w-11 h-6 bg-muted-3 peer-checked:bg-eighth rounded-full relative transition-colors before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-5 before:h-5 before:bg-muted-9 before:rounded-full peer-checked:before:translate-x-5 peer-checked:before:bg-white before:transition-transform"
+                ></span>
+              </label>
+            </div>
+          </li>
+          <li class="flex items-center justify-between py-2 px-2.5 rounded-lg">
+            <span>Top Experts in Vaughan</span>
+            <div class="flex items-center gap-2">
+              <button aria-label="Delete">
+                <img class="w-6" src="images/delete-icon.svg" alt="" />
+              </button>
+              <label class="map-toggle inline-flex items-center cursor-pointer">
+                <input type="checkbox" class="sr-only peer" />
+                <span
+                  class="w-11 h-6 bg-muted-3 peer-checked:bg-eighth rounded-full relative transition-colors before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-5 before:h-5 before:bg-muted-9 before:rounded-full peer-checked:before:translate-x-5 peer-checked:before:bg-white before:transition-transform"
+                ></span>
+              </label>
+            </div>
+          </li>
+          <li class="flex items-center justify-between py-2 px-2.5 rounded-lg">
+            <span>Top Pizza Places in Vaughan</span>
+            <div class="flex items-center gap-2">
+              <button aria-label="Delete">
+                <img class="w-6" src="images/delete-icon.svg" alt="" />
+              </button>
+              <label class="map-toggle inline-flex items-center cursor-pointer">
+                <input type="checkbox" class="sr-only peer" />
+                <span
+                  class="w-11 h-6 bg-muted-3 peer-checked:bg-eighth rounded-full relative transition-colors before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-5 before:h-5 before:bg-muted-9 before:rounded-full peer-checked:before:translate-x-5 peer-checked:before:bg-white before:transition-transform"
+                ></span>
+              </label>
+            </div>
+          </li>
+          <li class="flex items-center justify-between py-2 px-2.5 rounded-lg">
+            <span>Alexander Mackenzie High</span>
+            <div class="flex items-center gap-2">
+              <button aria-label="Delete">
+                <img class="w-6" src="images/delete-icon.svg" alt="" />
+              </button>
+              <label class="map-toggle inline-flex items-center cursor-pointer">
+                <input type="checkbox" class="sr-only peer" />
+                <span
+                  class="w-11 h-6 bg-muted-3 peer-checked:bg-eighth rounded-full relative transition-colors before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-5 before:h-5 before:bg-muted-9 before:rounded-full peer-checked:before:translate-x-5 peer-checked:before:bg-white before:transition-transform"
+                ></span>
+              </label>
+            </div>
+          </li>
+        </ul>
+
+        <h3 class="text-base text-muted-1 pt-4 mt-4 border-t border-t-muted-3">
+          Previous 7 Days
+        </h3>
+
+        <ul class="space-y-1 mt-2">
+          <li class="flex items-center justify-between py-2 px-2.5 rounded-lg">
+            <span>Top Pizza Places in Vaughan</span>
+            <div class="flex items-center gap-2">
+              <button aria-label="Delete">
+                <img class="w-6" src="images/delete-icon.svg" alt="" />
+              </button>
+              <label class="map-toggle inline-flex items-center cursor-pointer">
+                <input type="checkbox" class="sr-only peer" />
+                <span
+                  class="w-11 h-6 bg-muted-3 peer-checked:bg-eighth rounded-full relative transition-colors before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-5 before:h-5 before:bg-muted-9 before:rounded-full peer-checked:before:translate-x-5 peer-checked:before:bg-white before:transition-transform"
+                ></span>
+              </label>
+            </div>
+          </li>
+
+          <li class="flex items-center justify-between py-2 px-2.5 rounded-lg">
+            <span>Alexander Mackenzie High</span>
+            <div class="flex items-center gap-2">
+              <button aria-label="Delete">
+                <img class="w-6" src="images/delete-icon.svg" alt="" />
+              </button>
+              <label class="map-toggle inline-flex items-center cursor-pointer">
+                <input type="checkbox" class="sr-only peer" />
+                <span
+                  class="w-11 h-6 bg-muted-3 peer-checked:bg-eighth rounded-full relative transition-colors before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-5 before:h-5 before:bg-muted-9 before:rounded-full peer-checked:before:translate-x-5 peer-checked:before:bg-white before:transition-transform"
+                ></span>
+              </label>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </aside>
+
+    <!--  Navigation  section -->
+
+    <section class="section-wrapper has-slider pt-0">
+      <aside class="lg:hidden" aria-labelledby="home-dashboard-heading">
+        <div class="justify-between">
+          <div class="pointer-events-auto">
+            <div
+              class="text-white bg-primary flex justify-between px-5 md:px-8 pt-2.5 pb-[1.44rem]"
+            >
+              <span class="text-sm font-semibold">For Sale</span
+              ><span class="text-sm font-semibold">$2.3m</span>
+            </div>
+
+            <span class="block bg-white rounded-t-lg -mt-4 pt-4"></span>
+            <span
+              class="w-27 h-1 block -mt-0.75 bg-muted-2 rounded-sm mx-auto"
+              aria-hidden="true"
+              role="presentation"
+            ></span>
+          </div>
+        </div>
+      </aside>
+      <div class="md:px-3 min-[1280px]:!px-8">
+        <div class="swiper swiper-main-nav mt-5.25 md:mt-9.25 lg:mt-6">
+          <div
+            class="swiper-wrapper min-[1280px]:!grid min-[1280px]:grid-cols-5"
+          >
+            <div class="swiper-slide main-nav-item active">
+              <svg
+                class="w-5 h-5 icon"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M14.3813 7.64102L10.7354 4.87018C10.3021 4.54032 9.69725 4.54102 9.26461 4.87018L5.61878 7.64102C5.31808 7.86949 5.13892 8.23129 5.13892 8.60838V13.6459C5.13892 14.6993 5.99517 15.5556 7.04864 15.5556H8.95836V12.7778C8.95836 12.2028 9.42503 11.7362 10 11.7362C10.575 11.7362 11.0417 12.2028 11.0417 12.7778V15.5556H12.9514C14.0049 15.5556 14.8611 14.6993 14.8611 13.6459V8.60838C14.8611 8.23129 14.682 7.87018 14.3813 7.64102Z"
+                  fill="currentColor"
+                />
+              </svg>
+              <h3 class="mt-1">402 Spring Gate</h3>
+              <div class="more">
+                <span class="text-xs font-medium">45 home insights</span>
+                <img src="images/more-icon.svg" alt="" />
+              </div>
+            </div>
+
+            <div class="swiper-slide main-nav-item">
+              <svg
+                class="w-5 h-5 icon"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_7453_72081)">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10.5208 3.75V5.3125H9.47913V3.75H10.5208Z"
+                    fill="#FF603F"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M15.2083 15.2077V7.91602H10V15.2077H15.2083ZM13.1302 9.99935H12.0833V11.041H13.1302V9.99935ZM12.0833 13.1243V12.0827H13.1302V13.1243H12.0833Z"
+                    fill="#FF603F"
+                  />
+                  <path
+                    d="M7.39575 5.42708L12.6041 4.125V6.8754H9.99992C9.42461 6.8754 8.95825 7.34177 8.95825 7.91706V10.0895L7.39575 9.56863V5.42708Z"
+                    fill="#FF603F"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M4.79163 9.79883L8.95829 11.1877V15.209H4.79163V9.79883ZM7.40101 12.084V13.1257H6.35413V12.084H7.40101Z"
+                    fill="#FF603F"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_7453_72081">
+                    <rect
+                      width="12.5"
+                      height="12.5"
+                      fill="white"
+                      transform="translate(3.75 3.75)"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+
+              <h3 class="mt-1">Thornhill, ON</h3>
+              <div class="more">
+                <span class="text-xs font-medium">5 neighborhood insights</span>
+                <img src="images/more-icon.svg" alt="" />
+              </div>
+            </div>
+
+            <div class="swiper-slide main-nav-item">
+              <svg
+                class="w-5 h-5 icon"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_7453_72096)">
+                  <path
+                    d="M13.0086 4.89407C11.9879 3.8886 10.3336 3.89602 9.32112 4.90852L9.05042 5.17922L14.1 10.43L16.2114 8.31867L13.0086 4.89407Z"
+                    fill="#FF603F"
+                  />
+                  <path
+                    d="M9.64106 9.08945L8.04692 7.49531V5.4625L5.2356 4.05664L4.05591 5.23633L5.46177 8.04766H7.49458L9.08872 9.6418L9.64106 9.08945Z"
+                    fill="#FF603F"
+                  />
+                  <path
+                    d="M15.3145 12.9145L12.6544 10.4512L10.5321 12.743L12.9134 15.3152C13.2305 15.657 13.6618 15.8508 14.1274 15.8594C14.1387 15.8594 14.1501 15.8594 14.1614 15.8594C14.6145 15.8594 15.0399 15.6836 15.3614 15.3617C15.6911 15.032 15.8677 14.5938 15.8583 14.1277C15.8497 13.6617 15.6559 13.2305 15.3137 12.9141L15.3145 12.9145Z"
+                    fill="#FF603F"
+                  />
+                  <path
+                    d="M10.3563 7.66406L4.68521 12.9148C4.34342 13.2316 4.14967 13.6629 4.14107 14.1289C4.13209 14.5949 4.30865 15.0332 4.63834 15.3625C4.95982 15.6844 5.38482 15.8602 5.83834 15.8602C5.84928 15.8602 5.86061 15.8602 5.87193 15.8602C6.33795 15.8516 6.7692 15.6578 7.086 15.316L12.2997 9.68516L10.3563 7.66445V7.66406Z"
+                    fill="#FF603F"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_7453_72096">
+                    <rect
+                      width="12.5"
+                      height="12.5"
+                      fill="white"
+                      transform="translate(3.75 3.75)"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+
+              <h3 class="mt-1">Top Experts</h3>
+              <div class="more">
+                <span class="text-xs font-medium">43 experts</span>
+                <img src="images/more-icon.svg" alt="" />
+              </div>
+            </div>
+
+            <div class="swiper-slide main-nav-item">
+              <svg
+                class="w-5 h-5 icon"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M13.9062 8.16831C13.9062 9.74456 12.941 11.2406 12.0208 12.3159C11.5558 12.8592 11.0915 13.3075 10.7437 13.6198C10.5039 13.8352 10.2561 14.039 10 14.2345C9.74372 14.0388 9.49594 13.8345 9.25617 13.6187C8.90836 13.3058 8.44414 12.8569 7.97917 12.3132C7.05904 11.2372 6.09375 9.74115 6.09375 8.16831C6.09375 5.68058 8.10594 4.27148 10 4.27148C11.8941 4.27148 13.9062 5.68058 13.9062 8.16831ZM10 6.61523C9.13706 6.61523 8.4375 7.31479 8.4375 8.17773C8.4375 9.04068 9.13706 9.74023 10 9.74023C10.8629 9.74023 11.5625 9.04068 11.5625 8.17773C11.5625 7.31479 10.8629 6.61523 10 6.61523Z"
+                  fill="#FF603F"
+                />
+                <path
+                  d="M14.5386 12.3389C14.8691 12.4906 15.1535 12.6675 15.3611 12.8714C15.5677 13.0743 15.7291 13.3364 15.7291 13.6473C15.7291 14.0475 15.4656 14.3632 15.1643 14.5904C14.8526 14.8254 14.4242 15.0263 13.9238 15.1907C12.9187 15.521 11.5414 15.7306 9.99998 15.7306C8.45894 15.7306 7.08162 15.5227 6.07643 15.1932C5.57603 15.0292 5.14738 14.8285 4.83546 14.593C4.53334 14.3648 4.27081 14.0483 4.27081 13.6473V13.6359L4.27147 13.6246C4.28941 13.3164 4.45389 13.0578 4.66685 12.854C4.87996 12.6502 5.16729 12.4751 5.49924 12.3257C5.84977 12.1679 6.26967 12.0301 6.74477 11.9163L6.95857 12.6685C6.51003 12.7742 6.12672 12.9 5.81988 13.0381C5.53499 13.1663 5.33354 13.2974 5.20694 13.4185C5.09114 13.5293 5.05929 13.6101 5.05266 13.6574C5.05762 13.7025 5.09724 13.8117 5.30625 13.9695C5.52339 14.1334 5.86306 14.3011 6.31976 14.4508C7.22876 14.7488 8.52074 14.9493 9.99998 14.9493C11.4789 14.9493 12.7708 14.7472 13.6799 14.4485C14.1366 14.2984 14.4766 14.1304 14.6939 13.9666C14.9217 13.7949 14.9479 13.6817 14.9479 13.6473C14.9479 13.6216 14.935 13.5479 14.8137 13.4288C14.6934 13.3106 14.4963 13.1791 14.2126 13.0489C13.9 12.9053 13.5044 12.7734 13.0377 12.6634L13.2552 11.9121C13.7484 12.0304 14.1812 12.1748 14.5386 12.3389Z"
+                  fill="#FF603F"
+                />
+              </svg>
+
+              <h3 class="mt-1">Top Places</h3>
+              <div class="more">
+                <span class="text-xs font-medium">93 experts</span>
+                <img src="images/more-icon.svg" alt="" />
+              </div>
+            </div>
+
+            <div class="swiper-slide main-nav-item">
+              <svg
+                class="w-5 h-5 icon"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_7453_72124)">
+                  <path
+                    d="M10.5368 15.4667L10.6646 14.7209L10.125 14.1945C9.70142 13.7813 9.54655 13.1514 9.73058 12.5903C9.91461 12.023 10.3979 11.6153 10.9917 11.5292L11.7375 11.4209L12.0702 10.7445C12.3299 10.2209 12.8667 9.89727 13.4722 9.89727C14.0702 9.89727 14.5993 10.2153 14.8611 10.7257V8.60768C14.8611 8.2306 14.682 7.86879 14.3813 7.63963L10.7354 4.87018C10.3021 4.54032 9.69725 4.54102 9.26461 4.87018L5.61878 7.64102C5.31808 7.86949 5.13892 8.23129 5.13892 8.60838V13.6459C5.13892 14.6993 5.99517 15.5556 7.04864 15.5556H10.5347C10.5382 15.5257 10.5327 15.4966 10.5375 15.4667H10.5368Z"
+                    fill="#FF603F"
+                  />
+                  <path
+                    d="M15.8035 12.561L14.5153 12.3735L13.9396 11.2061C13.7632 10.8506 13.1813 10.8506 13.0049 11.2061L12.4292 12.3735L11.141 12.561C10.9445 12.5895 10.7813 12.727 10.7209 12.9151C10.6591 13.1033 10.7104 13.311 10.8521 13.4492L11.7848 14.3582L11.5646 15.6415C11.5313 15.8374 11.6111 16.0346 11.7723 16.1513C11.9313 16.2672 12.1452 16.2825 12.3202 16.1908L13.4729 15.5846L14.6257 16.1908C14.7014 16.2311 14.7848 16.2506 14.8681 16.2506C14.9757 16.2506 15.0841 16.2172 15.1736 16.1513C15.3341 16.0346 15.4146 15.8374 15.3813 15.6415L15.1611 14.3582L16.0938 13.4492C16.2354 13.311 16.2868 13.1033 16.225 12.9151C16.1639 12.727 16.0014 12.5895 15.8049 12.561H15.8035Z"
+                    fill="#FF603F"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_7453_72124">
+                    <rect
+                      width="12.5"
+                      height="12.5"
+                      fill="white"
+                      transform="translate(3.75 3.75)"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+
+              <h3 class="mt-1">Real Estate</h3>
+              <div class="more">
+                <span class="text-xs font-medium">1,500 listings</span>
+                <img src="images/more-icon.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--  maintenance-and-upkeep section -->
+
+    <section
+      class="section-wrapper has-slider max-w-none"
+      aria-labelledby="maintenance-and-upkeep-heading"
+    >
+      <header>
+        <div
+          class="txt w-full grid grid-cols-[32px_1fr_auto] items-end gap-2.5 lg:grid-cols-[56px_1fr_auto] lg:items-start !space-y-0"
+        >
+          <button
+            class="w-8 lg:w-14 h-8 lg:h-14 rounded-full bg-third text-white shadow-[0_16px_32px_0_rgba(0,0,0,0.2)] flex items-center justify-center lg:row-start-1 lg:row-end-3"
+            aria-label="Help"
+          >
+            <svg
+              class="chevron-icon static w-5.5 lg:w-10 h-5.5 lg:h-10 fill-white"
+            >
+              <use href="#chevron-icon"></use>
+            </svg>
+          </button>
+          <h2
+            class="max-w-70.5 text-lg leading-tight text-white bg-third rounded-lg p-4 pr-7.5 lg:max-w-none lg:text-[2rem] lg:text-current lg:bg-transparent lg:p-0"
+            id="maintenance-and-upkeep-heading"
+          >
+            What’s New 402 Spring <br class="lg:hidden" />
+            Gate Blvd?
+          </h2>
+          <div class="dropdown ml-auto self-center" x-data="{ open: false }">
+            <button
+              @click="open = !open"
+              @keydown.escape="open = false"
+              aria-haspopup="true"
+              :aria-expanded="open"
+              aria-label="More options for managing finances Your Home"
+              :class="{ 'bg-muted-7': open }"
+            >
+              <img src="images/three-points-icon.svg" alt="" />
+            </button>
+
+            <!-- Dropdown -->
+            <ul
+              x-show="open"
+              x-transition
+              @click.away="open = false"
+              role="menu"
+              aria-label="Manage Finances options"
+              class="menu"
+            >
+              <li role="none">
+                <a href="#" role="menuitem" class="menu-item">
+                  <img src="images/add-info-icon.svg" alt="" />
+                  Add info
+                </a>
+              </li>
+              <li role="none">
+                <a href="#" role="menuitem" class="menu-item">
+                  <img src="images/edit-icon.svg" alt="" />
+                  Edit
+                </a>
+              </li>
+              <li role="none">
+                <a href="#" role="menuitem" class="menu-item">
+                  <img src="images/view-details-icon.svg" alt="" />
+                  View Details
+                </a>
+              </li>
+            </ul>
+          </div>
+          <p
+            class="base-p col-start-1 col-end-[-1] lg:col-start-2 lg:col-end-3"
+          >
+            Welcome back! We’ve pulled together everything new and relevant for
+            your home. From recent real estate activity to updates on services
+            or costs, this banner keeps you up-to-date and makes it easy to spot
+            what’s changed since your last visit.
+          </p>
+          <div
+            class="flex flex-wrap gap-2 col-start-1 col-end-[-1] lg:col-start-2 lg:col-end-3"
+          >
+            <span class="text-xs font-normal py-0.5 px-2 bg-muted-2"
+              >#1 in Thornhill</span
+            >
+            <span class="text-xs font-normal py-0.5 px-2 bg-muted-2"
+              >#2 $500k to $750k Range</span
+            >
+            <span class="text-xs font-normal py-0.5 px-2 bg-muted-2"
+              >#3 Real Estate Agents in Vaughan</span
+            >
+          </div>
+        </div>
+      </header>
+
+      <nav class="tabs" aria-label="Filter rooms by floor">
+        <ul role="tablist" class="filter-tabs lg:px-28">
+          <li role="presentation">
+            <button
+              class="filter-tab filter-room-tab active"
+              role="tab"
+              aria-selected="true"
+              id="tab-all"
+              aria-controls="panel-all"
+            >
+              All
+            </button>
+          </li>
+          <li role="presentation">
+            <button
+              class="filter-tab filter-room-tab"
+              role="tab"
+              aria-selected="false"
+              id="tab-upcoming"
+              aria-controls="panel-upcoming"
+            >
+              Upcoming
+            </button>
+          </li>
+          <li role="presentation">
+            <button
+              class="filter-tab filter-room-tab"
+              role="tab"
+              aria-selected="false"
+              id="tab-done"
+              aria-controls="panel-done"
+            >
+              Done
+            </button>
+          </li>
+          <li role="presentation">
+            <button
+              class="filter-tab filter-room-tab"
+              role="tab"
+              aria-selected="false"
+              id="tab-overdue"
+              aria-controls="panel-overdue"
+            >
+              Overdue
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <div
+        class="swiper swiper-maintenance-and-upkeep"
+        role="tabpanel"
+        id="panel-all"
+        aria-labelledby="tab-all"
+      >
+        <div class="swiper-wrapper">
+          <div
+            class="swiper-slide card has-chevron-icon text-white bg-third origin-top"
+          >
+            <dl class="heading">
+              <dt class="text-[3.6rem] lg:text-[4rem] leading-[110%]">3</dt>
+              <dd class="text-lg lg:text-xl leading-[110%]">Due Soon</dd>
+              <dt class="text-[3.6rem] lg:text-[4rem] leading-[110%]">2</dt>
+              <dd class="text-lg lg:text-xl leading-[110%]">Completed</dd>
+            </dl>
+            <svg
+              class="chevron-icon fill-third-100 -top-3.5 left-auto -right-9"
+            >
+              <use href="#chevron-icon" />
+            </svg>
+
+            <div class="more border-[#ffffff22]">
+              <p>Add New</p>
+              <img
+                class="uploid-icon filter invert"
+                src="images/more-icon.svg"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="swiper-slide card bordered-card">
+            <div class="flex justify-between">
+              <img
+                class="w-14"
+                src="images/m-u-change-sir-filter-icon.svg"
+                alt=""
+              />
+              <span class="text-xs text-muted-6">Mar 04, 2025</span>
+            </div>
+            <span
+              class="text-xs text-third heading inline-flex items-center gap-1.25 bg-fourth rounded py-0.75 px-2.5 mt-8 lg:mt-9.5 self-start"
+            >
+              Due soon
+              <span class="w-1.5 h-1.5 rounded-full bg-third"></span>
+            </span>
+            <h3 class="text-[1.5rem] mt-1.5">Change Air Filter</h3>
+            <p class="text-sm text-muted-6 mt-1.5 mb-2.5">
+              Ensure clean indoor air and optimal HVAC performance by replacing
+              the air filter regularly.
+            </p>
+            <div class="more">
+              <p>Learn More</p>
+              <img src="images/more-icon.svg" alt="" />
+            </div>
+          </div>
+          <div class="swiper-slide card bordered-card">
+            <div class="flex justify-between">
+              <img
+                class="w-14"
+                src="images/m-u-change-sir-filter-icon.svg"
+                alt=""
+              />
+              <span class="text-xs text-muted-6">Mar 04, 2025</span>
+            </div>
+            <span
+              class="text-xs text-white heading inline-flex items-center gap-1.25 bg-third rounded py-0.75 px-2.5 mt-8 lg:mt-9.5 self-start"
+            >
+              Overdue
+              <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+            </span>
+            <h3 class="text-[1.5rem] mt-1.5">Check for leaks</h3>
+            <p class="text-sm text-muted-6 mt-1.5 mb-2.5">
+              Prevent water damage and high bills by checking for leaks in
+              faucets, pipes, and appliances regularly.
+            </p>
+            <div class="more">
+              <p>Learn More</p>
+              <img src="images/more-icon.svg" alt="" />
+            </div>
+          </div>
+          <div class="swiper-slide card bordered-card">
+            <div class="flex justify-between">
+              <img
+                class="w-14"
+                src="images/m-u-water-filter-replaced-icon.svg"
+                alt=""
+              />
+              <span class="text-xs text-muted-6">Mar 04, 2025</span>
+            </div>
+            <span
+              class="text-xs text-eighth heading inline-flex items-center gap-1.25 bg-tenth rounded py-0.75 px-2.5 mt-8 lg:mt-9.5 self-start"
+            >
+              Done
+              <span class="w-1.5 h-1.5 rounded-full bg-eighth"></span>
+            </span>
+            <h3 class="text-[1.5rem] mt-1.5">Water Filter Replaced</h3>
+            <p class="text-sm text-muted-6 mt-1.5 mb-2.5">
+              A recent plumbing task has been successfully completed, keeping
+              your home’s water systems in top condition.
+            </p>
+            <div class="more">
+              <p>Learn More</p>
+              <img src="images/more-icon.svg" alt="" />
+            </div>
+          </div>
+          <div class="swiper-slide card bordered-card">
+            <div class="flex justify-between">
+              <img
+                class="w-14"
+                src="images/m-u-plumbing-work-completed-icon.svg"
+                alt=""
+              />
+              <span class="text-xs text-muted-6">Mar 04, 2025</span>
+            </div>
+            <span
+              class="text-xs text-eighth heading inline-flex items-center gap-1.25 bg-tenth rounded py-0.75 px-2.5 mt-8 lg:mt-9.5 self-start"
+            >
+              Done
+              <span class="w-1.5 h-1.5 rounded-full bg-eighth"></span>
+            </span>
+            <h3 class="text-[1.5rem] mt-1.5">Plumbing Work Completed</h3>
+            <p class="text-sm text-muted-6 mt-1.5 mb-2.5">
+              A recent plumbing task has been successfully completed, keeping
+              your home’s water systems in top condition.
+            </p>
+            <div class="more">
+              <p>Learn More</p>
+              <img src="images/more-icon.svg" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center gap-2.5 py-2 mt-8 lg:mt-11.25">
+          <img
+            class="swiper-button-prev"
+            role="button"
+            aria-label="Previous slide"
+            src="images/prev-slider.svg"
+            alt=""
+          />
+          <img
+            class="swiper-button-next"
+            role="button"
+            aria-label="Next slide"
+            src="images/next-slider.svg"
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="section-wrapper">
+      <ul class="space-y-4">
+        <li>
+          <details id="next-steps" class="group lg:open:pt-0" open>
+            <summary
+              class="flex items-center gap-4.5 lg:gap-6 cursor-pointer select-none"
+            >
+              <span
+                class="shadow-[0_9.14px_18.29px_rgba(0,0,0,0.20)] w-8 h-8 lg:w-14 lg:h-14 flex-center bg-white group-open:bg-third rounded-full"
+              >
+                <img
+                  class="w-3.5 lg:w-6 group-open:hidden"
+                  src="images/plus-icon.svg"
+                  alt=""
+                />
+                <svg
+                  class="hidden group-open:block chevron-icon static w-5.75 h-5.75 fill-white"
+                >
+                  <use href="#chevron-icon"></use>
+                </svg>
+              </span>
+
+              <h3
+                class="text-xl lg:text-[2rem] lg:group-open:text-[2rem] flex-1"
+              >
+                Recommended Next Steps?
+              </h3>
+            </summary>
+
+            <ul
+              class="divide-y divide-muted-3 mt-4.25 lg:mt-2 leading-tight lg:pl-20"
+            >
+              <li>
+                <a
+                  class="py-2 lg:py-4 block"
+                  data-query="Compare my home to similar homes nearby"
+                  data-target="#home-improvement-ideas"
+                  href="#chat-block"
+                >
+                  <summary
+                    class="flex items-center gap-2 cursor-pointer select-none"
+                  >
+                    <span class="w-8 h-8 flex-center">
+                      <img class="w-3.5" src="images/plus-icon.svg" alt="" />
+                    </span>
+                    <span class="text-sm lg:text-base"
+                      >Compare your home to similar homes nearby.</span
+                    >
+                  </summary>
+                </a>
+              </li>
+              <li>
+                <details class="py-2 lg:py-4">
+                  <summary
+                    class="flex items-center gap-2 cursor-pointer select-none"
+                  >
+                    <span class="w-8 h-8 flex-center">
+                      <img class="w-3.5" src="images/plus-icon.svg" alt="" />
+                    </span>
+                    <span class="text-sm lg:text-base"
+                      >Track your home’s appreciation over time — Get monthly
+                      updates and projection trends.</span
+                    >
+                  </summary>
+                </details>
+              </li>
+              <li>
+                <details class="py-2 lg:py-4">
+                  <summary
+                    class="flex items-center gap-2 cursor-pointer select-none"
+                  >
+                    <span class="w-8 h-8 flex-center">
+                      <img class="w-3.5" src="images/plus-icon.svg" alt="" />
+                    </span>
+                    <span class="text-sm lg:text-base"
+                      >Start pre-sale planning — Explore recommended
+                      improvements that could boost value of your home.</span
+                    >
+                  </summary>
+                </details>
+              </li>
+              <li>
+                <details class="py-2 lg:py-4">
+                  <summary
+                    class="flex items-center gap-2 cursor-pointer select-none"
+                  >
+                    <span class="w-8 h-8 flex-center">
+                      <img class="w-3.5" src="images/plus-icon.svg" alt="" />
+                    </span>
+                    <span class="text-sm lg:text-base"
+                      >See full transaction history — Understand prior sale
+                      prices and ownership changes.</span
+                    >
+                  </summary>
+                </details>
+              </li>
+              <li>
+                <details class="py-2 lg:py-4">
+                  <summary
+                    class="flex items-center gap-2 cursor-pointer select-none"
+                  >
+                    <span class="w-8 h-8 flex-center">
+                      <img class="w-3.5" src="images/plus-icon.svg" alt="" />
+                    </span>
+                    <span class="text-sm lg:text-base"
+                      >Benchmark your home against others in the neighborhood —
+                      Understand how it compares.</span
+                    >
+                  </summary>
+                </details>
+              </li>
+            </ul>
+          </details>
+        </li>
+
+        <li>
+          <details id="next-steps" class="group open:pt-5 lg:open:pt-0" open>
+            <summary
+              class="flex items-center gap-4.5 lg:gap-6 cursor-pointer select-none"
+            >
+              <span
+                class="shadow-[0_9.14px_18.29px_rgba(0,0,0,0.20)] w-8 h-8 lg:w-14 lg:h-14 flex-center bg-white rounded-full"
+              >
+                <img class="w-5.75 lg:w-6" src="images/prev-icon.svg" alt="" />
+              </span>
+
+              <h3
+                class="text-xl lg:text-[2rem] lg:group-open:text-[2rem] flex-1"
+              >
+                Previously Asked Questions
+              </h3>
+            </summary>
+
+            <ul
+              class="divide-y divide-muted-3 mt-4.25 lg:mt-2 leading-tight lg:pl-20"
+            >
+              <li>
+                <details class="py-2 lg:py-4">
+                  <summary
+                    class="flex items-center gap-2 cursor-pointer select-none"
+                  >
+                    <span class="w-8 h-8 flex-center">
+                      <img class="w-3.5" src="images/prev-icon.svg" alt="" />
+                    </span>
+                    <span class="text-sm lg:text-base"
+                      >Compare your home to similar homes nearby.</span
+                    >
+                  </summary>
+                </details>
+              </li>
+              <li>
+                <details class="py-2 lg:py-4">
+                  <summary
+                    class="flex items-center gap-2 cursor-pointer select-none"
+                  >
+                    <span class="w-8 h-8 flex-center">
+                      <img class="w-3.5" src="images/prev-icon.svg" alt="" />
+                    </span>
+                    <span class="text-sm lg:text-base"
+                      >Track your home’s appreciation over time — Get monthly
+                      updates and projection trends.</span
+                    >
+                  </summary>
+                </details>
+              </li>
+              <li>
+                <details class="py-2 lg:py-4">
+                  <summary
+                    class="flex items-center gap-2 cursor-pointer select-none"
+                  >
+                    <span class="w-8 h-8 flex-center">
+                      <img class="w-3.5" src="images/prev-icon.svg" alt="" />
+                    </span>
+                    <span class="text-sm lg:text-base"
+                      >Start pre-sale planning — Explore recommended
+                      improvements that could boost value of your home.</span
+                    >
+                  </summary>
+                </details>
+              </li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </section>
+
+    <div
+      class="section-wrapper flex justify-end items-center gap-2.5 hidden"
+      id="chat-block"
+    >
+      <span
+        class="lg:text-2xl heading bg-muted-2 rounded-lg px-3 py-2 lg:p-4"
+        id="chat-block-txt"
+      ></span>
+      <img class="w-14" src="images/account-profile-image.webp" alt="" />
+    </div>
+
+    <!--  home-improvement-ideas section -->
+
+    <section
+      class="section-wrapper has-slider dynamic-section hidden pb-12"
+      aria-labelledby="home-improvement-ideas-heading"
+      id="home-improvement-ideas"
+    >
+      <header>
+        <div
+          class="txt w-full grid grid-cols-[32px_1fr_auto] items-end gap-2.5 lg:grid-cols-[56px_1fr_auto] lg:items-start !space-y-0"
+        >
+          <button
+            class="fade-up w-8 lg:w-14 h-8 lg:h-14 rounded-full bg-third text-white shadow-[0_16px_32px_0_rgba(0,0,0,0.2)] flex items-center justify-center lg:row-start-1 lg:row-end-3"
+            aria-label="Help"
+          >
+            <svg
+              class="chevron-icon static w-5.5 lg:w-10 h-5.5 lg:h-10 fill-white"
+            >
+              <use href="#chevron-icon"></use>
+            </svg>
+          </button>
+          <h2
+            class="max-w-70.5 text-lg leading-tight text-white bg-third rounded-lg p-4 pr-7.5 lg:max-w-none lg:text-[2rem] lg:text-current lg:bg-transparent lg:p-0 typewriter"
+            id="maintenance-and-upkeep-heading"
+            data-text="What’s New 402 Spring Gate Blvd?"
+          ></h2>
+          <div
+            class="dropdown ml-auto self-center fade-up ![animation-delay:2s]"
+            x-data="{ open: false }"
+          >
+            <button
+              @click="open = !open"
+              @keydown.escape="open = false"
+              aria-haspopup="true"
+              :aria-expanded="open"
+              aria-label="More options for managing finances Your Home"
+              :class="{ 'bg-muted-7': open }"
+              aria-expanded="false"
+            >
+              <img src="images/three-points-icon.svg" alt="" />
+            </button>
+
+            <!-- Dropdown -->
+            <ul
+              x-show="open"
+              x-transition=""
+              @click.away="open = false"
+              role="menu"
+              aria-label="Manage Finances options"
+              class="menu"
+              style="display: none"
+            >
+              <li role="none">
+                <a href="#" role="menuitem" class="menu-item">
+                  <img src="images/add-info-icon.svg" alt="" />
+                  Add info
+                </a>
+              </li>
+              <li role="none">
+                <a href="#" role="menuitem" class="menu-item">
+                  <img src="images/edit-icon.svg" alt="" />
+                  Edit
+                </a>
+              </li>
+              <li role="none">
+                <a href="#" role="menuitem" class="menu-item">
+                  <img src="images/view-details-icon.svg" alt="" />
+                  View Details
+                </a>
+              </li>
+            </ul>
+          </div>
+          <p
+            class="base-p col-start-1 col-end-[-1] lg:col-start-2 lg:col-end-3 typewriter"
+            data-text="Welcome back! We’ve pulled together everything new and relevant for
+            your home. From recent real estate activity to updates on services
+            or costs, this banner keeps you up-to-date and makes it easy to spot
+            what’s changed since your last visit."
+          ></p>
+          <div
+            class="flex flex-wrap gap-2 col-start-1 col-end-[-1] lg:col-start-2 lg:col-end-3"
+          >
+            <span
+              class="text-xs font-normal py-0.5 px-2 bg-muted-2 fade-up ![animation-delay:2.1s]"
+              >#1 in Thornhill</span
+            >
+            <span
+              class="text-xs font-normal py-0.5 px-2 bg-muted-2 fade-up ![animation-delay:2.1s]"
+              >#2 $500k to $750k Range</span
+            >
+            <span
+              class="text-xs font-normal py-0.5 px-2 bg-muted-2 fade-up ![animation-delay:2.3s]"
+              >#3 Real Estate Agents in Vaughan</span
+            >
+          </div>
+        </div>
+      </header>
+
+      <div class="mb-6">
+        <nav
+          class="swiper swiper-home-improvement-ideas-tabs"
+          aria-label="Filter by Home Improvement Ideas & Value Boosters"
+        >
+          <div role="tablist" class="swiper-wrapper">
+            <span
+              class="filter-tab swiper-slide cursor-pointer fade-up ![animation-delay:2.4s] active"
+              role="tab"
+              aria-selected="true"
+              id="tab-all"
+              aria-controls="panel-all"
+            >
+              All
+            </span>
+            <span
+              class="filter-tab swiper-slide cursor-pointer fade-up ![animation-delay:2.5s]"
+              role="tab"
+              aria-selected="false"
+              id="tab-renovation"
+              aria-controls="panel-renovation"
+            >
+              Renovation Inspirations
+            </span>
+            <span
+              class="filter-tab swiper-slide cursor-pointer fade-up ![animation-delay:2.6s]"
+              role="tab"
+              aria-selected="false"
+              id="tab-DIY"
+              aria-controls="panel-DIY"
+            >
+              DIY Projects
+            </span>
+            <span
+              class="filter-tab swiper-slide cursor-pointer fade-up ![animation-delay:2.7s]"
+              role="tab"
+              aria-selected="false"
+              id="tab-recommended "
+              aria-controls="panel-recommended "
+            >
+              Recommended Upgrades
+            </span>
+            <span
+              class="filter-tab swiper-slide cursor-pointer fade-up ![animation-delay:2.8s]"
+              role="tab"
+              aria-selected="false"
+              id="tab-seasonal"
+              aria-controls="panel-seasonal"
+            >
+              Seasonal Suggestions
+            </span>
+            <span
+              class="filter-tab swiper-slide cursor-pointer fade-up ![animation-delay:2.9s]"
+              role="tab"
+              aria-selected="false"
+              id="tab-energy-saving"
+              aria-controls="panel-energy-saving"
+            >
+              Energy Saving Ideas
+            </span>
+            <span
+              class="filter-tab swiper-slide cursor-pointer fade-up ![animation-delay:3s]"
+              role="tab"
+              aria-selected="false"
+              id="tab-energy-saving"
+              aria-controls="panel-energy-saving"
+            >
+              Energy Saving Ideas
+            </span>
+            <span
+              class="filter-tab swiper-slide cursor-pointer fade-up ![animation-delay:3.1s]"
+              role="tab"
+              aria-selected="false"
+              id="tab-energy-saving"
+              aria-controls="panel-energy-saving"
+            >
+              Safety & Security Tips
+            </span>
+          </div>
+        </nav>
+      </div>
+
+      <div
+        class="swiper swiper-home-improvement-ideas"
+        role="tabpanel"
+        id="panel-all"
+        aria-labelledby="tab-all"
+      >
+        <div class="swiper-wrapper">
+          <div
+            class="swiper-slide fade-up ![animation-delay:3.2s] card long imaged bg-[linear-gradient(transparent,transparent,#1F1F1F)),url('images/h-i-i-v-b-how-create-herb.webp')]"
+          >
+            <span class="home-badge">DIY Projects</span>
+            <div class="content">
+              <h3 class="leading-tight mt-1 lg:mt-0">
+                How to create the perfect <br />
+                herb garden
+              </h3>
+            </div>
+            <div class="more mt-5">
+              <p>Learn More</p>
+              <img src="images/more-icon.svg" alt="" />
+            </div>
+          </div>
+
+          <div
+            class="swiper-slide fade-up ![animation-delay:3.3s] card long imaged bg-[linear-gradient(transparent,transparent,#1F1F1F)),url('images/h-i-i-v-b-switch.webp')]"
+          >
+            <span class="home-badge">DIY Projects</span>
+            <div class="content">
+              <h3 class="leading-tight mt-1 lg:mt-0">
+                Switch your HVAC to a heatpump and save 30% energy!
+              </h3>
+            </div>
+            <div class="more mt-5">
+              <p>Learn More</p>
+              <img src="images/more-icon.svg" alt="" />
+            </div>
+          </div>
+
+          <div
+            class="swiper-slide fade-up ![animation-delay:3.4s] card long imaged bg-[linear-gradient(transparent,transparent,#1F1F1F)),url('images/h-i-i-v-b-modern-kitchen.webp')]"
+          >
+            <span class="home-badge">DIY Projects</span>
+            <div class="content">
+              <h3 class="leading-tight mt-1 lg:mt-0">
+                7 modern kitchen renovation ideas on a budget
+              </h3>
+            </div>
+            <div class="more mt-5">
+              <p>Learn More</p>
+              <img src="images/more-icon.svg" alt="" />
+            </div>
+          </div>
+
+          <div
+            class="swiper-slide fade-up ![animation-delay:3.5s] card long imaged bg-[linear-gradient(transparent,transparent,#1F1F1F)),url('images/h-i-i-v-b-home-ready.webp')]"
+          >
+            <span class="home-badge">DIY Projects</span>
+            <div class="content">
+              <h3 class="leading-tight mt-1 lg:mt-0">
+                Getting your home ready <br />
+                for selling
+              </h3>
+            </div>
+            <div class="more mt-5">
+              <p>Learn More</p>
+              <img src="images/more-icon.svg" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center gap-2.5 py-2 mt-8 lg:mt-11.25">
+          <img
+            class="swiper-button-prev"
+            role="button"
+            aria-label="Previous slide"
+            src="images/prev-slider.svg"
+            alt=""
+          />
+          <img
+            class="swiper-button-next"
+            role="button"
+            aria-label="Next slide"
+            src="images/next-slider.svg"
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-enterprise@33.3.2/dist/ag-grid-enterprise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ag-charts-enterprise@11.3.1/dist/umd/ag-charts-enterprise.js?t=1748412693015"></script>
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script>
+      /* -------- tiny typewriter util ---------------------------- */
+      function typeWriter(el, speed = 5) {
+        const txt = el.dataset.text || "";
+        el.textContent = "";
+        el.classList.add("typing-caret");
+
+        let i = 0;
+        const timer = setInterval(() => {
+          el.textContent += txt.charAt(i);
+          i++;
+          if (i >= txt.length) {
+            clearInterval(timer);
+            el.classList.remove("typing-caret");
+          }
+        }, speed);
+      }
+
+      function animateTypewriters(sec) {
+        sec.querySelectorAll(".typewriter").forEach((el) => typeWriter(el));
+      }
+
+      /* -------- your existing click handler stays the same ------ */
+      document.querySelectorAll("#next-steps [data-query]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          let chatBlock = document.querySelector("#chat-block");
+          chatBlock.classList.remove("hidden");
+          let chatBlockTxt = document.querySelector(
+            "#chat-block #chat-block-txt"
+          );
+          chatBlockTxt.textContent = btn.dataset.query;
+          reveal(btn.dataset.target);
+        });
+      });
+
+      /* -------- updated reveal() -------------------------------- */
+      function reveal(selector) {
+        document
+          .querySelectorAll(".dynamic-section")
+          .forEach((sec) => sec.classList.add("hidden"));
+
+        const sec = document.querySelector(selector);
+        if (!sec) return;
+
+        sec.classList.remove("hidden");
+        sec.classList.add("animate-section");
+
+        setTimeout(() => {
+          animateTypewriters(sec);
+        }, 500);
+      }
+    </script>
+
+    <script src="main.js"></script>
+  </body>
+</html>

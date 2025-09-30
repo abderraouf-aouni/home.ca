@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Search all Toronto MLS® real estate listings for sale. Find Toronto houses, townhouses and condo homes for sale—updated daily."
+    />
+    <link rel="canonical" href="https:home.ca/" />
+    <title>Home.ca</title>
+
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header
+      class="hidden lg:flex mx-auto py-1.75 px-2 md:px-8 justify-between items-center"
+    >
+      <div class="flex gap-4 items-center">
+        <button id="hamburger" class="grid space-y-1">
+          <span class="w-4.75 h-0.5 bg-muted-8"></span>
+          <span class="w-4.75 h-0.5 bg-muted-8"></span>
+          <span class="w-4.75 h-0.5 bg-muted-8"></span>
+        </button>
+        <a class="pt-1.5" href="#">
+          <img
+            class="w-27.75"
+            src="images/logo-desktop.svg"
+            alt="Home.ca logo"
+          />
+        </a>
+
+        <form action="" class="h-full">
+          <div class="h-full relative flex">
+            <input
+              id="header-search"
+              class="peer w-43.5 h-full text-sm font-semibold py-0.5 pl-2 pr-5.5 outline-secondary"
+              aria-label="Search by address"
+              title="Search by address"
+              type="text"
+              placeholder="402 Spring Gate Blvd."
+            />
+            <img
+              class="peer-focus:hidden absolute pointer-events-none top-1/2 -translate-y-1/2 right-1"
+              src="images/amplifier-icon.svg "
+              alt=""
+            />
+          </div>
+        </form>
+      </div>
+
+      <div class="flex gap-4">
+        <div
+          id="view-switch"
+          class="flex items-center rounded-full bg-third p-0.5"
+        >
+          <button
+            data-view="insights"
+            class="switch-btn-view active-tab transition-colors"
+          >
+            Insights
+          </button>
+
+          <button data-view="map" class="switch-btn-view transition-colors">
+            Map
+          </button>
+        </div>
+
+        <div class="flex-center-v gap-1">
+          <button
+            class="h-9 w-9 flex-center relative"
+            aria-label="Open messages"
+          >
+            <img class="w-4.5" src="images/messages-icon.svg" alt="" />
+            <div
+              class="w-4 h-4 flex-center absolute top-0.25 right-0.5 rounded-full bg-white"
+            >
+              <span
+                class="w-3 h-3 flex-center rounded-full bg-primary text-[0.5625rem] text-white"
+                >9</span
+              >
+            </div>
+          </button>
+
+          <button
+            class="h-9 w-9 flex-center relative"
+            aria-label="check your cart"
+          >
+            <img class="w-4.5" src="images/shopping-cart-icon.svg" alt="" />
+
+            <div
+              class="w-4 h-4 flex-center absolute top-0.25 right-0.5 rounded-full bg-white"
+            >
+              <span
+                class="w-3 h-3 flex-center rounded-full bg-primary text-[0.5625rem] text-white"
+                >9</span
+              >
+            </div>
+          </button>
+
+          <!-- User Profile Image -->
+          <button
+            class="h-9 w-9 rounded-full flex-center relative"
+            aria-label="your profile settings"
+          >
+            <img
+              class="w-7.5"
+              src="images/Profile-image.png"
+              alt="User profile"
+            />
+            <svg
+              class="absolute w-full"
+              viewBox="0 0 36 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M36 18C36 27.9411 27.9411 36 18 36C8.05887 36 0 27.9411 0 18C0 8.05887 8.05887 0 18 0C27.9411 0 36 8.05887 36 18ZM1.08 18C1.08 27.3447 8.65534 34.92 18 34.92C27.3447 34.92 34.92 27.3447 34.92 18C34.92 8.65534 27.3447 1.08 18 1.08C8.65534 1.08 1.08 8.65534 1.08 18Z"
+                fill="#F5F5F5"
+              />
+              <path
+                d="M18 0C21.6544 4.35788e-08 25.2223 1.11234 28.2293 3.18914C31.2363 5.26594 33.5399 8.2088 34.8338 11.6265L33.8238 12.0089C32.6075 8.79627 30.4421 6.02998 27.6155 4.07779C24.789 2.1256 21.4352 1.08 18 1.08V0Z"
+                fill="#FF603F"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <article id="cookie-policy" class="section-wrapper pb-15 px-5 md:px-8">
+      <h1 class="text-2xl lg:text-[2rem]">Cookie Policy</h1>
+      <p class="text-sm lg:text-base leading-snug mt-4">
+        This Cookie Policy explains how Home.ca AI Inc. (“Company,” “we,” “us,”
+        and “our”) uses cookies and similar technologies to recognize you when
+        you visit our website at
+        <a href="https://www.home.ca">home.ca</a> (“Website”). It explains what
+        these technologies are and why we use them, as well as your rights to
+        control our use of them. <br />
+        In some cases we may use cookies to collect personal information, or
+        that becomes personal information if we combine it with other
+        information.
+      </p>
+      <h2 class="text-xl lg:text-2xl pt-10 lg:pt-7.5 mb-2.5 lg:mb-3">
+        WHAT ARE COOKIES?
+      </h2>
+      <p class="text-sm lg:text-base leading-snug">
+        Cookies are small data files that are placed on your computer or mobile
+        device when you visit a website. Cookies are widely used by website
+        owners in order to make their websites work, or to work more
+        efficiently, as well as to provide reporting information.
+      </p>
+      <p class="text-sm lg:text-base leading-snug mt-6">
+        Cookies set by the website owner (in this case, Home.ca AI Inc.) are
+        called “first-party cookies.” Cookies set by parties other than the
+        website owner are called “third-party cookies.” Third-party cookies
+        enable third-party features or functionality to be provided on or
+        through the website (e.g., advertising, interactive content, and
+        analytics). The parties that set these third-party cookies can recognize
+        your computer both when it visits the website in question and also when
+        it visits certain other websites.
+      </p>
+      <h2 class="text-xl lg:text-2xl pt-6 lg:pt-7.5 mb-2.5 lg:mb-3">
+        WHAT ARE COOKIES USED FOR?
+      </h2>
+      <p class="text-sm lg:text-base leading-snug">
+        We use first and third-party cookies for several reasons. Some cookies
+        are required for technical reasons in order for our Websites to operate,
+        and we refer to these as “essential” or “strictly necessary” cookies.
+        Other cookies also enable us to track and target the interests of our
+        users to enhance the experience on our Online Properties. Third parties
+        serve cookies through our Websites for advertising, analytics, and other
+        purposes. This is described in more detail below.
+      </p>
+      <h2 class="text-xl lg:text-2xl pt-6 lg:pt-7.5 mb-2.5 lg:mb-3">
+        HOW CAN I CONTROL COOKIES?
+      </h2>
+      <p class="text-sm lg:text-base leading-snug">
+        You have the right to decide whether to accept or reject cookies. You
+        can exercise your cookie rights by setting your preferences in the
+        Cookie Consent Manager. The Cookie Consent Manager allows you to select
+        which categories of cookies you accept or reject. Essential cookies
+        cannot be rejected as they are strictly necessary to provide you with
+        services.
+      </p>
+      <p class="text-sm lg:text-base leading-snug mt-6">
+        The Cookie Consent Manager can be found in the notification banner and
+        on our Website. If you choose to reject cookies, you may still use our
+        Website though your access to some functionality and areas of our
+        Website may be restricted. You may also set or amend your web browser
+        controls to accept or refuse cookies.
+      </p>
+      <p class="text-sm lg:text-base leading-snug mt-6">
+        The specific types of first- and third-party cookies served through our
+        Website and the purposes they perform are described in the table below
+        (please note that the specific cookies served may vary depending on the
+        specific Online Properties you visit):
+      </p>
+
+      <h2 class="text-xl lg:text-2xl pt-6 lg:pt-7.5 mb-2.5 lg:mb-3">
+        Analytics and customization cookies:
+      </h2>
+      <p class="text-sm lg:text-base leading-snug">
+        These cookies collect information that is used either in aggregate form
+        to help us understand how our Website is being used or how effective our
+        marketing campaigns are, or to help us customize our Website for you.
+      </p>
+
+      <dl class="text-sm lg:text-base leading-snug mt-2.5">
+        <dt class="font-bold inline">Name</dt>
+        <dd class="inline">s7</dd>
+        <br />
+        <dt class="font-bold inline">Purpose</dt>
+        <dd class="inline">
+          Gather data regarding site usage and user behavior on the website.
+        </dd>
+        <br />
+        <dt class="font-bold inline">Provider</dt>
+        <dd class="inline">home.ca</dd>
+        <br />
+        <dt class="font-bold inline">Service</dt>
+        <dd class="inline">Adobe Analytics</dd>
+        <br />
+        <dt class="font-bold inline">Type</dt>
+        <dd class="inline">server_cookie</dd>
+        <br />
+        <dt class="font-bold inline">Expires in</dt>
+        <dd class="inline">11 months&nbsp;30&nbsp;days</dd>
+        <br />
+      </dl>
+
+      <dl class="text-sm lg:text-base leading-snug mt-6">
+        <dt class="font-bold inline">Name</dt>
+        <dd class="inline">_ga</dd>
+        <br />
+        <dt class="font-bold inline">Purpose</dt>
+        <dd class="inline">
+          Records a particular ID used to come up with data about website usage
+          by the user.
+        </dd>
+        <br />
+        <dt class="font-bold inline">Provider</dt>
+        <dd class="inline">.home.ca</dd>
+        <br />
+        <dt class="font-bold inline">Service</dt>
+        <dd class="inline">Google Analytics View Service Privacy Policy</dd>
+        <br />
+        <dt class="font-bold inline">Type</dt>
+        <dd class="inline">http_cookie</dd>
+        <br />
+        <dt class="font-bold inline">Expires in</dt>
+        <dd class="inline">1&nbsp;year&nbsp;1&nbsp;month&nbsp;4&nbsp;days</dd>
+        <br />
+      </dl>
+
+      <dl class="text-sm lg:text-base leading-snug mt-6">
+        <dt class="font-bold inline">Name</dt>
+        <dd class="inline">ga#</dd>
+        <br />
+        <dt class="font-bold inline">Purpose</dt>
+        <dd class="inline">
+          Used to distinguish individual users by means of designation of a
+          randomly generated number as client identifier, which allows
+          calculation of visits and sessions.
+        </dd>
+        <br />
+        <dt class="font-bold inline">Provider</dt>
+        <dd class="inline">.home.ca</dd>
+        <br />
+        <dt class="font-bold inline">Service</dt>
+        <dd class="inline">Google Analytics View Service Privacy Policy</dd>
+        <br />
+        <dt class="font-bold inline">Type</dt>
+        <dd class="inline">http_cookie</dd>
+        <br />
+        <dt class="font-bold inline">Expires in</dt>
+        <dd class="inline">1&nbsp;year&nbsp;1&nbsp;month&nbsp;4&nbsp;days</dd>
+        <br />
+      </dl>
+
+      <dl class="text-sm lg:text-base leading-snug mt-6">
+        <dt class="font-bold inline">Name</dt>
+        <dd class="inline">941507864</dd>
+        <br />
+        <dt class="font-bold inline">Provider</dt>
+        <dd class="inline">www.google.com</dd>
+        <br />
+        <dt class="font-bold inline">Type</dt>
+        <dd class="inline">pixel_tracker</dd>
+        <br />
+        <dt class="font-bold inline">Expires in</dt>
+        <dd class="inline">session</dd>
+        <br />
+      </dl>
+
+      <h2 class="text-xl lg:text-2xl pt-6 lg:pt-7.5 mb-2.5 lg:mb-3">
+        Advertising cookies:
+      </h2>
+
+      <dl class="text-sm lg:text-base leading-snug mt-2.5">
+        <dt class="font-bold inline">Name</dt>
+        <dd class="inline">_gcl_ls</dd>
+        <br />
+        <dt class="font-bold inline">Provider</dt>
+        <dd class="inline">home.ca</dd>
+        <br />
+        <dt class="font-bold inline">Service</dt>
+        <dd class="inline">
+          <a
+            href="https://policies.google.com/privacy"
+            class="underline text-ninth"
+          >
+            https://policies.google.com/privacy
+          </a>
+          — View Service Privacy Policy
+        </dd>
+        <br />
+        <dt class="font-bold inline">Type</dt>
+        <dd class="inline">html_local_storage</dd>
+        <br />
+        <dt class="font-bold inline">Expires in</dt>
+        <dd class="inline">persistent</dd>
+        <br />
+      </dl>
+
+      <dl class="text-sm lg:text-base leading-snug mt-6">
+        <dt class="font-bold inline">Name</dt>
+        <dd class="inline">test_cookie</dd>
+        <br />
+        <dt class="font-bold inline">Purpose</dt>
+        <dd class="inline">
+          A session cookie used to check if the user’s browser supports cookies.
+        </dd>
+        <br />
+        <dt class="font-bold inline">Provider</dt>
+        <dd class="inline">.doubleclick.net</dd>
+        <br />
+        <dt class="font-bold inline">Service</dt>
+        <dd class="inline">DoubleClick View Service Privacy Policy</dd>
+        <br />
+        <dt class="font-bold inline">Type</dt>
+        <dd class="inline">server_cookie</dd>
+        <br />
+        <dt class="font-bold inline">Expires in</dt>
+        <dd class="inline">15 minutes</dd>
+        <br />
+      </dl>
+
+      <dl class="text-sm lg:text-base leading-snug mt-6">
+        <dt class="font-bold inline">Name</dt>
+        <dd class="inline">_gcl_au</dd>
+        <br />
+        <dt class="font-bold inline">Purpose</dt>
+        <dd class="inline">
+          Used by Google Ads for experimenting with advertisement efficiency
+          across websites using their services.
+        </dd>
+        <br />
+        <dt class="font-bold inline">Provider</dt>
+        <dd class="inline">.home.ca</dd>
+        <br />
+        <dt class="font-bold inline">Service</dt>
+        <dd class="inline">Google Ads View Service Privacy Policy</dd>
+        <br />
+        <dt class="font-bold inline">Type</dt>
+        <dd class="inline">http_cookie</dd>
+        <br />
+        <dt class="font-bold inline">Expires in</dt>
+        <dd class="inline">2 months 29 days</dd>
+        <br />
+      </dl>
+
+      <h2 class="text-xl lg:text-2xl pt-6 lg:pt-7.5 mb-2.5 lg:mb-3">
+        How can I control cookies on my browser?
+      </h2>
+      <p class="text-sm lg:text-base leading-snug">
+        As the means by which you can refuse cookies through your web browser
+        controls vary from browser to browser, you should visit your browser’s
+        help menu for more information. The following is information about how
+        to manage cookies on the most popular browsers:
+      </p>
+      <ul class="leading-snug list-disc pl-6 text-sm lg:text-base">
+        <li>Chrome</li>
+        <li>Firefox</li>
+        <li>Safari</li>
+        <li>Edge</li>
+        <li>Opera</li>
+      </ul>
+
+      <p class="leading-snug mt-2.5">
+        in addition, most advertising networks offer you a way to opt out of
+        targeted advertising. If you would like to find out more information,
+        please visit:
+      </p>
+
+      <ul class="leading-snug list-disc pl-6">
+        <li>
+          <a href="#">Digital Advertising Alliance</a>
+        </li>
+        <li>
+          <a href="#" class="underline text-ninth"
+            >Digital Advertising Alliance of Canada</a
+          >
+        </li>
+        <li>
+          <a href="#" class="underline text-ninth"
+            >European Interactive Digital Advertising Alliance</a
+          >
+        </li>
+      </ul>
+
+      <h2 class="text-xl lg:text-2xl pt-6 lg:pt-7.5 mb-2.5 lg:mb-3">
+        What about other tracking technologies, like web beacons?
+      </h2>
+      <p class="text-sm lg:text-base leading-snug">
+        Cookies are not the only way to recognize or track visitors to a
+        website. We may use other, similar technologies from time to time, like
+        web beacons (sometimes called “tracking pixels” or “clear gifs”). These
+        are tiny graphics files that contain a unique identifier that enables us
+        to recognize when someone has visited our Website or opened an email
+        including them. This allows us, for example, to monitor the traffic
+        patterns of users from one page within a website to another, to deliver
+        or communicate with cookies, to understand whether you have come to the
+        website from an online advertisement displayed on a third-party website,
+        to improve site performance, and to measure the success of email
+        marketing campaigns. In many instances, these technologies are reliant
+        on cookies to function properly, and so declining cookies will impair
+        their functioning.
+      </p>
+      <h2 class="text-xl lg:text-2xl pt-6 lg:pt-7.5 mb-2.5 lg:mb-3">
+        Do you use Flash cookies or Local Shared Objects?
+      </h2>
+      <p class="text-sm lg:text-base leading-snug">
+        Websites may also use so-called “Flash Cookies” (also known as Local
+        Shared Objects or “LSOs”) to, among other things, collect and store
+        information about your use of our services, fraud prevention, and for
+        other site operations.
+      </p>
+      <p class="text-sm lg:text-base leading-snug mt-6">
+        If you do not want Flash Cookies stored on your computer, you can adjust
+        the settings of your Flash player to block Flash Cookies storage using
+        the tools contained in the Website Storage Settings Panel. You can also
+        control Flash Cookies by going to the Global Storage Settings Panel and
+        following the instructions (which may include instructions that explain,
+        for example, how to delete existing Flash Cookies (referred to
+        “Information” on the Macromedia site), how to prevent Flash LSOs from
+        being placed on your computer without your being asked, and (for Flash
+        Player 8 and later) how to block Flash Cookies that are not being
+        delivered by the operator of the page you are on at the time).
+      </p>
+      <p class="text-sm lg:text-base leading-snug mt-6">
+        Please note that setting the Flash Player to restrict or limit
+        acceptance of Flash Cookies may reduce or impede the functionality of
+        some Flash applications, including, potentially, Flash applications used
+        in connection with our services or online content.
+      </p>
+      <h2 class="text-xl lg:text-2xl pt-6 lg:pt-7.5 mb-2.5 lg:mb-3">
+        Do you serve targeted advertising?
+      </h2>
+      <p class="text-sm lg:text-base leading-snug">
+        Third parties may serve cookies on your computer or mobile device to
+        serve advertising through our Website. These companies may use
+        information about your visits to this and other websites in order to
+        provide relevant advertisements about goods and services that you may be
+        interested in. They may also employ technology that is used to measure
+        the effectiveness of advertisements. They can accomplish this by using
+        cookies or web beacons to collect information about your visits to this
+        and other sites in order to provide relevant advertisements about goods
+        and services of potential interest to you. The information collected
+        through this process does not enable us or them to identify your name,
+        contact details, or other details that directly identify you unless you
+        choose to provide these.
+      </p>
+      <h2 class="text-xl lg:text-2xl pt-6 lg:pt-7.5 mb-2.5 lg:mb-3">
+        How often will you update this Cookie Policy?
+      </h2>
+      <p class="text-sm lg:text-base leading-snug">
+        We may update this Cookie Policy from time to time in order to reflect,
+        for example, changes to the cookies we use or for other operational,
+        legal, or regulatory reasons. Please therefore revisit this Cookie
+        Policy regularly to stay informed about our use of cookies and related
+        technologies. <br />
+        The date at the top of this Cookie Policy indicates when it was last
+        updated.
+      </p>
+      <h2 class="text-xl lg:text-2xl pt-6 lg:pt-7.5 mb-2.5 lg:mb-3">
+        Where can I get further information?
+      </h2>
+      <address class="not-italic text-sm lg:text-base leading-snug">
+        If you have any questions about our use of cookies or other
+        technologies, please email us at support@home.ca or by post to:<br />
+        <a href="home.ca" class="underline text-ninth">home.ca</a> AI Inc.<br />
+        Phone: (+1)4169994262
+      </address>
+    </article>
+
+    <script src="main.js"></script>
+  </body>
+</html>

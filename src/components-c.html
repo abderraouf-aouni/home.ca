@@ -1,0 +1,2376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Search all Toronto MLS® real estate listings for sale. Find Toronto houses, townhouses and condo homes for sale—updated daily."
+    />
+    <link rel="canonical" href="https:home.ca/" />
+    <title>Home.ca</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <symbol id="chevron-icon" viewBox="0 0 143 143">
+        <path
+          d="M92.271 108.385C104.439 103.623 114.564 94.7647 120.9 83.3371C127.236 71.9095 129.387 58.6292 126.98 45.7861C124.574 32.943 117.761 21.3421 107.717 12.9838C97.6737 4.62551 85.0284 0.0337097 71.9618 0.000184721C58.8952 -0.0333403 46.2264 4.49351 36.1399 12.8002C26.0535 21.1068 19.1816 32.6726 16.7091 45.5032C14.2367 58.3338 16.3188 71.625 22.5963 83.0849C28.8738 94.5448 38.9532 103.455 51.0967 108.28L59.6847 86.6627C52.5742 83.8378 46.6722 78.6204 42.9965 71.9101C39.3207 65.1998 38.1016 57.4173 39.5493 49.9044C40.997 42.3916 45.0208 35.6193 50.9269 30.7554C56.8329 25.8915 64.251 23.2408 71.9021 23.2605C79.5531 23.2801 86.9575 25.9688 92.8386 30.8629C98.7196 35.7571 102.709 42.5499 104.118 50.0701C105.527 57.5903 104.268 65.3665 100.558 72.0578C96.8475 78.7491 90.9189 83.9362 83.794 86.7245L92.271 108.385Z"
+        />
+        <path
+          d="M49.3059 138.052C56.4181 141.166 64.0991 142.771 71.8633 142.765C79.6275 142.759 87.3059 141.141 94.4131 138.016L83.5688 113.359C79.8727 114.984 75.8795 115.825 71.8418 115.828C67.804 115.832 63.8095 114.997 60.1109 113.377L49.3059 138.052Z"
+        />
+      </symbol>
+    </svg>
+
+    <!--  contact-info section -->
+
+    <section
+      class="section-wrapper has-slider max-w-none"
+      aria-labelledby="contact-info-heading"
+    >
+      <header class="lg:max-w-[1347px] lg:mx-auto lg:px-8">
+        <div class="txt">
+          <h2 class="leading-tight" id="contact-info-heading">
+            Expert Help, Just a Click Away
+          </h2>
+          <p class="base-p">Room details for 402 Spring Gate Blvd, Thornhill</p>
+        </div>
+        <div class="dropdown" x-data="{ open: false }">
+          <button
+            @click="open = !open"
+            @keydown.escape="open = false"
+            aria-haspopup="true"
+            :aria-expanded="open"
+            aria-label="More options for managing finances Your Home"
+            :class="{ 'bg-muted-7': open }"
+          >
+            <img src="images/three-points-icon.svg" alt="" />
+          </button>
+
+          <!-- Dropdown -->
+          <ul
+            x-show="open"
+            x-transition
+            @click.away="open = false"
+            role="menu"
+            aria-label="Manage Finances options"
+            class="menu"
+          >
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/add-info-icon.svg" alt="" />
+                Add info
+              </a>
+            </li>
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/edit-icon.svg" alt="" />
+                Edit
+              </a>
+            </li>
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/view-details-icon.svg" alt="" />
+                View Details
+              </a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="min-[1360px]:pl-[calc((100vw-1298px)/2)]">
+        <div
+          class="swiper swiper-contact-info"
+          role="tabpanel"
+          id="panel-all"
+          aria-labelledby="tab-all"
+        >
+          <div class="swiper-wrapper">
+            <div class="swiper-slide card bordered-card">
+              <h3 class="text-[2rem] leading-tight">Contacts</h3>
+              <ul class="space-y-1.25 mt-auto">
+                <li>
+                  <a
+                    class="bg-muted-2 p-3 rounded-lg flex items-center gap-2.5"
+                  >
+                    <img
+                      class="w-5"
+                      src="images/contacts-phone-icon.svg"
+                      alt=""
+                    />
+                    <div class="grid">
+                      <span class="text-sm text-muted-1">Phone number</span>
+                      <span class="text-sm heading">+1 (567) 555-43-10</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="bg-muted-2 p-3 rounded-lg flex items-center gap-2.5"
+                  >
+                    <img
+                      class="w-5"
+                      src="images/contacts-email-icon.svg"
+                      alt=""
+                    />
+
+                    <div class="grid">
+                      <span class="text-sm text-muted-1">Email</span>
+                      <span class="text-sm heading">johnsmith@gmail.com</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="bg-muted-2 p-3 rounded-lg flex items-center gap-2.5"
+                  >
+                    <img
+                      class="w-5"
+                      src="images/contacts-website-icon.svg"
+                      alt=""
+                    />
+
+                    <div class="grid">
+                      <span class="text-sm text-muted-1">Website</span>
+                      <span class="text-sm heading">smithrealestate.com</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="swiper-slide card bordered-card">
+              <img class="w-16" src="images/contacts-address-icon.svg" alt="" />
+              <h3 class="text-[2rem] leading-tight mt-auto">Address</h3>
+              <p class="text-muted-1 mt-2">
+                1234 Thornhill Avenue, Suite 200 Thornhill, ON L3T 1X5
+              </p>
+
+              <div class="more mt-5">
+                <p>See on map</p>
+                <img src="images/more-icon.svg" alt="" />
+              </div>
+            </div>
+
+            <div class="swiper-slide card bordered-card">
+              <h3 class="text-[2rem] leading-tight">Social Links</h3>
+              <ul class="grid grid-cols-3 gap-2.5 mt-auto">
+                <li>
+                  <a class="bg-muted-2 p-7 rounded block">
+                    <img
+                      class="w-6"
+                      src="images/contacts-facebook-icon.svg"
+                      alt="Facebook"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a class="bg-muted-2 p-7 rounded block">
+                    <img
+                      class="w-6"
+                      src="images/contacts-whatsap-icon.svg"
+                      alt="WhatsApp"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a class="bg-muted-2 p-7 rounded block">
+                    <img
+                      class="w-6"
+                      src="images/contacts-insta-icon.svg"
+                      alt="Instagram"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a class="bg-muted-2 p-7 rounded block">
+                    <img
+                      class="w-6"
+                      src="images/contacts-linkedin-icon.svg"
+                      alt="Large"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a class="bg-muted-2 p-7 rounded block">
+                    <img
+                      class="w-6"
+                      src="images/contacts-youtube-icon.svg"
+                      alt="Youtube"
+                    />
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="swiper-slide card blue has-chevron-icon">
+              <div class="flex justify-end relative">
+                <img
+                  class="w-35.5 rounded-full"
+                  src="images/contacts-profile-img.webp"
+                  alt="John Smith"
+                />
+                <div
+                  class="bg-seventh w-10 h-10 p-0.75 rounded-full absolute right-2.25 -bottom-1.5"
+                >
+                  <span
+                    class="w-full h-full bg-eighth rounded-full flex justify-center items-center"
+                  >
+                    <svg class="w-5.75 h-5.75 fill-white">
+                      <use href="#chevron-icon" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="mt-auto">
+                <h3 class="text-[2rem] leading-tight">
+                  Connect with <br />
+                  John Smith
+                </h3>
+              </div>
+
+              <svg
+                class="chevron-icon w-69 h-69 left-23 -top-7.5 fill-[#1E2A4F]"
+              >
+                <use href="#chevron-icon" />
+              </svg>
+
+              <div class="more mt-5">
+                <p>Get in Touch</p>
+                <img src="images/more-icon.svg" alt="" />
+              </div>
+            </div>
+
+            <div
+              class="swiper-slide card imaged bg-[linear-gradient(transparent,transparent,#1F1F1F)),url('images/contacts-get-directions-img.webp')]"
+            >
+              <div class="content">
+                <h3 class="text-[2rem] leading-tight">Get Directions</h3>
+              </div>
+              <div class="more">
+                <p>Book Now</p>
+                <img src="images/more-icon.svg" alt="" />
+              </div>
+            </div>
+
+            <div class="swiper-slide card numbered has-chevron-icon">
+              <div>
+                <h3 class="text-[2rem] leading-tight">
+                  Book an <br />
+                  appointment
+                </h3>
+              </div>
+              <svg class="chevron-icon">
+                <use href="#chevron-icon"></use>
+              </svg>
+              <div class="more">
+                <p>Book Now</p>
+                <img src="images/more-icon.svg" alt="" />
+              </div>
+            </div>
+
+            <div
+              class="swiper-slide card imaged bg-[linear-gradient(transparent,transparent,#1F1F1F)),url('images/contacts-sponsored-ad-img.webp')]"
+            >
+              <div class="content flex items-center gap-2.75">
+                <svg class="w-14 h-14 fill-third">
+                  <use href="#chevron-icon"></use>
+                </svg>
+                <h3 class="text-[2rem] leading-tight">
+                  Sponsored <br />
+                  Ad
+                </h3>
+              </div>
+              <div class="more">
+                <p>Learn More</p>
+                <img src="images/more-icon.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center gap-2.5 py-2 mt-8 lg:mt-11.25">
+            <img
+              class="swiper-button-prev"
+              role="button"
+              aria-label="Previous slide"
+              src="images/prev-slider.svg"
+              alt=""
+            />
+            <img
+              class="swiper-button-next"
+              role="button"
+              aria-label="Next slide"
+              src="images/next-slider.svg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="separate-line" />
+
+    <!--  grid-ranking-city section -->
+
+    <section
+      class="section-wrapper"
+      aria-labelledby="grid-ranking-city-heading"
+    >
+      <header>
+        <div class="txt">
+          <h2 class="leading-tight" id="grid-ranking-city-heading">
+            Vaughan Ranking
+          </h2>
+          <p class="base-p">Room details for 402 Spring Gate Blvd, Thornhill</p>
+        </div>
+        <div class="dropdown" x-data="{ open: false }">
+          <button
+            @click="open = !open"
+            @keydown.escape="open = false"
+            aria-haspopup="true"
+            :aria-expanded="open"
+            aria-label="More options for managing finances Your Home"
+            :class="{ 'bg-muted-7': open }"
+          >
+            <img src="images/three-points-icon.svg" alt="" />
+          </button>
+
+          <ul
+            x-show="open"
+            x-transition
+            @click.away="open = false"
+            role="menu"
+            aria-label="Manage Finances options"
+            class="menu"
+          >
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/add-info-icon.svg" alt="" />
+                Add info
+              </a>
+            </li>
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/edit-icon.svg" alt="" />
+                Edit
+              </a>
+            </li>
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/view-details-icon.svg" alt="" />
+                View Details
+              </a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <div
+        id="rankingCityGrid"
+        class="ag-theme-quartz grid-ranking-city"
+        style="height: 750px"
+      ></div>
+    </section>
+
+    <hr class="separate-line" />
+
+    <!--  top-home-experts section -->
+
+    <section
+      class="section-wrapper has-slider max-w-none"
+      aria-labelledby="top-home-experts-heading"
+    >
+      <header class="lg:max-w-[1347px] lg:mx-auto lg:px-8">
+        <div class="txt">
+          <h2 class="leading-tight" id="top-home-experts-rebates-heading">
+            Top Home Experts Update
+          </h2>
+          <p class="base-p">
+            All monthly costs related to 402 Spring Gate Blvd, Thornhill
+          </p>
+        </div>
+
+        <div class="dropdown" x-data="{ open: false }">
+          <button
+            @click="open = !open"
+            @keydown.escape="open = false"
+            aria-haspopup="true"
+            :aria-expanded="open"
+            aria-label="More options for managing finances Your Home"
+            :class="{ 'bg-muted-7': open }"
+          >
+            <img src="images/three-points-icon.svg" alt="" />
+          </button>
+
+          <!-- Dropdown -->
+          <ul
+            x-show="open"
+            x-transition
+            @click.away="open = false"
+            role="menu"
+            aria-label="Manage Finances options"
+            class="menu"
+          >
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/add-info-icon.svg" alt="" />
+                Add info
+              </a>
+            </li>
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/edit-icon.svg" alt="" />
+                Edit
+              </a>
+            </li>
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/view-details-icon.svg" alt="" />
+                View Details
+              </a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <div
+        class="flex flex-wrap justify-between items-start gap-3 px-5 md:px-8 lg:max-w-[1347px] lg:mx-auto lg:px-8 mb-6"
+      >
+        <nav class="tabs" aria-label="Filter by Experts or job">
+          <ul role="tablist" class="filter-tabs px-0 mb-0">
+            <li role="presentation">
+              <button
+                class="filter-tab filter-room-tab active"
+                role="tab"
+                aria-selected="true"
+                id="tab-by-experts"
+                aria-controls="panel-by-experts"
+              >
+                By Experts
+              </button>
+            </li>
+            <li role="presentation">
+              <button
+                class="filter-tab filter-room-tab"
+                role="tab"
+                aria-selected="false"
+                id="tab-by-job"
+                aria-controls="panel-by-job"
+              >
+                By Job
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <div class="relative border border-muted-3 rounded-md w-full sm:w-auto">
+          <input
+            class="peer w-full filter-input text-sm py-1.75 pl-8 pr-2.5 outline-secondary"
+            aria-label="filter Neighborhood Comparison"
+            title="filter Neighborhood Comparison"
+            type="text"
+            placeholder="Search"
+            id="quickFilter"
+          />
+          <img
+            class="peer-focus:hidden absolute pointer-events-none top-1/2 left-2.5 -translate-y-1/2 leading-1-1"
+            src="images/amplifier-icon.svg "
+            alt=""
+          />
+        </div>
+      </div>
+
+      <div class="min-[1360px]:pl-[calc((100vw-1298px)/2)]">
+        <div
+          class="swiper swiper-top-home-experts"
+          role="tabpanel"
+          id="panel-all"
+          aria-labelledby="tab-all"
+        >
+          <div class="swiper-wrapper">
+            <div
+              class="swiper-slide min-h-110 card imaged bg-[linear-gradient(#1F1F1F99,#1F1F1F99),url('images/t-h-e-plumbing.webp')]"
+            >
+              <div class="flex justify-between mb-3">
+                <h3 class="text-2xl">Plumbing</h3>
+                <button
+                  id="home-expert-modal-close"
+                  class="w-8 h-8 text-body bg-white text-3xl flex justify-center items-center rounded-full"
+                  aria-label="Close home expert modal"
+                >
+                  &times;
+                </button>
+              </div>
+              <div class="mt-auto space-y-1.25">
+                <div class="p-2.5 rounded-lg bg-black/8 backdrop-blur-[10.4px]">
+                  <div class="flex justify-between items-center mb-1">
+                    <div class="flex items-center gap-2.5">
+                      <img
+                        class="w-12"
+                        src="images/t-h-e-rny-plumbing.png"
+                        alt=""
+                      />
+                      <div>
+                        <div class="flex gap-1">
+                          <div class="flex gap-0.25">
+                            <img
+                              class="w-3"
+                              src="images/t-h-e-start.svg"
+                              alt=""
+                            />
+                            <img
+                              class="w-3"
+                              src="images/t-h-e-start.svg"
+                              alt=""
+                            />
+                            <img
+                              class="w-3"
+                              src="images/t-h-e-start.svg"
+                              alt=""
+                            />
+                            <img
+                              class="w-3"
+                              src="images/t-h-e-start.svg"
+                              alt=""
+                            />
+                            <img
+                              class="w-3"
+                              src="images/t-h-e-start.svg"
+                              alt=""
+                            />
+                          </div>
+                          <span class="text-xs heading">4.9</span>
+                        </div>
+
+                        <h4 class="mt-0.5">RNY Plumbing</h4>
+                      </div>
+                    </div>
+                    <span
+                      class="w-8 h-8 flex justify-center items-center bg-white/15 backdrop-blur-[10.4px] rounded-full"
+                    >
+                      <img
+                        class="filter invert"
+                        src="images/more-icon.svg"
+                        alt=""
+                      />
+                    </span>
+                  </div>
+                  <span
+                    class="text-xs py-0.5 px-2 bg-white/15 backdrop-blur-[10.4px] rounded"
+                    >#1 Google Rated</span
+                  >
+                  <span
+                    class="text-xs py-0.5 px-2 bg-white/15 backdrop-blur-[10.4px] rounded"
+                    >12 Years in Business</span
+                  >
+                  <span
+                    class="text-xs py-0.5 px-2 bg-white/15 backdrop-blur-[10.4px] rounded"
+                    >3 KM from your home</span
+                  >
+                </div>
+                <div class="p-2.5 rounded-lg bg-black/8 backdrop-blur-[10.4px]">
+                  <div class="flex justify-between items-center mb-1">
+                    <div class="flex items-center gap-2.5">
+                      <img
+                        class="w-12"
+                        src="images/t-h-e-ja-plumbing.png"
+                        alt=""
+                      />
+                      <div>
+                        <div class="flex gap-1">
+                          <div class="flex gap-0.25">
+                            <img
+                              class="w-3"
+                              src="images/t-h-e-start.svg"
+                              alt=""
+                            />
+                            <img
+                              class="w-3"
+                              src="images/t-h-e-start.svg"
+                              alt=""
+                            />
+                            <img
+                              class="w-3"
+                              src="images/t-h-e-start.svg"
+                              alt=""
+                            />
+                            <img
+                              class="w-3"
+                              src="images/t-h-e-start.svg"
+                              alt=""
+                            />
+                            <img
+                              class="w-3"
+                              src="images/t-h-e-start.svg"
+                              alt=""
+                            />
+                          </div>
+                          <span class="text-xs heading text-muted-6">4.9</span>
+                        </div>
+
+                        <h4 class="mt-0.5">JA Plumbing</h4>
+                      </div>
+                    </div>
+                    <span
+                      class="w-8 h-8 flex justify-center items-center bg-white/15 backdrop-blur-[10.4px] rounded-full"
+                    >
+                      <img
+                        class="filter invert"
+                        src="images/more-icon.svg"
+                        alt=""
+                      />
+                    </span>
+                  </div>
+                  <span
+                    class="text-xs py-0.5 px-2 bg-white/15 backdrop-blur-[10.4px] rounded"
+                    >#1 Google Rated</span
+                  >
+                  <span
+                    class="text-xs py-0.5 px-2 bg-white/15 backdrop-blur-[10.4px] rounded"
+                    >12 Years in Business</span
+                  >
+                  <span
+                    class="text-xs py-0.5 px-2 bg-white/15 backdrop-blur-[10.4px] rounded"
+                    >3 KM from your home</span
+                  >
+                </div>
+                <div class="p-2.5 rounded-lg bg-black/8 backdrop-blur-[10.4px]">
+                  <div class="flex justify-between items-center mb-1">
+                    <div class="flex items-center gap-2.5">
+                      <img
+                        class="w-12"
+                        src="images/t-h-e-pro-plumbing.png"
+                        alt=""
+                      />
+                      <div>
+                        <div class="flex gap-1">
+                          <div class="flex gap-0.25">
+                            <img
+                              class="w-3"
+                              src="images/t-h-e-start.svg"
+                              alt=""
+                            />
+                            <img
+                              class="w-3"
+                              src="images/t-h-e-start.svg"
+                              alt=""
+                            />
+                            <img
+                              class="w-3"
+                              src="images/t-h-e-start.svg"
+                              alt=""
+                            />
+                            <img
+                              class="w-3"
+                              src="images/t-h-e-start.svg"
+                              alt=""
+                            />
+                            <img
+                              class="w-3"
+                              src="images/t-h-e-start.svg"
+                              alt=""
+                            />
+                          </div>
+                          <span class="text-xs heading text-muted-6">4.9</span>
+                        </div>
+
+                        <h4 class="mt-0.5">Pro Plumbing</h4>
+                      </div>
+                    </div>
+                    <span
+                      class="w-8 h-8 flex justify-center items-center bg-white/15 backdrop-blur-[10.4px] rounded-full"
+                    >
+                      <img
+                        class="filter invert"
+                        src="images/more-icon.svg"
+                        alt=""
+                      />
+                    </span>
+                  </div>
+                  <span
+                    class="text-xs py-0.5 px-2 bg-white/15 backdrop-blur-[10.4px] rounded"
+                    >#1 Google Rated</span
+                  >
+                  <span
+                    class="text-xs py-0.5 px-2 bg-white/15 backdrop-blur-[10.4px] rounded"
+                    >12 Years in Business</span
+                  >
+                  <span
+                    class="text-xs py-0.5 px-2 bg-white/15 backdrop-blur-[10.4px] rounded"
+                    >3 KM from your home</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide min-h-110 card imaged bg-[linear-gradient(transparent,#1F1F1F),url('images/t-h-e-plumbing-bathroom.webp')]"
+            >
+              <div class="flex items-end mt-auto">
+                <div>
+                  <div class="flex gap-1">
+                    <div class="flex gap-0.25">
+                      <img class="w-3" src="images/t-h-e-start.svg" alt="" />
+                      <img class="w-3" src="images/t-h-e-start.svg" alt="" />
+                      <img class="w-3" src="images/t-h-e-start.svg" alt="" />
+                      <img class="w-3" src="images/t-h-e-start.svg" alt="" />
+                      <img class="w-3" src="images/t-h-e-start.svg" alt="" />
+                    </div>
+                    <span class="text-xs heading">4.9</span>
+                  </div>
+                  <h3 class="text-[2rem] leading-tight">
+                    Bathroom Maintenance
+                  </h3>
+                  <span
+                    class="text-xs heading text-third bg-white rounded py-0.75 px-2.5"
+                    >Top Expert</span
+                  >
+                  <p class="mt-2">Encore Baths</p>
+                </div>
+                <div class="pb-2">
+                  <span
+                    class="w-8 h-8 flex justify-center items-center bg-white rounded-full"
+                  >
+                    <img src="images/more-icon.svg" alt="" />
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide min-h-110 card imaged bg-[linear-gradient(transparent,#1F1F1F),url('images/t-h-e-painting.webp')]"
+            >
+              <div class="flex items-end mt-auto">
+                <div>
+                  <div class="flex gap-1">
+                    <div class="flex gap-0.25">
+                      <img class="w-3" src="images/t-h-e-start.svg" alt="" />
+                      <img class="w-3" src="images/t-h-e-start.svg" alt="" />
+                      <img class="w-3" src="images/t-h-e-start.svg" alt="" />
+                      <img class="w-3" src="images/t-h-e-start.svg" alt="" />
+                      <img class="w-3" src="images/t-h-e-start.svg" alt="" />
+                    </div>
+                    <span class="text-xs heading">4.9</span>
+                  </div>
+                  <h3 class="text-[2rem] leading-tight">Painting Upgrades</h3>
+                  <span
+                    class="text-xs heading text-third bg-white rounded py-0.75 px-2.5"
+                    >Top Expert</span
+                  >
+                  <p class="mt-2">Your Painting Your Way</p>
+                </div>
+                <div class="pb-2">
+                  <span
+                    class="w-8 h-8 flex justify-center items-center bg-white rounded-full"
+                  >
+                    <img src="images/more-icon.svg" alt="" />
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide min-h-110 card imaged bg-[linear-gradient(transparent,#1F1F1F),url('images/t-h-e-cleaning.webp')]"
+            >
+              <div class="flex items-end mt-auto">
+                <div>
+                  <div class="flex gap-1">
+                    <div class="flex gap-0.25">
+                      <img class="w-3" src="images/t-h-e-start.svg" alt="" />
+                      <img class="w-3" src="images/t-h-e-start.svg" alt="" />
+                      <img class="w-3" src="images/t-h-e-start.svg" alt="" />
+                      <img class="w-3" src="images/t-h-e-start.svg" alt="" />
+                      <img class="w-3" src="images/t-h-e-start.svg" alt="" />
+                    </div>
+                    <span class="text-xs heading">4.9</span>
+                  </div>
+                  <h3 class="text-[2rem] leading-tight">Cleaning Services</h3>
+                  <span
+                    class="text-xs heading text-third bg-white rounded py-0.75 px-2.5"
+                    >Top Expert</span
+                  >
+                  <p class="mt-2">Capsule Cleaning Corp</p>
+                </div>
+                <div class="pb-2">
+                  <span
+                    class="w-8 h-8 flex justify-center items-center bg-white rounded-full"
+                  >
+                    <img src="images/more-icon.svg" alt="" />
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide min-h-110 card imaged bg-[linear-gradient(transparent,#1F1F1F),url('images/t-h-e-electrical.webp')]"
+            >
+              <div class="flex items-end mt-auto">
+                <div>
+                  <div class="flex gap-1">
+                    <div class="flex gap-0.25">
+                      <img class="w-3" src="images/t-h-e-start.svg" alt="" />
+                      <img class="w-3" src="images/t-h-e-start.svg" alt="" />
+                      <img class="w-3" src="images/t-h-e-start.svg" alt="" />
+                      <img class="w-3" src="images/t-h-e-start.svg" alt="" />
+                      <img class="w-3" src="images/t-h-e-start.svg" alt="" />
+                    </div>
+                    <span class="text-xs heading">4.9</span>
+                  </div>
+                  <h3 class="text-[2rem] leading-tight">
+                    Electrical & Lighting
+                  </h3>
+                  <span
+                    class="text-xs heading text-third bg-white rounded py-0.75 px-2.5"
+                    >Top Expert</span
+                  >
+                  <p class="mt-2">RNY Plumbing</p>
+                </div>
+                <div class="pb-2">
+                  <span
+                    class="w-8 h-8 flex justify-center items-center bg-white rounded-full"
+                  >
+                    <img src="images/more-icon.svg" alt="" />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <nav class="swiper swiper-chars-tabes mt-6">
+            <div role="tablist" class="swiper-wrapper">
+              <span
+                class="swiper-slide cursor-pointer filter-tab px-4 active"
+                role="tab"
+                aria-selected="true"
+                id="tab-by-a"
+                aria-controls="panel-by-a"
+              >
+                A
+              </span>
+              <span
+                class="swiper-slide cursor-pointer filter-tab px-4"
+                role="tab"
+                aria-selected="false"
+                id="tab-by-b"
+                aria-controls="panel-by-b"
+              >
+                B
+              </span>
+              <span
+                class="swiper-slide cursor-pointer filter-tab px-4"
+                role="tab"
+                aria-selected="false"
+                id="tab-by-c"
+                aria-controls="panel-by-c"
+              >
+                C
+              </span>
+              <span
+                class="swiper-slide cursor-pointer filter-tab px-4"
+                role="tab"
+                aria-selected="false"
+                id="tab-by-d"
+                aria-controls="panel-by-d"
+              >
+                D
+              </span>
+              <span
+                class="swiper-slide cursor-pointer filter-tab px-4"
+                role="tab"
+                aria-selected="false"
+                id="tab-by-e"
+                aria-controls="panel-by-e"
+              >
+                E
+              </span>
+              <span
+                class="swiper-slide cursor-pointer filter-tab px-4"
+                role="tab"
+                aria-selected="false"
+                id="tab-by-f"
+                aria-controls="panel-by-f"
+              >
+                F
+              </span>
+              <span
+                class="swiper-slide cursor-pointer filter-tab px-4"
+                role="tab"
+                aria-selected="false"
+                id="tab-by-g"
+                aria-controls="panel-by-g"
+              >
+                G
+              </span>
+              <span
+                class="swiper-slide cursor-pointer filter-tab px-4"
+                role="tab"
+                aria-selected="false"
+                id="tab-by-h"
+                aria-controls="panel-by-h"
+              >
+                H
+              </span>
+              <span
+                class="swiper-slide cursor-pointer filter-tab px-4"
+                role="tab"
+                aria-selected="false"
+                id="tab-by-i"
+                aria-controls="panel-by-i"
+              >
+                I
+              </span>
+              <span
+                class="swiper-slide cursor-pointer filter-tab px-4"
+                role="tab"
+                aria-selected="false"
+                id="tab-by-j"
+                aria-controls="panel-by-j"
+              >
+                J
+              </span>
+              <span
+                class="swiper-slide cursor-pointer filter-tab px-4"
+                role="tab"
+                aria-selected="false"
+                id="tab-by-k"
+                aria-controls="panel-by-k"
+              >
+                K
+              </span>
+              <span
+                class="swiper-slide cursor-pointer filter-tab px-4"
+                role="tab"
+                aria-selected="false"
+                id="tab-by-l"
+                aria-controls="panel-by-l"
+              >
+                L
+              </span>
+              <span
+                class="swiper-slide cursor-pointer filter-tab px-4"
+                role="tab"
+                aria-selected="false"
+                id="tab-by-m"
+                aria-controls="panel-by-m"
+              >
+                M
+              </span>
+              <span
+                class="swiper-slide cursor-pointer filter-tab px-4"
+                role="tab"
+                aria-selected="false"
+                id="tab-by-n"
+                aria-controls="panel-by-n"
+              >
+                N
+              </span>
+              <span
+                class="swiper-slide cursor-pointer filter-tab px-4"
+                role="tab"
+                aria-selected="false"
+                id="tab-by-o"
+                aria-controls="panel-by-o"
+              >
+                O
+              </span>
+              <span
+                class="swiper-slide cursor-pointer filter-tab px-4"
+                role="tab"
+                aria-selected="false"
+                id="tab-by-p"
+                aria-controls="panel-by-p"
+              >
+                P
+              </span>
+              <span
+                class="swiper-slide cursor-pointer filter-tab px-4"
+                role="tab"
+                aria-selected="false"
+                id="tab-by-q"
+                aria-controls="panel-by-q"
+              >
+                Q
+              </span>
+              <span
+                class="swiper-slide cursor-pointer filter-tab px-4"
+                role="tab"
+                aria-selected="false"
+                id="tab-by-r"
+                aria-controls="panel-by-r"
+              >
+                R
+              </span>
+              <span
+                class="swiper-slide cursor-pointer filter-tab px-4"
+                role="tab"
+                aria-selected="false"
+                id="tab-by-s"
+                aria-controls="panel-by-s"
+              >
+                S
+              </span>
+              <span
+                class="swiper-slide cursor-pointer filter-tab px-4"
+                role="tab"
+                aria-selected="false"
+                id="tab-by-t"
+                aria-controls="panel-by-t"
+              >
+                T
+              </span>
+              <span
+                class="swiper-slide cursor-pointer filter-tab px-4"
+                role="tab"
+                aria-selected="false"
+                id="tab-by-u"
+                aria-controls="panel-by-u"
+              >
+                U
+              </span>
+              <span
+                class="swiper-slide cursor-pointer filter-tab px-4"
+                role="tab"
+                aria-selected="false"
+                id="tab-by-v"
+                aria-controls="panel-by-v"
+              >
+                V
+              </span>
+              <span
+                class="swiper-slide cursor-pointer filter-tab px-4"
+                role="tab"
+                aria-selected="false"
+                id="tab-by-w"
+                aria-controls="panel-by-w"
+              >
+                W
+              </span>
+              <span
+                class="swiper-slide cursor-pointer filter-tab px-4"
+                role="tab"
+                aria-selected="false"
+                id="tab-by-x"
+                aria-controls="panel-by-x"
+              >
+                X
+              </span>
+              <span
+                class="swiper-slide cursor-pointer filter-tab px-4"
+                role="tab"
+                aria-selected="false"
+                id="tab-by-y"
+                aria-controls="panel-by-y"
+              >
+                Y
+              </span>
+              <span
+                class="swiper-slide cursor-pointer filter-tab px-4"
+                role="tab"
+                aria-selected="false"
+                id="tab-by-z"
+                aria-controls="panel-by-z"
+              >
+                Z
+              </span>
+            </div>
+          </nav>
+
+          <div class="flex justify-center gap-2.5 py-2 mt-8 lg:mt-11.25">
+            <img
+              class="swiper-button-prev"
+              role="button"
+              aria-label="Previous slide"
+              src="images/prev-slider.svg"
+              alt=""
+            />
+            <img
+              class="swiper-button-next"
+              role="button"
+              aria-label="Next slide"
+              src="images/next-slider.svg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="separate-line" />
+
+    <!--  monthly-costs-overview section -->
+
+    <section
+      class="section-wrapper has-slider max-w-none"
+      aria-labelledby="monthly-costs-overview-heading"
+    >
+      <header class="lg:max-w-[1347px] lg:mx-auto lg:px-8">
+        <div class="txt">
+          <h2 class="leading-tight" id="monthly-costs-overview-rebates-heading">
+            Monthly Costs Overview
+          </h2>
+
+          <p class="base-p">
+            All monthly costs related to 402 Spring Gate Blvd, Thornhill
+          </p>
+        </div>
+
+        <div class="dropdown" x-data="{ open: false }">
+          <button
+            @click="open = !open"
+            @keydown.escape="open = false"
+            aria-haspopup="true"
+            :aria-expanded="open"
+            aria-label="More options for managing finances Your Home"
+            :class="{ 'bg-muted-7': open }"
+          >
+            <img src="images/three-points-icon.svg" alt="" />
+          </button>
+
+          <ul
+            x-show="open"
+            x-transition
+            @click.away="open = false"
+            role="menu"
+            aria-label="Manage Finances options"
+            class="menu"
+          >
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/add-info-icon.svg" alt="" />
+                Add info
+              </a>
+            </li>
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/edit-icon.svg" alt="" />
+                Edit
+              </a>
+            </li>
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/view-details-icon.svg" alt="" />
+                View Details
+              </a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <nav
+        class="tabs"
+        aria-label="Filter by Opportunities, Risks, Incentives & Rebates"
+      >
+        <ul
+          role="tablist"
+          class="filter-tabs lg:max-w-[1347px] lg:mx-auto lg:px-8"
+        >
+          <li role="presentation">
+            <button
+              class="filter-tab filter-room-tab active"
+              role="tab"
+              aria-selected="true"
+              id="tab-monthly-costs"
+              aria-controls="panel-monthly-costs"
+            >
+              Your Monthly Costs
+            </button>
+          </li>
+          <li role="presentation">
+            <button
+              class="filter-tab filter-room-tab"
+              role="tab"
+              aria-selected="false"
+              id="tab-average-ontario"
+              aria-controls="panel-average-ontario"
+            >
+              Average in Ontario
+            </button>
+          </li>
+          <li role="presentation">
+            <button
+              class="filter-tab filter-room-tab"
+              role="tab"
+              aria-selected="false"
+              id="tab-average-canada"
+              aria-controls="panel-average-canada"
+            >
+              Average in Canada
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="min-[1360px]:pl-[calc((100vw-1298px)/2)]">
+        <div
+          class="swiper swiper-plan-for-emergencies"
+          role="tabpanel"
+          id="panel-all"
+          aria-labelledby="tab-all"
+        >
+          <div class="swiper-wrapper">
+            <div class="swiper-slide min-w-83.75 md:min-w-176 lg:min-w-241.25">
+              <div class="flex flex-col md:flex-row md:items-center md:gap-10">
+                <figure class="flex justify-center">
+                  <div
+                    class="w-60 lg:w-93 lg:h-93"
+                    id="monthlyCostsOverviewChart"
+                  ></div>
+                </figure>
+
+                <div class="lg:flex-1">
+                  <div
+                    id="monthlyCostsOverviewGrid"
+                    class="ag-theme-alpine h-45.5 lg:h-114 md:w-83.75 lg:w-full monthly-costs-overview-ag-grid"
+                  ></div>
+                  <!-- <button
+                    class="heading text-third block mx-auto py-3.5 lg:hidden"
+                    id="monthlyCostsOverviewShowMoreBtn"
+                  >
+                    Show More
+                  </button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center gap-2.5 py-2 mt-8 lg:mt-11.25">
+            <img
+              class="swiper-button-prev"
+              role="button"
+              aria-label="Previous slide"
+              src="images/prev-slider.svg"
+              alt=""
+            />
+            <img
+              class="swiper-button-next"
+              role="button"
+              aria-label="Next slide"
+              src="images/next-slider.svg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="separate-line" />
+
+    <!--  insurance-comparison section -->
+
+    <section
+      class="section-wrapper section-wrapper"
+      aria-labelledby="insurance-comparison-heading"
+    >
+      <header>
+        <div class="txt">
+          <h2 class="leading-tight" id="insurance-comparison-heading">
+            Insurance Comparison
+          </h2>
+          <p class="base-p" data-readmore>
+            Insurance premiums can differ greatly among providers. Utilize this
+            tool
+            <span data-readmore-text class="hidden">
+              to compare your existing policy with the latest quotes from
+              leading non-bank insurers, including brokers and mutual companies.
+              Click the "Best Quotes" tab to access current rates and evaluate
+              how your policy stacks up.
+            </span>
+            <button href="#" class="show-more" data-readmore-btn>
+              Read more
+            </button>
+          </p>
+        </div>
+        <div class="dropdown" x-data="{ open: false }">
+          <button
+            @click="open = !open"
+            @keydown.escape="open = false"
+            aria-haspopup="true"
+            :aria-expanded="open"
+            aria-label="More options for managing finances Your Home"
+            :class="{ 'bg-muted-7': open }"
+          >
+            <img src="images/three-points-icon.svg" alt="" />
+          </button>
+
+          <!-- Dropdown -->
+          <ul
+            x-show="open"
+            x-transition
+            @click.away="open = false"
+            role="menu"
+            aria-label="Manage Finances options"
+            class="menu"
+          >
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/add-info-icon.svg" alt="" />
+                Add info
+              </a>
+            </li>
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/edit-icon.svg" alt="" />
+                Edit
+              </a>
+            </li>
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/view-details-icon.svg" alt="" />
+                View Details
+              </a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <div
+        id="insuranceComparisonGrid"
+        class="ag-theme-quartz insurance-comparison-grid"
+        style="height: 419px"
+      ></div>
+    </section>
+
+    <hr class="separate-line" />
+
+    <!--  utility-costs section -->
+
+    <section
+      class="section-wrapper section-wrapper"
+      aria-labelledby="utility-costs-heading"
+    >
+      <header>
+        <div class="txt">
+          <h2 class="leading-tight" id="utility-costs-heading">
+            Utility Costs
+          </h2>
+          <p class="base-p">
+            Recently sold and rented properties similar to 402 Spring Gate Blvd,
+            Thornhill
+          </p>
+        </div>
+        <div class="dropdown" x-data="{ open: false }">
+          <button
+            @click="open = !open"
+            @keydown.escape="open = false"
+            aria-haspopup="true"
+            :aria-expanded="open"
+            aria-label="More options for managing finances Your Home"
+            :class="{ 'bg-muted-7': open }"
+          >
+            <img src="images/three-points-icon.svg" alt="" />
+          </button>
+
+          <!-- Dropdown -->
+          <ul
+            x-show="open"
+            x-transition
+            @click.away="open = false"
+            role="menu"
+            aria-label="Manage Finances options"
+            class="menu"
+          >
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/add-info-icon.svg" alt="" />
+                Add info
+              </a>
+            </li>
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/edit-icon.svg" alt="" />
+                Edit
+              </a>
+            </li>
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/view-details-icon.svg" alt="" />
+                View Details
+              </a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="flex flex-col md:flex-row lg:gap-5">
+        <div
+          class="w-full md:w-1/2 md:h-full md:order-2"
+          id="utilityCostsLineChart"
+        ></div>
+        <div
+          id="utilityCostsGrid"
+          class="ag-theme-quartz utility-costs-grid h-52.5 md:w-1/2"
+        ></div>
+      </div>
+    </section>
+
+    <hr class="separate-line" />
+
+    <!--  client-reviews section -->
+
+    <section
+      class="section-wrapper has-slider max-w-none"
+      aria-labelledby="client-reviews-heading"
+    >
+      <header class="lg:max-w-[1347px] lg:mx-auto lg:px-8">
+        <div class="txt">
+          <h2 class="leading-tight" id="client-reviews-heading">
+            John's Client Reviews
+          </h2>
+          <p class="base-p">Room details for 402 Spring Gate Blvd, Thornhill</p>
+        </div>
+        <div class="dropdown" x-data="{ open: false }">
+          <button
+            @click="open = !open"
+            @keydown.escape="open = false"
+            aria-haspopup="true"
+            :aria-expanded="open"
+            aria-label="More options for managing finances Your Home"
+            :class="{ 'bg-muted-7': open }"
+          >
+            <img src="images/three-points-icon.svg" alt="" />
+          </button>
+
+          <!-- Dropdown -->
+          <ul
+            x-show="open"
+            x-transition
+            @click.away="open = false"
+            role="menu"
+            aria-label="Manage Finances options"
+            class="menu"
+          >
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/add-info-icon.svg" alt="" />
+                Add info
+              </a>
+            </li>
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/edit-icon.svg" alt="" />
+                Edit
+              </a>
+            </li>
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/view-details-icon.svg" alt="" />
+                View Details
+              </a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="min-[1360px]:pl-[calc((100vw-1298px)/2)]">
+        <div
+          class="swiper swiper-client-reviews"
+          role="tabpanel"
+          id="panel-all"
+          aria-labelledby="tab-all"
+        >
+          <div class="swiper-wrapper">
+            <div
+              class="swiper-slide card pt-8.75 has-chevron-icon text-white bg-third origin-top"
+            >
+              <div class="text-xl heading flex items-center gap-2.5">
+                <div class="flex">
+                  <img class="w-9" src="images/c-r-star-icon.svg" alt="" />
+                  <img class="w-9" src="images/c-r-star-icon.svg" alt="" />
+                  <img class="w-9" src="images/c-r-star-icon.svg" alt="" />
+                  <img class="w-9" src="images/c-r-star-icon.svg" alt="" />
+                  <img class="w-9" src="images/c-r-star-icon.svg" alt="" />
+                </div>
+                4.9
+              </div>
+              <span class="text-[4rem] heading leading-[106%] mt-16.75"
+                >56</span
+              >
+              <span class="text-xl leading-[110%]">Reviews</span>
+              <svg
+                class="chevron-icon fill-third-100 -top-3.5 left-auto -right-9"
+              >
+                <use href="#chevron-icon" />
+              </svg>
+
+              <div class="more border-[#ffffff22]">
+                <p>Review this expert</p>
+                <img
+                  class="uploid-icon filter invert"
+                  src="images/more-icon.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="swiper-slide card">
+              <img class="w-6" src="images/c-r-quote-icon.svg" alt="" />
+
+              <p class="mt-3.75 mb-2.5">
+                I had an urgent issue, and they responded immediately. Not only
+                did they fix the problem efficiently, but they also took the
+                time to explain what went wrong and how to prevent it in the
+                future. Truly a professional with outstanding...
+                <a href="#" class="show-more">Read more</a>
+              </p>
+
+              <div class="flex items-center gap-2.5 mt-auto">
+                <img
+                  class="w-11.25"
+                  src="images/c-r-ronald.png"
+                  alt="Ronald Richards"
+                />
+                <div class="flex-1">
+                  <span class="text-lg heading">Ronald Richards</span>
+                  <div class="flex justify-between items-center">
+                    <div class="flex gap-1">
+                      <img
+                        class="w-3"
+                        src="images/c-r-start-xs-icon.svg"
+                        alt=""
+                      />
+                      <img
+                        class="w-3"
+                        src="images/c-r-start-xs-icon.svg"
+                        alt=""
+                      />
+                      <img
+                        class="w-3"
+                        src="images/c-r-start-xs-icon.svg"
+                        alt=""
+                      />
+                      <img
+                        class="w-3"
+                        src="images/c-r-start-xs-icon.svg"
+                        alt=""
+                      />
+                      <img
+                        class="w-3"
+                        src="images/c-r-start-xs-icon.svg"
+                        alt=""
+                      />
+                      <span class="text-xs heading text-muted-1">5</span>
+                    </div>
+                    <span class="text-xs text-muted-1 heading">2h ago</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide card">
+              <img class="w-6" src="images/c-r-quote-icon.svg" alt="" />
+
+              <p class="mt-3.75 mb-2.5">
+                Incredible expertise and attention to detail. Fixed the issue
+                quickly and explained everything clearly
+              </p>
+
+              <div class="flex items-center gap-2.5 mt-auto">
+                <img
+                  class="w-11.25"
+                  src="images/c-r-jacob.png"
+                  alt="Jacob Jones"
+                />
+                <div class="flex-1">
+                  <span class="text-lg heading">Jacob Jones</span>
+                  <div class="flex justify-between items-center">
+                    <div class="flex gap-1">
+                      <img
+                        class="w-3"
+                        src="images/c-r-start-xs-icon.svg"
+                        alt=""
+                      />
+                      <img
+                        class="w-3"
+                        src="images/c-r-start-xs-icon.svg"
+                        alt=""
+                      />
+                      <img
+                        class="w-3"
+                        src="images/c-r-start-xs-icon.svg"
+                        alt=""
+                      />
+                      <img
+                        class="w-3"
+                        src="images/c-r-start-xs-icon.svg"
+                        alt=""
+                      />
+                      <img
+                        class="w-3"
+                        src="images/c-r-start-xs-icon.svg"
+                        alt=""
+                      />
+                      <span class="text-xs heading text-muted-1">5</span>
+                    </div>
+                    <span class="text-xs text-muted-1 heading">3 days ago</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide card">
+              <img class="w-6" src="images/c-r-quote-icon.svg" alt="" />
+
+              <p class="mt-3.75 mb-2.5">
+                Great communication and fair pricing. A true expert in the
+                field!
+              </p>
+
+              <div class="flex items-center gap-2.5 mt-auto">
+                <img
+                  class="w-11.25"
+                  src="images/c-r-albert.png"
+                  alt="Albert Flores"
+                />
+                <div class="flex-1">
+                  <span class="text-lg heading">Albert Flores</span>
+                  <div class="flex justify-between items-center">
+                    <div class="flex gap-1">
+                      <img
+                        class="w-3"
+                        src="images/c-r-start-xs-icon.svg"
+                        alt=""
+                      />
+                      <img
+                        class="w-3"
+                        src="images/c-r-start-xs-icon.svg"
+                        alt=""
+                      />
+                      <img
+                        class="w-3"
+                        src="images/c-r-start-xs-icon.svg"
+                        alt=""
+                      />
+                      <img
+                        class="w-3"
+                        src="images/c-r-start-xs-icon.svg"
+                        alt=""
+                      />
+                      <img
+                        class="w-3"
+                        src="images/c-r-start-xs-icon.svg"
+                        alt=""
+                      />
+                      <span class="text-xs heading text-muted-1">5</span>
+                    </div>
+                    <span class="text-xs text-muted-1 heading"
+                      >15 days ago</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide card">
+              <img class="w-6" src="images/c-r-quote-icon.svg" alt="" />
+
+              <p class="mt-3.75 mb-2.5">
+                Fixed a long-standing issue that others couldn’t. Super happy
+                with the service!
+              </p>
+
+              <div class="flex items-center gap-2.5 mt-auto">
+                <img
+                  class="w-11.25"
+                  src="images/c-r-dianne.png"
+                  alt="Dianne Russell"
+                />
+                <div class="flex-1">
+                  <span class="text-lg heading">Dianne Russell</span>
+                  <div class="flex justify-between items-center">
+                    <div class="flex gap-1">
+                      <img
+                        class="w-3"
+                        src="images/c-r-start-xs-icon.svg"
+                        alt=""
+                      />
+                      <img
+                        class="w-3"
+                        src="images/c-r-start-xs-icon.svg"
+                        alt=""
+                      />
+                      <img
+                        class="w-3"
+                        src="images/c-r-start-xs-icon.svg"
+                        alt=""
+                      />
+                      <img
+                        class="w-3"
+                        src="images/c-r-start-xs-icon.svg"
+                        alt=""
+                      />
+                      <img
+                        class="w-3"
+                        src="images/c-r-start-xs-icon.svg"
+                        alt=""
+                      />
+                      <span class="text-xs heading text-muted-1">5</span>
+                    </div>
+                    <span class="text-xs text-muted-1 heading"
+                      >1 month ago</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide card">
+              <img class="w-6" src="images/c-r-quote-icon.svg" alt="" />
+
+              <p class="mt-3.75 mb-2.5">
+                Fixed a long-standing issue that others couldn’t. Super happy
+                with the service!
+                <a href="#" class="show-more">Read more</a>
+              </p>
+
+              <div class="flex items-center gap-2.5 mt-auto">
+                <img
+                  class="w-11.25"
+                  src="images/c-r-jenny.png"
+                  alt="Jenny Wilson"
+                />
+                <div class="flex-1">
+                  <span class="text-lg heading">Jenny Wilson</span>
+                  <div class="flex justify-between items-center">
+                    <div class="flex gap-1">
+                      <img
+                        class="w-3"
+                        src="images/c-r-start-xs-icon.svg"
+                        alt=""
+                      />
+                      <img
+                        class="w-3"
+                        src="images/c-r-start-xs-icon.svg"
+                        alt=""
+                      />
+                      <img
+                        class="w-3"
+                        src="images/c-r-start-xs-icon.svg"
+                        alt=""
+                      />
+                      <img
+                        class="w-3"
+                        src="images/c-r-start-xs-icon.svg"
+                        alt=""
+                      />
+                      <img
+                        class="w-3"
+                        src="images/c-r-start-xs-icon.svg"
+                        alt=""
+                      />
+                      <span class="text-xs heading text-muted-1">5</span>
+                    </div>
+                    <span class="text-xs text-muted-1 heading">1 year ago</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide card">
+              <div class="flex bg-muted-3 rounded-lg py-2 px-6">
+                <div class="border-r border-r-muted-7 pr-13.5">
+                  <h3 class="text-base font-normal text-muted-1">Rating</h3>
+                  <span class="text-[1.75rem] heading leading-tight mt-1"
+                    >4.9</span
+                  >
+                </div>
+                <div class="pl-4">
+                  <h3 class="text-base font-normal text-muted-1">Reviews</h3>
+                  <span class="text-[1.75rem] heading leading-tight mt-1"
+                    >56</span
+                  >
+                </div>
+              </div>
+              <div class="space-y-2 mt-5">
+                <div class="flex justify-between items-center gap-3.75">
+                  <div class="flex items-center gap-0.5">
+                    <span class="text-sm heading pt-0.25 min-w-2.5">5</span>
+                    <img
+                      class="w-4.5"
+                      src="images/c-r-start-s-icon.svg"
+                      alt="Star"
+                    />
+                  </div>
+                  <div class="w-41.75 h-1.25 bg-muted-3 rounded-3xl">
+                    <span
+                      class="w-[65%] h-full bg-third block rounded-[inherit]"
+                    ></span>
+                  </div>
+                  <span class="text-sm heading pt-0.25">65%</span>
+                </div>
+                <div class="flex justify-between items-center gap-3.75">
+                  <div class="flex items-center gap-0.5">
+                    <span class="text-sm heading pt-0.25 min-w-2.5">4</span>
+                    <img
+                      class="w-4.5"
+                      src="images/c-r-start-s-icon.svg"
+                      alt="Star"
+                    />
+                  </div>
+                  <div class="w-41.75 h-1.25 bg-muted-3 rounded-3xl">
+                    <span
+                      class="w-[25%] h-full bg-third block rounded-[inherit]"
+                    ></span>
+                  </div>
+                  <span class="text-sm heading pt-0.25">25%</span>
+                </div>
+                <div class="flex justify-between items-center gap-3.75">
+                  <div class="flex items-center gap-0.5">
+                    <span class="text-sm heading pt-0.25 min-w-2.5">3</span>
+                    <img
+                      class="w-4.5"
+                      src="images/c-r-start-s-icon.svg"
+                      alt="Star"
+                    />
+                  </div>
+                  <div class="w-41.75 h-1.25 bg-muted-3 rounded-3xl">
+                    <span
+                      class="w-[10%] h-full bg-third block rounded-[inherit]"
+                    ></span>
+                  </div>
+                  <span class="text-sm heading pt-0.25">10%</span>
+                </div>
+                <div class="flex justify-between items-center gap-3.75">
+                  <div class="flex items-center gap-0.5">
+                    <span class="text-sm heading pt-0.25 min-w-2.5">2</span>
+                    <img
+                      class="w-4.5"
+                      src="images/c-r-start-s-icon.svg"
+                      alt="Star"
+                    />
+                  </div>
+                  <div class="w-41.75 h-1.25 bg-muted-3 rounded-3xl">
+                    <span
+                      class="w-[5%] h-full bg-third block rounded-[inherit]"
+                    ></span>
+                  </div>
+                  <span class="text-sm heading pt-0.25">5%</span>
+                </div>
+                <div class="flex justify-between items-center gap-3.75">
+                  <div class="flex items-center gap-0.5">
+                    <span class="text-sm heading pt-0.25 min-w-2.5">1</span>
+                    <img
+                      class="w-4.5"
+                      src="images/c-r-start-s-icon.svg"
+                      alt="Star"
+                    />
+                  </div>
+                  <div class="w-41.75 h-1.25 bg-muted-3 rounded-3xl"></div>
+                  <span class="text-sm heading pt-0.25">0%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center gap-2.5 py-2 mt-8 lg:mt-11.25">
+            <img
+              class="swiper-button-prev"
+              role="button"
+              aria-label="Previous slide"
+              src="images/prev-slider.svg"
+              alt=""
+            />
+            <img
+              class="swiper-button-next"
+              role="button"
+              aria-label="Next slide"
+              src="images/next-slider.svg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="separate-line" />
+
+    <!--  home-improvement-ideas section -->
+
+    <section
+      class="section-wrapper has-slider max-w-none"
+      aria-labelledby="home-improvement-ideas-heading"
+    >
+      <header class="lg:max-w-[1347px] lg:mx-auto lg:px-8">
+        <div class="txt">
+          <h2 class="leading-tight" id="home-improvement-ideas-heading">
+            Home Improvement Ideas & Value Boosters
+          </h2>
+          <p class="base-p">Room details for 402 Spring Gate Blvd, Thornhill</p>
+        </div>
+        <div class="dropdown" x-data="{ open: false }">
+          <button
+            @click="open = !open"
+            @keydown.escape="open = false"
+            aria-haspopup="true"
+            :aria-expanded="open"
+            aria-label="More options for managing finances Your Home"
+            :class="{ 'bg-muted-7': open }"
+          >
+            <img src="images/three-points-icon.svg" alt="" />
+          </button>
+
+          <!-- Dropdown -->
+          <ul
+            x-show="open"
+            x-transition
+            @click.away="open = false"
+            role="menu"
+            aria-label="Manage Finances options"
+            class="menu"
+          >
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/add-info-icon.svg" alt="" />
+                Add info
+              </a>
+            </li>
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/edit-icon.svg" alt="" />
+                Edit
+              </a>
+            </li>
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/view-details-icon.svg" alt="" />
+                View Details
+              </a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="lg:max-w-[1347px] lg:mx-auto lg:px-8 mb-6">
+        <nav
+          class="swiper swiper-home-improvement-ideas-tabs"
+          aria-label="Filter by Home Improvement Ideas & Value Boosters"
+        >
+          <div role="tablist" class="swiper-wrapper">
+            <span
+              class="filter-tab swiper-slide cursor-pointer active"
+              role="tab"
+              aria-selected="true"
+              id="tab-all"
+              aria-controls="panel-all"
+            >
+              All
+            </span>
+            <span
+              class="filter-tab swiper-slide cursor-pointer"
+              role="tab"
+              aria-selected="false"
+              id="tab-renovation"
+              aria-controls="panel-renovation"
+            >
+              Renovation Inspirations
+            </span>
+            <span
+              class="filter-tab swiper-slide cursor-pointer"
+              role="tab"
+              aria-selected="false"
+              id="tab-DIY"
+              aria-controls="panel-DIY"
+            >
+              DIY Projects
+            </span>
+            <span
+              class="filter-tab swiper-slide cursor-pointer"
+              role="tab"
+              aria-selected="false"
+              id="tab-recommended "
+              aria-controls="panel-recommended "
+            >
+              Recommended Upgrades
+            </span>
+            <span
+              class="filter-tab swiper-slide cursor-pointer"
+              role="tab"
+              aria-selected="false"
+              id="tab-seasonal"
+              aria-controls="panel-seasonal"
+            >
+              Seasonal Suggestions
+            </span>
+            <span
+              class="filter-tab swiper-slide cursor-pointer"
+              role="tab"
+              aria-selected="false"
+              id="tab-energy-saving"
+              aria-controls="panel-energy-saving"
+            >
+              Energy Saving Ideas
+            </span>
+            <span
+              class="filter-tab swiper-slide cursor-pointer"
+              role="tab"
+              aria-selected="false"
+              id="tab-energy-saving"
+              aria-controls="panel-energy-saving"
+            >
+              Energy Saving Ideas
+            </span>
+            <span
+              class="filter-tab swiper-slide cursor-pointer"
+              role="tab"
+              aria-selected="false"
+              id="tab-energy-saving"
+              aria-controls="panel-energy-saving"
+            >
+              Safety & Security Tips
+            </span>
+          </div>
+        </nav>
+      </div>
+
+      <div class="min-[1360px]:pl-[calc((100vw-1298px)/2)]">
+        <div
+          class="swiper swiper-home-improvement-ideas"
+          role="tabpanel"
+          id="panel-all"
+          aria-labelledby="tab-all"
+        >
+          <div class="swiper-wrapper">
+            <div
+              class="swiper-slide card long imaged bg-[linear-gradient(transparent,transparent,#1F1F1F)),url('images/h-i-i-v-b-how-create-herb.webp')]"
+            >
+              <span class="home-badge">DIY Projects</span>
+              <div class="content">
+                <h3 class="leading-tight">
+                  How to create the perfect <br />
+                  herb garden
+                </h3>
+              </div>
+              <div class="more mt-5">
+                <p>Learn More</p>
+                <img src="images/more-icon.svg" alt="" />
+              </div>
+            </div>
+
+            <div
+              class="swiper-slide card long imaged bg-[linear-gradient(transparent,transparent,#1F1F1F)),url('images/h-i-i-v-b-switch.webp')]"
+            >
+              <span class="home-badge">DIY Projects</span>
+              <div class="content">
+                <h3 class="leading-tight">
+                  Switch your HVAC to a heatpump and save 30% energy!
+                </h3>
+              </div>
+              <div class="more mt-5">
+                <p>Learn More</p>
+                <img src="images/more-icon.svg" alt="" />
+              </div>
+            </div>
+
+            <div
+              class="swiper-slide card long imaged bg-[linear-gradient(transparent,transparent,#1F1F1F)),url('images/h-i-i-v-b-modern-kitchen.webp')]"
+            >
+              <span class="home-badge">DIY Projects</span>
+              <div class="content">
+                <h3 class="leading-tight">
+                  7 modern kitchen renovation ideas on a budget
+                </h3>
+              </div>
+              <div class="more mt-5">
+                <p>Learn More</p>
+                <img src="images/more-icon.svg" alt="" />
+              </div>
+            </div>
+
+            <div
+              class="swiper-slide card long imaged bg-[linear-gradient(transparent,transparent,#1F1F1F)),url('images/h-i-i-v-b-home-ready.webp')]"
+            >
+              <span class="home-badge">DIY Projects</span>
+              <div class="content">
+                <h3 class="leading-tight">
+                  Getting your home ready <br />
+                  for selling
+                </h3>
+              </div>
+              <div class="more mt-5">
+                <p>Learn More</p>
+                <img src="images/more-icon.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center gap-2.5 py-2 mt-8 lg:mt-11.25">
+            <img
+              class="swiper-button-prev"
+              role="button"
+              aria-label="Previous slide"
+              src="images/prev-slider.svg"
+              alt=""
+            />
+            <img
+              class="swiper-button-next"
+              role="button"
+              aria-label="Next slide"
+              src="images/next-slider.svg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="separate-line" />
+
+    <!--  social-media-posts section -->
+
+    <section
+      class="section-wrapper section-wrapper"
+      aria-labelledby="social-media-posts-heading"
+    >
+      <header>
+        <div class="txt">
+          <h2 class="leading-tight" id="social-media-posts-heading">
+            Connect with Home Depot on Social Networks
+          </h2>
+          <p class="base-p">
+            Recently sold and rented properties similar to 402 Spring Gate Blvd,
+            Thornhill
+          </p>
+        </div>
+
+        <div class="dropdown" x-data="{ open: false }">
+          <button
+            @click="open = !open"
+            @keydown.escape="open = false"
+            aria-haspopup="true"
+            :aria-expanded="open"
+            aria-label="More options for managing finances Your Home"
+            :class="{ 'bg-muted-7': open }"
+          >
+            <img src="images/three-points-icon.svg" alt="" />
+          </button>
+
+          <!-- Dropdown -->
+          <ul
+            x-show="open"
+            x-transition
+            @click.away="open = false"
+            role="menu"
+            aria-label="Manage Finances options"
+            class="menu"
+          >
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/add-info-icon.svg" alt="" />
+                Add info
+              </a>
+            </li>
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/edit-icon.svg" alt="" />
+                Edit
+              </a>
+            </li>
+            <li role="none">
+              <a href="#" role="menuitem" class="menu-item">
+                <img src="images/view-details-icon.svg" alt="" />
+                View Details
+              </a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="swiper swiper-social-media-posts">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide !flex lg:!grid lg:grid-cols-5 gap-2.5">
+            <div
+              class="card imaged p-6 bg-[linear-gradient(transparent,transparent,#1F1F1F),url('images/c-h-d-s-n-ronald-post.webp')]"
+            >
+              <div class="content flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2 5">
+                  <img
+                    class="w-11.25"
+                    src="images/c-r-ronald.png"
+                    alt="Ronald Richards"
+                  />
+                  <h3 class="text-xl">Ronald Richards</h3>
+                </div>
+                <img class="w-6" src="images/google-white-icon.svg" alt="" />
+              </div>
+            </div>
+
+            <div class="card p-6">
+              <p class="mb-2.5">
+                I recently had an issue with my Home Depot order, and their
+                customer service was fantastic! They resolved my problem quickly
+                and even shared helpful tips to prevent it from happening again.
+                I really appreciate their support and will definitely contact
+                them in the future!
+              </p>
+
+              <div class="flex items-center justify-between gap-2 mt-auto">
+                <div class="flex items-center gap-2 5">
+                  <img
+                    class="w-11.25"
+                    src="images/c-r-dianne.png"
+                    alt="Dianne Russell"
+                  />
+                  <h3 class="text-xl">Dianne Russell</h3>
+                </div>
+                <img
+                  class="w-6"
+                  src="images/goolge-colorfull-icon.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div
+              class="card imaged lg:col-start-3 lg:row-start-1 lg:row-end-3 p-6 bg-[linear-gradient(transparent,transparent,#1F1F1F),url('images/c-h-d-s-n-albert-post.webp')]"
+            >
+              <button class="heading space-y-2 mt-auto mx-auto">
+                <img class="w-8" src="images/play.svg" alt="play video" />
+                Video
+              </button>
+
+              <div class="content flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2 5">
+                  <img
+                    class="w-11.25"
+                    src="images/c-r-albert.png"
+                    alt="Albert Flores"
+                  />
+                  <h3 class="text-xl">Albert Flores</h3>
+                </div>
+                <img class="w-6" src="images/google-white-icon.svg" alt="" />
+              </div>
+            </div>
+
+            <div class="card p-6">
+              <p>
+                I faced an urgent issue with a product from Home Depot, and
+                their team responded right away.
+              </p>
+              <p class="mb-2.5">
+                They not only resolved the problem efficiently but also
+                explained what went wrong and how to avoid...
+                <a href="#" class="show-more">Read more</a>
+              </p>
+
+              <div class="flex items-center justify-between gap-2 mt-auto">
+                <div class="flex items-center gap-2 5">
+                  <img
+                    class="w-11.25"
+                    src="images/c-r-jenny.png"
+                    alt="Annette Black"
+                  />
+                  <h3 class="text-xl">Annette Black</h3>
+                </div>
+                <img
+                  class="w-6"
+                  src="images/goolge-colorfull-icon.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div
+              class="card imaged p-6 bg-[linear-gradient(transparent,transparent,#1F1F1F),url('images/c-h-d-s-n-guy-post.webp')]"
+            >
+              <div class="content flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2 5">
+                  <img
+                    class="w-11.25"
+                    src="images/guy-thumb.png"
+                    alt="Guy Hawkins"
+                  />
+                  <h3 class="text-xl">Guy Hawkins</h3>
+                </div>
+                <img class="w-6" src="images/google-white-icon.svg" alt="" />
+              </div>
+            </div>
+
+            <div class="card p-6">
+              <p class="mb-2.5">
+                I encountered an urgent problem with my Home Depot order, and
+                they responded without delay. They fixed the issue quickly and
+                took the time to explain what had happened and how to prevent it
+                from happening again.
+              </p>
+
+              <div class="flex items-center justify-between gap-2 mt-auto">
+                <div class="flex items-center gap-2 5">
+                  <img
+                    class="w-11.25"
+                    src="images/kathryn-thumb.png"
+                    alt="Kathryn Murphy"
+                  />
+                  <h3 class="text-xl">Kathryn Murphy</h3>
+                </div>
+                <img
+                  class="w-6"
+                  src="images/goolge-colorfull-icon.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div
+              class="card imaged p-6 bg-[linear-gradient(transparent,transparent,#1F1F1F),url('images/c-h-d-s-n-jacob-post.webp')]"
+            >
+              <div class="content flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2 5">
+                  <img
+                    class="w-11.25"
+                    src="images/c-r-jacob.png"
+                    alt="Jacob Jones"
+                  />
+                  <h3 class="text-xl">Jacob Jones</h3>
+                </div>
+                <img class="w-6" src="images/google-white-icon.svg" alt="" />
+              </div>
+            </div>
+
+            <div class="card p-6">
+              <p>
+                I had a great experience with Home Depot! They quickly resolved
+                an issue with my order and explained everything clearly.
+              </p>
+              <p class="mb-2.5">
+                They not only resolved the problem efficiently but also
+                explained what went wrong and how to avoid...
+                <a href="#" class="show-more">Read more</a>
+              </p>
+
+              <div class="flex items-center justify-between gap-2 mt-auto">
+                <div class="flex items-center gap-2 5">
+                  <img
+                    class="w-11.25"
+                    src="images/wilson-thumb.png"
+                    alt="Jenny Wilson"
+                  />
+                  <h3 class="text-xl">Jenny Wilson</h3>
+                </div>
+                <img
+                  class="w-6"
+                  src="images/goolge-colorfull-icon.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div
+              class="card imaged p-6 bg-[linear-gradient(transparent,transparent,#1F1F1F),url('images/c-h-d-s-n-raymond-post.webp')]"
+            >
+              <div class="content flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2 5">
+                  <img
+                    class="w-11.25"
+                    src="images/raymond-thumb.png"
+                    alt="Raymond Collins"
+                  />
+                  <h3 class="text-xl">Raymond Collins</h3>
+                </div>
+                <img class="w-6" src="images/google-white-icon.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-enterprise@33.3.2/dist/ag-grid-enterprise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ag-charts-enterprise@11.3.1/dist/umd/ag-charts-enterprise.js?t=1748412693015"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

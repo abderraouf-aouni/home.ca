@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Search all Toronto MLS® real estate listings for sale. Find Toronto houses, townhouses and condo homes for sale—updated daily."
+    />
+    <link rel="canonical" href="https:home.ca/" />
+    <title>Home.ca</title>
+
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <symbol id="chevron-icon" viewBox="0 0 143 143">
+        <path
+          d="M92.271 108.385C104.439 103.623 114.564 94.7647 120.9 83.3371C127.236 71.9095 129.387 58.6292 126.98 45.7861C124.574 32.943 117.761 21.3421 107.717 12.9838C97.6737 4.62551 85.0284 0.0337097 71.9618 0.000184721C58.8952 -0.0333403 46.2264 4.49351 36.1399 12.8002C26.0535 21.1068 19.1816 32.6726 16.7091 45.5032C14.2367 58.3338 16.3188 71.625 22.5963 83.0849C28.8738 94.5448 38.9532 103.455 51.0967 108.28L59.6847 86.6627C52.5742 83.8378 46.6722 78.6204 42.9965 71.9101C39.3207 65.1998 38.1016 57.4173 39.5493 49.9044C40.997 42.3916 45.0208 35.6193 50.9269 30.7554C56.8329 25.8915 64.251 23.2408 71.9021 23.2605C79.5531 23.2801 86.9575 25.9688 92.8386 30.8629C98.7196 35.7571 102.709 42.5499 104.118 50.0701C105.527 57.5903 104.268 65.3665 100.558 72.0578C96.8475 78.7491 90.9189 83.9362 83.794 86.7245L92.271 108.385Z"
+        />
+        <path
+          d="M49.3059 138.052C56.4181 141.166 64.0991 142.771 71.8633 142.765C79.6275 142.759 87.3059 141.141 94.4131 138.016L83.5688 113.359C79.8727 114.984 75.8795 115.825 71.8418 115.828C67.804 115.832 63.8095 114.997 60.1109 113.377L49.3059 138.052Z"
+        />
+      </symbol>
+    </svg>
+
+    <header
+      class="hidden lg:flex mx-auto py-1.75 px-2 md:px-8 justify-between items-center lg:max-w-[1347px]"
+    >
+      <div class="flex gap-4 items-center">
+        <button id="hamburger" class="grid space-y-1">
+          <span class="w-4.75 h-0.5 bg-muted-8"></span>
+          <span class="w-4.75 h-0.5 bg-muted-8"></span>
+          <span class="w-4.75 h-0.5 bg-muted-8"></span>
+        </button>
+        <a class="pt-1.5" href="#">
+          <img
+            class="w-27.75"
+            src="images/logo-desktop.svg"
+            alt="Home.ca logo"
+          />
+        </a>
+
+        <form action="" class="h-full">
+          <div class="h-full relative flex">
+            <input
+              id="header-search"
+              class="peer w-43.5 h-full text-sm font-semibold py-0.5 pl-2 pr-5.5 outline-secondary"
+              aria-label="Search by address"
+              title="Search by address"
+              type="text"
+              placeholder="402 Spring Gate Blvd."
+            />
+            <img
+              class="peer-focus:hidden absolute pointer-events-none top-1/2 -translate-y-1/2 right-1"
+              src="images/amplifier-icon.svg "
+              alt=""
+            />
+          </div>
+        </form>
+      </div>
+
+      <div class="flex gap-4">
+        <div
+          id="view-switch"
+          class="flex items-center rounded-full bg-third p-0.5"
+        >
+          <button
+            data-view="insights"
+            class="switch-btn-view active-tab transition-colors"
+          >
+            Insights
+          </button>
+
+          <button data-view="map" class="switch-btn-view transition-colors">
+            Map
+          </button>
+        </div>
+
+        <div class="flex-center-v gap-1">
+          <button
+            class="h-9 w-9 flex-center relative"
+            aria-label="Open messages"
+          >
+            <img class="w-4.5" src="images/messages-icon.svg" alt="" />
+            <div
+              class="w-4 h-4 flex-center absolute top-0.25 right-0.5 rounded-full bg-white"
+            >
+              <span
+                class="w-3 h-3 flex-center rounded-full bg-primary text-[0.5625rem] text-white"
+                >9</span
+              >
+            </div>
+          </button>
+
+          <button
+            class="h-9 w-9 flex-center relative"
+            aria-label="check your cart"
+          >
+            <img class="w-4.5" src="images/shopping-cart-icon.svg" alt="" />
+
+            <div
+              class="w-4 h-4 flex-center absolute top-0.25 right-0.5 rounded-full bg-white"
+            >
+              <span
+                class="w-3 h-3 flex-center rounded-full bg-primary text-[0.5625rem] text-white"
+                >9</span
+              >
+            </div>
+          </button>
+
+          <!-- User Profile Image -->
+          <button
+            class="h-9 w-9 rounded-full flex-center relative"
+            aria-label="your profile settings"
+          >
+            <img
+              class="w-7.5"
+              src="images/Profile-image.png"
+              alt="User profile"
+            />
+            <svg
+              class="absolute w-full"
+              viewBox="0 0 36 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M36 18C36 27.9411 27.9411 36 18 36C8.05887 36 0 27.9411 0 18C0 8.05887 8.05887 0 18 0C27.9411 0 36 8.05887 36 18ZM1.08 18C1.08 27.3447 8.65534 34.92 18 34.92C27.3447 34.92 34.92 27.3447 34.92 18C34.92 8.65534 27.3447 1.08 18 1.08C8.65534 1.08 1.08 8.65534 1.08 18Z"
+                fill="#F5F5F5"
+              />
+              <path
+                d="M18 0C21.6544 4.35788e-08 25.2223 1.11234 28.2293 3.18914C31.2363 5.26594 33.5399 8.2088 34.8338 11.6265L33.8238 12.0089C32.6075 8.79627 30.4421 6.02998 27.6155 4.07779C24.789 2.1256 21.4352 1.08 18 1.08V0Z"
+                fill="#FF603F"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- search-modal -->
+
+    <div
+      id="search-modal"
+      class="fixed hidden inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-start justify-center pt-5 px-5"
+      aria-hidden="true"
+    >
+      <form class="w-full max-w-[657px] mt-8 relative" action="#" method="GET">
+        <div class="relative">
+          <input
+            type="text"
+            id="search-modal-input"
+            name="q"
+            placeholder="Address, Neighborhood, City, Postal Code"
+            class="peer w-full h-16 md:h-20.5 text-sm md:text-[1.125rem] placeholder-muted-8 rounded-full pl-5 pr-15 pt-2.5 md:pr-18.5 bg-white shadow-[0_12px_35px_0_rgba(0,0,0,0.10)] border border-muted-3 focus:outline-none rounded-t-[2.4375rem] rounded-b-none border-b-0"
+          />
+
+          <button
+            class="flex w-8 h-8 absolute top-5.25 md:top-7.5 right-4.5 items-center justify-center rounded-full bg-muted-2"
+            aria-label="close"
+            id="search-modal-close"
+          >
+            <img
+              class="w-4 peer-focus:hidden"
+              src="images/close-icon.svg"
+              alt=""
+            />
+          </button>
+          <div
+            id="search-dropdown"
+            class="w-full text-left absolute z-40 top-full left-0 rounded-b-[2.4375rem] border border-muted-3 bg-white shadow-[0_12px_35px_rgba(0,0,0,0.10)]"
+          >
+            <div class="px-2.5 py-4 space-y-2.5">
+              <h3 class="text-sm px-2.5">Favorites</h3>
+              <ul class="space-y-2 mt-2">
+                <li
+                  class="flex items-center justify-between p-2 rounded-lg hover:bg-muted-2 cursor-pointer group gap-1.5"
+                >
+                  <div class="flex items-center gap-2.5">
+                    <div
+                      class="w-11.5 h-11.5 rounded-full bg-muted-2 flex justify-center items-center group-hover:bg-white"
+                    >
+                      <svg
+                        class="w-6 h-6"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M7.32295 8.4597C7.36645 8.22445 7.45405 7.9994 7.5821 7.7973C7.9755 7.1763 8.3959 6.5664 8.80705 5.97375L8.9266 5.8015C9.96295 4.30859 10.9154 2.93642 11.3696 1.67357C11.5491 1.17421 12.0936 0.873076 12.6294 1.05202C14.2488 1.59284 15.2083 3.38056 14.6914 5.05985L13.6735 8.36825H19.6641C20.7793 8.36825 21.8288 9.16125 21.9781 10.3279C22.0502 10.8921 21.9069 11.4204 21.6246 11.8465C22.1533 12.2554 22.4966 12.8935 22.4966 13.6183C22.4966 14.4978 21.9917 15.2507 21.2603 15.6188C21.4108 15.9189 21.4966 16.2579 21.4966 16.6183C21.4966 17.4666 21.0274 18.2025 20.3357 18.5855C20.424 18.791 20.479 19.0145 20.4932 19.2498C20.564 20.4487 19.522 21.3683 18.4021 21.3683H12.4966C10.4322 21.3683 8.85855 20.9778 7.79275 20.5806C7.67395 20.5363 7.46185 20.4754 7.25555 20.4149C6.5597 16.4125 6.5822 12.4657 7.32295 8.4597Z"
+                          fill="#B3B3B3"
+                          class="group-hover:fill-third"
+                        />
+                        <path
+                          d="M6.00595 21.8683H3.73137C3.08272 21.8683 2.48531 21.4503 2.29623 20.808C1.23972 17.2197 1.22947 13.5537 2.29622 9.9291C2.48518 9.28725 3.08231 8.8683 3.73137 8.8683H5.72855C5.00855 13.215 5.101 17.5079 6.00595 21.8683Z"
+                          fill="#B3B3B3"
+                          class="group-hover:fill-third"
+                        />
+                      </svg>
+                    </div>
+
+                    <div class="heading grid">
+                      <span class="text-sm">456 Thorn Avenue</span>
+                      <span class="text-xs text-muted-6"
+                        >Buffalo, NY 14223</span
+                      >
+                    </div>
+                  </div>
+
+                  <span
+                    class="text-[0.625rem] text-muted-6 pl-1.25 pr-3 py-0.5 rounded bg-muted-2 group-hover:bg-white flex items-center gap-1"
+                    ><span class="w-1.5 h-1.5 rounded-full bg-third"></span>
+                    For Sale
+                  </span>
+                </li>
+                <li
+                  class="flex items-center justify-between p-2 rounded-lg hover:bg-muted-2 cursor-pointer group gap-1.5"
+                >
+                  <div class="flex items-center gap-2.5">
+                    <div
+                      class="w-11.5 h-11.5 rounded-full bg-muted-2 flex justify-center items-center group-hover:bg-white"
+                    >
+                      <svg
+                        class="w-6 h-6"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M7.32295 8.4597C7.36645 8.22445 7.45405 7.9994 7.5821 7.7973C7.9755 7.1763 8.3959 6.5664 8.80705 5.97375L8.9266 5.8015C9.96295 4.30859 10.9154 2.93642 11.3696 1.67357C11.5491 1.17421 12.0936 0.873076 12.6294 1.05202C14.2488 1.59284 15.2083 3.38056 14.6914 5.05985L13.6735 8.36825H19.6641C20.7793 8.36825 21.8288 9.16125 21.9781 10.3279C22.0502 10.8921 21.9069 11.4204 21.6246 11.8465C22.1533 12.2554 22.4966 12.8935 22.4966 13.6183C22.4966 14.4978 21.9917 15.2507 21.2603 15.6188C21.4108 15.9189 21.4966 16.2579 21.4966 16.6183C21.4966 17.4666 21.0274 18.2025 20.3357 18.5855C20.424 18.791 20.479 19.0145 20.4932 19.2498C20.564 20.4487 19.522 21.3683 18.4021 21.3683H12.4966C10.4322 21.3683 8.85855 20.9778 7.79275 20.5806C7.67395 20.5363 7.46185 20.4754 7.25555 20.4149C6.5597 16.4125 6.5822 12.4657 7.32295 8.4597Z"
+                          fill="#B3B3B3"
+                          class="group-hover:fill-third"
+                        />
+                        <path
+                          d="M6.00595 21.8683H3.73137C3.08272 21.8683 2.48531 21.4503 2.29623 20.808C1.23972 17.2197 1.22947 13.5537 2.29622 9.9291C2.48518 9.28725 3.08231 8.8683 3.73137 8.8683H5.72855C5.00855 13.215 5.101 17.5079 6.00595 21.8683Z"
+                          fill="#B3B3B3"
+                          class="group-hover:fill-third"
+                        />
+                      </svg>
+                    </div>
+
+                    <div class="heading grid">
+                      <span class="text-sm">123 Thorn Street</span>
+                      <span class="text-xs text-muted-6"
+                        >San Diego, CA 92103</span
+                      >
+                    </div>
+                  </div>
+
+                  <span
+                    class="text-[0.625rem] text-muted-6 pl-1.25 pr-3 py-0.5 rounded bg-muted-2 group-hover:bg-white flex items-center gap-1"
+                  >
+                    <span class="w-1.5 h-1.5 rounded-full bg-eighth"></span>
+                    For Rent
+                  </span>
+                </li>
+                <li
+                  class="flex items-center justify-between p-2 rounded-lg hover:bg-muted-2 cursor-pointer group gap-1.5"
+                >
+                  <div class="flex items-center gap-2.5">
+                    <div
+                      class="w-11.5 h-11.5 rounded-full bg-muted-2 flex justify-center items-center group-hover:bg-white"
+                    >
+                      <svg
+                        class="w-6 h-6"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M7.32295 8.4597C7.36645 8.22445 7.45405 7.9994 7.5821 7.7973C7.9755 7.1763 8.3959 6.5664 8.80705 5.97375L8.9266 5.8015C9.96295 4.30859 10.9154 2.93642 11.3696 1.67357C11.5491 1.17421 12.0936 0.873076 12.6294 1.05202C14.2488 1.59284 15.2083 3.38056 14.6914 5.05985L13.6735 8.36825H19.6641C20.7793 8.36825 21.8288 9.16125 21.9781 10.3279C22.0502 10.8921 21.9069 11.4204 21.6246 11.8465C22.1533 12.2554 22.4966 12.8935 22.4966 13.6183C22.4966 14.4978 21.9917 15.2507 21.2603 15.6188C21.4108 15.9189 21.4966 16.2579 21.4966 16.6183C21.4966 17.4666 21.0274 18.2025 20.3357 18.5855C20.424 18.791 20.479 19.0145 20.4932 19.2498C20.564 20.4487 19.522 21.3683 18.4021 21.3683H12.4966C10.4322 21.3683 8.85855 20.9778 7.79275 20.5806C7.67395 20.5363 7.46185 20.4754 7.25555 20.4149C6.5597 16.4125 6.5822 12.4657 7.32295 8.4597Z"
+                          fill="#B3B3B3"
+                          class="group-hover:fill-third"
+                        />
+                        <path
+                          d="M6.00595 21.8683H3.73137C3.08272 21.8683 2.48531 21.4503 2.29623 20.808C1.23972 17.2197 1.22947 13.5537 2.29622 9.9291C2.48518 9.28725 3.08231 8.8683 3.73137 8.8683H5.72855C5.00855 13.215 5.101 17.5079 6.00595 21.8683Z"
+                          fill="#B3B3B3"
+                          class="group-hover:fill-third"
+                        />
+                      </svg>
+                    </div>
+
+                    <div class="heading grid">
+                      <span class="text-sm">789 Thornhill Road</span>
+                      <span class="text-xs text-muted-6"
+                        >Toronto, ON M4G 3V3</span
+                      >
+                    </div>
+                  </div>
+
+                  <span
+                    class="text-[0.625rem] text-muted-6 pl-1.25 pr-3 py-0.5 rounded bg-muted-2 group-hover:bg-white flex items-center gap-1"
+                  >
+                    <span class="w-1.5 h-1.5 rounded-full bg-eighth"></span>
+                    For Rent
+                  </span>
+                </li>
+              </ul>
+              <h3 class="text-sm px-2.5">Recent</h3>
+              <ul class="space-y-2 mt-2">
+                <li
+                  class="flex items-center justify-between p-2 rounded-lg hover:bg-muted-2 cursor-pointer group gap-1.5"
+                >
+                  <div class="flex items-center gap-2.5">
+                    <div
+                      class="w-11.5 h-11.5 rounded-full bg-muted-2 flex justify-center items-center group-hover:bg-white"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12.0002 1.4C10.6014 1.4002 9.21686 1.68108 7.92859 2.22602C6.64032 2.77096 5.47449 3.56887 4.50016 4.5725V2.15C4.50016 1.73579 4.16438 1.4 3.75016 1.4C3.33595 1.4 3.00016 1.73579 3.00016 2.15V7.4H8.25016C8.66438 7.4 9.00016 7.06421 9.00016 6.65C9.00016 6.23579 8.66438 5.9 8.25016 5.9H5.31016C6.71718 4.33647 8.6274 3.31515 10.7091 3.0134C12.7907 2.71166 14.9123 3.14856 16.7054 4.24823C18.4984 5.3479 19.8497 7.04086 20.5245 9.0331C21.1992 11.0253 21.1549 13.191 20.3992 15.1539C19.6434 17.1169 18.224 18.7531 16.3875 19.7785C14.5509 20.8039 12.4132 21.1536 10.3457 20.7669C8.27809 20.3803 6.41127 19.2816 5.06941 17.6618C3.88777 16.2354 3.17894 14.4843 3.02976 12.6501C2.99617 12.237 2.66372 11.9 2.24932 11.9C1.83557 11.9 1.49738 12.2358 1.52687 12.6485C1.65645 14.4617 2.25506 16.2149 3.26973 17.7335C4.42349 19.4602 6.06336 20.806 7.98199 21.6007C9.90061 22.3955 12.0118 22.6034 14.0486 22.1982C16.0854 21.7931 17.9563 20.7931 19.4248 19.3246C20.8932 17.8562 21.8933 15.9852 22.2984 13.9484C22.7036 11.9116 22.4956 9.80045 21.7009 7.88182C20.9062 5.9632 19.5604 4.32332 17.8337 3.16957C16.1069 2.01581 14.0769 1.4 12.0002 1.4Z"
+                          fill="#B3B3B3"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M12.0002 1C14.156 1 16.2634 1.63927 18.0559 2.83698C19.8484 4.03469 21.2455 5.73704 22.0704 7.72875C22.8954 9.72046 23.1113 11.9121 22.6907 14.0265C22.2701 16.1409 21.232 18.0831 19.7076 19.6075C18.1832 21.1319 16.241 22.17 14.1266 22.5906C12.0123 23.0111 9.82063 22.7953 7.82891 21.9703C5.8372 21.1453 4.13485 19.7482 2.93714 17.9557C1.88382 16.3793 1.2624 14.5593 1.12789 12.6771C1.08049 12.0138 1.6229 11.5 2.24932 11.5C2.89267 11.5 3.37969 12.0181 3.42845 12.6177C3.571 14.3703 4.24832 16.0437 5.37744 17.4067C6.65967 18.9545 8.44352 20.0043 10.4192 20.3738C12.3949 20.7432 14.4375 20.4091 16.1925 19.4293C17.9474 18.4495 19.3037 16.8859 20.0259 15.0102C20.748 13.1345 20.7904 11.0651 20.1456 9.16142C19.5008 7.25772 18.2096 5.64 16.4962 4.58921C14.7829 3.53842 12.7556 3.12093 10.7664 3.40927C9.09102 3.65212 7.53182 4.3828 6.27827 5.5H8.25016C8.88529 5.5 9.40016 6.01487 9.40016 6.65C9.40016 7.28513 8.88529 7.8 8.25016 7.8H2.60016V2.15C2.60016 1.51487 3.11504 1 3.75016 1C4.38529 1 4.90016 1.51487 4.90016 2.15V3.64525C5.7569 2.90416 6.72589 2.30045 7.77275 1.85762C9.11031 1.29184 10.5479 1.00021 12.0002 1ZM4.90016 4.18193C4.76353 4.30838 4.63014 4.43861 4.50016 4.5725V2.15C4.50016 1.73579 4.16438 1.4 3.75016 1.4C3.33595 1.4 3.00016 1.73579 3.00016 2.15V7.4H8.25016C8.66438 7.4 9.00016 7.06421 9.00016 6.65C9.00016 6.23579 8.66438 5.9 8.25016 5.9H5.31016C5.43396 5.76243 5.56166 5.62906 5.69303 5.5C7.05466 4.16231 8.81056 3.2886 10.7091 3.0134C12.7907 2.71166 14.9123 3.14856 16.7054 4.24823C18.4984 5.3479 19.8497 7.04086 20.5245 9.0331C21.1992 11.0253 21.1549 13.191 20.3992 15.1539C19.6434 17.1169 18.224 18.7531 16.3875 19.7785C14.5509 20.8039 12.4132 21.1536 10.3457 20.7669C8.27809 20.3803 6.41127 19.2816 5.06941 17.6618C3.88777 16.2354 3.17894 14.4843 3.02976 12.6501C2.99617 12.237 2.66372 11.9 2.24932 11.9C1.83557 11.9 1.49738 12.2358 1.52687 12.6485C1.65645 14.4617 2.25506 16.2149 3.26973 17.7335C4.42349 19.4602 6.06336 20.806 7.98199 21.6007C9.90061 22.3955 12.0118 22.6034 14.0486 22.1982C16.0854 21.7931 17.9563 20.7931 19.4248 19.3246C20.8932 17.8562 21.8933 15.9852 22.2984 13.9484C22.7036 11.9116 22.4956 9.80045 21.7009 7.88182C20.9062 5.9632 19.5604 4.32332 17.8337 3.16957C16.1069 2.01581 14.0769 1.4 12.0002 1.4C10.6014 1.4002 9.21686 1.68108 7.92859 2.22602C6.81218 2.69826 5.78772 3.36048 4.90016 4.18193Z"
+                          fill="#B3B3B3"
+                        />
+                      </svg>
+                    </div>
+
+                    <div class="heading grid">
+                      <span class="text-sm">123 Thorn Street</span>
+                      <span class="text-xs text-muted-6"
+                        >San Diego, CA 92103</span
+                      >
+                    </div>
+                  </div>
+
+                  <span
+                    class="text-[0.625rem] text-muted-6 pl-1.25 pr-3 py-0.5 rounded bg-muted-2 group-hover:bg-white flex items-center gap-1"
+                  >
+                    <span class="w-1.5 h-1.5 rounded-full bg-eighth"></span>
+                    For Rent
+                  </span>
+                </li>
+                <li
+                  class="flex items-center justify-between p-2 rounded-lg hover:bg-muted-2 cursor-pointer group gap-1.5"
+                >
+                  <div class="flex items-center gap-2.5">
+                    <div
+                      class="w-11.5 h-11.5 rounded-full bg-muted-2 flex justify-center items-center group-hover:bg-white"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12.0002 1.4C10.6014 1.4002 9.21686 1.68108 7.92859 2.22602C6.64032 2.77096 5.47449 3.56887 4.50016 4.5725V2.15C4.50016 1.73579 4.16438 1.4 3.75016 1.4C3.33595 1.4 3.00016 1.73579 3.00016 2.15V7.4H8.25016C8.66438 7.4 9.00016 7.06421 9.00016 6.65C9.00016 6.23579 8.66438 5.9 8.25016 5.9H5.31016C6.71718 4.33647 8.6274 3.31515 10.7091 3.0134C12.7907 2.71166 14.9123 3.14856 16.7054 4.24823C18.4984 5.3479 19.8497 7.04086 20.5245 9.0331C21.1992 11.0253 21.1549 13.191 20.3992 15.1539C19.6434 17.1169 18.224 18.7531 16.3875 19.7785C14.5509 20.8039 12.4132 21.1536 10.3457 20.7669C8.27809 20.3803 6.41127 19.2816 5.06941 17.6618C3.88777 16.2354 3.17894 14.4843 3.02976 12.6501C2.99617 12.237 2.66372 11.9 2.24932 11.9C1.83557 11.9 1.49738 12.2358 1.52687 12.6485C1.65645 14.4617 2.25506 16.2149 3.26973 17.7335C4.42349 19.4602 6.06336 20.806 7.98199 21.6007C9.90061 22.3955 12.0118 22.6034 14.0486 22.1982C16.0854 21.7931 17.9563 20.7931 19.4248 19.3246C20.8932 17.8562 21.8933 15.9852 22.2984 13.9484C22.7036 11.9116 22.4956 9.80045 21.7009 7.88182C20.9062 5.9632 19.5604 4.32332 17.8337 3.16957C16.1069 2.01581 14.0769 1.4 12.0002 1.4Z"
+                          fill="#B3B3B3"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M12.0002 1C14.156 1 16.2634 1.63927 18.0559 2.83698C19.8484 4.03469 21.2455 5.73704 22.0704 7.72875C22.8954 9.72046 23.1113 11.9121 22.6907 14.0265C22.2701 16.1409 21.232 18.0831 19.7076 19.6075C18.1832 21.1319 16.241 22.17 14.1266 22.5906C12.0123 23.0111 9.82063 22.7953 7.82891 21.9703C5.8372 21.1453 4.13485 19.7482 2.93714 17.9557C1.88382 16.3793 1.2624 14.5593 1.12789 12.6771C1.08049 12.0138 1.6229 11.5 2.24932 11.5C2.89267 11.5 3.37969 12.0181 3.42845 12.6177C3.571 14.3703 4.24832 16.0437 5.37744 17.4067C6.65967 18.9545 8.44352 20.0043 10.4192 20.3738C12.3949 20.7432 14.4375 20.4091 16.1925 19.4293C17.9474 18.4495 19.3037 16.8859 20.0259 15.0102C20.748 13.1345 20.7904 11.0651 20.1456 9.16142C19.5008 7.25772 18.2096 5.64 16.4962 4.58921C14.7829 3.53842 12.7556 3.12093 10.7664 3.40927C9.09102 3.65212 7.53182 4.3828 6.27827 5.5H8.25016C8.88529 5.5 9.40016 6.01487 9.40016 6.65C9.40016 7.28513 8.88529 7.8 8.25016 7.8H2.60016V2.15C2.60016 1.51487 3.11504 1 3.75016 1C4.38529 1 4.90016 1.51487 4.90016 2.15V3.64525C5.7569 2.90416 6.72589 2.30045 7.77275 1.85762C9.11031 1.29184 10.5479 1.00021 12.0002 1ZM4.90016 4.18193C4.76353 4.30838 4.63014 4.43861 4.50016 4.5725V2.15C4.50016 1.73579 4.16438 1.4 3.75016 1.4C3.33595 1.4 3.00016 1.73579 3.00016 2.15V7.4H8.25016C8.66438 7.4 9.00016 7.06421 9.00016 6.65C9.00016 6.23579 8.66438 5.9 8.25016 5.9H5.31016C5.43396 5.76243 5.56166 5.62906 5.69303 5.5C7.05466 4.16231 8.81056 3.2886 10.7091 3.0134C12.7907 2.71166 14.9123 3.14856 16.7054 4.24823C18.4984 5.3479 19.8497 7.04086 20.5245 9.0331C21.1992 11.0253 21.1549 13.191 20.3992 15.1539C19.6434 17.1169 18.224 18.7531 16.3875 19.7785C14.5509 20.8039 12.4132 21.1536 10.3457 20.7669C8.27809 20.3803 6.41127 19.2816 5.06941 17.6618C3.88777 16.2354 3.17894 14.4843 3.02976 12.6501C2.99617 12.237 2.66372 11.9 2.24932 11.9C1.83557 11.9 1.49738 12.2358 1.52687 12.6485C1.65645 14.4617 2.25506 16.2149 3.26973 17.7335C4.42349 19.4602 6.06336 20.806 7.98199 21.6007C9.90061 22.3955 12.0118 22.6034 14.0486 22.1982C16.0854 21.7931 17.9563 20.7931 19.4248 19.3246C20.8932 17.8562 21.8933 15.9852 22.2984 13.9484C22.7036 11.9116 22.4956 9.80045 21.7009 7.88182C20.9062 5.9632 19.5604 4.32332 17.8337 3.16957C16.1069 2.01581 14.0769 1.4 12.0002 1.4C10.6014 1.4002 9.21686 1.68108 7.92859 2.22602C6.81218 2.69826 5.78772 3.36048 4.90016 4.18193Z"
+                          fill="#B3B3B3"
+                        />
+                      </svg>
+                    </div>
+
+                    <div class="heading grid">
+                      <span class="text-sm">789 Thornhill Road</span>
+                      <span class="text-xs text-muted-6"
+                        >Toronto, ON M4G 3V3</span
+                      >
+                    </div>
+                  </div>
+
+                  <span
+                    class="text-[0.625rem] text-muted-6 pl-1.25 pr-3 py-0.5 rounded bg-muted-2 group-hover:bg-white flex items-center gap-1"
+                  >
+                    <span class="w-1.5 h-1.5 rounded-full bg-eighth"></span>
+                    For Rent
+                  </span>
+                </li>
+                <li
+                  class="flex items-center justify-between p-2 rounded-lg hover:bg-muted-2 cursor-pointer group gap-1.5"
+                >
+                  <div class="flex items-center gap-2.5">
+                    <div
+                      class="w-11.5 h-11.5 rounded-full bg-muted-2 flex justify-center items-center group-hover:bg-white"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12.0002 1.4C10.6014 1.4002 9.21686 1.68108 7.92859 2.22602C6.64032 2.77096 5.47449 3.56887 4.50016 4.5725V2.15C4.50016 1.73579 4.16438 1.4 3.75016 1.4C3.33595 1.4 3.00016 1.73579 3.00016 2.15V7.4H8.25016C8.66438 7.4 9.00016 7.06421 9.00016 6.65C9.00016 6.23579 8.66438 5.9 8.25016 5.9H5.31016C6.71718 4.33647 8.6274 3.31515 10.7091 3.0134C12.7907 2.71166 14.9123 3.14856 16.7054 4.24823C18.4984 5.3479 19.8497 7.04086 20.5245 9.0331C21.1992 11.0253 21.1549 13.191 20.3992 15.1539C19.6434 17.1169 18.224 18.7531 16.3875 19.7785C14.5509 20.8039 12.4132 21.1536 10.3457 20.7669C8.27809 20.3803 6.41127 19.2816 5.06941 17.6618C3.88777 16.2354 3.17894 14.4843 3.02976 12.6501C2.99617 12.237 2.66372 11.9 2.24932 11.9C1.83557 11.9 1.49738 12.2358 1.52687 12.6485C1.65645 14.4617 2.25506 16.2149 3.26973 17.7335C4.42349 19.4602 6.06336 20.806 7.98199 21.6007C9.90061 22.3955 12.0118 22.6034 14.0486 22.1982C16.0854 21.7931 17.9563 20.7931 19.4248 19.3246C20.8932 17.8562 21.8933 15.9852 22.2984 13.9484C22.7036 11.9116 22.4956 9.80045 21.7009 7.88182C20.9062 5.9632 19.5604 4.32332 17.8337 3.16957C16.1069 2.01581 14.0769 1.4 12.0002 1.4Z"
+                          fill="#B3B3B3"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M12.0002 1C14.156 1 16.2634 1.63927 18.0559 2.83698C19.8484 4.03469 21.2455 5.73704 22.0704 7.72875C22.8954 9.72046 23.1113 11.9121 22.6907 14.0265C22.2701 16.1409 21.232 18.0831 19.7076 19.6075C18.1832 21.1319 16.241 22.17 14.1266 22.5906C12.0123 23.0111 9.82063 22.7953 7.82891 21.9703C5.8372 21.1453 4.13485 19.7482 2.93714 17.9557C1.88382 16.3793 1.2624 14.5593 1.12789 12.6771C1.08049 12.0138 1.6229 11.5 2.24932 11.5C2.89267 11.5 3.37969 12.0181 3.42845 12.6177C3.571 14.3703 4.24832 16.0437 5.37744 17.4067C6.65967 18.9545 8.44352 20.0043 10.4192 20.3738C12.3949 20.7432 14.4375 20.4091 16.1925 19.4293C17.9474 18.4495 19.3037 16.8859 20.0259 15.0102C20.748 13.1345 20.7904 11.0651 20.1456 9.16142C19.5008 7.25772 18.2096 5.64 16.4962 4.58921C14.7829 3.53842 12.7556 3.12093 10.7664 3.40927C9.09102 3.65212 7.53182 4.3828 6.27827 5.5H8.25016C8.88529 5.5 9.40016 6.01487 9.40016 6.65C9.40016 7.28513 8.88529 7.8 8.25016 7.8H2.60016V2.15C2.60016 1.51487 3.11504 1 3.75016 1C4.38529 1 4.90016 1.51487 4.90016 2.15V3.64525C5.7569 2.90416 6.72589 2.30045 7.77275 1.85762C9.11031 1.29184 10.5479 1.00021 12.0002 1ZM4.90016 4.18193C4.76353 4.30838 4.63014 4.43861 4.50016 4.5725V2.15C4.50016 1.73579 4.16438 1.4 3.75016 1.4C3.33595 1.4 3.00016 1.73579 3.00016 2.15V7.4H8.25016C8.66438 7.4 9.00016 7.06421 9.00016 6.65C9.00016 6.23579 8.66438 5.9 8.25016 5.9H5.31016C5.43396 5.76243 5.56166 5.62906 5.69303 5.5C7.05466 4.16231 8.81056 3.2886 10.7091 3.0134C12.7907 2.71166 14.9123 3.14856 16.7054 4.24823C18.4984 5.3479 19.8497 7.04086 20.5245 9.0331C21.1992 11.0253 21.1549 13.191 20.3992 15.1539C19.6434 17.1169 18.224 18.7531 16.3875 19.7785C14.5509 20.8039 12.4132 21.1536 10.3457 20.7669C8.27809 20.3803 6.41127 19.2816 5.06941 17.6618C3.88777 16.2354 3.17894 14.4843 3.02976 12.6501C2.99617 12.237 2.66372 11.9 2.24932 11.9C1.83557 11.9 1.49738 12.2358 1.52687 12.6485C1.65645 14.4617 2.25506 16.2149 3.26973 17.7335C4.42349 19.4602 6.06336 20.806 7.98199 21.6007C9.90061 22.3955 12.0118 22.6034 14.0486 22.1982C16.0854 21.7931 17.9563 20.7931 19.4248 19.3246C20.8932 17.8562 21.8933 15.9852 22.2984 13.9484C22.7036 11.9116 22.4956 9.80045 21.7009 7.88182C20.9062 5.9632 19.5604 4.32332 17.8337 3.16957C16.1069 2.01581 14.0769 1.4 12.0002 1.4C10.6014 1.4002 9.21686 1.68108 7.92859 2.22602C6.81218 2.69826 5.78772 3.36048 4.90016 4.18193Z"
+                          fill="#B3B3B3"
+                        />
+                      </svg>
+                    </div>
+
+                    <div class="heading grid">
+                      <span class="text-sm">789 Thornhill Road</span>
+                      <span class="text-xs text-muted-6"
+                        >Toronto, ON M4G 3V3</span
+                      >
+                    </div>
+                  </div>
+
+                  <span
+                    class="text-[0.625rem] text-muted-6 pl-1.25 pr-3 py-0.5 rounded bg-muted-2 group-hover:bg-white flex items-center gap-1"
+                  >
+                    <span class="w-1.5 h-1.5 rounded-full bg-ninth"></span>
+                    Pre-Const
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- side-bar -->
+    <aside
+      id="sidebar"
+      class="hidden min-w-93.75 h-screen pt-4 px-5 pb-3.5 bg-white rounded-lg lg:flex flex-col overflow-y-auto leading-tight fixed top-0 z-999 transition-transform duration-300 -translate-x-full"
+    >
+      <header class="flex items-center justify-between">
+        <h2 class="text-2xl">Menu</h2>
+        <div class="flex items-center gap-2.75">
+          <div class="dropdown" x-data="{ open: false }">
+            <button
+              @click="open = !open"
+              @keydown.escape="open = false"
+              aria-haspopup="true"
+              :aria-expanded="open"
+              aria-label="More options for Knowing Your Home"
+              class="bg-muted-2"
+              :class="{ 'bg-muted-7': open }"
+            >
+              <img src="images/three-points-icon.svg" alt="" />
+            </button>
+
+            <!-- Dropdown -->
+            <ul
+              x-show="open"
+              x-transition
+              @click.away="open = false"
+              role="menu"
+              aria-label="Manage Finances options"
+              class="menu"
+            >
+              <li role="none">
+                <a href="#" role="menuitem" class="menu-item">
+                  <img src="images/add-info-icon.svg" alt="" />
+                  Add info
+                </a>
+              </li>
+              <li role="none">
+                <a href="#" role="menuitem" class="menu-item">
+                  <img src="images/edit-icon.svg" alt="" />
+                  Edit
+                </a>
+              </li>
+              <li role="none">
+                <a href="#" role="menuitem" class="menu-item">
+                  <img src="images/view-details-icon.svg" alt="" />
+                  View Details
+                </a>
+              </li>
+            </ul>
+          </div>
+          <button
+            aria-label="Search"
+            class="w-8 h-8 rounded-full bg-muted-2 flex-center"
+          >
+            <img class="w-5" src="images/amplifier-dark-icon.svg" alt="" />
+          </button>
+          <button
+            id="close-sidebar"
+            aria-label="Close"
+            class="w-8 h-8 rounded-full bg-muted-2 flex-center"
+          >
+            <img class="w-5" src="images/close-icon.svg" alt="" />
+          </button>
+        </div>
+      </header>
+
+      <section class="mt-6">
+        <h3 class="text-base text-muted-1">Claimed Property</h3>
+
+        <ul class="space-y-2 mt-4">
+          <li
+            class="flex items-center justify-between bg-muted-2 py-2 px-2.5 rounded-lg"
+          >
+            <div class="flex items-center gap-2.5">
+              <div class="w-11.5 h-11.5 bg-white rounded-full flex-center">
+                <svg class="chevron-icon static w-6.5 h-6.5 fill-third">
+                  <use href="#chevron-icon" />
+                </svg>
+              </div>
+
+              <div class="heading">
+                <p class="text-sm">402 Spring Gate Blvd</p>
+                <p class="text-xs text-muted-6">San Diego, CA 92003</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2.5">
+              <span
+                class="text-xs heading text-third px-2.75 py-0.75 rounded bg-fourth flex items-center gap-0.5"
+              >
+                <svg class="chevron-icon static w-2.5 h-2.5 fill-third">
+                  <use href="#chevron-icon" />
+                </svg>
+                <span>45</span>
+              </span>
+              <button
+                aria-label="Delete"
+                class="text-gray-400 hover:text-red-500"
+              >
+                <img class="w-6" src="images/delete-icon.svg" alt="" />
+              </button>
+            </div>
+          </li>
+
+          <li class="flex items-center justify-between py-2 px-2.5 rounded-lg">
+            <div class="flex items-center gap-2.5">
+              <div class="w-11.5 h-11.5 bg-muted-2 rounded-full flex-center">
+                <svg class="chevron-icon static w-6.5 h-6.5 fill-third">
+                  <use href="#chevron-icon" />
+                </svg>
+              </div>
+
+              <div class="heading">
+                <p class="text-sm">402 Spring Gate Blvd</p>
+                <p class="text-xs text-muted-6">San Diego, CA 92003</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2.5">
+              <span
+                class="text-xs heading text-third px-2.75 py-0.75 rounded bg-fourth flex items-center gap-0.5"
+              >
+                <svg class="chevron-icon static w-2.5 h-2.5 fill-third">
+                  <use href="#chevron-icon" />
+                </svg>
+                <span>24</span>
+              </span>
+              <button aria-label="Delete">
+                <img class="w-6" src="images/delete-icon.svg" alt="" />
+              </button>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="mt-4 mb-17">
+        <h2 class="text-2xl">History</h2>
+
+        <h3 class="text-base text-muted-1 mt-4">Today</h3>
+
+        <ul class="space-y-1 mt-2">
+          <li
+            class="flex items-center justify-between bg-muted-2 py-2 px-2.5 rounded-lg"
+          >
+            <span>402 Spring Gate Blvd Update</span>
+            <div class="flex items-center gap-2">
+              <button aria-label="Delete">
+                <img class="w-6" src="images/delete-icon.svg" alt="" />
+              </button>
+              <label class="map-toggle inline-flex items-center cursor-pointer">
+                <input type="checkbox" class="sr-only peer" checked />
+                <span
+                  class="w-11 h-6 bg-muted-3 peer-checked:bg-eighth rounded-full relative transition-colors before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-5 before:h-5 before:bg-muted-9 before:rounded-full peer-checked:before:translate-x-5 peer-checked:before:bg-white before:transition-transform"
+                ></span>
+              </label>
+            </div>
+          </li>
+          <li class="flex items-center justify-between py-2 px-2.5 rounded-lg">
+            <span>Vaughan, ON</span>
+            <div class="flex items-center gap-2">
+              <button aria-label="Delete">
+                <img class="w-6" src="images/delete-icon.svg" alt="" />
+              </button>
+              <label class="map-toggle inline-flex items-center cursor-pointer">
+                <input type="checkbox" class="sr-only peer" />
+                <span
+                  class="w-11 h-6 bg-muted-3 peer-checked:bg-eighth rounded-full relative transition-colors before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-5 before:h-5 before:bg-muted-9 before:rounded-full peer-checked:before:translate-x-5 peer-checked:before:bg-white before:transition-transform"
+                ></span>
+              </label>
+            </div>
+          </li>
+          <li class="flex items-center justify-between py-2 px-2.5 rounded-lg">
+            <span>Top Experts in Vaughan</span>
+            <div class="flex items-center gap-2">
+              <button aria-label="Delete">
+                <img class="w-6" src="images/delete-icon.svg" alt="" />
+              </button>
+              <label class="map-toggle inline-flex items-center cursor-pointer">
+                <input type="checkbox" class="sr-only peer" />
+                <span
+                  class="w-11 h-6 bg-muted-3 peer-checked:bg-eighth rounded-full relative transition-colors before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-5 before:h-5 before:bg-muted-9 before:rounded-full peer-checked:before:translate-x-5 peer-checked:before:bg-white before:transition-transform"
+                ></span>
+              </label>
+            </div>
+          </li>
+          <li class="flex items-center justify-between py-2 px-2.5 rounded-lg">
+            <span>Top Pizza Places in Vaughan</span>
+            <div class="flex items-center gap-2">
+              <button aria-label="Delete">
+                <img class="w-6" src="images/delete-icon.svg" alt="" />
+              </button>
+              <label class="map-toggle inline-flex items-center cursor-pointer">
+                <input type="checkbox" class="sr-only peer" />
+                <span
+                  class="w-11 h-6 bg-muted-3 peer-checked:bg-eighth rounded-full relative transition-colors before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-5 before:h-5 before:bg-muted-9 before:rounded-full peer-checked:before:translate-x-5 peer-checked:before:bg-white before:transition-transform"
+                ></span>
+              </label>
+            </div>
+          </li>
+          <li class="flex items-center justify-between py-2 px-2.5 rounded-lg">
+            <span>Alexander Mackenzie High</span>
+            <div class="flex items-center gap-2">
+              <button aria-label="Delete">
+                <img class="w-6" src="images/delete-icon.svg" alt="" />
+              </button>
+              <label class="map-toggle inline-flex items-center cursor-pointer">
+                <input type="checkbox" class="sr-only peer" />
+                <span
+                  class="w-11 h-6 bg-muted-3 peer-checked:bg-eighth rounded-full relative transition-colors before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-5 before:h-5 before:bg-muted-9 before:rounded-full peer-checked:before:translate-x-5 peer-checked:before:bg-white before:transition-transform"
+                ></span>
+              </label>
+            </div>
+          </li>
+        </ul>
+
+        <h3 class="text-base text-muted-1 pt-4 mt-4 border-t border-t-muted-3">
+          Previous 7 Days
+        </h3>
+
+        <ul class="space-y-1 mt-2">
+          <li class="flex items-center justify-between py-2 px-2.5 rounded-lg">
+            <span>Top Pizza Places in Vaughan</span>
+            <div class="flex items-center gap-2">
+              <button aria-label="Delete">
+                <img class="w-6" src="images/delete-icon.svg" alt="" />
+              </button>
+              <label class="map-toggle inline-flex items-center cursor-pointer">
+                <input type="checkbox" class="sr-only peer" />
+                <span
+                  class="w-11 h-6 bg-muted-3 peer-checked:bg-eighth rounded-full relative transition-colors before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-5 before:h-5 before:bg-muted-9 before:rounded-full peer-checked:before:translate-x-5 peer-checked:before:bg-white before:transition-transform"
+                ></span>
+              </label>
+            </div>
+          </li>
+
+          <li class="flex items-center justify-between py-2 px-2.5 rounded-lg">
+            <span>Alexander Mackenzie High</span>
+            <div class="flex items-center gap-2">
+              <button aria-label="Delete">
+                <img class="w-6" src="images/delete-icon.svg" alt="" />
+              </button>
+              <label class="map-toggle inline-flex items-center cursor-pointer">
+                <input type="checkbox" class="sr-only peer" />
+                <span
+                  class="w-11 h-6 bg-muted-3 peer-checked:bg-eighth rounded-full relative transition-colors before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-5 before:h-5 before:bg-muted-9 before:rounded-full peer-checked:before:translate-x-5 peer-checked:before:bg-white before:transition-transform"
+                ></span>
+              </label>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </aside>
+
+    <!-- Profile Section -->
+
+    <section
+      class="section-wrapper pt-5 lg:pt-8.25 flex flex-col gap-4 lg:flex-row lg:gap-12.5"
+      aria-labelledby="profile-heading"
+    >
+      <header class="space-y-2 block mb-0 lg:max-w-83.75">
+        <h2 class="text-xl py-1.5" id="profile-heading">Profile</h2>
+        <p class="text-sm text-muted-6">
+          Your profile helps us personalize your experience—from expert
+          recommendations to neighborhood insights and tailored notifications.
+        </p>
+      </header>
+
+      <form class="" action="#">
+        <div class="relative flex items-center gap-3">
+          <img
+            src="images/account-profile-image.webp"
+            alt="User avatar"
+            class="w-18.75 h-18.75 rounded-full object-cover"
+          />
+
+          <label
+            class="text-sm font-semibold text-white bg-third flex rounded px-2.25 py-2 items-center gap-1.5 cursor-pointer"
+          >
+            <input class="sr-only" type="file" />
+            <img class="uploid-icon w-4" src="images/uploid-icon.svg" alt="" />
+            Replace
+          </label>
+        </div>
+
+        <div class="grid grid-cols-2 gap-x-4 gap-y-2 mt-6">
+          <label class="flex flex-col gap-1.5">
+            <span class="text-sm font-medium text-muted-6">First Name</span>
+            <input
+              class="text-sm font-medium rounded-md border border-muted-3 py-2 px-2.5"
+              type="text"
+              value="John"
+            />
+          </label>
+
+          <label class="flex flex-col gap-1.5">
+            <span class="text-sm font-medium text-muted-6">Last Name</span>
+            <input
+              class="text-sm font-medium rounded-md border border-muted-3 py-2 px-2.5"
+              type="text"
+              value="Johnson"
+            />
+          </label>
+
+          <label class="flex flex-col gap-1.5">
+            <span class="text-sm font-medium text-muted-6">Mobile Number</span>
+            <input
+              class="text-sm font-medium rounded-md border border-muted-3 py-2 px-2.5"
+              type="tel"
+              value="(416) 555-0199"
+            />
+          </label>
+
+          <label class="flex flex-col gap-1.5">
+            <span class="text-sm font-medium text-muted-6">Cell</span>
+            <input
+              class="text-sm font-medium rounded-md border border-muted-3 py-2 px-2.5"
+              type="tel"
+              value="(416) 555-0199"
+            />
+          </label>
+
+          <label class="flex flex-col gap-1.5">
+            <span class="text-sm font-medium text-muted-6">Email</span>
+            <input
+              class="text-sm font-medium rounded-md border border-muted-3 py-2 px-2.5"
+              type="email"
+              value="email@gmail.com"
+            />
+          </label>
+
+          <div class="relative flex flex-col gap-1.5">
+            <span class="text-sm font-medium text-muted-6">Password</span>
+            <div class="flex gap-2">
+              <input
+                class="w-full flex-1 text-sm font-medium text-muted-6 rounded-md border border-muted-3 py-2 px-2.5 focus:outline-0"
+                type="password"
+                value="********"
+                readonly
+              />
+              <button
+                class="py-2 text-sm font-semibold text-third px-1.5 lg:px-3"
+              >
+                <img
+                  class="w-3 lg:hidden"
+                  src="images/edit-icon-black.svg"
+                  alt=""
+                />
+                <span class="hidden lg:inline">Change</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="text-sm font-semibold text-white bg-third px-18.25 py-2 rounded mt-6"
+        >
+          Save
+        </button>
+      </form>
+    </section>
+
+    <!-- Profile Section -->
+
+    <section
+      class="section-wrapper pt-5 lg:pt-8.25 flex flex-col gap-4 lg:flex-row lg:gap-12.5"
+      aria-labelledby="profile-heading"
+    >
+      <header class="space-y-2 block mb-0 lg:max-w-83.75">
+        <h2 class="text-xl py-1.5" id="profile-heading">Profile</h2>
+        <p class="text-sm text-muted-6">
+          Your profile helps us personalize your experience—from expert
+          recommendations to neighborhood insights and tailored notifications.
+        </p>
+      </header>
+
+      <form class="" action="#">
+        <div class="relative flex items-center gap-3">
+          <img
+            src="images/account-profile-image.webp"
+            alt="User avatar"
+            class="w-18.75 h-18.75 rounded-full object-cover"
+          />
+
+          <label
+            class="text-sm font-semibold text-white bg-third flex rounded px-2.25 py-2 items-center gap-1.5 cursor-pointer"
+          >
+            <input class="sr-only" type="file" />
+            <img class="uploid-icon w-4" src="images/uploid-icon.svg" alt="" />
+            Replace
+          </label>
+        </div>
+
+        <div class="grid grid-cols-2 gap-x-4 gap-y-2 mt-6">
+          <label class="flex flex-col gap-1.5">
+            <span class="text-sm font-medium text-muted-6">First Name</span>
+            <input
+              class="text-sm font-medium rounded-md border border-muted-3 py-2 px-2.5"
+              type="text"
+              value="John"
+            />
+          </label>
+
+          <label class="flex flex-col gap-1.5">
+            <span class="text-sm font-medium text-muted-6">Last Name</span>
+            <input
+              class="text-sm font-medium rounded-md border border-muted-3 py-2 px-2.5"
+              type="text"
+              value="Johnson"
+            />
+          </label>
+
+          <label class="flex flex-col gap-1.5">
+            <span class="text-sm font-medium text-muted-6">Mobile Number</span>
+            <input
+              class="text-sm font-medium rounded-md border border-muted-3 py-2 px-2.5"
+              type="tel"
+              value="(416) 555-0199"
+            />
+          </label>
+
+          <label class="flex flex-col gap-1.5">
+            <span class="text-sm font-medium text-muted-6">Cell</span>
+            <input
+              class="text-sm font-medium rounded-md border border-muted-3 py-2 px-2.5"
+              type="tel"
+              value="(416) 555-0199"
+            />
+          </label>
+
+          <label class="flex flex-col gap-1.5">
+            <span class="text-sm font-medium text-muted-6">Email</span>
+            <input
+              class="text-sm font-medium rounded-md border border-muted-3 py-2 px-2.5"
+              type="email"
+              value="email@gmail.com"
+            />
+          </label>
+
+          <div class="relative flex flex-col gap-1.5 justify-end">
+            <div class="flex gap-2">
+              <button
+                class="py-2 text-sm font-semibold text-third px-1.5 lg:px-3"
+              >
+                Setup Password
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="text-sm font-semibold text-white bg-third px-18.25 py-2 rounded mt-6"
+        >
+          Save
+        </button>
+      </form>
+    </section>
+
+    <hr class="separate-line mt-6 lg:mt-12" />
+
+    <!-- single-sign-on Section -->
+
+    <section
+      class="section-wrapper pt-6 lg:pt-12 flex flex-col gap-4 lg:flex-row lg:gap-12.5"
+      aria-labelledby="single-sign-on-heading"
+    >
+      <header class="space-y-2 block mb-0 lg:max-w-83.75">
+        <h2 class="text-xl py-1.5" id="single-sign-on-heading">
+          Single Sign On
+        </h2>
+        <p class="text-sm text-muted-6">
+          Easily connect your Google, Apple, or Microsoft account for quick and
+          secure access to Home.ca.
+        </p>
+      </header>
+
+      <ul class="divide-y divide-muted-3 lg:flex-1">
+        <li class="flex items-start lg:items-center gap-4 pb-4">
+          <img src="images/google-icon-account.svg" alt="" class="w-6" />
+
+          <div class="flex-1 space-y-1">
+            <h3 class="text-base lg:text-lg">Google</h3>
+            <p class="text-sm text-muted-6">
+              You can log in with your Google account (xyz@gmail.com)
+            </p>
+          </div>
+
+          <label class="flex items-center cursor-pointer">
+            <input type="checkbox" class="sr-only peer" checked="" />
+            <span
+              class="w-11 h-6 bg-muted-3 peer-checked:bg-eighth rounded-full relative transition-colors before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-5 before:h-5 before:bg-muted-9 before:rounded-full peer-checked:before:translate-x-5 peer-checked:before:bg-white before:transition-transform"
+            ></span>
+          </label>
+        </li>
+        <li class="flex items-start lg:items-center gap-4 py-4">
+          <img class="w-6" src="images/apple-dark-icon-account.svg" alt="" />
+
+          <div class="flex-1 space-y-1">
+            <h3 class="text-base lg:text-lg">Apple</h3>
+            <p class="text-sm text-muted-6">Click to enable</p>
+          </div>
+
+          <label class="flex items-center cursor-pointer">
+            <input type="checkbox" class="sr-only peer" />
+            <span
+              class="w-11 h-6 bg-muted-3 peer-checked:bg-eighth rounded-full relative transition-colors before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-5 before:h-5 before:bg-muted-9 before:rounded-full peer-checked:before:translate-x-5 peer-checked:before:bg-white before:transition-transform"
+            ></span>
+          </label>
+        </li>
+        <li class="flex items-start lg:items-center gap-4 pt-4">
+          <img src="images/microsoft-icon-account.svg" alt="" class="w-6" />
+
+          <div class="flex-1 space-y-1">
+            <h3 class="text-base lg:text-lg">Microsoft</h3>
+            <p class="text-sm text-muted-6">Click to enable</p>
+          </div>
+
+          <label class="flex items-center cursor-pointer">
+            <input type="checkbox" class="sr-only peer" />
+            <span
+              class="w-11 h-6 bg-muted-3 peer-checked:bg-eighth rounded-full relative transition-colors before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-5 before:h-5 before:bg-muted-9 before:rounded-full peer-checked:before:translate-x-5 peer-checked:before:bg-white before:transition-transform"
+            ></span>
+          </label>
+        </li>
+      </ul>
+    </section>
+
+    <hr class="separate-line mt-6 lg:mt-12" />
+
+    <!-- payment-methods Section Empty -->
+
+    <section
+      class="section-wrapper pt-6 lg:pt-12 flex flex-col gap-4 lg:flex-row lg:gap-12.5"
+      aria-labelledby="payment-methods-heading"
+    >
+      <header class="space-y-2 block mb-0 lg:max-w-83.75">
+        <h2 class="text-xl py-1.5" id="payment-methods-heading">
+          Payment Methods
+        </h2>
+        <p class="text-sm text-muted-6">
+          Securely store and manage your preferred payment methods to book
+          services, purchase recommendations, or activate premium features.
+        </p>
+      </header>
+
+      <div
+        class="rounded-md bg-muted-2 lg:flex-1 p-6 flex flex-col items-center text-center"
+      >
+        <div class="flex gap-1.75">
+          <span class="bg-white rounded-lg p-2.5">
+            <img class="w-11" src="images/visa-logo.svg" alt="Visa logo" />
+          </span>
+          <span class="bg-white rounded-lg p-2.5">
+            <img
+              class="w-11"
+              src="images/master-card-logo.svg"
+              alt="Mastercard logo"
+            />
+          </span>
+          <span class="bg-white rounded-lg p-2.5">
+            <img class="w-11" src="images/paypal-logo.svg" alt="Visa logo" />
+          </span>
+        </div>
+        <h3 class="mt-6">No payment methods added</h3>
+        <p class="text-sm text-muted-6 mt-2">
+          Let’s get you set up so you’re ready to roll — add a payment method
+          now!
+        </p>
+        <button
+          type="button"
+          class="text-sm font-semibold text-white flex items-center gap-1.5 rounded bg-third px-6.25 py-2 mt-2"
+        >
+          <img class="w-4" src="images/plus-icon-white.svg" alt="" />
+          Add new card
+        </button>
+      </div>
+    </section>
+
+    <hr class="separate-line mt-6 lg:mt-12" />
+
+    <!-- payment-methods Section -->
+
+    <section
+      class="section-wrapper pt-6 lg:pt-12 flex flex-col gap-4 lg:flex-row lg:gap-12.5"
+      aria-labelledby="payment-methods-heading"
+    >
+      <header class="space-y-2 block mb-0 lg:max-w-83.75">
+        <h2 class="text-xl py-1.5" id="payment-methods-heading">
+          Payment Methods
+        </h2>
+        <p class="text-sm text-muted-6">
+          Securely store and manage your preferred payment methods to book
+          services, purchase recommendations, or activate premium features.
+        </p>
+      </header>
+
+      <div class="space-y-2 lg:flex-1">
+        <ul class="space-y-2">
+          <li>
+            <label
+              class="relative flex items-center p-2.5 cursor-pointer rounded"
+            >
+              <input type="radio" name="payment" class="sr-only peer" checked />
+              <span
+                class="w-full h-full absolute top-0 left-0 rounded-[inherit] bg-muted-2 peer-checked:bg-transparent peer-checked:border peer-checked:border-third pee z-0"
+              ></span>
+              <span
+                class="w-6 h-6 rounded-full border-2 border-muted-7 peer-checked:border-6 peer-checked:border-eighth relative"
+              ></span>
+
+              <img
+                class="w-11 ml-2 relative"
+                src="images/visa-logo.svg"
+                alt="Visa logo"
+              />
+              <span class="font-medium ml-4 relative">***** 2334</span>
+              <div class="dropdown ml-auto" x-data="{ open: false }">
+                <button
+                  @click="open = !open"
+                  @keydown.escape="open = false"
+                  aria-haspopup="true"
+                  :aria-expanded="open"
+                  aria-label="More options for Knowing Your Home"
+                  :class="{ 'bg-muted-7': open }"
+                >
+                  <img src="images/three-points-icon.svg" alt="" />
+                </button>
+
+                <!-- Dropdown -->
+                <ul
+                  x-show="open"
+                  x-transition
+                  @click.away="open = false"
+                  role="menu"
+                  aria-label="Manage Finances options"
+                  class="menu"
+                >
+                  <li role="none">
+                    <a href="#" role="menuitem" class="menu-item">
+                      <img src="images/add-info-icon.svg" alt="" />
+                      Add info
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a href="#" role="menuitem" class="menu-item">
+                      <img src="images/edit-icon.svg" alt="" />
+                      Edit
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a href="#" role="menuitem" class="menu-item">
+                      <img src="images/view-details-icon.svg" alt="" />
+                      View Details
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </label>
+          </li>
+          <li>
+            <label
+              class="relative flex items-center p-2.5 cursor-pointer rounded"
+            >
+              <input type="radio" name="payment" class="sr-only peer" />
+              <span
+                class="w-full h-full absolute top-0 left-0 rounded-[inherit] bg-muted-2 peer-checked:bg-transparent peer-checked:border peer-checked:border-third pee z-0"
+              ></span>
+              <span
+                class="w-6 h-6 rounded-full border-2 border-muted-7 peer-checked:border-6 peer-checked:border-eighth relative"
+              ></span>
+
+              <img
+                class="w-11 ml-2 relative"
+                src="images/master-card-logo.svg"
+                alt="Mastercard logo"
+              />
+              <span class="font-medium ml-4 relative">***** 3774</span>
+              <div class="dropdown ml-auto" x-data="{ open: false }">
+                <button
+                  @click="open = !open"
+                  @keydown.escape="open = false"
+                  aria-haspopup="true"
+                  :aria-expanded="open"
+                  aria-label="More options for Knowing Your Home"
+                  :class="{ 'bg-muted-7': open }"
+                >
+                  <img src="images/three-points-icon.svg" alt="" />
+                </button>
+
+                <!-- Dropdown -->
+                <ul
+                  x-show="open"
+                  x-transition
+                  @click.away="open = false"
+                  role="menu"
+                  aria-label="Manage Finances options"
+                  class="menu"
+                >
+                  <li role="none">
+                    <a href="#" role="menuitem" class="menu-item">
+                      <img src="images/add-info-icon.svg" alt="" />
+                      Add info
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a href="#" role="menuitem" class="menu-item">
+                      <img src="images/edit-icon.svg" alt="" />
+                      Edit
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a href="#" role="menuitem" class="menu-item">
+                      <img src="images/view-details-icon.svg" alt="" />
+                      View Details
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </label>
+          </li>
+          <li>
+            <label
+              class="relative flex items-center p-2.5 cursor-pointer rounded"
+            >
+              <input type="radio" name="payment" class="sr-only peer" />
+              <span
+                class="w-full h-full absolute top-0 left-0 rounded-[inherit] bg-muted-2 peer-checked:bg-transparent peer-checked:border peer-checked:border-third pee z-0"
+              ></span>
+              <span
+                class="w-6 h-6 rounded-full border-2 border-muted-7 peer-checked:border-6 peer-checked:border-eighth relative"
+              ></span>
+
+              <img
+                class="w-11 ml-2 relative"
+                src="images/paypal-logo.svg"
+                alt="Visa logo"
+              />
+              <span class="font-medium ml-4 relative">***** 2334</span>
+              <div class="dropdown ml-auto" x-data="{ open: false }">
+                <button
+                  @click="open = !open"
+                  @keydown.escape="open = false"
+                  aria-haspopup="true"
+                  :aria-expanded="open"
+                  aria-label="More options for Knowing Your Home"
+                  :class="{ 'bg-muted-7': open }"
+                >
+                  <img src="images/three-points-icon.svg" alt="" />
+                </button>
+
+                <!-- Dropdown -->
+                <ul
+                  x-show="open"
+                  x-transition
+                  @click.away="open = false"
+                  role="menu"
+                  aria-label="Manage Finances options"
+                  class="menu"
+                >
+                  <li role="none">
+                    <a href="#" role="menuitem" class="menu-item">
+                      <img src="images/add-info-icon.svg" alt="" />
+                      Add info
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a href="#" role="menuitem" class="menu-item">
+                      <img src="images/edit-icon.svg" alt="" />
+                      Edit
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a href="#" role="menuitem" class="menu-item">
+                      <img src="images/view-details-icon.svg" alt="" />
+                      View Details
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </label>
+          </li>
+        </ul>
+
+        <button
+          type="button"
+          class="text-sm font-semibold text-white ml-auto flex items-center gap-1.5 rounded bg-third px-6.25 py-2"
+        >
+          <img class="w-4" src="images/plus-icon-white.svg" alt="" />
+          Add new card
+        </button>
+      </div>
+    </section>
+
+    <!-- recent-transactions Section -->
+
+    <section
+      class="section-wrapper pt-6 lg:pt-12 flex flex-col gap-4 lg:flex-row lg:gap-12.5"
+      aria-labelledby="recent-transactions-heading"
+    >
+      <header class="space-y-2 block mb-0 lg:max-w-83.75">
+        <h2 class="text-xl py-1.5" id="recent-transactions-heading">
+          Recent Transactions
+        </h2>
+        <p class="text-sm text-muted-6">
+          Get visibility into past services, upcoming payments, and completed
+          jobs—so you stay on top of your home’s health and budget.
+        </p>
+      </header>
+      <div
+        class="w-full recent-transactions-grid"
+        id="recentTransactionsGrid"
+      ></div>
+    </section>
+
+    <hr class="separate-line mt-6 lg:mt-12" />
+
+    <!-- notifications Section -->
+
+    <section
+      class="section-wrapper pt-6 lg:pt-12 flex flex-col gap-4 lg:flex-row lg:gap-12.5"
+      aria-labelledby="notifications-heading"
+    >
+      <header class="space-y-2 block mb-0 lg:max-w-83.75">
+        <h2 class="text-xl py-1.5" id="notifications-heading">Notifications</h2>
+        <p class="text-sm text-muted-6">
+          Choose how and when you get updates—from appointment reminders and
+          expert replies to new messages and marketplace activity.
+        </p>
+      </header>
+
+      <ul class="divide-y divide-muted-3 lg:flex-1">
+        <li class="flex items-start flex-wrap lg:items-center gap-4 pb-4">
+          <img
+            src="images/homeca-notifications-icon-account.svg"
+            alt=""
+            class="w-6"
+          />
+
+          <div class="flex-1 space-y-1">
+            <h3 class="text-base lg:text-lg">Home.ca Notifications</h3>
+            <p class="text-sm text-muted-6">Schedule appointments with ease</p>
+          </div>
+
+          <div
+            x-data="{ open:false, value:'Daily', options:['Daily','Weekly','Monthly','Yearly'], highlight:0 }"
+            class="relative w-full ml-10 md:w-27.75"
+          >
+            <!-- Trigger ---------------------------------------------------- -->
+            <button
+              @click="open = !open; if(open) $nextTick(() => $refs.list.focus())"
+              @keydown.arrow-down.prevent="open = true; $nextTick(() => $refs.list.focus())"
+              class="text-sm font-medium flex justify-between items-center w-full h-8 px-2.5 rounded border border-muted-3"
+            >
+              <span x-text="value"></span>
+              <img class="w-1.5" src="images/dropdown-arrow.svg" alt="" />
+            </button>
+
+            <!-- Option list ------------------------------------------------ -->
+            <ul
+              x-show="open"
+              x-ref="list"
+              tabindex="-1"
+              @click.away="open=false; highlight=0"
+              @keydown.escape.window="open=false; highlight=0"
+              @keydown.arrow-down.prevent="highlight = (highlight + 1) %
+              options.length"
+              @keydown.arrow-up.prevent="highlight = (highlight
+              - 1 + options.length) % options.length"
+              @keydown.enter.prevent="value = options[highlight]; open=false"
+              class="absolute z-10 mt-1 w-full bg-white border border-gray-300 rounded shadow-sm text-sm divide-y divide-gray-200 outline-none"
+            >
+              <template x-for="(opt,idx) in options" :key="idx">
+                <li>
+                  <button
+                    @click="value = opt; open = false; highlight = idx"
+                    @mouseenter="highlight = idx"
+                    :class="[
+            'w-full text-left px-3 py-2',
+            highlight === idx ? 'bg-gray-100' : ''
+          ]"
+                    x-text="opt"
+                  ></button>
+                </li>
+              </template>
+            </ul>
+          </div>
+        </li>
+        <li class="flex items-start lg:items-center gap-4 py-4">
+          <img
+            class="w-6"
+            src="images/experts-Places-notifications-icon-account.svg"
+            alt=""
+          />
+
+          <div class="flex-1 space-y-1">
+            <h3 class="text-base lg:text-lg">Experts & Places Notifications</h3>
+            <p class="text-sm text-muted-6">
+              Get notified through Whats App when there is a new message from
+              Home.ca
+            </p>
+          </div>
+
+          <label class="flex items-center cursor-pointer">
+            <input type="checkbox" class="sr-only peer" checked />
+            <span
+              class="w-11 h-6 bg-muted-3 peer-checked:bg-eighth rounded-full relative transition-colors before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-5 before:h-5 before:bg-muted-9 before:rounded-full peer-checked:before:translate-x-5 peer-checked:before:bg-white before:transition-transform"
+            ></span>
+          </label>
+        </li>
+        <li class="flex items-start lg:items-center gap-4 py-4">
+          <img
+            class="w-6"
+            src="images/user-comments-forum-icon-account.svg"
+            alt=""
+          />
+
+          <div class="flex-1 space-y-1">
+            <h3 class="text-base lg:text-lg">
+              User Comments & Forum Discussions
+            </h3>
+            <p class="text-sm text-muted-6">
+              Get notified through Whats App when there is a new message from
+              Home.ca
+            </p>
+          </div>
+
+          <label class="flex items-center cursor-pointer">
+            <input type="checkbox" class="sr-only peer" checked />
+            <span
+              class="w-11 h-6 bg-muted-3 peer-checked:bg-eighth rounded-full relative transition-colors before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-5 before:h-5 before:bg-muted-9 before:rounded-full peer-checked:before:translate-x-5 peer-checked:before:bg-white before:transition-transform"
+            ></span>
+          </label>
+        </li>
+      </ul>
+    </section>
+
+    <hr class="separate-line mt-6 lg:mt-12" />
+
+    <!-- integrations Section -->
+
+    <section
+      class="section-wrapper pt-6 lg:pt-12 flex flex-col gap-4 lg:flex-row lg:gap-12.5"
+      aria-labelledby="integrations-heading"
+    >
+      <header class="space-y-2 block mb-0 lg:max-w-83.75">
+        <h2 class="text-xl py-1.5" id="integrations-heading">Integrations</h2>
+        <p class="text-sm text-muted-6">
+          Sync with Google Calendar to manage appointments or connect WhatsApp
+          for real-time alerts from your everything home app.
+        </p>
+      </header>
+
+      <ul class="divide-y divide-muted-3 lg:flex-1">
+        <li class="flex items-start lg:items-center gap-4 pb-4">
+          <img
+            src="images/google-calendar-icon-account.svg"
+            alt=""
+            class="w-6"
+          />
+
+          <div class="flex-1 space-y-1">
+            <h3 class="text-base lg:text-lg">Google Calendar</h3>
+            <p class="text-sm text-muted-6">Schedule appointments with ease</p>
+          </div>
+
+          <label class="flex items-center cursor-pointer">
+            <input type="checkbox" class="sr-only peer" checked="" />
+            <span
+              class="w-11 h-6 bg-muted-3 peer-checked:bg-eighth rounded-full relative transition-colors before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-5 before:h-5 before:bg-muted-9 before:rounded-full peer-checked:before:translate-x-5 peer-checked:before:bg-white before:transition-transform"
+            ></span>
+          </label>
+        </li>
+        <li class="flex items-start lg:items-center gap-4 py-4">
+          <img class="w-6" src="images/whatsApp-icon-account.svg" alt="" />
+
+          <div class="flex-1 space-y-1">
+            <h3 class="text-base lg:text-lg">Whats App</h3>
+            <p class="text-sm text-muted-6">
+              Get notified through Whats App when there is a new message from
+              Home.ca
+            </p>
+          </div>
+
+          <label class="flex items-center cursor-pointer">
+            <input type="checkbox" class="sr-only peer" />
+            <span
+              class="w-11 h-6 bg-muted-3 peer-checked:bg-eighth rounded-full relative transition-colors before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-5 before:h-5 before:bg-muted-9 before:rounded-full peer-checked:before:translate-x-5 peer-checked:before:bg-white before:transition-transform"
+            ></span>
+          </label>
+        </li>
+      </ul>
+    </section>
+
+    <hr class="separate-line mt-6 lg:mt-12" />
+
+    <!-- deactivate Section -->
+
+    <section
+      x-data="{ open: false }"
+      class="section-wrapper pt-6 lg:pt-12"
+      aria-labelledby="deactivate-heading"
+    >
+      <div class="bg-twelvth rounded-md p-4">
+        <div
+          class="flex flex-col items-start gap-4 lg:flex-row lg:items-center lg:justify-between"
+        >
+          <header class="space-y-2 block mb-0 lg:max-w-83.75">
+            <h2 class="text-xl py-1.5" id="deactivate-heading">Deactivate</h2>
+            <p class="text-sm text-muted-6">
+              Deleting your account will permanently erase your settings, saved
+              data, and history across Home.ca. We hope to see you back soon
+            </p>
+          </header>
+
+          <button
+            @click="open = true"
+            class="text-sm font-semibold text-third py-2 px-4"
+          >
+            Deactivate&nbsp;Account
+          </button>
+        </div>
+
+        <div
+          x-show="open"
+          x-transition
+          class="rounded-lg bg-white p-4 space-y-4 mt-4"
+        >
+          <div>
+            <h3>Are you sure?</h3>
+            <ul class="text-sm text-muted-6 mt-3 list-disc space-y-1 pl-5">
+              <li>This action is permanent and can’t be reversed.</li>
+              <li>Your account data will be removed.</li>
+              <li>
+                To use the service again, you’ll need to create a new account.
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <label for="deactivate-reason" class="text-xl heading block"
+              >Reason</label
+            >
+            <textarea
+              id="deactivate-reason"
+              rows="3"
+              class="w-full text-sm font-medium rounded-md border border-muted-3 bg-white p-2.5 mt-1.5"
+              placeholder="Let us know why you’re leaving (optional)…"
+            ></textarea>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button
+              class="text-sm font-semibold text-white rounded bg-third py-2 flex-1 min-[500px]:flex-initial min-[500px]:w-35"
+            >
+              Deactivate
+            </button>
+            <button
+              @click="open = false"
+              class="text-sm font-semibold rounded border border-muted-7 bg-white py-2 flex-1 min-[500px]:flex-initial min-[500px]:w-35"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-enterprise@33.3.2/dist/ag-grid-enterprise.min.js"></script>
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <script src="main.js"></script>
+  </body>
+</html>
