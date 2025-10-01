@@ -4350,7 +4350,7 @@ function initUtilityCosts() {
 
 
 
-function initFlipCards() {
+function topHomeExpertCardClicks() {
   // Detect if device is touch-enabled
   const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
   
@@ -4401,12 +4401,13 @@ function initFlipCards() {
           });
         }
       });
-    } 
+    } else {
+      // Desktop: Keep hover behavior (CSS handles this)
+      // No JavaScript needed for desktop
+    }
   });
 }
 
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', initFlipCards);
 
 
 function initTriggerZoningUsage() {
