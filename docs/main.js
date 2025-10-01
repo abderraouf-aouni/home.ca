@@ -36,9 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initrankingCityGrid();
   initMonthlyCostsOverviewGridChart();
   initInsuranceComparisonGrid();
-  initUtilityCostsGrid();
+  initUtilityCosts()
   recentTransactionsGrid();
-  initUtilityCostsChart();
   topHomeExpertCardClicks();
   initTriggerZoningUsage();
   initSeeMoreTables();
@@ -803,6 +802,7 @@ function initSwipers() {
       selector: ".swiper-manage-finances",
       options: {
         slidesPerView: "auto",
+        // slidesOffsetBefore: 98,
         mousewheel: { forceToAxis: true },
         pagination: { el: ".swiper-pagination" },
         navigation: {
@@ -1620,11 +1620,6 @@ function initForecastChart() {
   const container = document.getElementById("lineChart");
   if (!container) return;
 
-  const banner = document.getElementById("forecastBanner");
-  const bannerValue = banner?.querySelector("[data-value]");
-  const bannerYear = banner?.querySelector("[data-year]");
-  const bannerDelta = banner?.querySelector("[data-delta]");
-
   const { AgCharts } = agCharts;
 
   const getSizes = () => {
@@ -1653,27 +1648,9 @@ function initForecastChart() {
     { year: 2027, revenue: 1200000 },
     { year: 2029, revenue: 2100000 },
   ];
+
   const actualData = fullData.filter((d) => d.year <= 2025);
-  // keep 2025 in to draw a continuous dashed line from 2025→…
   const forecastData = fullData.filter((d) => d.year >= 2025);
-
-  function setBanner(datum) {
-    if (!banner) return;
-    if (bannerValue) bannerValue.textContent = fmtCompactUSD(datum.revenue);
-    if (bannerYear) bannerYear.textContent = datum.year;
-
-    if (bannerDelta) {
-      const i = fullData.findIndex((x) => x.year === datum.year);
-      const prev = i > 0 ? fullData[i - 1].revenue : null;
-      if (prev != null && isFinite(prev) && prev !== 0) {
-        const pct = Math.round(((datum.revenue - prev) / prev) * 100);
-        bannerDelta.textContent = (pct >= 0 ? "+" : "") + pct + "%";
-      }
-    }
-  }
-
-  let lastHovered = fullData[fullData.length - 1];
-  setBanner(lastHovered);
 
   let chart;
   function render() {
@@ -1691,31 +1668,24 @@ function initForecastChart() {
         stroke: "white",
         strokeWidth: 1,
       },
-      // labels over markers (like Figma)
       label: {
         enabled: true,
         fontFamily: "Alber Sans",
         fontSize: sizes.labelFs,
         fontWeight: 600,
-        padding: 6, // nudge up from marker
+        padding: 6,
         formatter: ({ datum, yKey }) => fmtCompactUSD(datum[yKey]),
       },
-      tooltip: {
-        renderer: ({ datum }) => {
-          lastHovered = datum;
-          setBanner(datum);
-          return ""; // suppress default tooltip bubble
-        },
-      },
+      // No tooltip & no renderer => nothing updates on hover
+      tooltip: { enabled: false },
     };
 
     const options = {
       container,
       data: fullData,
       padding: { top: 8, right: 18, bottom: 0, left: 18 },
-      tooltip: { class: "banner-proxy", range: Infinity, delay: 0 },
+      tooltip: { enabled: false }, 
       series: [
-        // Solid (actuals)
         {
           ...baseSeries,
           data: actualData,
@@ -1723,7 +1693,6 @@ function initForecastChart() {
           marker: { ...baseSeries.marker, fill: "#FF603F" },
           label: { ...baseSeries.label, color: "#9E9E9E", fontSize: 12 },
         },
-        // Dashed (forecast)
         {
           ...baseSeries,
           data: forecastData,
@@ -1731,11 +1700,10 @@ function initForecastChart() {
           lineDash: [6, 4],
           marker: { ...baseSeries.marker, fill: "#949494" },
           label: { ...baseSeries.label, color: "#9E9E9E", fontSize: 12 },
-          // hide marker/label at the first forecast point (year 2025) to avoid double label
           itemStyler: ({ datumIndex }) =>
-    datumIndex === 0
-      ? { marker: { enabled: false }, label: { enabled: false } }
-      : null,
+            datumIndex === 0
+              ? { marker: { enabled: false }, label: { enabled: false } }
+              : null,
         },
       ],
       axes: [
@@ -1765,6 +1733,7 @@ function initForecastChart() {
   render();
   new ResizeObserver(render).observe(container);
 }
+
 
 
 function initComprarablePropertiesGrid() {
@@ -4211,47 +4180,28 @@ function recentTransactionsGrid() {
 const UtilityCosts = (() => {
   const months = ["Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec","Jan","Feb"];
   const dataByType = {
-    "Total Selected": [20,40,55,60,60,60,51,70,77,88,99,121],
     "Electricity":    [12,18,22,24,26,27,25,30,32,34,36,40],
     "Internet & Cable":[30,30,31,31,32,32,32,33,33,34,35,36],
     "Water":          [18,20,21,21,22,22,21,22,23,24,25,26],
     "Parking":        [40,45,48,50,50,50,45,48,50,54,58,62],
+    "Total Selected": [20,40,55,60,60,60,51,70,77,88,99,121],
   };
 
   const makeSeries = (vals) =>
     months.map((m, i) => ({ month: m, value: vals[i], date: `${m} 01` }));
 
-  const getSeriesFor = (type) => makeSeries(dataByType[type] ?? dataByType["Total Selected"]);
+  const getSeriesFor = (type) => makeSeries(dataByType[type] ?? dataByType["Electricity"]);
 
   let chart = null;
-  let lastHovered = null;
-  let banner, bannerValue, bannerMonth;
 
-  function setBanner(datum) {
-    if (!banner || !datum) return;
-    if (bannerValue) bannerValue.textContent = `$${datum.value}/m`;
-    if (bannerMonth) bannerMonth.textContent = datum.month;
-  }
-
-  function initBanner() {
-    banner =
-      document.getElementById("utilityCoststBanner") ||
-      document.getElementById("utilityCostsBanner");
-    bannerValue = banner?.querySelector("[data-value]") || null;
-    bannerMonth = banner?.querySelector("[data-year]") || null;
-  }
-
-  function createChart(initialType = "Total Selected") {
+  function createChart(initialType = "Electricity") {
     if (typeof agCharts === "undefined" || !agCharts.AgCharts) return;
     const { AgCharts } = agCharts;
     const container = document.getElementById("utilityCostsLineChart");
     if (!container) return;
 
-    initBanner();
 
     const data = getSeriesFor(initialType);
-    lastHovered = data[data.length - 1];
-    setBanner(lastHovered);
 
     chart = AgCharts.create({
       container,
@@ -4275,11 +4225,7 @@ const UtilityCosts = (() => {
         },
         showInLegend: false,
         nodeClickRange: "nearest",
-        tooltip: {
-          range: Infinity,
-          delay: 0,
-          renderer: ({ datum }) => (lastHovered = datum, setBanner(datum), ""),
-        },
+        tooltip: { enabled: false }, 
       }],
       axes: [
         { type: "category", position: "bottom", gridLine: { enabled: false },
@@ -4288,15 +4234,13 @@ const UtilityCosts = (() => {
       ],
     });
 
-    container.addEventListener("pointerleave", () => setBanner(lastHovered));
   }
 
   function setType(type) {
     if (!chart || !agCharts?.AgCharts) return; // if chart isn't ready, do nothing
 
     const data = getSeriesFor(type).map(d => ({ ...d })); // fresh objects
-    lastHovered = data[data.length - 1];
-    setBanner(lastHovered);
+    
 
     // Update the series' own data so labels refresh
     const s = chart.series?.[0];
@@ -4311,9 +4255,6 @@ const UtilityCosts = (() => {
 
   const data = getSeriesFor(type).map(d => ({ ...d })); // fresh objects
 
-  // banner
-  lastHovered = data[data.length - 1];
-  setBanner(lastHovered);
 
   // 1) Try a deep update so labels + data refresh reliably
   try {
@@ -4363,7 +4304,7 @@ const UtilityCosts = (() => {
 /* ------------ GRID + CHART INIT in correct order ------------ */
 function initUtilityCosts() {
   // 1) create the chart first (with default dataset)
-  UtilityCosts.createChart("Total Selected");
+  UtilityCosts.createChart("Electricity");
 
   // 2) then create the grid and wire clicks
   if (typeof agGrid === "undefined" || !agGrid.createGrid) return;
@@ -4371,11 +4312,11 @@ function initUtilityCosts() {
   if (!container) return;
 
   const rowData = [
-    { type: "Total Selected", cost: 674, active: true },
     { type: "Electricity", cost: 168 },
     { type: "Internet & Cable", cost: 158 },
     { type: "Water", cost: 130 },
     { type: "Parking", cost: 218 },
+    { type: "Total Selected", cost: 674, active: true },
   ];
 
   const gridOptions = {
@@ -4405,43 +4346,68 @@ function initUtilityCosts() {
   agGrid.createGrid(container, gridOptions);
 }
 
-// Call this once after the DOM is ready:
-document.addEventListener("DOMContentLoaded", initUtilityCosts);
-
-
-/* If you need to auto-init after DOM ready:
-document.addEventListener("DOMContentLoaded", () => {
-  initUtilityCostsGrid();
-  initUtilityCostsChart();
-});
-*/
 
 
 
-function topHomeExpertCardClicks() {
-  let topHomeExpertCards = document.querySelectorAll(".top-home-expert");
 
-  topHomeExpertCards.forEach((card) => {
-    card.addEventListener("click", () => {
-      let content = card.querySelector(".top-home-expert__content");
-      let modal = card.querySelector(".top-home-expert__modal");
-      let closeModalBtn = modal.querySelector(
-        ".home-expert-modal__modal-close"
-      );
-
-      card.classList.add("hidden");
-      modal.classList.remove("hidden");
-      content.classList.add("hidden");
-      closeModalBtn.addEventListener("click", () => {
-        setTimeout(() => {
-          card.classList.add("hidden");
-          modal.classList.add("hidden");
-          content.classList.remove("hidden");
-        }, 100);
+function initFlipCards() {
+  // Detect if device is touch-enabled
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  
+  const flipCards = document.querySelectorAll('.flip-card');
+  
+  flipCards.forEach((flipCard) => {
+    const cardInner = flipCard.querySelector('.card');
+    let isFlipped = false;
+    
+    if (isTouchDevice) {
+      // Mobile: Click to flip
+      flipCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // If clicking on "Learn More" link, don't flip - let it navigate
+        if (e.target.closest('.more')) {
+          return;
+        }
+        
+        // Close all other flipped cards first
+        flipCards.forEach((otherCard) => {
+          if (otherCard !== flipCard) {
+            const otherCardInner = otherCard.querySelector('.card');
+            otherCardInner.style.transform = 'rotateY(0deg)';
+            otherCard.dataset.flipped = 'false';
+          }
+        });
+        
+        // Toggle current card
+        isFlipped = flipCard.dataset.flipped === 'true';
+        
+        if (isFlipped) {
+          cardInner.style.transform = 'rotateY(0deg)';
+          flipCard.dataset.flipped = 'false';
+        } else {
+          cardInner.style.transform = 'rotateY(180deg)';
+          flipCard.dataset.flipped = 'true';
+        }
       });
-    });
+      
+      // Optional: Close card when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.flip-card')) {
+          flipCards.forEach((card) => {
+            const cardInner = card.querySelector('.card');
+            cardInner.style.transform = 'rotateY(0deg)';
+            card.dataset.flipped = 'false';
+          });
+        }
+      });
+    } 
   });
 }
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', initFlipCards);
+
 
 function initTriggerZoningUsage() {
   const modal = document.getElementById("itemModal");
