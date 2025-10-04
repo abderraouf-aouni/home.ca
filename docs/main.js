@@ -11,17 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  if (window.agGrid) {
-  if (
-    agGrid.LicenseManager &&
-    typeof agGrid.LicenseManager.setLicenseKey === "function"
-  ) {
-    agGrid.LicenseManager.setLicenseKey(
-      "Using_this_{AG_Charts_and_AG_Grid}_Enterprise_key_{AG-089230}_in_excess_of_the_licence_granted_is_not_permitted___Please_report_misuse_to_legal@ag-grid.com___For_help_with_changing_this_key_please_contact_info@ag-grid.com___{Home.ca_AI_Inc.}_is_granted_a_{Single_Application}_Developer_License_for_the_application_{Home.ca}_only_for_{1}_Front-End_JavaScript_developer___All_Front-End_JavaScript_developers_working_on_{Home.ca}_need_to_be_licensed___{Home.ca}_has_not_been_granted_a_Deployment_License_Add-on___This_key_works_with_{AG_Charts_and_AG_Grid}_Enterprise_versions_released_before_{29_May_2026}____[v3]_[0102]_MTc4MDAwOTIwMDAwMA==f316b4bbbe0fac41ee1975fb1ccd13c3"
-    );
-  }
-}
-
   switchViews();
   initMiniMap("mini-map");
   initBaseLayersSidebarToggle();
@@ -48,13 +37,14 @@ document.addEventListener("DOMContentLoaded", () => {
   initMonthlyCostsOverviewGridChart();
   initInsuranceComparisonGrid();
   initUtilityCosts()
+  flipCards()
   recentTransactionsGrid();
   topHomeExpertCardClicks();
   initTriggerZoningUsage();
   initSeeMoreTables();
   initReadMoreToggles();
   // initScrollSpy();
-
+  aiChatCodeCopy()
   generateComponentAnimation();
 });
 
@@ -1081,6 +1071,19 @@ function initSwipers() {
     },
     {
       selector: ".swiper-banners",
+      options: {
+        slidesPerView: "auto",
+        freeMode: true,
+        spaceBetween: 10,
+        mousewheel: {},
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      },
+    },
+    {
+      selector: ".swiper-ai-chat-experts-examples-option-1",
       options: {
         slidesPerView: "auto",
         freeMode: true,
@@ -3994,7 +3997,30 @@ function initInsuranceComparisonGrid() {
   agGrid.createGrid(eGridDiv, gridOptions);
 }
 
+function topHomeExpertCardClicks() {
+  let topHomeExpertCards = document.querySelectorAll(".top-home-expert");
 
+  topHomeExpertCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      let content = card.querySelector(".top-home-expert__content");
+      let modal = card.querySelector(".top-home-expert__modal");
+      let closeModalBtn = modal.querySelector(
+        ".home-expert-modal__modal-close"
+      );
+
+      card.classList.add("hidden");
+      modal.classList.remove("hidden");
+      content.classList.add("hidden");
+      closeModalBtn.addEventListener("click", () => {
+        setTimeout(() => {
+          card.classList.add("hidden");
+          modal.classList.add("hidden");
+          content.classList.remove("hidden");
+        }, 100);
+      });
+    });
+  });
+}
 
 function recentTransactionsGrid() {
   if (typeof agGrid === "undefined") {
@@ -4361,7 +4387,7 @@ function initUtilityCosts() {
 
 
 
-function topHomeExpertCardClicks() {
+function flipCards() {
   // Detect if device is touch-enabled
   const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
   
@@ -4545,6 +4571,26 @@ function show35MoreImages() {
   modalGrid.innerHTML = ""; // clear
   more35Images.classList.remove("hidden");
   galleryContainer.scrollTo(0, 0);
+}
+
+function aiChatCodeCopy() {
+document.addEventListener("click", async (e) => {
+  const btn = e.target.closest("[data-copy]");
+  if (!btn) return;
+  const btnText = btn.querySelector('.txt');
+
+  const target = document.querySelector(btn.dataset.copy);
+  if (!target) return;
+
+  try {
+    await navigator.clipboard.writeText(target.textContent);
+    const old = btnText.textContent;
+    btnText.textContent = "Copied!";
+    setTimeout(() => (btnText.textContent = old), 1200);
+  } catch (err) {
+    console.error("Copy failed:", err);
+  }
+});
 }
 
 function generateComponentAnimation() {
