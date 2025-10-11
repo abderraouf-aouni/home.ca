@@ -1096,6 +1096,19 @@ function initSwipers() {
       },
     },
     {
+      selector: ".swiper-reward-active",
+      options: {
+        slidesPerView: "auto",
+        freeMode: true,
+        spaceBetween: 10,
+        mousewheel: {},
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      },
+    },
+    {
       selector: ".swiper-opportunities-risks-incentives-rebates",
       options: {
         slidesPerView: "auto",

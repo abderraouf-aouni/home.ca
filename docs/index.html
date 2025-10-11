@@ -465,7 +465,7 @@
 
         <!--  Navigation  section -->
 
-        <section class="section-wrapper pt-0">
+        <section class="section-wrapper pt-0 overflow-hidden @min-[1024px]:pb-80 relative z-2">
           <aside class="lg:hidden" aria-labelledby="home-dashboard-heading">
             <div class="justify-between">
               <div class="pointer-events-auto">
@@ -486,40 +486,74 @@
             </div>
           </aside>
           <div
-            class="swiper swiper-main-nav mt-4 @min-[768px]:mt-9.25 @min-[1024px]:mt-6"
+            class="swiper swiper-main-nav mt-4 @min-[768px]:mt-9.25 @min-[1024px]:mt-6 !overflow-visible"
           >
             <div class="swiper-wrapper">
-              <div
-                class="swiper-slide @min-[900px]:flex-1 pl-5 @min-[768px]:pl-8"
-              >
-                <div class="main-nav-item active">
-                  <svg
-                    class="w-5 h-5 icon"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M14.3813 7.64102L10.7354 4.87018C10.3021 4.54032 9.69725 4.54102 9.26461 4.87018L5.61878 7.64102C5.31808 7.86949 5.13892 8.23129 5.13892 8.60838V13.6459C5.13892 14.6993 5.99517 15.5556 7.04864 15.5556H8.95836V12.7778C8.95836 12.2028 9.42503 11.7362 10 11.7362C10.575 11.7362 11.0417 12.2028 11.0417 12.7778V15.5556H12.9514C14.0049 15.5556 14.8611 14.6993 14.8611 13.6459V8.60838C14.8611 8.23129 14.682 7.87018 14.3813 7.64102Z"
-                      fill="currentColor"
-                    />
+              <!-- let popovers escape the slides -->
+
+<div class="swiper-slide @min-[900px]:flex-1 pl-5 @min-[768px]:pl-8">
+  <!-- anchor -->
+  <div class="main-nav-item group relative">
+      <svg class="w-5 h-5 icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.3813 7.64102L10.7354 4.87018C10.3021 4.54032 9.69725 4.54102 9.26461 4.87018L5.61878 7.64102C5.31808 7.86949 5.13892 8.23129 5.13892 8.60838V13.6459C5.13892 14.6993 5.99517 15.5556 7.04864 15.5556H8.95836V12.7778C8.95836 12.2028 9.42503 11.7362 10 11.7362C10.575 11.7362 11.0417 12.2028 11.0417 12.7778V15.5556H12.9514C14.0049 15.5556 14.8611 14.6993 14.8611 13.6459V8.60838C14.8611 8.23129 14.682 7.87018 14.3813 7.64102Z" fill="currentColor"></path>
                   </svg>
-                  <h3>402 Spring Gate</h3>
-                  <div class="more">
-                    <span class="text-xs font-medium">45 home insights</span>
-                    <img
-                      class="w-4.5 @min-[1024px]:w-5"
-                      src="images/more-icon.svg"
-                      alt=""
-                    />
-                  </div>
+      
+      <h3>Thornhill, ON</h3>
+      <div class="more">
+        <span class="text-xs font-medium">5 neighborhood insights</span>
+        <img class="w-4.5 @min-[1024px]:w-5" src="images/more-icon.svg" alt="" />
+      </div>
+
+      <div class="hidden lg:block absolute z-30 left-0 top-[calc(100%+10px)]
+             w-[min(92vw,460px)]  opacity-0 translate-y-1 pointer-events-none
+             transition duration-150 ease-out
+             lg:group-hover:opacity-100 lg:group-hover:translate-y-0 lg:group-hover:pointer-events-auto"
+      role="dialog" aria-label="Thornhill communities preview">
+            <div class="text-white bg-primary flex justify-between px-5 pt-2.5 pb-[1.44rem] rounded-t-lg">
+              <span class="font-semibold">For Sale </span><span class="font-semibold">$2.3m</span>
+            </div>
+
+            <div class="bg-white shadow-lg rounded-lg -mt-4 p-5">
+              <span class="w-27 h-1 block bg-muted-2 rounded-sm mx-auto md:hidden" aria-hidden="true" role="presentation"></span>
+
+             
+
+              <div class="flex gap-2 justify-between items-start">
+                <div>
+                  <h1 class="text-[1.75rem]" aria-labelledby="home-dashboard-heading">
+                    [Address]
+                  </h1>
+                  <p class=" text-xl mt-0.5">
+                    [City], [Province] [Postal Code]
+                  </p>
+                </div>
+                <div class="flex gap-1.5">
+                  <button title="like this home" aria-label="Like this home" class="bg-muted-2 p-2.25 rounded-full">
+                    <img class="w-4.5" src="images/like-icon.svg" alt="">
+                  </button>
+                  <button title="share this home" aria-label="Share home place in social media" class="bg-muted-2 p-2.25 rounded-full">
+                    <img class="w-4.5" src="images/share-icon.svg" alt="">
+                  </button>
                 </div>
               </div>
 
+              <p class="leading-[140%] text-muted-6 mt-3">
+                Manage every aspect of your home at [Address], [City], [Province] [Postal Code]. Claim it to unlock tools, track updates, discover local home experts & savings.
+              </p>
+
+              <button href="#prequal" class="inline-block text-sm text-white bg-primary px-3.5 py-1.75 mt-3 rounded">
+                Get pre-qualified
+              </button>
+            </div>
+      </div>
+
+    
+  </div>
+</div>
+
+
               <div class="swiper-slide @min-[900px]:flex-1">
-                <div class="main-nav-item">
+                <div class="main-nav-item group relative">
                   <svg
                     class="w-5 h-5 icon"
                     width="20"
@@ -575,11 +609,54 @@
                       alt=""
                     />
                   </div>
+
+                  <div class="hidden lg:block absolute z-30 left-0 top-[calc(100%+10px)]
+             w-[min(92vw,460px)]  opacity-0 translate-y-1 pointer-events-none
+             transition duration-150 ease-out
+             lg:group-hover:opacity-100 lg:group-hover:translate-y-0 lg:group-hover:pointer-events-auto"
+      role="dialog" aria-label="Thornhill communities preview">
+            <div class="text-white bg-primary flex justify-between px-5 pt-2.5 pb-[1.44rem] rounded-t-lg">
+              <span class="font-semibold">For Sale </span><span class="font-semibold">$2.3m</span>
+            </div>
+
+            <div class="bg-white shadow-lg rounded-lg -mt-4 p-5">
+              <span class="w-27 h-1 block bg-muted-2 rounded-sm mx-auto md:hidden" aria-hidden="true" role="presentation"></span>
+
+             
+
+              <div class="flex gap-2 justify-between items-start">
+                <div>
+                  <h1 class="text-[1.75rem]" aria-labelledby="home-dashboard-heading">
+                    [Address]
+                  </h1>
+                  <p class=" text-xl mt-0.5">
+                    [City], [Province] [Postal Code]
+                  </p>
+                </div>
+                <div class="flex gap-1.5">
+                  <button title="like this home" aria-label="Like this home" class="bg-muted-2 p-2.25 rounded-full">
+                    <img class="w-4.5" src="images/like-icon.svg" alt="">
+                  </button>
+                  <button title="share this home" aria-label="Share home place in social media" class="bg-muted-2 p-2.25 rounded-full">
+                    <img class="w-4.5" src="images/share-icon.svg" alt="">
+                  </button>
+                </div>
+              </div>
+
+              <p class="leading-[140%] text-muted-6 mt-3">
+                Manage every aspect of your home at [Address], [City], [Province] [Postal Code]. Claim it to unlock tools, track updates, discover local home experts & savings.
+              </p>
+
+              <button href="#prequal" class="inline-block text-sm text-white bg-primary px-3.5 py-1.75 mt-3 rounded">
+                Get pre-qualified
+              </button>
+            </div>
+      </div>
                 </div>
               </div>
 
               <div class="swiper-slide @min-[900px]:flex-1">
-                <div class="main-nav-item">
+                <div class="main-nav-item group relative">
                   <svg
                     class="w-5 h-5 icon"
                     width="20"
@@ -627,11 +704,54 @@
                       alt=""
                     />
                   </div>
+
+                  <div class="hidden lg:block absolute z-30 left-0 top-[calc(100%+10px)]
+             w-[min(92vw,460px)]  opacity-0 translate-y-1 pointer-events-none
+             transition duration-150 ease-out
+             lg:group-hover:opacity-100 lg:group-hover:translate-y-0 lg:group-hover:pointer-events-auto"
+      role="dialog" aria-label="Thornhill communities preview">
+            <div class="text-white bg-primary flex justify-between px-5 pt-2.5 pb-[1.44rem] rounded-t-lg">
+              <span class="font-semibold">For Sale </span><span class="font-semibold">$2.3m</span>
+            </div>
+
+            <div class="bg-white shadow-lg rounded-lg -mt-4 p-5">
+              <span class="w-27 h-1 block bg-muted-2 rounded-sm mx-auto md:hidden" aria-hidden="true" role="presentation"></span>
+
+             
+
+              <div class="flex gap-2 justify-between items-start">
+                <div>
+                  <h1 class="text-[1.75rem]" aria-labelledby="home-dashboard-heading">
+                    [Address]
+                  </h1>
+                  <p class=" text-xl mt-0.5">
+                    [City], [Province] [Postal Code]
+                  </p>
+                </div>
+                <div class="flex gap-1.5">
+                  <button title="like this home" aria-label="Like this home" class="bg-muted-2 p-2.25 rounded-full">
+                    <img class="w-4.5" src="images/like-icon.svg" alt="">
+                  </button>
+                  <button title="share this home" aria-label="Share home place in social media" class="bg-muted-2 p-2.25 rounded-full">
+                    <img class="w-4.5" src="images/share-icon.svg" alt="">
+                  </button>
+                </div>
+              </div>
+
+              <p class="leading-[140%] text-muted-6 mt-3">
+                Manage every aspect of your home at [Address], [City], [Province] [Postal Code]. Claim it to unlock tools, track updates, discover local home experts & savings.
+              </p>
+
+              <button href="#prequal" class="inline-block text-sm text-white bg-primary px-3.5 py-1.75 mt-3 rounded">
+                Get pre-qualified
+              </button>
+            </div>
+      </div>
                 </div>
               </div>
 
               <div class="swiper-slide @min-[900px]:flex-1">
-                <div class="main-nav-item">
+                <div class="main-nav-item group relative">
                   <svg
                     class="w-5 h-5 icon"
                     width="20"
@@ -661,13 +781,56 @@
                       alt=""
                     />
                   </div>
+
+                  <div class="hidden lg:block absolute z-30 left-0 top-[calc(100%+10px)]
+             w-[min(92vw,460px)]  opacity-0 translate-y-1 pointer-events-none
+             transition duration-150 ease-out
+             lg:group-hover:opacity-100 lg:group-hover:translate-y-0 lg:group-hover:pointer-events-auto"
+      role="dialog" aria-label="Thornhill communities preview">
+            <div class="text-white bg-primary flex justify-between px-5 pt-2.5 pb-[1.44rem] rounded-t-lg">
+              <span class="font-semibold">For Sale </span><span class="font-semibold">$2.3m</span>
+            </div>
+
+            <div class="bg-white shadow-lg rounded-lg -mt-4 p-5">
+              <span class="w-27 h-1 block bg-muted-2 rounded-sm mx-auto md:hidden" aria-hidden="true" role="presentation"></span>
+
+             
+
+              <div class="flex gap-2 justify-between items-start">
+                <div>
+                  <h1 class="text-[1.75rem]" aria-labelledby="home-dashboard-heading">
+                    [Address]
+                  </h1>
+                  <p class=" text-xl mt-0.5">
+                    [City], [Province] [Postal Code]
+                  </p>
+                </div>
+                <div class="flex gap-1.5">
+                  <button title="like this home" aria-label="Like this home" class="bg-muted-2 p-2.25 rounded-full">
+                    <img class="w-4.5" src="images/like-icon.svg" alt="">
+                  </button>
+                  <button title="share this home" aria-label="Share home place in social media" class="bg-muted-2 p-2.25 rounded-full">
+                    <img class="w-4.5" src="images/share-icon.svg" alt="">
+                  </button>
+                </div>
+              </div>
+
+              <p class="leading-[140%] text-muted-6 mt-3">
+                Manage every aspect of your home at [Address], [City], [Province] [Postal Code]. Claim it to unlock tools, track updates, discover local home experts & savings.
+              </p>
+
+              <button href="#prequal" class="inline-block text-sm text-white bg-primary px-3.5 py-1.75 mt-3 rounded">
+                Get pre-qualified
+              </button>
+            </div>
+      </div>
                 </div>
               </div>
 
               <div
                 class="swiper-slide @min-[900px]:flex-1 pr-5 @min-[768px]:pr-8"
               >
-                <div class="main-nav-item">
+                <div class="main-nav-item group relative">
                   <svg
                     class="w-5 h-5 icon"
                     width="20"
@@ -707,20 +870,63 @@
                       alt=""
                     />
                   </div>
+
+                  <div class="hidden lg:block absolute z-30 left-0 top-[calc(100%+10px)]
+             w-[min(92vw,460px)]  opacity-0 translate-y-1 pointer-events-none
+             transition duration-150 ease-out
+             lg:group-hover:opacity-100 lg:group-hover:translate-y-0 lg:group-hover:pointer-events-auto"
+      role="dialog" aria-label="Thornhill communities preview">
+            <div class="text-white bg-primary flex justify-between px-5 pt-2.5 pb-[1.44rem] rounded-t-lg">
+              <span class="font-semibold">For Sale </span><span class="font-semibold">$2.3m</span>
+            </div>
+
+            <div class="bg-white shadow-lg rounded-lg -mt-4 p-5">
+              <span class="w-27 h-1 block bg-muted-2 rounded-sm mx-auto md:hidden" aria-hidden="true" role="presentation"></span>
+
+             
+
+              <div class="flex gap-2 justify-between items-start">
+                <div>
+                  <h1 class="text-[1.75rem]" aria-labelledby="home-dashboard-heading">
+                    [Address]
+                  </h1>
+                  <p class=" text-xl mt-0.5">
+                    [City], [Province] [Postal Code]
+                  </p>
+                </div>
+                <div class="flex gap-1.5">
+                  <button title="like this home" aria-label="Like this home" class="bg-muted-2 p-2.25 rounded-full">
+                    <img class="w-4.5" src="images/like-icon.svg" alt="">
+                  </button>
+                  <button title="share this home" aria-label="Share home place in social media" class="bg-muted-2 p-2.25 rounded-full">
+                    <img class="w-4.5" src="images/share-icon.svg" alt="">
+                  </button>
+                </div>
+              </div>
+
+              <p class="leading-[140%] text-muted-6 mt-3">
+                Manage every aspect of your home at [Address], [City], [Province] [Postal Code]. Claim it to unlock tools, track updates, discover local home experts & savings.
+              </p>
+
+              <button href="#prequal" class="inline-block text-sm text-white bg-primary px-3.5 py-1.75 mt-3 rounded">
+                Get pre-qualified
+              </button>
+            </div>
+      </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <div class="px-5 @min-[768px]:px-8">
+        <!-- <div class="px-5 @min-[768px]:px-8">
           <button
             class="text-white bg-third py-2 px-10 mt-6 open-canvas"
             data-canvas-target="map"
           >
             Open Map
           </button>
-        </div>
+        </div> -->
 
         <!-- side-bar -->
 
@@ -1115,13 +1321,13 @@
           </div>
         </main> -->
 
-        <hr class="separate-line mt-8 @min-[1024px]:!mx-0 @min-[768px]:mt-6" />
+        <hr class="separate-line mt-8 @min-[1024px]:!mx-0 @min-[768px]:mt-6 @min-[1024px]:-mt-74" />
 
         <!-- manage-finances section -->
 
         <section
           id="manage-finances"
-          class="section-wrapper has-slider main-section pt-8 @min-[1024px]:pt-6"
+          class="section-wrapper has-slider main-section pt-8 @min-[1024px]:pt-6 "
           aria-labelledby="manage-finances-heading"
         >
           <header class="main-header">
@@ -7844,52 +8050,24 @@
                 class="swiper-slide pl-5 @min-[768px]:pl-8 @min-[1024px]:pl-24.5"
               >
                 <div
-                  class="top-home-expert card min-h-82.75 @min-[768px]:min-h-120.5 rounded-md @min-[768px]:rounded-xl p-0 imaged bg-[linear-gradient(transparent,#1F1F1F),url('images/t-h-e-plumbing.webp')]"
+                  class="top-home-expert card min-h-82.75 @min-[768px]:min-h-110.5 rounded-xl p-0 imaged bg-[linear-gradient(transparent,#1F1F1F),url('images/t-h-e-plumbing.webp')]"
                 >
                   <div
-                    class="top-home-expert__content px-5 p-3.75 @min-[768px]:p-5 flex justify-between items-end mt-auto"
+                    class="top-home-expert__content px-5 p-3.75 @min-[768px]:p-5 flex justify-between items-end gap-2 mt-auto"
                   >
                     <div>
-                      <div class="flex gap-0.75 @min-[768px]:gap-1">
-                        <div class="flex gap-0.25">
-                          <img
-                            class="w-2 @min-[768px]:w-3"
-                            src="images/t-h-e-start.svg"
-                            alt=""
-                          />
-                          <img
-                            class="w-2 @min-[768px]:w-3"
-                            src="images/t-h-e-start.svg"
-                            alt=""
-                          />
-                          <img
-                            class="w-2 @min-[768px]:w-3"
-                            src="images/t-h-e-start.svg"
-                            alt=""
-                          />
-                          <img
-                            class="w-2 @min-[768px]:w-3"
-                            src="images/t-h-e-start.svg"
-                            alt=""
-                          />
-                          <img
-                            class="w-2 @min-[768px]:w-3"
-                            src="images/t-h-e-start.svg"
-                            alt=""
-                          />
-                        </div>
-                        <span
-                          class="text-[0.625rem] @min-[768px]:text-xs heading"
-                          >4.9</span
-                        >
+                      <div class="flex items-center gap-1">
+                        <img class="w-5 @min-[768px]:w-6" src="images/v-r-total-scrore-icon.svg" alt="" />
+                        <span class="text-lg @min-[768px]:text-xl heading leading-[100%] underline text-white">98</span>
+                        <span class="grid-ranking-city__total-score-triangle top !text-[0.525rem] @min-[768px]:!text-[0.625rem] px-1.5 @min-[768px]:px-1.75">▲</span>
                       </div>
                       <h3
-                        class="text-xl @min-[768px]:text-[2rem] leading-tight mb-0.5 @min-[768px]:mb-1"
+                        class="text-xl @min-[768px]:text-[1.75rem] leading-tight mb-0.5 @min-[768px]:mb-1"
                       >
                         Plumbing
                       </h3>
                       <span
-                        class="text-[0.625rem] @min-[768px]:text-xs heading text-third bg-white rounded-xs @min-[768px]:rounded pb-0.5 px-1.5 @min-[768px]:pt-0.75 @min-[768px]:py-0.75 @min-[768px]:px-2.5 inline-block mb-1.5 @min-[768px]:mb-2"
+                        class="text-xs heading text-third bg-white rounded py-0.75 px-2.5 inline-block mb-1.5 @min-[768px]:mb-2"
                         >Top Expert</span
                       >
                       <p class="text-xs @min-[768px]:text-base leading-[1.2]">
@@ -7910,262 +8088,101 @@
                     <div
                       class="flex justify-between items-center mb-2 @min-[768px]:mb-3"
                     >
-                      <h3 class="text-base @min-[768px]:text-2xl">Plumbing</h3>
+                      <h3 class="text-xl @min-[768px]:text-2xl">Real Estate Agents</h3>
                       <button
                         aria-label="Close home expert modal"
-                        class="w-5.5 h-5.5 @min-[768px]:w-8 @min-[768px]:h-8 rounded-full bg-muted-2 flex-center home-expert-modal__modal-close"
+                        class="w-6 h-6 @min-[768px]:w-8 @min-[768px]:h-8 rounded-full bg-muted-2 flex-center home-expert-modal__modal-close"
                       >
                         <img
-                          class="w-2.75 @min-[768px]:w-4"
+                          class="w-4"
                           src="images/close-icon.svg"
                           alt=""
                         />
                       </button>
                     </div>
-                    <div class="mt-auto space-y-1.25">
-                      <div
-                        class="p-1.75 pt-1.5 @min-[768px]:p-2.5 rounded-md @min-[768px]:rounded-lg bg-black/8 backdrop-blur-[10.4px]"
-                      >
-                        <div
-                          class="flex justify-between items-center mb-1.5 @min-[768px]:mb-2"
-                        >
-                          <div
-                            class="flex items-center gap-1.5 @min-[768px]:gap-2.5"
-                          >
-                            <img
-                              class="w-8.75 @min-[768px]:w-12"
-                              src="images/t-h-e-rny-plumbing.png"
-                              alt=""
-                            />
-                            <div>
-                              <div class="flex gap-0.75 @min-[768px]:gap-1">
-                                <div class="flex gap-0.25">
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                </div>
-                                <span
-                                  class="text-[0.625rem] @min-[768px]:text-xs heading"
-                                  >4.9</span
-                                >
-                              </div>
+                    <div class="mt-auto space-y-1 @min-[768px]:space-y-1.25">
+                      
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/contacts-profile-img.webp" alt="John Davis">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">John Davis</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-third rounded-full flex justify-center items-center" aria-label="Like this agent">
+                  <img class="w-3" src="images/like-icon-white.svg" alt="">
+                </button>
+                    </div>
+                    
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/top-home-experts-adam-smith.webp" alt="Adam Smith">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">Adam Smith</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] rounded-full flex justify-center items-center" aria-label="add this agent">
+                  <img class="w-3" src="images/ai-starts-white-icon.svg" alt="">
+                </button>
+                    </div>
 
-                              <h4
-                                class="text-xs @min-[768px]:text-base leading-[1.1] mt-0.5"
-                              >
-                                RNY Plumbing
-                              </h4>
-                            </div>
-                          </div>
-                          <span
-                            class="w-5.5 h-5.5 @min-[768px]:w-8 @min-[768px]:h-8 flex justify-center items-center bg-white/15 backdrop-blur-[10.4px] rounded-full"
-                          >
-                            <img
-                              class="w-3 @min-[768px]:w-4 filter invert"
-                              src="images/more-icon.svg"
-                              alt=""
-                            />
-                          </span>
-                        </div>
-                        <div class="flex flex-wrap gap-0.5 @min-[768px]:gap-1">
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >#1 Google Rated</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >12 Years in Business</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >3 KM from your home</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="p-1.75 pt-1.5 @min-[768px]:p-2.5 rounded-md @min-[768px]:rounded-lg bg-black/8 backdrop-blur-[10.4px]"
-                      >
-                        <div
-                          class="flex justify-between items-center mb-1.5 @min-[768px]:mb-2"
-                        >
-                          <div
-                            class="flex items-center gap-1.5 @min-[768px]:gap-2.5"
-                          >
-                            <img
-                              class="w-8.75 @min-[768px]:w-12"
-                              src="images/t-h-e-ja-plumbing.png"
-                              alt=""
-                            />
-                            <div>
-                              <div class="flex gap-0.75 @min-[768px]:gap-1">
-                                <div class="flex gap-0.25">
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                </div>
-                                <span
-                                  class="text-[0.625rem] @min-[768px]:text-xs heading text-muted-6"
-                                  >4.9</span
-                                >
-                              </div>
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/top-home-experts-matthew-brown.webp" alt="Matthew Brown">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">Matthew Brown</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] rounded-full flex justify-center items-center" aria-label="add this agent">
+                  <img class="w-3" src="images/ai-starts-white-icon.svg" alt="">
+                </button>
+                    </div>
 
-                              <h4
-                                class="text-xs @min-[768px]:text-base leading-[1.1] mt-0.5"
-                              >
-                                JA Plumbing
-                              </h4>
-                            </div>
-                          </div>
-                          <span
-                            class="w-5.5 h-5.5 @min-[768px]:w-8 @min-[768px]:h-8 flex justify-center items-center bg-white/15 backdrop-blur-[10.4px] rounded-full"
-                          >
-                            <img
-                              class="w-3 @min-[768px]:w-4 filter invert"
-                              src="images/more-icon.svg"
-                              alt=""
-                            />
-                          </span>
-                        </div>
-                        <div class="flex flex-wrap gap-0.5 @min-[768px]:gap-1">
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >#1 Google Rated</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >12 Years in Business</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >3 KM from your home</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="p-1.75 pt-1.5 @min-[768px]:p-2.5 rounded-md @min-[768px]:rounded-lg bg-black/8 backdrop-blur-[10.4px]"
-                      >
-                        <div
-                          class="flex justify-between items-center mb-1.5 @min-[768px]:mb-2"
-                        >
-                          <div
-                            class="flex items-center gap-1.5 @min-[768px]:gap-2.5"
-                          >
-                            <img
-                              class="w-8.75 @min-[768px]:w-12"
-                              src="images/t-h-e-pro-plumbing.png"
-                              alt=""
-                            />
-                            <div>
-                              <div class="flex gap-0.75 @min-[768px]:gap-1">
-                                <div class="flex gap-0.25">
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                </div>
-                                <span
-                                  class="text-[0.625rem] @min-[768px]:text-xs heading text-muted-6"
-                                  >4.9</span
-                                >
-                              </div>
+                    <div class="bg-[#29346499] py-2 px-2.5 rounded-lg flex justify-between items-center gap-2">
+                      <span class="text-xs @min-[768px]:text-base heading leading-[100%]">Get a Quick Quote</span>
+                      <img class="w-17.5 @min-[768px]:w-23.25" src="images/top-home-experts-group.webp" alt="">
+                    </div>
 
-                              <h4
-                                class="text-xs @min-[768px]:text-base leading-[1.1] mt-0.5"
-                              >
-                                Pro Plumbing
-                              </h4>
-                            </div>
-                          </div>
-                          <span
-                            class="w-5.5 h-5.5 @min-[768px]:w-8 @min-[768px]:h-8 flex justify-center items-center bg-white/15 backdrop-blur-[10.4px] rounded-full"
-                          >
-                            <img
-                              class="w-3 @min-[768px]:w-4 filter invert"
-                              src="images/more-icon.svg"
-                              alt=""
-                            />
-                          </span>
-                        </div>
-                        <div class="flex flex-wrap gap-0.5 @min-[768px]:gap-1">
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >#1 Google Rated</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >12 Years in Business</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >3 KM from your home</span
-                          >
-                        </div>
-                      </div>
+                    <div class="relative  rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] @min-[768px]:mb-1.75">
+              <input class="peer w-full filter-input text-xs @min-[768px]:text-sm py-2.25 pr-2.5 pl-8" aria-label="filter Neighborhood Comparison" title="filter Neighborhood Comparison" type="text" placeholder="Add your own agent to this list">
+              <img class="w-3.5 h-3.5 peer-focus:hidden absolute pointer-events-none top-1/2 left-2.5 -translate-y-1/2 leading-1-1" src="images/amplifier-icon.svg " alt="">
+            </div>
+
+            <div class="more border-[#ffffff22] pt-3 @min-[768px]:pt-3.75 mt-0">
+                    <p class="text-xs">See all</p>
+                    <img class="uploid-icon filter invert" src="images/more-icon.svg" alt="">
+                  </div>
+                     
                     </div>
                   </div>
                 </div>
@@ -8173,52 +8190,24 @@
 
               <div class="swiper-slide">
                 <div
-                  class="top-home-expert card min-h-82.75 @min-[768px]:min-h-120.5 rounded-md @min-[768px]:rounded-xl p-0 imaged bg-[linear-gradient(transparent,#1F1F1F),url('images/t-h-e-plumbing-bathroom.webp')]"
+                  class="top-home-expert card min-h-82.75 @min-[768px]:min-h-110.5 rounded-xl p-0 imaged bg-[linear-gradient(transparent,#1F1F1F),url('images/t-h-e-plumbing-bathroom.webp')]"
                 >
                   <div
-                    class="top-home-expert__content px-5 p-3.75 @min-[768px]:p-5 flex justify-between items-end mt-auto"
+                    class="top-home-expert__content px-5 p-3.75 @min-[768px]:p-5 flex justify-between items-end gap-2 mt-auto"
                   >
                     <div>
-                      <div class="flex gap-0.75 @min-[768px]:gap-1">
-                        <div class="flex gap-0.25">
-                          <img
-                            class="w-2 @min-[768px]:w-3"
-                            src="images/t-h-e-start.svg"
-                            alt=""
-                          />
-                          <img
-                            class="w-2 @min-[768px]:w-3"
-                            src="images/t-h-e-start.svg"
-                            alt=""
-                          />
-                          <img
-                            class="w-2 @min-[768px]:w-3"
-                            src="images/t-h-e-start.svg"
-                            alt=""
-                          />
-                          <img
-                            class="w-2 @min-[768px]:w-3"
-                            src="images/t-h-e-start.svg"
-                            alt=""
-                          />
-                          <img
-                            class="w-2 @min-[768px]:w-3"
-                            src="images/t-h-e-start.svg"
-                            alt=""
-                          />
-                        </div>
-                        <span
-                          class="text-[0.625rem] @min-[768px]:text-xs heading"
-                          >4.9</span
-                        >
+                      <div class="flex items-center gap-1 mb-1">
+                        <img class="w-5 @min-[768]:w-6" src="images/v-r-total-scrore-icon.svg" alt="">
+                        <span class="text-lg @min-[768px]:text-xl heading leading-[100%] underline text-white">98</span>
+                        <span class="grid-ranking-city__total-score-triangle top !text-[0.525rem] @min-[768px]:!text-[0.625rem] px-1.5 @min-[768px]:px-1.75">▲</span>
                       </div>
                       <h3
-                        class="text-xl @min-[768px]:text-[2rem] leading-tight mb-0.5 @min-[768px]:mb-1"
+                        class="text-xl @min-[768px]:text-[1.75rem] leading-tight mb-0.5 @min-[768px]:mb-1"
                       >
                         Bathroom Maintenance
                       </h3>
                       <span
-                        class="text-[0.625rem] @min-[768px]:text-xs heading text-third bg-white rounded-xs @min-[768px]:rounded pb-0.5 px-1.5 @min-[768px]:pt-0 @min-[768px]:px-2.5 inline-block mb-1.5 @min-[768px]:mb-2"
+                        class="text-xs heading text-third bg-white rounded py-0.75 px-2.5 inline-block mb-1.5 @min-[768px]:mb-2"
                         >Top Expert</span
                       >
                       <p class="text-xs @min-[768px]:text-base leading-[1.2]">
@@ -8233,270 +8222,107 @@
                       </span>
                     </div>
                   </div>
-                  <div
+                 <div
                     class="top-home-expert__modal rounded-[inherit] p-3.75 @min-[768px]:p-5 @min-[768px]:pb-4.5 h-full bg-[linear-gradient(#1F1F1F99,#1F1F1F99)] flex flex-col hidden"
                   >
                     <div
                       class="flex justify-between items-center mb-2 @min-[768px]:mb-3"
                     >
-                      <h3 class="text-base @min-[768px]:text-2xl">
-                        Bathroom Maintenance
-                      </h3>
+                      <h3 class="text-xl @min-[768px]:text-2xl">Real Estate Agents</h3>
                       <button
                         aria-label="Close home expert modal"
-                        class="w-5.5 h-5.5 @min-[768px]:w-8 @min-[768px]:h-8 rounded-full bg-muted-2 flex-center home-expert-modal__modal-close"
+                        class="w-6 h-6 @min-[768px]:w-8 @min-[768px]:h-8 rounded-full bg-muted-2 flex-center home-expert-modal__modal-close"
                       >
                         <img
-                          class="w-2.75 @min-[768px]:w-4"
+                          class="w-4"
                           src="images/close-icon.svg"
                           alt=""
                         />
                       </button>
                     </div>
-                    <div class="mt-auto space-y-1.25">
-                      <div
-                        class="p-1.75 pt-1.5 @min-[768px]:p-2.5 rounded-md @min-[768px]:rounded-lg bg-black/8 backdrop-blur-[10.4px]"
-                      >
-                        <div
-                          class="flex justify-between items-center mb-1.5 @min-[768px]:mb-2"
-                        >
-                          <div
-                            class="flex items-center gap-1.5 @min-[768px]:gap-2.5"
-                          >
-                            <img
-                              class="w-8.75 @min-[768px]:w-12"
-                              src="images/t-h-e-rny-plumbing.png"
-                              alt=""
-                            />
-                            <div>
-                              <div class="flex gap-0.75 @min-[768px]:gap-1">
-                                <div class="flex gap-0.25">
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                </div>
-                                <span
-                                  class="text-[0.625rem] @min-[768px]:text-xs heading"
-                                  >4.9</span
-                                >
-                              </div>
+                    <div class="mt-auto space-y-1 @min-[768px]:space-y-1.25">
+                      
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/contacts-profile-img.webp" alt="John Davis">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">John Davis</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-third rounded-full flex justify-center items-center" aria-label="Like this agent">
+                  <img class="w-3" src="images/like-icon-white.svg" alt="">
+                </button>
+                    </div>
+                    
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/top-home-experts-adam-smith.webp" alt="Adam Smith">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">Adam Smith</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] rounded-full flex justify-center items-center" aria-label="add this agent">
+                  <img class="w-3" src="images/ai-starts-white-icon.svg" alt="">
+                </button>
+                    </div>
 
-                              <h4
-                                class="text-xs @min-[768px]:text-base leading-[1.1] mt-0.5"
-                              >
-                                RNY Plumbing
-                              </h4>
-                            </div>
-                          </div>
-                          <span
-                            class="w-5.5 h-5.5 @min-[768px]:w-8 @min-[768px]:h-8 flex justify-center items-center bg-white/15 backdrop-blur-[10.4px] rounded-full"
-                          >
-                            <img
-                              class="w-3 @min-[768px]:w-4 filter invert"
-                              src="images/more-icon.svg"
-                              alt=""
-                            />
-                          </span>
-                        </div>
-                        <div class="flex flex-wrap gap-0.5 @min-[768px]:gap-1">
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >#1 Google Rated</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >12 Years in Business</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >3 KM from your home</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="p-1.75 pt-1.5 @min-[768px]:p-2.5 rounded-md @min-[768px]:rounded-lg bg-black/8 backdrop-blur-[10.4px]"
-                      >
-                        <div
-                          class="flex justify-between items-center mb-1.5 @min-[768px]:mb-2"
-                        >
-                          <div
-                            class="flex items-center gap-1.5 @min-[768px]:gap-2.5"
-                          >
-                            <img
-                              class="w-8.75 @min-[768px]:w-12"
-                              src="images/t-h-e-ja-plumbing.png"
-                              alt=""
-                            />
-                            <div>
-                              <div class="flex gap-0.75 @min-[768px]:gap-1">
-                                <div class="flex gap-0.25">
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                </div>
-                                <span
-                                  class="text-[0.625rem] @min-[768px]:text-xs heading text-muted-6"
-                                  >4.9</span
-                                >
-                              </div>
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/top-home-experts-matthew-brown.webp" alt="Matthew Brown">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">Matthew Brown</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] rounded-full flex justify-center items-center" aria-label="add this agent">
+                  <img class="w-3" src="images/ai-starts-white-icon.svg" alt="">
+                </button>
+                    </div>
 
-                              <h4
-                                class="text-xs @min-[768px]:text-base leading-[1.1] mt-0.5"
-                              >
-                                JA Plumbing
-                              </h4>
-                            </div>
-                          </div>
-                          <span
-                            class="w-5.5 h-5.5 @min-[768px]:w-8 @min-[768px]:h-8 flex justify-center items-center bg-white/15 backdrop-blur-[10.4px] rounded-full"
-                          >
-                            <img
-                              class="w-3 @min-[768px]:w-4 filter invert"
-                              src="images/more-icon.svg"
-                              alt=""
-                            />
-                          </span>
-                        </div>
-                        <div class="flex flex-wrap gap-0.5 @min-[768px]:gap-1">
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >#1 Google Rated</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >12 Years in Business</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >3 KM from your home</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="p-1.75 pt-1.5 @min-[768px]:p-2.5 rounded-md @min-[768px]:rounded-lg bg-black/8 backdrop-blur-[10.4px]"
-                      >
-                        <div
-                          class="flex justify-between items-center mb-1.5 @min-[768px]:mb-2"
-                        >
-                          <div
-                            class="flex items-center gap-1.5 @min-[768px]:gap-2.5"
-                          >
-                            <img
-                              class="w-8.75 @min-[768px]:w-12"
-                              src="images/t-h-e-pro-plumbing.png"
-                              alt=""
-                            />
-                            <div>
-                              <div class="flex gap-0.75 @min-[768px]:gap-1">
-                                <div class="flex gap-0.25">
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                </div>
-                                <span
-                                  class="text-[0.625rem] @min-[768px]:text-xs heading text-muted-6"
-                                  >4.9</span
-                                >
-                              </div>
+                    <div class="bg-[#29346499] py-2 px-2.5 rounded-lg flex justify-between items-center gap-2">
+                      <span class="text-xs @min-[768px]:text-base heading leading-[100%]">Get a Quick Quote</span>
+                      <img class="w-17.5 @min-[768px]:w-23.25" src="images/top-home-experts-group.webp" alt="">
+                    </div>
 
-                              <h4
-                                class="text-xs @min-[768px]:text-base leading-[1.1] mt-0.5"
-                              >
-                                Pro Plumbing
-                              </h4>
-                            </div>
-                          </div>
-                          <span
-                            class="w-5.5 h-5.5 @min-[768px]:w-8 @min-[768px]:h-8 flex justify-center items-center bg-white/15 backdrop-blur-[10.4px] rounded-full"
-                          >
-                            <img
-                              class="w-3 @min-[768px]:w-4 filter invert"
-                              src="images/more-icon.svg"
-                              alt=""
-                            />
-                          </span>
-                        </div>
-                        <div class="flex flex-wrap gap-0.5 @min-[768px]:gap-1">
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >#1 Google Rated</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >12 Years in Business</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >3 KM from your home</span
-                          >
-                        </div>
-                      </div>
+                    <div class="relative  rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] @min-[768px]:mb-1.75">
+              <input class="peer w-full filter-input text-xs @min-[768px]:text-sm py-2.25 pr-2.5 pl-8" aria-label="filter Neighborhood Comparison" title="filter Neighborhood Comparison" type="text" placeholder="Add your own agent to this list">
+              <img class="w-3.5 h-3.5 peer-focus:hidden absolute pointer-events-none top-1/2 left-2.5 -translate-y-1/2 leading-1-1" src="images/amplifier-icon.svg " alt="">
+            </div>
+
+            <div class="more border-[#ffffff22] pt-3 @min-[768px]:pt-3.75 mt-0">
+                    <p class="text-xs">See all</p>
+                    <img class="uploid-icon filter invert" src="images/more-icon.svg" alt="">
+                  </div>
+                     
                     </div>
                   </div>
                 </div>
@@ -8504,52 +8330,24 @@
 
               <div class="swiper-slide">
                 <div
-                  class="top-home-expert card min-h-82.75 @min-[768px]:min-h-120.5 rounded-md @min-[768px]:rounded-xl p-0 imaged bg-[linear-gradient(transparent,#1F1F1F),url('images/t-h-e-painting.webp')]"
+                  class="top-home-expert card min-h-82.75 @min-[768px]:min-h-110.5 rounded-xl p-0 imaged bg-[linear-gradient(transparent,#1F1F1F),url('images/t-h-e-painting.webp')]"
                 >
                   <div
-                    class="top-home-expert__content px-5 p-3.75 @min-[768px]:p-5 flex justify-between items-end mt-auto"
+                    class="top-home-expert__content px-5 p-3.75 @min-[768px]:p-5 flex justify-between items-end gap-2 mt-auto"
                   >
                     <div>
-                      <div class="flex gap-0.75 @min-[768px]:gap-1">
-                        <div class="flex gap-0.25">
-                          <img
-                            class="w-2 @min-[768px]:w-3"
-                            src="images/t-h-e-start.svg"
-                            alt=""
-                          />
-                          <img
-                            class="w-2 @min-[768px]:w-3"
-                            src="images/t-h-e-start.svg"
-                            alt=""
-                          />
-                          <img
-                            class="w-2 @min-[768px]:w-3"
-                            src="images/t-h-e-start.svg"
-                            alt=""
-                          />
-                          <img
-                            class="w-2 @min-[768px]:w-3"
-                            src="images/t-h-e-start.svg"
-                            alt=""
-                          />
-                          <img
-                            class="w-2 @min-[768px]:w-3"
-                            src="images/t-h-e-start.svg"
-                            alt=""
-                          />
-                        </div>
-                        <span
-                          class="text-[0.625rem] @min-[768px]:text-xs heading"
-                          >4.9</span
-                        >
+                      <div class="flex items-center gap-1 mb-1">
+                        <img class="w-5 @min-[768]:w-6" src="images/v-r-total-scrore-icon.svg" alt="">
+                        <span class="text-lg @min-[768px]:text-xl heading leading-[100%] underline text-white">98</span>
+                        <span class="grid-ranking-city__total-score-triangle top !text-[0.525rem] @min-[768px]:!text-[0.625rem] px-1.5 @min-[768px]:px-1.75">▲</span>
                       </div>
                       <h3
-                        class="text-xl @min-[768px]:text-[2rem] leading-tight mb-0.5 @min-[768px]:mb-1"
+                        class="text-xl @min-[768px]:text-[1.75rem] leading-tight mb-0.5 @min-[768px]:mb-1"
                       >
                         Painting Upgrades
                       </h3>
                       <span
-                        class="text-[0.625rem] @min-[768px]:text-xs heading text-third bg-white rounded-xs @min-[768px]:rounded pb-0.5 px-1.5 @min-[768px]:pt-0 @min-[768px]:px-2.5 inline-block mb-1.5 @min-[768px]:mb-2"
+                        class="text-xs heading text-third bg-white rounded py-0.75 px-2.5 inline-block mb-1.5 @min-[768px]:mb-2"
                         >Top Expert</span
                       >
                       <p class="text-xs @min-[768px]:text-base leading-[1.2]">
@@ -8570,264 +8368,101 @@
                     <div
                       class="flex justify-between items-center mb-2 @min-[768px]:mb-3"
                     >
-                      <h3 class="text-base @min-[768px]:text-2xl">
-                        Painting Upgrades
-                      </h3>
+                      <h3 class="text-xl @min-[768px]:text-2xl">Real Estate Agents</h3>
                       <button
                         aria-label="Close home expert modal"
-                        class="w-5.5 h-5.5 @min-[768px]:w-8 @min-[768px]:h-8 rounded-full bg-muted-2 flex-center home-expert-modal__modal-close"
+                        class="w-6 h-6 @min-[768px]:w-8 @min-[768px]:h-8 rounded-full bg-muted-2 flex-center home-expert-modal__modal-close"
                       >
                         <img
-                          class="w-2.75 @min-[768px]:w-4"
+                          class="w-4"
                           src="images/close-icon.svg"
                           alt=""
                         />
                       </button>
                     </div>
-                    <div class="mt-auto space-y-1.25">
-                      <div
-                        class="p-1.75 pt-1.5 @min-[768px]:p-2.5 rounded-md @min-[768px]:rounded-lg bg-black/8 backdrop-blur-[10.4px]"
-                      >
-                        <div
-                          class="flex justify-between items-center mb-1.5 @min-[768px]:mb-2"
-                        >
-                          <div
-                            class="flex items-center gap-1.5 @min-[768px]:gap-2.5"
-                          >
-                            <img
-                              class="w-8.75 @min-[768px]:w-12"
-                              src="images/t-h-e-rny-plumbing.png"
-                              alt=""
-                            />
-                            <div>
-                              <div class="flex gap-0.75 @min-[768px]:gap-1">
-                                <div class="flex gap-0.25">
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                </div>
-                                <span
-                                  class="text-[0.625rem] @min-[768px]:text-xs heading"
-                                  >4.9</span
-                                >
-                              </div>
+                    <div class="mt-auto space-y-1 @min-[768px]:space-y-1.25">
+                      
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/contacts-profile-img.webp" alt="John Davis">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">John Davis</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-third rounded-full flex justify-center items-center" aria-label="Like this agent">
+                  <img class="w-3" src="images/like-icon-white.svg" alt="">
+                </button>
+                    </div>
+                    
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/top-home-experts-adam-smith.webp" alt="Adam Smith">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">Adam Smith</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] rounded-full flex justify-center items-center" aria-label="add this agent">
+                  <img class="w-3" src="images/ai-starts-white-icon.svg" alt="">
+                </button>
+                    </div>
 
-                              <h4
-                                class="text-xs @min-[768px]:text-base leading-[1.1] mt-0.5"
-                              >
-                                RNY Plumbing
-                              </h4>
-                            </div>
-                          </div>
-                          <span
-                            class="w-5.5 h-5.5 @min-[768px]:w-8 @min-[768px]:h-8 flex justify-center items-center bg-white/15 backdrop-blur-[10.4px] rounded-full"
-                          >
-                            <img
-                              class="w-3 @min-[768px]:w-4 filter invert"
-                              src="images/more-icon.svg"
-                              alt=""
-                            />
-                          </span>
-                        </div>
-                        <div class="flex flex-wrap gap-0.5 @min-[768px]:gap-1">
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >#1 Google Rated</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >12 Years in Business</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >3 KM from your home</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="p-1.75 pt-1.5 @min-[768px]:p-2.5 rounded-md @min-[768px]:rounded-lg bg-black/8 backdrop-blur-[10.4px]"
-                      >
-                        <div
-                          class="flex justify-between items-center mb-1.5 @min-[768px]:mb-2"
-                        >
-                          <div
-                            class="flex items-center gap-1.5 @min-[768px]:gap-2.5"
-                          >
-                            <img
-                              class="w-8.75 @min-[768px]:w-12"
-                              src="images/t-h-e-ja-plumbing.png"
-                              alt=""
-                            />
-                            <div>
-                              <div class="flex gap-0.75 @min-[768px]:gap-1">
-                                <div class="flex gap-0.25">
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                </div>
-                                <span
-                                  class="text-[0.625rem] @min-[768px]:text-xs heading text-muted-6"
-                                  >4.9</span
-                                >
-                              </div>
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/top-home-experts-matthew-brown.webp" alt="Matthew Brown">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">Matthew Brown</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] rounded-full flex justify-center items-center" aria-label="add this agent">
+                  <img class="w-3" src="images/ai-starts-white-icon.svg" alt="">
+                </button>
+                    </div>
 
-                              <h4
-                                class="text-xs @min-[768px]:text-base leading-[1.1] mt-0.5"
-                              >
-                                JA Plumbing
-                              </h4>
-                            </div>
-                          </div>
-                          <span
-                            class="w-5.5 h-5.5 @min-[768px]:w-8 @min-[768px]:h-8 flex justify-center items-center bg-white/15 backdrop-blur-[10.4px] rounded-full"
-                          >
-                            <img
-                              class="w-3 @min-[768px]:w-4 filter invert"
-                              src="images/more-icon.svg"
-                              alt=""
-                            />
-                          </span>
-                        </div>
-                        <div class="flex flex-wrap gap-0.5 @min-[768px]:gap-1">
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >#1 Google Rated</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >12 Years in Business</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >3 KM from your home</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="p-1.75 pt-1.5 @min-[768px]:p-2.5 rounded-md @min-[768px]:rounded-lg bg-black/8 backdrop-blur-[10.4px]"
-                      >
-                        <div
-                          class="flex justify-between items-center mb-1.5 @min-[768px]:mb-2"
-                        >
-                          <div
-                            class="flex items-center gap-1.5 @min-[768px]:gap-2.5"
-                          >
-                            <img
-                              class="w-8.75 @min-[768px]:w-12"
-                              src="images/t-h-e-pro-plumbing.png"
-                              alt=""
-                            />
-                            <div>
-                              <div class="flex gap-0.75 @min-[768px]:gap-1">
-                                <div class="flex gap-0.25">
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                </div>
-                                <span
-                                  class="text-[0.625rem] @min-[768px]:text-xs heading text-muted-6"
-                                  >4.9</span
-                                >
-                              </div>
+                    <div class="bg-[#29346499] py-2 px-2.5 rounded-lg flex justify-between items-center gap-2">
+                      <span class="text-xs @min-[768px]:text-base heading leading-[100%]">Get a Quick Quote</span>
+                      <img class="w-17.5 @min-[768px]:w-23.25" src="images/top-home-experts-group.webp" alt="">
+                    </div>
 
-                              <h4
-                                class="text-xs @min-[768px]:text-base leading-[1.1] mt-0.5"
-                              >
-                                Pro Plumbing
-                              </h4>
-                            </div>
-                          </div>
-                          <span
-                            class="w-5.5 h-5.5 @min-[768px]:w-8 @min-[768px]:h-8 flex justify-center items-center bg-white/15 backdrop-blur-[10.4px] rounded-full"
-                          >
-                            <img
-                              class="w-3 @min-[768px]:w-4 filter invert"
-                              src="images/more-icon.svg"
-                              alt=""
-                            />
-                          </span>
-                        </div>
-                        <div class="flex flex-wrap gap-0.5 @min-[768px]:gap-1">
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >#1 Google Rated</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >12 Years in Business</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >3 KM from your home</span
-                          >
-                        </div>
-                      </div>
+                    <div class="relative  rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] @min-[768px]:mb-1.75">
+              <input class="peer w-full filter-input text-xs @min-[768px]:text-sm py-2.25 pr-2.5 pl-8" aria-label="filter Neighborhood Comparison" title="filter Neighborhood Comparison" type="text" placeholder="Add your own agent to this list">
+              <img class="w-3.5 h-3.5 peer-focus:hidden absolute pointer-events-none top-1/2 left-2.5 -translate-y-1/2 leading-1-1" src="images/amplifier-icon.svg " alt="">
+            </div>
+
+            <div class="more border-[#ffffff22] pt-3 @min-[768px]:pt-3.75 mt-0">
+                    <p class="text-xs">See all</p>
+                    <img class="uploid-icon filter invert" src="images/more-icon.svg" alt="">
+                  </div>
+                     
                     </div>
                   </div>
                 </div>
@@ -8835,52 +8470,24 @@
 
               <div class="swiper-slide">
                 <div
-                  class="top-home-expert card min-h-82.75 @min-[768px]:min-h-120.5 rounded-md @min-[768px]:rounded-xl p-0 imaged bg-[linear-gradient(transparent,#1F1F1F),url('images/t-h-e-cleaning.webp')]"
+                  class="top-home-expert card min-h-82.75 @min-[768px]:min-h-110.5 rounded-xl p-0 imaged bg-[linear-gradient(transparent,#1F1F1F),url('images/t-h-e-cleaning.webp')]"
                 >
                   <div
-                    class="top-home-expert__content px-5 p-3.75 @min-[768px]:p-5 flex justify-between items-end mt-auto"
+                    class="top-home-expert__content px-5 p-3.75 @min-[768px]:p-5 flex justify-between items-end gap-2 mt-auto"
                   >
                     <div>
-                      <div class="flex gap-0.75 @min-[768px]:gap-1">
-                        <div class="flex gap-0.25">
-                          <img
-                            class="w-2 @min-[768px]:w-3"
-                            src="images/t-h-e-start.svg"
-                            alt=""
-                          />
-                          <img
-                            class="w-2 @min-[768px]:w-3"
-                            src="images/t-h-e-start.svg"
-                            alt=""
-                          />
-                          <img
-                            class="w-2 @min-[768px]:w-3"
-                            src="images/t-h-e-start.svg"
-                            alt=""
-                          />
-                          <img
-                            class="w-2 @min-[768px]:w-3"
-                            src="images/t-h-e-start.svg"
-                            alt=""
-                          />
-                          <img
-                            class="w-2 @min-[768px]:w-3"
-                            src="images/t-h-e-start.svg"
-                            alt=""
-                          />
-                        </div>
-                        <span
-                          class="text-[0.625rem] @min-[768px]:text-xs heading"
-                          >4.9</span
-                        >
+                      <div class="flex items-center gap-1 mb-1">
+                        <img class="w-5 @min-[768]:w-6" src="images/v-r-total-scrore-icon.svg" alt="">
+                        <span class="text-lg @min-[768px]:text-xl heading leading-[100%] underline text-white">98</span>
+                        <span class="grid-ranking-city__total-score-triangle top !text-[0.525rem] @min-[768px]:!text-[0.625rem] px-1.5 @min-[768px]:px-1.75">▲</span>
                       </div>
                       <h3
-                        class="text-xl @min-[768px]:text-[2rem] leading-tight mb-0.5 @min-[768px]:mb-1"
+                        class="text-xl @min-[768px]:text-[1.75rem] leading-tight mb-0.5 @min-[768px]:mb-1"
                       >
                         Cleaning Services
                       </h3>
                       <span
-                        class="text-[0.625rem] @min-[768px]:text-xs heading text-third bg-white rounded-xs @min-[768px]:rounded pb-0.5 px-1.5 @min-[768px]:pt-0 @min-[768px]:px-2.5 inline-block mb-1.5 @min-[768px]:mb-2"
+                        class="text-xs heading text-third bg-white rounded py-0.75 px-2.5 inline-block mb-1.5 @min-[768px]:mb-2"
                         >Top Expert</span
                       >
                       <p class="text-xs @min-[768px]:text-base leading-[1.2]">
@@ -8895,270 +8502,107 @@
                       </span>
                     </div>
                   </div>
-                  <div
+                 <div
                     class="top-home-expert__modal rounded-[inherit] p-3.75 @min-[768px]:p-5 @min-[768px]:pb-4.5 h-full bg-[linear-gradient(#1F1F1F99,#1F1F1F99)] flex flex-col hidden"
                   >
                     <div
                       class="flex justify-between items-center mb-2 @min-[768px]:mb-3"
                     >
-                      <h3 class="text-base @min-[768px]:text-2xl">
-                        Cleaning Services
-                      </h3>
+                      <h3 class="text-xl @min-[768px]:text-2xl">Real Estate Agents</h3>
                       <button
                         aria-label="Close home expert modal"
-                        class="w-5.5 h-5.5 @min-[768px]:w-8 @min-[768px]:h-8 rounded-full bg-muted-2 flex-center home-expert-modal__modal-close"
+                        class="w-6 h-6 @min-[768px]:w-8 @min-[768px]:h-8 rounded-full bg-muted-2 flex-center home-expert-modal__modal-close"
                       >
                         <img
-                          class="w-2.75 @min-[768px]:w-4"
+                          class="w-4"
                           src="images/close-icon.svg"
                           alt=""
                         />
                       </button>
                     </div>
-                    <div class="mt-auto space-y-1.25">
-                      <div
-                        class="p-1.75 pt-1.5 @min-[768px]:p-2.5 rounded-md @min-[768px]:rounded-lg bg-black/8 backdrop-blur-[10.4px]"
-                      >
-                        <div
-                          class="flex justify-between items-center mb-1.5 @min-[768px]:mb-2"
-                        >
-                          <div
-                            class="flex items-center gap-1.5 @min-[768px]:gap-2.5"
-                          >
-                            <img
-                              class="w-8.75 @min-[768px]:w-12"
-                              src="images/t-h-e-rny-plumbing.png"
-                              alt=""
-                            />
-                            <div>
-                              <div class="flex gap-0.75 @min-[768px]:gap-1">
-                                <div class="flex gap-0.25">
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                </div>
-                                <span
-                                  class="text-[0.625rem] @min-[768px]:text-xs heading"
-                                  >4.9</span
-                                >
-                              </div>
+                    <div class="mt-auto space-y-1 @min-[768px]:space-y-1.25">
+                      
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/contacts-profile-img.webp" alt="John Davis">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">John Davis</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-third rounded-full flex justify-center items-center" aria-label="Like this agent">
+                  <img class="w-3" src="images/like-icon-white.svg" alt="">
+                </button>
+                    </div>
+                    
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/top-home-experts-adam-smith.webp" alt="Adam Smith">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">Adam Smith</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] rounded-full flex justify-center items-center" aria-label="add this agent">
+                  <img class="w-3" src="images/ai-starts-white-icon.svg" alt="">
+                </button>
+                    </div>
 
-                              <h4
-                                class="text-xs @min-[768px]:text-base leading-[1.1] mt-0.5"
-                              >
-                                RNY Plumbing
-                              </h4>
-                            </div>
-                          </div>
-                          <span
-                            class="w-5.5 h-5.5 @min-[768px]:w-8 @min-[768px]:h-8 flex justify-center items-center bg-white/15 backdrop-blur-[10.4px] rounded-full"
-                          >
-                            <img
-                              class="w-3 @min-[768px]:w-4 filter invert"
-                              src="images/more-icon.svg"
-                              alt=""
-                            />
-                          </span>
-                        </div>
-                        <div class="flex flex-wrap gap-0.5 @min-[768px]:gap-1">
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >#1 Google Rated</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >12 Years in Business</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >3 KM from your home</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="p-1.75 pt-1.5 @min-[768px]:p-2.5 rounded-md @min-[768px]:rounded-lg bg-black/8 backdrop-blur-[10.4px]"
-                      >
-                        <div
-                          class="flex justify-between items-center mb-1.5 @min-[768px]:mb-2"
-                        >
-                          <div
-                            class="flex items-center gap-1.5 @min-[768px]:gap-2.5"
-                          >
-                            <img
-                              class="w-8.75 @min-[768px]:w-12"
-                              src="images/t-h-e-ja-plumbing.png"
-                              alt=""
-                            />
-                            <div>
-                              <div class="flex gap-0.75 @min-[768px]:gap-1">
-                                <div class="flex gap-0.25">
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                </div>
-                                <span
-                                  class="text-[0.625rem] @min-[768px]:text-xs heading text-muted-6"
-                                  >4.9</span
-                                >
-                              </div>
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/top-home-experts-matthew-brown.webp" alt="Matthew Brown">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">Matthew Brown</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] rounded-full flex justify-center items-center" aria-label="add this agent">
+                  <img class="w-3" src="images/ai-starts-white-icon.svg" alt="">
+                </button>
+                    </div>
 
-                              <h4
-                                class="text-xs @min-[768px]:text-base leading-[1.1] mt-0.5"
-                              >
-                                JA Plumbing
-                              </h4>
-                            </div>
-                          </div>
-                          <span
-                            class="w-5.5 h-5.5 @min-[768px]:w-8 @min-[768px]:h-8 flex justify-center items-center bg-white/15 backdrop-blur-[10.4px] rounded-full"
-                          >
-                            <img
-                              class="w-3 @min-[768px]:w-4 filter invert"
-                              src="images/more-icon.svg"
-                              alt=""
-                            />
-                          </span>
-                        </div>
-                        <div class="flex flex-wrap gap-0.5 @min-[768px]:gap-1">
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >#1 Google Rated</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >12 Years in Business</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >3 KM from your home</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="p-1.75 pt-1.5 @min-[768px]:p-2.5 rounded-md @min-[768px]:rounded-lg bg-black/8 backdrop-blur-[10.4px]"
-                      >
-                        <div
-                          class="flex justify-between items-center mb-1.5 @min-[768px]:mb-2"
-                        >
-                          <div
-                            class="flex items-center gap-1.5 @min-[768px]:gap-2.5"
-                          >
-                            <img
-                              class="w-8.75 @min-[768px]:w-12"
-                              src="images/t-h-e-pro-plumbing.png"
-                              alt=""
-                            />
-                            <div>
-                              <div class="flex gap-0.75 @min-[768px]:gap-1">
-                                <div class="flex gap-0.25">
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                </div>
-                                <span
-                                  class="text-[0.625rem] @min-[768px]:text-xs heading text-muted-6"
-                                  >4.9</span
-                                >
-                              </div>
+                    <div class="bg-[#29346499] py-2 px-2.5 rounded-lg flex justify-between items-center gap-2">
+                      <span class="text-xs @min-[768px]:text-base heading leading-[100%]">Get a Quick Quote</span>
+                      <img class="w-17.5 @min-[768px]:w-23.25" src="images/top-home-experts-group.webp" alt="">
+                    </div>
 
-                              <h4
-                                class="text-xs @min-[768px]:text-base leading-[1.1] mt-0.5"
-                              >
-                                Pro Plumbing
-                              </h4>
-                            </div>
-                          </div>
-                          <span
-                            class="w-5.5 h-5.5 @min-[768px]:w-8 @min-[768px]:h-8 flex justify-center items-center bg-white/15 backdrop-blur-[10.4px] rounded-full"
-                          >
-                            <img
-                              class="w-3 @min-[768px]:w-4 filter invert"
-                              src="images/more-icon.svg"
-                              alt=""
-                            />
-                          </span>
-                        </div>
-                        <div class="flex flex-wrap gap-0.5 @min-[768px]:gap-1">
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >#1 Google Rated</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >12 Years in Business</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >3 KM from your home</span
-                          >
-                        </div>
-                      </div>
+                    <div class="relative  rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] @min-[768px]:mb-1.75">
+              <input class="peer w-full filter-input text-xs @min-[768px]:text-sm py-2.25 pr-2.5 pl-8" aria-label="filter Neighborhood Comparison" title="filter Neighborhood Comparison" type="text" placeholder="Add your own agent to this list">
+              <img class="w-3.5 h-3.5 peer-focus:hidden absolute pointer-events-none top-1/2 left-2.5 -translate-y-1/2 leading-1-1" src="images/amplifier-icon.svg " alt="">
+            </div>
+
+            <div class="more border-[#ffffff22] pt-3 @min-[768px]:pt-3.75 mt-0">
+                    <p class="text-xs">See all</p>
+                    <img class="uploid-icon filter invert" src="images/more-icon.svg" alt="">
+                  </div>
+                     
                     </div>
                   </div>
                 </div>
@@ -9166,52 +8610,24 @@
 
               <div class="swiper-slide pr-5 @min-[768px]:pr-8">
                 <div
-                  class="top-home-expert card min-h-82.75 @min-[768px]:min-h-120.5 rounded-md @min-[768px]:rounded-xl p-0 imaged bg-[linear-gradient(transparent,#1F1F1F),url('images/t-h-e-electrical.webp')]"
+                  class="top-home-expert card min-h-82.75 @min-[768px]:min-h-110.5 rounded-xl p-0 imaged bg-[linear-gradient(transparent,#1F1F1F),url('images/t-h-e-electrical.webp')]"
                 >
                   <div
-                    class="top-home-expert__content px-5 p-3.75 @min-[768px]:p-5 flex justify-between items-end mt-auto"
+                    class="top-home-expert__content px-5 p-3.75 @min-[768px]:p-5 flex justify-between items-end gap-2 mt-auto"
                   >
                     <div>
-                      <div class="flex gap-0.75 @min-[768px]:gap-1">
-                        <div class="flex gap-0.25">
-                          <img
-                            class="w-2 @min-[768px]:w-3"
-                            src="images/t-h-e-start.svg"
-                            alt=""
-                          />
-                          <img
-                            class="w-2 @min-[768px]:w-3"
-                            src="images/t-h-e-start.svg"
-                            alt=""
-                          />
-                          <img
-                            class="w-2 @min-[768px]:w-3"
-                            src="images/t-h-e-start.svg"
-                            alt=""
-                          />
-                          <img
-                            class="w-2 @min-[768px]:w-3"
-                            src="images/t-h-e-start.svg"
-                            alt=""
-                          />
-                          <img
-                            class="w-2 @min-[768px]:w-3"
-                            src="images/t-h-e-start.svg"
-                            alt=""
-                          />
-                        </div>
-                        <span
-                          class="text-[0.625rem] @min-[768px]:text-xs heading"
-                          >4.9</span
-                        >
+                      <div class="flex items-center gap-1 mb-1">
+                        <img class="w-5 @min-[768]:w-6" src="images/v-r-total-scrore-icon.svg" alt="">
+                        <span class="text-lg @min-[768px]:text-xl heading leading-[100%] underline text-white">98</span>
+                        <span class="grid-ranking-city__total-score-triangle top !text-[0.525rem] @min-[768px]:!text-[0.625rem] px-1.5 @min-[768px]:px-1.75">▲</span>
                       </div>
                       <h3
-                        class="text-xl @min-[768px]:text-[2rem] leading-tight mb-0.5 @min-[768px]:mb-1"
+                        class="text-xl @min-[768px]:text-[1.75rem] leading-tight mb-0.5 @min-[768px]:mb-1"
                       >
                         Electrical & Lighting
                       </h3>
                       <span
-                        class="text-[0.625rem] @min-[768px]:text-xs heading text-third bg-white rounded-xs @min-[768px]:rounded pb-0.5 px-1.5 @min-[768px]:pt-0 @min-[768px]:px-2.5 inline-block mb-1.5 @min-[768px]:mb-2"
+                        class="text-xs heading text-third bg-white rounded py-0.75 px-2.5 inline-block mb-1.5 @min-[768px]:mb-2"
                         >Top Expert</span
                       >
                       <p class="text-xs @min-[768px]:text-base leading-[1.2]">
@@ -9232,264 +8648,101 @@
                     <div
                       class="flex justify-between items-center mb-2 @min-[768px]:mb-3"
                     >
-                      <h3 class="text-base @min-[768px]:text-2xl">
-                        Electrical & Lighting
-                      </h3>
+                      <h3 class="text-xl @min-[768px]:text-2xl">Real Estate Agents</h3>
                       <button
                         aria-label="Close home expert modal"
-                        class="w-5.5 h-5.5 @min-[768px]:w-8 @min-[768px]:h-8 rounded-full bg-muted-2 flex-center home-expert-modal__modal-close"
+                        class="w-6 h-6 @min-[768px]:w-8 @min-[768px]:h-8 rounded-full bg-muted-2 flex-center home-expert-modal__modal-close"
                       >
                         <img
-                          class="w-2.75 @min-[768px]:w-4"
+                          class="w-4"
                           src="images/close-icon.svg"
                           alt=""
                         />
                       </button>
                     </div>
-                    <div class="mt-auto space-y-1.25">
-                      <div
-                        class="p-1.75 pt-1.5 @min-[768px]:p-2.5 rounded-md @min-[768px]:rounded-lg bg-black/8 backdrop-blur-[10.4px]"
-                      >
-                        <div
-                          class="flex justify-between items-center mb-1.5 @min-[768px]:mb-2"
-                        >
-                          <div
-                            class="flex items-center gap-1.5 @min-[768px]:gap-2.5"
-                          >
-                            <img
-                              class="w-8.75 @min-[768px]:w-12"
-                              src="images/t-h-e-rny-plumbing.png"
-                              alt=""
-                            />
-                            <div>
-                              <div class="flex gap-0.75 @min-[768px]:gap-1">
-                                <div class="flex gap-0.25">
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                </div>
-                                <span
-                                  class="text-[0.625rem] @min-[768px]:text-xs heading"
-                                  >4.9</span
-                                >
-                              </div>
+                    <div class="mt-auto space-y-1 @min-[768px]:space-y-1.25">
+                      
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/contacts-profile-img.webp" alt="John Davis">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">John Davis</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-third rounded-full flex justify-center items-center" aria-label="Like this agent">
+                  <img class="w-3" src="images/like-icon-white.svg" alt="">
+                </button>
+                    </div>
+                    
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/top-home-experts-adam-smith.webp" alt="Adam Smith">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">Adam Smith</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] rounded-full flex justify-center items-center" aria-label="add this agent">
+                  <img class="w-3" src="images/ai-starts-white-icon.svg" alt="">
+                </button>
+                    </div>
 
-                              <h4
-                                class="text-xs @min-[768px]:text-base leading-[1.1] mt-0.5"
-                              >
-                                RNY Plumbing
-                              </h4>
-                            </div>
-                          </div>
-                          <span
-                            class="w-5.5 h-5.5 @min-[768px]:w-8 @min-[768px]:h-8 flex justify-center items-center bg-white/15 backdrop-blur-[10.4px] rounded-full"
-                          >
-                            <img
-                              class="w-3 @min-[768px]:w-4 filter invert"
-                              src="images/more-icon.svg"
-                              alt=""
-                            />
-                          </span>
-                        </div>
-                        <div class="flex flex-wrap gap-0.5 @min-[768px]:gap-1">
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >#1 Google Rated</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >12 Years in Business</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >3 KM from your home</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="p-1.75 pt-1.5 @min-[768px]:p-2.5 rounded-md @min-[768px]:rounded-lg bg-black/8 backdrop-blur-[10.4px]"
-                      >
-                        <div
-                          class="flex justify-between items-center mb-1.5 @min-[768px]:mb-2"
-                        >
-                          <div
-                            class="flex items-center gap-1.5 @min-[768px]:gap-2.5"
-                          >
-                            <img
-                              class="w-8.75 @min-[768px]:w-12"
-                              src="images/t-h-e-ja-plumbing.png"
-                              alt=""
-                            />
-                            <div>
-                              <div class="flex gap-0.75 @min-[768px]:gap-1">
-                                <div class="flex gap-0.25">
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                </div>
-                                <span
-                                  class="text-[0.625rem] @min-[768px]:text-xs heading text-muted-6"
-                                  >4.9</span
-                                >
-                              </div>
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/top-home-experts-matthew-brown.webp" alt="Matthew Brown">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">Matthew Brown</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] rounded-full flex justify-center items-center" aria-label="add this agent">
+                  <img class="w-3" src="images/ai-starts-white-icon.svg" alt="">
+                </button>
+                    </div>
 
-                              <h4
-                                class="text-xs @min-[768px]:text-base leading-[1.1] mt-0.5"
-                              >
-                                JA Plumbing
-                              </h4>
-                            </div>
-                          </div>
-                          <span
-                            class="w-5.5 h-5.5 @min-[768px]:w-8 @min-[768px]:h-8 flex justify-center items-center bg-white/15 backdrop-blur-[10.4px] rounded-full"
-                          >
-                            <img
-                              class="w-3 @min-[768px]:w-4 filter invert"
-                              src="images/more-icon.svg"
-                              alt=""
-                            />
-                          </span>
-                        </div>
-                        <div class="flex flex-wrap gap-0.5 @min-[768px]:gap-1">
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >#1 Google Rated</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >12 Years in Business</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >3 KM from your home</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="p-1.75 pt-1.5 @min-[768px]:p-2.5 rounded-md @min-[768px]:rounded-lg bg-black/8 backdrop-blur-[10.4px]"
-                      >
-                        <div
-                          class="flex justify-between items-center mb-1.5 @min-[768px]:mb-2"
-                        >
-                          <div
-                            class="flex items-center gap-1.5 @min-[768px]:gap-2.5"
-                          >
-                            <img
-                              class="w-8.75 @min-[768px]:w-12"
-                              src="images/t-h-e-pro-plumbing.png"
-                              alt=""
-                            />
-                            <div>
-                              <div class="flex gap-0.75 @min-[768px]:gap-1">
-                                <div class="flex gap-0.25">
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="w-2 @min-[768px]:w-3"
-                                    src="images/t-h-e-start.svg"
-                                    alt=""
-                                  />
-                                </div>
-                                <span
-                                  class="text-[0.625rem] @min-[768px]:text-xs heading text-muted-6"
-                                  >4.9</span
-                                >
-                              </div>
+                    <div class="bg-[#29346499] py-2 px-2.5 rounded-lg flex justify-between items-center gap-2">
+                      <span class="text-xs @min-[768px]:text-base heading leading-[100%]">Get a Quick Quote</span>
+                      <img class="w-17.5 @min-[768px]:w-23.25" src="images/top-home-experts-group.webp" alt="">
+                    </div>
 
-                              <h4
-                                class="text-xs @min-[768px]:text-base leading-[1.1] mt-0.5"
-                              >
-                                Pro Plumbing
-                              </h4>
-                            </div>
-                          </div>
-                          <span
-                            class="w-5.5 h-5.5 @min-[768px]:w-8 @min-[768px]:h-8 flex justify-center items-center bg-white/15 backdrop-blur-[10.4px] rounded-full"
-                          >
-                            <img
-                              class="w-3 @min-[768px]:w-4 filter invert"
-                              src="images/more-icon.svg"
-                              alt=""
-                            />
-                          </span>
-                        </div>
-                        <div class="flex flex-wrap gap-0.5 @min-[768px]:gap-1">
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >#1 Google Rated</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >12 Years in Business</span
-                          >
-                          <span
-                            class="text-[0.625rem] @min-[768px]:text-xs px-1 @min-[768px]:py-0.5 @min-[768px]:px-2 bg-white/15 backdrop-blur-[10.4px] rounded-xs @min-[768px]:rounded"
-                            >3 KM from your home</span
-                          >
-                        </div>
-                      </div>
+                    <div class="relative  rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] @min-[768px]:mb-1.75">
+              <input class="peer w-full filter-input text-xs @min-[768px]:text-sm py-2.25 pr-2.5 pl-8" aria-label="filter Neighborhood Comparison" title="filter Neighborhood Comparison" type="text" placeholder="Add your own agent to this list">
+              <img class="w-3.5 h-3.5 peer-focus:hidden absolute pointer-events-none top-1/2 left-2.5 -translate-y-1/2 leading-1-1" src="images/amplifier-icon.svg " alt="">
+            </div>
+
+            <div class="more border-[#ffffff22] pt-3 @min-[768px]:pt-3.75 mt-0">
+                    <p class="text-xs">See all</p>
+                    <img class="uploid-icon filter invert" src="images/more-icon.svg" alt="">
+                  </div>
+                     
                     </div>
                   </div>
                 </div>
@@ -11519,8 +10772,55 @@
             aria-labelledby="tab-all"
           >
             <div class="swiper-wrapper">
+
+              <div class="swiper-slide pl-5 @min-[768px]:pl-8 @min-[1024px]:pl-24.5">
+                <div
+                  class="card has-chevron-icon text-white bg-third origin-top"
+                >
+                  <div class="flex justify-between mb-2.5">
+                    <dl class="heading leading-[1]">
+                      <dt class="text-[2.625rem] @min-[768px]:text-[4rem]">
+                        5,450
+                      </dt>
+                      <dd class="text-sm @min-[768px]:text-xl">Home.CA Points</dd>
+                      <dt
+                        class="text-[2.625rem] @min-[768px]:text-[4rem] mt-6 @min-[768px]:mt-5"
+                      >
+                        39
+                      </dt>
+                      <dd class="text-sm @min-[768px]:text-xl">Opportunities</dd>
+                    </dl>
+                    <span
+                      class="hidden @min-[768px]:flex text-[0.625rem] text-third heading leading-[100%] bg-white py-1 px-1.25 rounded  gap-0.5 self-start mt-1.25 @min-[768px]:mt-0"
+                    >
+                      +2 000 points
+                      <svg
+                        class="chevron-icon fill-third-100 w-2.5 h-2.5 static"
+                      >
+                        <use href="#chevron-icon" />
+                      </svg>
+                    </span>
+                  </div>
+
+                  <svg
+                    class="chevron-icon fill-third-100 w-39 h-39 @min-[768px]:w-56 @min-[768px]:h-56 -top-3.5 left-auto -right-9"
+                  >
+                    <use href="#chevron-icon" />
+                  </svg>
+
+                  <div class="more border-[#ffffff22]">
+                    <p>Scroll to Discover</p>
+                    <img
+                      class="uploid-icon filter invert"
+                      src="images/more-icon.svg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+
               <div
-                class="swiper-slide pl-5 @min-[768px]:pl-8 @min-[1024px]:pl-24.5"
+                class="swiper-slide "
               >
                 <div class="card bg-third text-white has-chevron-icon">
                   <div class="flex justify-between">
@@ -14407,7 +13707,7 @@
         </div>
       </div>
 
-      <div class="hidden" id="pane-2">
+      <div class="hidden relative z-2" id="pane-2">
         <div
           data-canvas="map"
           class="h-screen flex flex-col bg-white sticky top-0"
