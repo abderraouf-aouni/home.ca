@@ -1019,6 +1019,9 @@
   .aspect-\[1\.4\] {
     aspect-ratio: 1.4;
   }
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
   .aspect-video {
     aspect-ratio: var(--aspect-video);
   }
@@ -2257,8 +2260,14 @@
   .bg-\[\#D8F0E7\] {
     background-color: #D8F0E7;
   }
+  .bg-\[\#E4E4E4\] {
+    background-color: #E4E4E4;
+  }
   .bg-\[\#FFDFD2\] {
     background-color: #FFDFD2;
+  }
+  .bg-\[E4E4E4\] {
+    background-color: E4E4E4;
   }
   .bg-\[rgba\(255\,255\,255\,0\.1\)\] {
     background-color: rgba(255,255,255,0.1);
@@ -5593,6 +5602,26 @@
       margin-top: calc(var(--spacing) * -13);
     }
   }
+  .\@min-\[768px\]\:-mt-15 {
+    @container (width >= 768px) {
+      margin-top: calc(var(--spacing) * -15);
+    }
+  }
+  .\@min-\[768px\]\:-mt-17 {
+    @container (width >= 768px) {
+      margin-top: calc(var(--spacing) * -17);
+    }
+  }
+  .\@min-\[768px\]\:-mt-17\.5 {
+    @container (width >= 768px) {
+      margin-top: calc(var(--spacing) * -17.5);
+    }
+  }
+  .\@min-\[768px\]\:-mt-20 {
+    @container (width >= 768px) {
+      margin-top: calc(var(--spacing) * -20);
+    }
+  }
   .\@min-\[768px\]\:mt-0 {
     @container (width >= 768px) {
       margin-top: calc(var(--spacing) * 0);
@@ -6326,6 +6355,11 @@
   .\@min-\[768px\]\:gap-18\.75 {
     @container (width >= 768px) {
       gap: calc(var(--spacing) * 18.75);
+    }
+  }
+  .\@min-\[768px\]\:gap-22\.5 {
+    @container (width >= 768px) {
+      gap: calc(var(--spacing) * 22.5);
     }
   }
   .\@min-\[768px\]\:gap-50 {
