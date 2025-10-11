@@ -773,7 +773,7 @@
             </div>
     </header>
     <div class="wrapper">
-            <div class=" bg-muted-2 rounded-lg p-4">
+            <div class="max-w-176  bg-muted-2 rounded-lg p-4">
               <p class="max-w-116.5 font-medium leading-[140%]">
                 Hey, I am here to answer any of your questions about property
                 You can ask anything, like:
@@ -1857,7 +1857,7 @@ class="section-wrapper"
           </header>
 
           <div class="wrapper">
-            <div class=" bg-muted-2 rounded-lg p-4">
+            <div class="max-w-176  bg-muted-2 rounded-lg p-4">
               <p class=" font-medium leading-[140%]">
                 Here are the nearest days John Smith is available. Choose when you’d like to book an appointment:
               </p>
@@ -1947,7 +1947,8 @@ class="section-wrapper"
                 
               </ul>
             </div>
-            <div class=" bg-muted-2 rounded-lg p-4">
+
+            <div class="max-w-176 bg-muted-2 rounded-lg p-4 mt-4">
               <p class=" font-medium leading-[140%]">
                 Choose a time slot that works best for you
               </p>
@@ -2101,7 +2102,8 @@ class="section-wrapper"
    </header>
 
    <div class="wrapper">
-     <div class=" flex flex-col @min-[768px]:flex-row justify-between gap-3">
+     <div class="max-w-176">
+      <div class=" flex flex-col @min-[768px]:flex-row justify-between gap-3">
        <h3 class="text-xl @min-[768px]:text-2xl">Price range</h3>
        <div class="flex gap-2">
          <button class="w-30 font-medium text-white rounded-md bg-third py-1.75"
@@ -2165,6 +2167,7 @@ class="section-wrapper"
      <!-- hidden fields for forms -->
      <input type="hidden" name="min_price" :value="minVal">
      <input type="hidden" name="max_price" :value="maxVal">
+     </div>
    </div>
 
 
@@ -2925,7 +2928,7 @@ function rangeUI(){
               <span class="text-sm text-muted-1">Sub description here</span>
               
         <div x-data="rating()" x-init="init()">
-  <div class="@min-[768px]:max-w-82 bg-white rounded-[9px] p-4 flex flex-col items-center gap-4 @min-[768px]:flex-row mt-4">
+  <div class="@min-[768px]:max-w-88 bg-white rounded-[9px] p-4 flex flex-col items-center gap-4 @min-[768px]:flex-row mt-4">
   
     <fieldset class="w-full @min-[768px]:w-auto flex justify-center items-center gap-2 border-b border-muted-3 pb-4 @min-[768px]:border-b-0 @min-[768px]:border-r @min-[768px]:pb-0 @min-[768px]:pr-4" role="radiogroup" aria-label="Rate product from 0 to 5">
       <template x-for="i in 5" :key="i">
@@ -3171,6 +3174,8 @@ function rangeUI(){
               </div>
             </div>
           </section>
+
+          <hr class="separate-line" />
 
           <!--  ai chat experts examples option-1 section -->
 
@@ -3435,7 +3440,7 @@ function rangeUI(){
               </div>
 
               <div
-                class="swiper-slide"
+                class="swiper-slide pr-5 @min-[768px]:pr-8"
               >
                 <div class="card bg-third text-white has-chevron-icon">
                   <div class="flex justify-between">
@@ -3496,6 +3501,1124 @@ function rangeUI(){
               </div>
           </div>
           </section>
+
+          <hr class="separate-line" />
+
+        <!--  places examples section -->
+
+        <section
+          class="section-wrapper has-slider max-w-none"
+          aria-labelledby="places-examples-heading"
+        >
+          <header class="main-header">
+            <span class="bubble hidden">
+              <svg class="chevron-icon">
+                <use href="#chevron-icon"></use>
+              </svg>
+            </span>
+            <h2 id="places-examples-rebates-heading">
+              Top Home Experts Update
+            </h2>
+            <div class="dropdown" x-data="{ open: false }">
+              <button
+                @click="open = !open"
+                @keydown.escape="open = false"
+                aria-haspopup="true"
+                :aria-expanded="open"
+                aria-label="More options for managing finances Your Home"
+                :class="{ 'bg-muted-7': open }"
+                aria-expanded="false"
+              >
+                <img src="images/three-points-icon.svg" alt="" />
+              </button>
+
+              <ul
+                x-show="open"
+                x-transition=""
+                @click.away="open = false"
+                role="menu"
+                aria-label="Manage Finances options"
+                class="menu"
+                style="display: none"
+              >
+                <li role="none">
+                  <a href="#" role="menuitem" class="menu-item">
+                    <img src="images/add-info-icon.svg" alt="" />
+                    Add info
+                  </a>
+                </li>
+                <li role="none">
+                  <a href="#" role="menuitem" class="menu-item">
+                    <img src="images/edit-icon.svg" alt="" />
+                    Edit
+                  </a>
+                </li>
+                <li role="none">
+                  <a href="#" role="menuitem" class="menu-item">
+                    <img src="images/view-details-icon.svg" alt="" />
+                    View Details
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <p class="base-p" data-readmore="">
+              A stunning property that effortlessly blends style, comfort, and
+              functionality in a highly sought-after neighborhood. Nestled in a
+              serene and
+              <span data-readmore-text="" class="hidden">
+                additional copy goes here.
+              </span>
+              <button href="#" class="show-more" data-readmore-btn="">
+                Read more
+              </button>
+            </p>
+            <div class="header-tags">
+              <span class="tag">#1 in Thornhill</span>
+              <span class="tag">#2 $500k to $750k Range</span>
+              <span class="tag">#3 Real Estate Agents in Vaughan</span>
+            </div>
+          </header>
+
+          <div
+            class="wrapper flex flex-wrap justify-between items-start gap-3 mb-6"
+          >
+            <nav class="tabs" aria-label="Filter by Experts or job">
+              <ul role="tablist" class="filter-tabs px-0 mb-0">
+                <li role="presentation">
+                  <button
+                    class="filter-tab filter-room-tab active"
+                    role="tab"
+                    aria-selected="true"
+                    id="tab-by-experts"
+                    aria-controls="panel-by-experts"
+                  >
+                    By Experts
+                  </button>
+                </li>
+                <li role="presentation">
+                  <button
+                    class="filter-tab filter-room-tab"
+                    role="tab"
+                    aria-selected="false"
+                    id="tab-by-job"
+                    aria-controls="panel-by-job"
+                  >
+                    By Job
+                  </button>
+                </li>
+              </ul>
+            </nav>
+            <div
+              class="relative border border-muted-3 rounded-md flex-1 sm:w-auto"
+            >
+              <input
+                class="peer w-full filter-input text-sm py-1.75 pl-8 pr-2.5 outline-secondary"
+                aria-label="filter Neighborhood Comparison"
+                title="filter Neighborhood Comparison"
+                type="text"
+                placeholder="Search"
+                id="quickFilter"
+              />
+              <img
+                class="peer-focus:hidden absolute pointer-events-none top-1/2 left-2.5 -translate-y-1/2 leading-1-1"
+                src="images/amplifier-icon.svg "
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div
+            class="swiper swiper-top-home-experts"
+            role="tabpanel"
+            id="panel-all"
+            aria-labelledby="tab-all"
+          >
+            <div class="swiper-wrapper">
+              <div
+                class="swiper-slide pl-5 @min-[768px]:pl-8 @min-[1024px]:pl-24.5"
+              >
+                <div
+                  class="top-home-expert card min-h-82.75 @min-[768px]:min-h-110 rounded-xl p-0 imaged bg-[linear-gradient(transparent,#1F1F1F),url('images/places-examples-1.png')]"
+                >
+                  <div
+                    class="top-home-expert__content px-5 p-3.75 @min-[768px]:p-5 flex justify-between items-end gap-2 mt-auto"
+                  >
+                    <div>
+                      <div class="flex items-center gap-1">
+                        <img class="w-5 @min-[768px]:w-6" src="images/v-r-total-scrore-icon.svg" alt="" />
+                        <span class="text-lg @min-[768px]:text-xl heading leading-[100%] underline text-white">98</span>
+                        <span class="grid-ranking-city__total-score-triangle top !text-[0.525rem] @min-[768px]:!text-[0.625rem] px-1.5 @min-[768px]:px-1.75">▲</span>
+                      </div>
+                      <h3
+                        class="text-xl @min-[768px]:text-[1.75rem] leading-tight mb-0.5 @min-[768px]:mb-1"
+                      >
+                        Pizza
+                      </h3>
+                      <span
+                        class="text-xs heading text-third bg-white rounded py-0.75 px-2.5 inline-block mb-1.5 @min-[768px]:mb-2"
+                        >Top Expert</span
+                      >
+                      <p class="text-xs @min-[768px]:text-base leading-[1.2]">
+                        Westmount Collegiate Institute
+                      </p>
+                    </div>
+                    <div class="pb-1.5 @min-[768px]:pb-2">
+                      <span
+                        class="w-5.5 h-5.5 @min-[768px]:w-8 @min-[768px]:h-8 flex justify-center items-center bg-white rounded-full"
+                      >
+                        <img src="images/more-icon.svg" alt="" />
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="top-home-expert__modal rounded-[inherit] p-3.75 @min-[768px]:p-5 @min-[768px]:pb-4.5 h-full bg-[linear-gradient(#1F1F1F99,#1F1F1F99)] flex flex-col hidden"
+                  >
+                    <div
+                      class="flex justify-between items-center mb-2 @min-[768px]:mb-3"
+                    >
+                      <h3 class="text-xl @min-[768px]:text-2xl">Pizza</h3>
+                      <button
+                        aria-label="Close home expert modal"
+                        class="w-6 h-6 @min-[768px]:w-8 @min-[768px]:h-8 rounded-full bg-muted-2 flex-center home-expert-modal__modal-close"
+                      >
+                        <img
+                          class="w-4"
+                          src="images/close-icon.svg"
+                          alt=""
+                        />
+                      </button>
+                    </div>
+                    <div class="mt-auto space-y-1 @min-[768px]:space-y-1.25">
+                      
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/contacts-profile-img.webp" alt="John Davis">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">John Davis</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-third rounded-full flex justify-center items-center" aria-label="Like this agent">
+                  <img class="w-3" src="images/like-icon-white.svg" alt="">
+                </button>
+                    </div>
+                    
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/top-home-experts-adam-smith.webp" alt="Adam Smith">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">Adam Smith</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] rounded-full flex justify-center items-center" aria-label="add this agent">
+                  <img class="w-3" src="images/ai-starts-white-icon.svg" alt="">
+                </button>
+                    </div>
+
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/top-home-experts-matthew-brown.webp" alt="Matthew Brown">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">Matthew Brown</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] rounded-full flex justify-center items-center" aria-label="add this agent">
+                  <img class="w-3" src="images/ai-starts-white-icon.svg" alt="">
+                </button>
+                    </div>
+
+                    <div class="bg-[#29346499] py-2 px-2.5 rounded-lg flex justify-between items-center gap-2">
+                      <span class="text-xs @min-[768px]:text-base heading leading-[100%]">Get a Quick Quote</span>
+                      <img class="w-17.5 @min-[768px]:w-23.25" src="images/top-home-experts-group.webp" alt="">
+                    </div>
+
+                    <div class="relative  rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] @min-[768px]:mb-1.75">
+              <input class="peer w-full filter-input text-xs @min-[768px]:text-sm py-2.25 pr-2.5 pl-8" aria-label="filter Neighborhood Comparison" title="filter Neighborhood Comparison" type="text" placeholder="Add your own agent to this list">
+              <img class="w-3.5 h-3.5 peer-focus:hidden absolute pointer-events-none top-1/2 left-2.5 -translate-y-1/2 leading-1-1" src="images/amplifier-icon.svg " alt="">
+            </div>
+
+            <div class="more border-[#ffffff22] pt-3 @min-[768px]:pt-3.75 mt-0">
+                    <p class="text-xs">See all</p>
+                    <img class="uploid-icon filter invert" src="images/more-icon.svg" alt="">
+                  </div>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div
+                  class="top-home-expert card min-h-82.75 @min-[768px]:min-h-110 rounded-xl p-0 imaged bg-[linear-gradient(transparent,#1F1F1F),url('images/places-examples-2.png')]"
+                >
+                  <div
+                    class="top-home-expert__content px-5 p-3.75 @min-[768px]:p-5 flex justify-between items-end gap-2 mt-auto"
+                  >
+                    <div>
+                      <div class="flex items-center gap-1 mb-1">
+                        <img class="w-5 @min-[768]:w-6" src="images/v-r-total-scrore-icon.svg" alt="">
+                        <span class="text-lg @min-[768px]:text-xl heading leading-[100%] underline text-white">98</span>
+                        <span class="grid-ranking-city__total-score-triangle top !text-[0.525rem] @min-[768px]:!text-[0.625rem] px-1.5 @min-[768px]:px-1.75">▲</span>
+                      </div>
+                      <h3
+                        class="text-xl @min-[768px]:text-[1.75rem] leading-tight mb-0.5 @min-[768px]:mb-1"
+                      >
+                        Schools
+                      </h3>
+                      <span
+                        class="text-xs heading text-third bg-white rounded py-0.75 px-2.5 inline-block mb-1.5 @min-[768px]:mb-2"
+                        >Top Expert</span
+                      >
+                      <p class="text-xs @min-[768px]:text-base leading-[1.2]">
+                        Westmount Collegiate Institute
+                      </p>
+                    </div>
+                    <div class="pb-1.5 @min-[768px]:pb-2">
+                      <span
+                        class="w-5.5 h-5.5 @min-[768px]:w-8 @min-[768px]:h-8 flex justify-center items-center bg-white rounded-full"
+                      >
+                        <img src="images/more-icon.svg" alt="" />
+                      </span>
+                    </div>
+                  </div>
+                 <div
+                    class="top-home-expert__modal rounded-[inherit] p-3.75 @min-[768px]:p-5 @min-[768px]:pb-4.5 h-full bg-[linear-gradient(#1F1F1F99,#1F1F1F99)] flex flex-col hidden"
+                  >
+                    <div
+                      class="flex justify-between items-center mb-2 @min-[768px]:mb-3"
+                    >
+                      <h3 class="text-xl @min-[768px]:text-2xl">Schools</h3>
+                      <button
+                        aria-label="Close home expert modal"
+                        class="w-6 h-6 @min-[768px]:w-8 @min-[768px]:h-8 rounded-full bg-muted-2 flex-center home-expert-modal__modal-close"
+                      >
+                        <img
+                          class="w-4"
+                          src="images/close-icon.svg"
+                          alt=""
+                        />
+                      </button>
+                    </div>
+                    <div class="mt-auto space-y-1 @min-[768px]:space-y-1.25">
+                      
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/contacts-profile-img.webp" alt="John Davis">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">John Davis</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-third rounded-full flex justify-center items-center" aria-label="Like this agent">
+                  <img class="w-3" src="images/like-icon-white.svg" alt="">
+                </button>
+                    </div>
+                    
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/top-home-experts-adam-smith.webp" alt="Adam Smith">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">Adam Smith</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] rounded-full flex justify-center items-center" aria-label="add this agent">
+                  <img class="w-3" src="images/ai-starts-white-icon.svg" alt="">
+                </button>
+                    </div>
+
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/top-home-experts-matthew-brown.webp" alt="Matthew Brown">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">Matthew Brown</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] rounded-full flex justify-center items-center" aria-label="add this agent">
+                  <img class="w-3" src="images/ai-starts-white-icon.svg" alt="">
+                </button>
+                    </div>
+
+                    <div class="bg-[#29346499] py-2 px-2.5 rounded-lg flex justify-between items-center gap-2">
+                      <span class="text-xs @min-[768px]:text-base heading leading-[100%]">Get a Quick Quote</span>
+                      <img class="w-17.5 @min-[768px]:w-23.25" src="images/top-home-experts-group.webp" alt="">
+                    </div>
+
+                    <div class="relative  rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] @min-[768px]:mb-1.75">
+              <input class="peer w-full filter-input text-xs @min-[768px]:text-sm py-2.25 pr-2.5 pl-8" aria-label="filter Neighborhood Comparison" title="filter Neighborhood Comparison" type="text" placeholder="Add your own agent to this list">
+              <img class="w-3.5 h-3.5 peer-focus:hidden absolute pointer-events-none top-1/2 left-2.5 -translate-y-1/2 leading-1-1" src="images/amplifier-icon.svg " alt="">
+            </div>
+
+            <div class="more border-[#ffffff22] pt-3 @min-[768px]:pt-3.75 mt-0">
+                    <p class="text-xs">See all</p>
+                    <img class="uploid-icon filter invert" src="images/more-icon.svg" alt="">
+                  </div>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div
+                  class="top-home-expert card min-h-82.75 @min-[768px]:min-h-110 rounded-xl p-0 imaged bg-[linear-gradient(transparent,#1F1F1F),url('images/places-examples-3.png')]"
+                >
+                  <div
+                    class="top-home-expert__content px-5 p-3.75 @min-[768px]:p-5 flex justify-between items-end gap-2 mt-auto"
+                  >
+                    <div>
+                      <div class="flex items-center gap-1 mb-1">
+                        <img class="w-5 @min-[768]:w-6" src="images/v-r-total-scrore-icon.svg" alt="">
+                        <span class="text-lg @min-[768px]:text-xl heading leading-[100%] underline text-white">98</span>
+                        <span class="grid-ranking-city__total-score-triangle top !text-[0.525rem] @min-[768px]:!text-[0.625rem] px-1.5 @min-[768px]:px-1.75">▲</span>
+                      </div>
+                      <h3
+                        class="text-xl @min-[768px]:text-[1.75rem] leading-tight mb-0.5 @min-[768px]:mb-1"
+                      >
+                        Parks
+                      </h3>
+                      <span
+                        class="text-xs heading text-third bg-white rounded py-0.75 px-2.5 inline-block mb-1.5 @min-[768px]:mb-2"
+                        >Top Expert</span
+                      >
+                      <p class="text-xs @min-[768px]:text-base leading-[1.2]">
+                        Concord/Thornhill Regional Park
+                      </p>
+                    </div>
+                    <div class="pb-1.5 @min-[768px]:pb-2">
+                      <span
+                        class="w-5.5 h-5.5 @min-[768px]:w-8 @min-[768px]:h-8 flex justify-center items-center bg-white rounded-full"
+                      >
+                        <img src="images/more-icon.svg" alt="" />
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="top-home-expert__modal rounded-[inherit] p-3.75 @min-[768px]:p-5 @min-[768px]:pb-4.5 h-full bg-[linear-gradient(#1F1F1F99,#1F1F1F99)] flex flex-col hidden"
+                  >
+                    <div
+                      class="flex justify-between items-center mb-2 @min-[768px]:mb-3"
+                    >
+                      <h3 class="text-xl @min-[768px]:text-2xl">Parks</h3>
+                      <button
+                        aria-label="Close home expert modal"
+                        class="w-6 h-6 @min-[768px]:w-8 @min-[768px]:h-8 rounded-full bg-muted-2 flex-center home-expert-modal__modal-close"
+                      >
+                        <img
+                          class="w-4"
+                          src="images/close-icon.svg"
+                          alt=""
+                        />
+                      </button>
+                    </div>
+                    <div class="mt-auto space-y-1 @min-[768px]:space-y-1.25">
+                      
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/contacts-profile-img.webp" alt="John Davis">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">John Davis</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-third rounded-full flex justify-center items-center" aria-label="Like this agent">
+                  <img class="w-3" src="images/like-icon-white.svg" alt="">
+                </button>
+                    </div>
+                    
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/top-home-experts-adam-smith.webp" alt="Adam Smith">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">Adam Smith</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] rounded-full flex justify-center items-center" aria-label="add this agent">
+                  <img class="w-3" src="images/ai-starts-white-icon.svg" alt="">
+                </button>
+                    </div>
+
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/top-home-experts-matthew-brown.webp" alt="Matthew Brown">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">Matthew Brown</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] rounded-full flex justify-center items-center" aria-label="add this agent">
+                  <img class="w-3" src="images/ai-starts-white-icon.svg" alt="">
+                </button>
+                    </div>
+
+                    <div class="bg-[#29346499] py-2 px-2.5 rounded-lg flex justify-between items-center gap-2">
+                      <span class="text-xs @min-[768px]:text-base heading leading-[100%]">Get a Quick Quote</span>
+                      <img class="w-17.5 @min-[768px]:w-23.25" src="images/top-home-experts-group.webp" alt="">
+                    </div>
+
+                    <div class="relative  rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] @min-[768px]:mb-1.75">
+              <input class="peer w-full filter-input text-xs @min-[768px]:text-sm py-2.25 pr-2.5 pl-8" aria-label="filter Neighborhood Comparison" title="filter Neighborhood Comparison" type="text" placeholder="Add your own agent to this list">
+              <img class="w-3.5 h-3.5 peer-focus:hidden absolute pointer-events-none top-1/2 left-2.5 -translate-y-1/2 leading-1-1" src="images/amplifier-icon.svg " alt="">
+            </div>
+
+            <div class="more border-[#ffffff22] pt-3 @min-[768px]:pt-3.75 mt-0">
+                    <p class="text-xs">See all</p>
+                    <img class="uploid-icon filter invert" src="images/more-icon.svg" alt="">
+                  </div>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div
+                  class="top-home-expert card min-h-82.75 @min-[768px]:min-h-110 rounded-xl p-0 imaged bg-[linear-gradient(transparent,#1F1F1F),url('images/places-examples-4.png')]"
+                >
+                  <div
+                    class="top-home-expert__content px-5 p-3.75 @min-[768px]:p-5 flex justify-between items-end gap-2 mt-auto"
+                  >
+                    <div>
+                      <div class="flex items-center gap-1 mb-1">
+                        <img class="w-5 @min-[768]:w-6" src="images/v-r-total-scrore-icon.svg" alt="">
+                        <span class="text-lg @min-[768px]:text-xl heading leading-[100%] underline text-white">98</span>
+                        <span class="grid-ranking-city__total-score-triangle top !text-[0.525rem] @min-[768px]:!text-[0.625rem] px-1.5 @min-[768px]:px-1.75">▲</span>
+                      </div>
+                      <h3
+                        class="text-xl @min-[768px]:text-[1.75rem] leading-tight mb-0.5 @min-[768px]:mb-1"
+                      >
+                        Pools
+                      </h3>
+                      <span
+                        class="text-xs heading text-third bg-white rounded py-0.75 px-2.5 inline-block mb-1.5 @min-[768px]:mb-2"
+                        >Top Expert</span
+                      >
+                      <p class="text-xs @min-[768px]:text-base leading-[1.2]">
+                        North Thornhill Community Centre
+                      </p>
+                    </div>
+                    <div class="pb-1.5 @min-[768px]:pb-2">
+                      <span
+                        class="w-5.5 h-5.5 @min-[768px]:w-8 @min-[768px]:h-8 flex justify-center items-center bg-white rounded-full"
+                      >
+                        <img src="images/more-icon.svg" alt="" />
+                      </span>
+                    </div>
+                  </div>
+                 <div
+                    class="top-home-expert__modal rounded-[inherit] p-3.75 @min-[768px]:p-5 @min-[768px]:pb-4.5 h-full bg-[linear-gradient(#1F1F1F99,#1F1F1F99)] flex flex-col hidden"
+                  >
+                    <div
+                      class="flex justify-between items-center mb-2 @min-[768px]:mb-3"
+                    >
+                      <h3 class="text-xl @min-[768px]:text-2xl">Pools</h3>
+                      <button
+                        aria-label="Close home expert modal"
+                        class="w-6 h-6 @min-[768px]:w-8 @min-[768px]:h-8 rounded-full bg-muted-2 flex-center home-expert-modal__modal-close"
+                      >
+                        <img
+                          class="w-4"
+                          src="images/close-icon.svg"
+                          alt=""
+                        />
+                      </button>
+                    </div>
+                    <div class="mt-auto space-y-1 @min-[768px]:space-y-1.25">
+                      
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/contacts-profile-img.webp" alt="John Davis">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">John Davis</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-third rounded-full flex justify-center items-center" aria-label="Like this agent">
+                  <img class="w-3" src="images/like-icon-white.svg" alt="">
+                </button>
+                    </div>
+                    
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/top-home-experts-adam-smith.webp" alt="Adam Smith">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">Adam Smith</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] rounded-full flex justify-center items-center" aria-label="add this agent">
+                  <img class="w-3" src="images/ai-starts-white-icon.svg" alt="">
+                </button>
+                    </div>
+
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/top-home-experts-matthew-brown.webp" alt="Matthew Brown">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">Matthew Brown</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] rounded-full flex justify-center items-center" aria-label="add this agent">
+                  <img class="w-3" src="images/ai-starts-white-icon.svg" alt="">
+                </button>
+                    </div>
+
+                    <div class="bg-[#29346499] py-2 px-2.5 rounded-lg flex justify-between items-center gap-2">
+                      <span class="text-xs @min-[768px]:text-base heading leading-[100%]">Get a Quick Quote</span>
+                      <img class="w-17.5 @min-[768px]:w-23.25" src="images/top-home-experts-group.webp" alt="">
+                    </div>
+
+                    <div class="relative  rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] @min-[768px]:mb-1.75">
+              <input class="peer w-full filter-input text-xs @min-[768px]:text-sm py-2.25 pr-2.5 pl-8" aria-label="filter Neighborhood Comparison" title="filter Neighborhood Comparison" type="text" placeholder="Add your own agent to this list">
+              <img class="w-3.5 h-3.5 peer-focus:hidden absolute pointer-events-none top-1/2 left-2.5 -translate-y-1/2 leading-1-1" src="images/amplifier-icon.svg " alt="">
+            </div>
+
+            <div class="more border-[#ffffff22] pt-3 @min-[768px]:pt-3.75 mt-0">
+                    <p class="text-xs">See all</p>
+                    <img class="uploid-icon filter invert" src="images/more-icon.svg" alt="">
+                  </div>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide pr-5 @min-[768px]:pr-8">
+                <div
+                  class="top-home-expert card min-h-82.75 @min-[768px]:min-h-110 rounded-xl p-0 imaged bg-[linear-gradient(transparent,#1F1F1F),url('images/places-examples-5.png')]"
+                >
+                  <div
+                    class="top-home-expert__content px-5 p-3.75 @min-[768px]:p-5 flex justify-between items-end gap-2 mt-auto"
+                  >
+                    <div>
+                      <div class="flex items-center gap-1 mb-1">
+                        <img class="w-5 @min-[768]:w-6" src="images/v-r-total-scrore-icon.svg" alt="">
+                        <span class="text-lg @min-[768px]:text-xl heading leading-[100%] underline text-white">98</span>
+                        <span class="grid-ranking-city__total-score-triangle top !text-[0.525rem] @min-[768px]:!text-[0.625rem] px-1.5 @min-[768px]:px-1.75">▲</span>
+                      </div>
+                      <h3
+                        class="text-xl @min-[768px]:text-[1.75rem] leading-tight mb-0.5 @min-[768px]:mb-1"
+                      >
+                        Bakers
+                      </h3>
+                      <span
+                        class="text-xs heading text-third bg-white rounded py-0.75 px-2.5 inline-block mb-1.5 @min-[768px]:mb-2"
+                        >Top Expert</span
+                      >
+                      <p class="text-xs @min-[768px]:text-base leading-[1.2]">
+                        What a Bagel
+                      </p>
+                    </div>
+                    <div class="pb-1.5 @min-[768px]:pb-2">
+                      <span
+                        class="w-5.5 h-5.5 @min-[768px]:w-8 @min-[768px]:h-8 flex justify-center items-center bg-white rounded-full"
+                      >
+                        <img src="images/more-icon.svg" alt="" />
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="top-home-expert__modal rounded-[inherit] p-3.75 @min-[768px]:p-5 @min-[768px]:pb-4.5 h-full bg-[linear-gradient(#1F1F1F99,#1F1F1F99)] flex flex-col hidden"
+                  >
+                    <div
+                      class="flex justify-between items-center mb-2 @min-[768px]:mb-3"
+                    >
+                      <h3 class="text-xl @min-[768px]:text-2xl">Bakers</h3>
+                      <button
+                        aria-label="Close home expert modal"
+                        class="w-6 h-6 @min-[768px]:w-8 @min-[768px]:h-8 rounded-full bg-muted-2 flex-center home-expert-modal__modal-close"
+                      >
+                        <img
+                          class="w-4"
+                          src="images/close-icon.svg"
+                          alt=""
+                        />
+                      </button>
+                    </div>
+                    <div class="mt-auto space-y-1 @min-[768px]:space-y-1.25">
+                      
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/contacts-profile-img.webp" alt="John Davis">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">John Davis</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-third rounded-full flex justify-center items-center" aria-label="Like this agent">
+                  <img class="w-3" src="images/like-icon-white.svg" alt="">
+                </button>
+                    </div>
+                    
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/top-home-experts-adam-smith.webp" alt="Adam Smith">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">Adam Smith</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] rounded-full flex justify-center items-center" aria-label="add this agent">
+                  <img class="w-3" src="images/ai-starts-white-icon.svg" alt="">
+                </button>
+                    </div>
+
+                    <div
+                      class="flex justify-between items-center mb-1.25 pl-2 pr-2.5 py-1.25 @min-[768px]:p-2.5 rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px]"
+                    >
+                   <div class="flex items-center gap-3 @min-[768px]:gap-2">
+                <div class="relative">
+                  <img class="w-8 @min-[768px]:w-10.5 rounded-full" src="images/top-home-experts-matthew-brown.webp" alt="Matthew Brown">
+                  <img class="w-3.5 h-3.5 p-0.25 bg-white rounded-full absolute -right-1 @min-[768px]:right-0 bottom-0.5 @min-[768px]:-bottom-0.5" src="images/green-check-mark-white-fill.svg" alt="" />
+                </div>
+                <div class="grid gap-1 @min-[768px]:gap-0.5">
+                  <span class="text-xs @min-[768px]:text-lg heading leading-[100%]">Matthew Brown</span>
+                  <div class="flex items-center gap-1">
+                    <img class="w-3 @min-[768px]:w-4.5" src="images/v-r-total-scrore-icon.svg" alt="">
+                    <span class="text-[0.625rem] @min-[768px]:text-sm heading leading-[100%] underline text-white">98</span>
+                    <span class="grid-ranking-city__total-score-triangle top !text-[0.35rem] @min-[768px]:!text-[0.5rem] px-0.75 @min-[768px]:px-1.25">▲</span>
+                  </div>
+                </div>
+                   </div>
+                <button class="w-6 h-6 bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] rounded-full flex justify-center items-center" aria-label="add this agent">
+                  <img class="w-3" src="images/ai-starts-white-icon.svg" alt="">
+                </button>
+                    </div>
+
+                    <div class="bg-[#29346499] py-2 px-2.5 rounded-lg flex justify-between items-center gap-2">
+                      <span class="text-xs @min-[768px]:text-base heading leading-[100%]">Get a Quick Quote</span>
+                      <img class="w-17.5 @min-[768px]:w-23.25" src="images/top-home-experts-group.webp" alt="">
+                    </div>
+
+                    <div class="relative  rounded-lg bg-[rgba(255,255,255,0.1)] backdrop-blur-[12px] @min-[768px]:mb-1.75">
+              <input class="peer w-full filter-input text-xs @min-[768px]:text-sm py-2.25 pr-2.5 pl-8" aria-label="filter Neighborhood Comparison" title="filter Neighborhood Comparison" type="text" placeholder="Add your own agent to this list">
+              <img class="w-3.5 h-3.5 peer-focus:hidden absolute pointer-events-none top-1/2 left-2.5 -translate-y-1/2 leading-1-1" src="images/amplifier-icon.svg " alt="">
+            </div>
+
+            <div class="more border-[#ffffff22] pt-3 @min-[768px]:pt-3.75 mt-0">
+                    <p class="text-xs">See all</p>
+                    <img class="uploid-icon filter invert" src="images/more-icon.svg" alt="">
+                  </div>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+           
+
+            <div
+              class="hidden @min-[1024px]-flex justify-center gap-2.5 py-2 mt-11.25"
+            >
+              <img
+                class="swiper-button-prev"
+                role="button"
+                aria-label="Previous slide"
+                src="images/prev-slider.svg"
+                alt=""
+              />
+              <img
+                class="swiper-button-next"
+                role="button"
+                aria-label="Next slide"
+                src="images/next-slider.svg"
+                alt=""
+              />
+            </div>
+          </div>
+        </section>
+
+        <hr class="separate-line" />
+
+          <!--  reward section -->
+
+        <section
+          class="section-wrapper has-slider"
+          aria-labelledby="reward-heading"
+        >
+          <header class="main-header">
+            <span class="bubble hidden">
+              <svg class="chevron-icon">
+                <use href="#chevron-icon"></use>
+              </svg>
+            </span>
+            <h2 id="manage-finances-heading" id="reward-heading">
+              Title Here
+            </h2>
+            <div class="dropdown" x-data="{ open: false }">
+              <button
+                @click="open = !open"
+                @keydown.escape="open = false"
+                aria-haspopup="true"
+                :aria-expanded="open"
+                aria-label="More options for managing finances Your Home"
+                :class="{ 'bg-muted-7': open }"
+                aria-expanded="false"
+              >
+                <img src="images/three-points-icon.svg" alt="" />
+              </button>
+
+              <ul
+                x-show="open"
+                x-transition=""
+                @click.away="open = false"
+                role="menu"
+                aria-label="Manage Finances options"
+                class="menu"
+                style="display: none"
+              >
+                <li role="none">
+                  <a href="#" role="menuitem" class="menu-item">
+                    <img src="images/add-info-icon.svg" alt="" />
+                    Add info
+                  </a>
+                </li>
+                <li role="none">
+                  <a href="#" role="menuitem" class="menu-item">
+                    <img src="images/edit-icon.svg" alt="" />
+                    Edit
+                  </a>
+                </li>
+                <li role="none">
+                  <a href="#" role="menuitem" class="menu-item">
+                    <img src="images/view-details-icon.svg" alt="" />
+                    View Details
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <p class="base-p" data-readmore>
+              A stunning property that effortlessly blends style, comfort, and
+              functionality in a highly sought-after neighborhood. Nestled in a
+              serene and
+              <span data-readmore-text class="hidden">
+                additional copy goes here.
+              </span>
+              <button href="#" class="show-more" data-readmore-btn>
+                Read more
+              </button>
+            </p>
+            <div class="header-tags">
+              <span class="tag">#1 in Thornhill</span>
+              <span class="tag">#2 $500k to $750k Range</span>
+              <span class="tag">#3 Real Estate Agents in Vaughan</span>
+            </div>
+          </header>
+
+          <div
+            class="swiper swiper-reward-active !pt-12 -mt-12 !pb-20"
+            role="tabpanel"
+            id="panel-all"
+            aria-labelledby="tab-all"
+          >
+            <div class="swiper-wrapper">
+              <div
+                class="swiper-slide flip-card group  [perspective:1000px]  pl-5 @min-[768px]:pl-8 @min-[1024px]:pl-24.5"
+              >
+               <div class="card  reward-visa-card min-h-80   text-white bg-sixth @min-[768px]:rounded-[18px]  @min-[768px]:gap-0 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus:[transform:rotateY(180deg)] peer shadow-2xl">
+                <div class="card reward-visa-card absolute inset-0 h-full  rounded-[inherit] [backface-visibility:hidden] bg-sixth py-2.5 px-3 @min-[768px]:py-5 @min-[768px]:px-6.5 gap-5.75">
+                  <div class="flex flex-col gap-5.75 @min-[768px]:flex-row @min-[768px]:gap-2.5">
+                    <div class="flex gap-3.75 @min-[768px]:flex-col @min-[768px]:gap-18.75">
+                     <div class="flex flex-col items-end">
+                       <img class="w-18.5 @min-[768px]:w-28.75" src="images/logo-white.svg" alt="Home.ca logo">
+                       <span class="text-[0.4375rem]  @min-[768px]:text-[0.6875rem] font-medium -mt-0.5">Rewards Card</span>
+                     </div>
+                     <img class="w-8 @min-[768px]:hidden" src="images/chip-icon-mobile.svg" alt="">
+                     <img class="w-16.5 hidden @min-[768px]:inline" src="images/chip-icon.svg" alt="">
+                    
+                   </div>
+                   <div class="flex justify-center">
+                     <div class="relative">
+                       <svg class="w-36 h-45.75 @min-[768px]:w-56.5 @min-[768px]:h-72" viewBox="0 0 226 288" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M154.177 218.646C178.676 209.04 199.062 191.169 211.819 168.116C224.576 145.063 228.906 118.273 224.06 92.3645C219.215 66.456 205.499 43.0535 185.277 26.1923C165.055 9.33106 139.595 0.0680028 113.287 0.000372639C86.9784 -0.0672575 61.4711 9.06478 41.1631 25.8218C20.855 42.5788 7.01918 65.9105 2.04123 91.7938C-2.93672 117.677 1.25526 144.489 13.8943 167.607C26.5334 190.726 46.8274 208.701 71.2769 218.433L88.568 174.825C74.2517 169.126 62.3688 158.601 54.968 145.065C47.5673 131.528 45.1127 115.828 48.0275 100.672C50.9423 85.5167 59.0438 71.855 70.935 62.043C82.8262 52.231 97.7618 46.8839 113.166 46.9235C128.571 46.9631 143.479 52.387 155.32 62.2599C167.161 72.1329 175.192 85.8361 178.029 101.007C180.866 116.177 178.331 131.864 170.861 145.362C163.391 158.861 151.455 169.325 137.11 174.95L154.177 218.646Z" fill="#1E2A4F"/>
+                         <path d="M71.823 218.646C45.2354 208.221 23.5722 188.097 11.1887 162.322C-1.19492 136.546 -3.38084 107.029 5.07033 79.704L49.804 93.5933C44.8555 109.593 46.1354 126.877 53.3865 141.969C60.6376 157.062 73.3223 168.845 88.8905 174.95L71.823 218.646Z" fill="#466EFF"/>
+                         <path d="M67.6715 278.492C81.9911 284.775 97.456 288.012 113.088 288C128.721 287.987 144.18 284.725 158.49 278.42L136.656 228.679C129.214 231.958 121.175 233.654 113.045 233.661C104.915 233.668 96.873 231.984 89.4261 228.717L67.6715 278.492Z" fill="#1E2A4F"/>
+                       </svg>
+                       <div class="heading flex flex-col items-center absolute left-1/2 -translate-x-1/2 top-13.75 @min-[768px]:top-22.25">
+                         <span class="text-[1.1875rem] @min-[768px]:text-[1.875rem] leading-[120%]">12,450</span>
+                         <span class="text-[0.625rem]  @min-[768px]:text-base leading-[100%] mt-0.5">points</span>
+                       </div>
+                       <img class="w-13.5 @min-[768px]:w-20.25 absolute top-0.5 -right-3 @min-[768px]:top-0 @min-[768px]:-right-4.5" src="images/reward-cards-avatar.webp" alt="Jenna Wilson" />
+                     </div>
+                   </div>
+                  </div>
+                   <div class="flex gap-4 justify-between @min-[768px]:-mt-13">
+                     <div class=" flex flex-col">
+                       <span class="heading leading-[100%] @min-[768px]:text-[1.625rem]">Jenna Wilson</span>
+                       <span class="text-[0.4375rem] @min-[768px]:text-[0.6875rem] font-medium mt-0.5 @min-[768px]:mt-0">Member Name</span>
+                     </div>
+                     <img class="w-14.5  @min-[768px]:w-23" src="images/visa-logo-white.svg" alt="VISA logo">
+                   </div>
+                </div>
+                <div class="card reward-visa-card absolute inset-0 h-full rounded-[inherit] [backface-visibility:hidden] bg-sixth rotate-y-180  py-0 px-3 @min-[768px]:py-6 @min-[768px]:px-0 flex gap-3.5 flex-row @min-[768px]:flex-col  @min-[768px]:gap-0">
+                   <div class="@min-[768px]:inline-flex flex-col items-end hidden self-start @min-[768px]:px-6.5">
+                         <img class="w-28.75" src="images/logo-white.svg" alt="Home.ca logo">
+                         <span class="text-[0.6875rem] font-medium -mt-0.5">Rewards Card</span>
+                    </div>
+                  <span class="w-8.5 h-full @min-[768px]:w-full @min-[768px]:h-11.5 bg-[#16203B] @min-[768px]:mt-4.75"></span>
+                  <div class="py-2.5 @min-[768px]:py-0 @min-[768px]:mt-6"> 
+                    <div class="inline-flex flex-col items-end @min-[768px]:hidden">
+                         <img class="w-18.5 " src="images/logo-white.svg" alt="Home.ca logo">
+                         <span class="text-[0.4375rem]   font-medium -mt-0.5">Rewards Card</span>
+                    </div>
+                    <div class="@min-[768px]:px-6.5">
+                      <div class="flex flex-col gap-5 @min-[768px]:flex-row @min-[768px]:gap-13.75">
+                        <div class="flex flex-col  mt-11.25 @min-[768px]:mt-0">
+                        <span class="text-[0.625rem] @min-[768px]:text-base font-medium">Card Number</span>
+                        <span class="text-[0.8125rem] @min-[768px]:text-[1.3125rem] heading leading-[100%] mt-0.5">4527 2824 9455 6429</span>
+                      </div>
+                      <div class="flex flex-col @min-[768px]:hidden">
+                        <span class="text-[0.625rem]  font-medium">Cardholder</span>
+                        <span class="text-[0.8125rem]  heading leading-[100%] mt-0.5">Jenna Wilson</span>
+                      </div>
+                      <div class="flex gap-5 @min-[768px]:gap-8.5">
+                        <div class="flex flex-col">
+                        <span class="text-[0.625rem] @min-[768px]:text-base font-medium">Valid Date</span>
+                        <span class="text-sm @min-[768px]:text-[1.21875rem] heading leading-[100%] mt-0.5">11/29</span>
+                      </div>
+                      <div class="flex flex-col">
+                        <span class="text-[0.625rem] @min-[768px]:text-base font-medium">CVV</span>
+                        <span class="text-sm @min-[768px]:text-[1.21875rem] heading leading-[100%] mt-0.5">754</span>
+                      </div>
+                      </div>
+                      </div>
+                      <img class="w-23.25 @min-[768px]:w-33 mt-12.5  @min-[768px]:ml-auto" src="images/card-visa-signature.svg" alt="Cardholder signature"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <span class="w-51 h-63.25 bg-black blur-2xl left-1/2 -translate-x-1/2 rounded-b-[35px] absolute top-20 z-0" >
+              </span> -->
+              </div>
+
+              <div class="swiper-slide">
+                <div class="card reward-white-card  bg-white border border-muted-3">
+                  <h3 class="text-2xl @min-[768px]:text-xl">You can earn 5,450 Home.CA points</h3>
+                  <ul class="text-sm @min-[768px]:text-base font-medium mt-5 @min-[768px]:mt-auto space-y-2 @min-[768px]:grid @min-[768px]:grid-cols-2">
+    <li class="flex items-center gap-2">
+      <span class="size-1.5 rounded-full bg-third  @min-[768px]:hidden"></span>
+      <img class="w-5" src="images/ornage-check-mark.svg" alt="" />
+      <span class="flex-1">Earn point on mortgage & rent</span>
+    </li>
+    <li class="flex items-center gap-2">
+      <span class="size-1.5 rounded-full bg-third  @min-[768px]:hidden"></span>
+      <img class="w-5" src="images/ornage-check-mark.svg" alt="" />
+      <span class="flex-1">No annual fees</span>
+    </li>
+    <li class="flex items-center gap-2">
+      <span class="size-1.5 rounded-full bg-third  @min-[768px]:hidden"></span>
+      <img class="w-5" src="images/ornage-check-mark.svg" alt="" />
+      <span class="flex-1">Exclusive offers & promos</span>
+    </li>
+    <li class="hidden @min-[768px]:flex items-center gap-2">
+      <span class="size-1.5 rounded-full bg-third  @min-[768px]:hidden"></span>
+      <img class="w-5" src="images/ornage-check-mark.svg" alt="" />
+      <span class="flex-1">Earn point on mortgage & rent</span>
+    </li>
+    <li class="hidden @min-[768px]:flex items-center gap-2">
+      <span class="size-1.5 rounded-full bg-third  @min-[768px]:hidden"></span>
+      <img class="w-5" src="images/ornage-check-mark.svg" alt="" />
+      <span class="flex-1">No annual fees</span>
+    </li>
+    <li class="hidden @min-[768px]:flex items-center gap-2">
+      <span class="size-1.5 rounded-full bg-third  @min-[768px]:hidden"></span>
+      <img class="w-5" src="images/ornage-check-mark.svg" alt="" />
+      <span class="flex-1">Exclusive offers & promos</span>
+    </li>
+  </ul>
+  <hr class="w-full h-0.25 border-muted-3 mt-auto @min-[768px]:mt-5 @min-[768px]:w-128.25" />
+                  <div class="more border-none h-9.75 @min-[768px]:h-auto mt-0">
+                    <p>Swipe right to see how to get ponits</p>
+                    <img class="w-4 @min-[768px]:w-6" src="images/more-icon.svg" alt="">
+                  </div>
+                </div>
+              </div>
+
+
+              <div
+                class="swiper-slide pr-5 @min-[768px]:pr-8"
+              >
+               <div class="card reward-white-card bg-white border border-muted-3">
+                  <h3 class="text-2xl @min-[768px]:text-xl">Recent Activity</h3>
+               <ul class="text-xs space-y-3  mt-5 @min-[768px]:mt-auto @min-[768px]:max-w-107">
+    <li class="flex items-center justify-between  ">
+      <div class="flex items-center gap-2 @min-[768px]:gap-3.5">
+        <span class="text-[0.625rem] heading text-third inline-flex items-center gap-0.5 bg-white shadow-[0_4px_8px_0_rgba(0,0,0,0.12)] rounded px-1.5 py-1">
+          +250
+          <img class="w-2.5" src="images/v-r-total-scrore-icon.svg" alt="">
+        </span>
+        <span class="font-medium @min-[768px]:text-base @min-[768px]:font-normal">Mortgage payment</span>
+      </div>
+      <span class="text-muted-8 @min-[768px]:text-sm">Jul 1</span>
+    </li>
+
+    <li class="flex items-center justify-between  ">
+      <div class="flex items-center gap-2 @min-[768px]:gap-3.5">
+        <span class="text-[0.625rem] heading text-third inline-flex items-center gap-0.5 bg-white shadow-[0_4px_8px_0_rgba(0,0,0,0.12)] rounded px-1.5 py-1">
+          +1000
+          <img class="w-2.5" src="images/v-r-total-scrore-icon.svg" alt="">
+        </span>
+        <span class="font-medium @min-[768px]:text-base @min-[768px]:font-normal">Verified Home Pro</span>
+      </div>
+      <span class="text-muted-8 @min-[768px]:text-sm">Jun 27</span>
+    </li>
+
+    <li class="flex items-center justify-between  ">
+      <div class="flex items-center gap-2 @min-[768px]:gap-3.5">
+        <span class="text-[0.625rem] heading text-third inline-flex items-center gap-0.5 bg-white shadow-[0_4px_8px_0_rgba(0,0,0,0.12)] rounded px-1.5 py-1">
+          +500
+          <img class="w-2.5" src="images/v-r-total-scrore-icon.svg" alt="">
+        </span>
+        <span class="font-medium @min-[768px]:text-base @min-[768px]:font-normal">Smart Thermostat</span>
+      </div>
+      <span class="text-muted-8 @min-[768px]:text-sm">Jun 23</span>
+    </li>
+  </ul>
+  <hr class="w-full h-0.25 border-muted-3 mt-auto @min-[768px]:mt-5 @min-[768px]:w-107 self-center" />
+                  <div class="more border-none h-9.75 @min-[768px]:h-auto mt-0 @min-[768px]:justify-start @min-[768px]:gap-74">
+                    <p>View All Activity</p>
+                    <img class="w-4 @min-[768px]:w-6" src="images/more-icon.svg" alt="">
+                  </div>
+                </div>
+              </div>
+              </div>
+          </div>
+          </section>
+
+          <hr class="separate-line" />
+        
         
 
 
@@ -3510,7 +4633,7 @@ function rangeUI(){
 
 
       </div>
-      <div class="hidden" id="pane-2">
+      <div class="hidden relative z-2" id="pane-2">
         <div
           data-canvas="map"
           class="h-screen flex flex-col bg-white sticky top-0"
