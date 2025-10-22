@@ -485,6 +485,9 @@
               </div>
             </div>
           </aside>
+          <div id="muted-bg" class="hidden w-screen h-screen bg-[#52525233] backdrop-blur-xs fixed top-0 z-999">
+
+          </div>
           <div
             class="swiper swiper-main-nav mt-4 @min-[768px]:mt-9.25 @min-[1024px]:mt-6 !overflow-visible"
           >
@@ -493,7 +496,7 @@
 
 <div class="swiper-slide @min-[900px]:flex-1 pl-5 @min-[768px]:pl-8">
   <!-- anchor -->
-  <div class="main-nav-item group relative">
+  <div class="main-nav-item  relative">
       <svg class="w-5 h-5 icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M14.3813 7.64102L10.7354 4.87018C10.3021 4.54032 9.69725 4.54102 9.26461 4.87018L5.61878 7.64102C5.31808 7.86949 5.13892 8.23129 5.13892 8.60838V13.6459C5.13892 14.6993 5.99517 15.5556 7.04864 15.5556H8.95836V12.7778C8.95836 12.2028 9.42503 11.7362 10 11.7362C10.575 11.7362 11.0417 12.2028 11.0417 12.7778V15.5556H12.9514C14.0049 15.5556 14.8611 14.6993 14.8611 13.6459V8.60838C14.8611 8.23129 14.682 7.87018 14.3813 7.64102Z" fill="currentColor"></path>
                   </svg>
@@ -504,7 +507,7 @@
         <img class="w-4.5 @min-[1024px]:w-5" src="images/more-icon.svg" alt="" />
       </div>
 
-      <div class="hidden lg:block absolute z-30 left-0 top-[calc(100%+10px)]
+      <div class=" absolute z-30 left-0 top-[calc(100%+10px)]
              w-[min(92vw,460px)]  opacity-0 translate-y-1 
              transition duration-150 ease-out
              lg:group-hover:opacity-100 lg:group-hover:translate-y-0 lg:group-hover:pointer-events-auto"
@@ -546,6 +549,7 @@
               </button>
             </div>
       </div>
+      
 
     
   </div>
@@ -782,7 +786,7 @@
                     />
                   </div>
 
-                  <div class="hidden lg:block absolute z-30 left-0 top-[calc(100%+10px)]
+                  <div class="hidden lg:block absolute z-30 right-0 top-[calc(100%+10px)]
              w-[min(92vw,460px)]  opacity-0 translate-y-1 
              transition duration-150 ease-out
              lg:group-hover:opacity-100 lg:group-hover:translate-y-0 lg:group-hover:pointer-events-auto"
@@ -871,7 +875,7 @@
                     />
                   </div>
 
-                  <div class="hidden lg:block absolute z-30 left-0 top-[calc(100%+10px)]
+                  <div class="hidden lg:block absolute z-30 right-0 top-[calc(100%+10px)]
              w-[min(92vw,460px)]  opacity-0 translate-y-1 
              transition duration-150 ease-out
              lg:group-hover:opacity-100 lg:group-hover:translate-y-0 lg:group-hover:pointer-events-auto"
@@ -2442,14 +2446,14 @@
                   Read more
                 </button>
               </p>
-              <div class="header-tags mt-2 @min-[1024px]:mt-5">
+              <div class="header-tags mt-2 @min-[1024px]:mt-7">
                 <span class="tag">#1 in Thornhill</span>
                 <span class="tag">#2 $500k to $750k Range</span>
                 <span class="tag">#3 Real Estate Agents in Vaughan</span>
               </div>
 
               <div
-                class="k-f-accordions-wrapper hidden @min-[1024px]:block col-start-1"
+                class="mt-2.5 k-f-accordions-wrapper hidden @min-[1024px]:block col-start-1"
               >
                 <details class="k-f-accordion">
                   <summary>
@@ -3112,16 +3116,15 @@
               >
                 <li>
                   <div
-                    href="#"
-                    class="has-chevron-icon min-h-30 h-full bg-third text-white rounded-lg p-4 @min-[1024px]:p-6 space-y-1.25 @min-[768px]:space-y-3 @min-[1024px]:space-y-5"
+                    class="has-chevron-icon min-h-30 h-full border border-muted-3  rounded-lg p-4 @min-[1024px]:p-6 space-y-1.25 @min-[768px]:space-y-3 @min-[1024px]:space-y-5"
                   >
                     <div class="flex items-end gap-1">
                       <span
-                        class="text-[2rem] heading leading-tight @min-[1024px]:text-[4rem]"
+                        class="text-[2rem] heading leading-tight @min-[1024px]:text-[4rem] text-third"
                         >#1</span
                       >
                       <span
-                        class="text-sm leading-8.25 @min-[768px]:text-base @min-[1024px]:text-xl @min-[1024px]:leading-12 text-fourth"
+                        class="text-sm leading-8.25 @min-[768px]:text-base @min-[1024px]:text-xl @min-[1024px]:leading-12 text-muted-8"
                         >/ 299</span
                       >
                     </div>
@@ -3131,16 +3134,16 @@
                       </h3>
                     </div>
                     <svg
-                      class="chevron-icon w-33.25 h-33.25 -top-3.25 -right-0.5 @min-[768px]:w-41.25 @min-[768px]:h-41.25 -@min-[768px]:right-4 @min-[768px]:-top-11 @min-[1024px]:w-58.25 @min-[1024px]:h-58.25 @min-[1024px]:right-0 fill-third-100"
+                      class="chevron-icon w-33.25 h-33.25 -top-3.25 -right-0.5 @min-[768px]:w-41.25 @min-[768px]:h-41.25 -@min-[768px]:right-4 @min-[768px]:-top-11 @min-[1024px]:w-58.25 @min-[1024px]:h-58.25 @min-[1024px]:right-0 fill-muted-2"
                     >
                       <use href="#chevron-icon" />
                     </svg>
                   </div>
                 </li>
+
                 <li>
                   <div
-                    href="#"
-                    class="min-h-30 h-full border border-muted-3 rounded-lg p-4 @min-[1024px]:p-6 space-y-1.25 @min-[768px]:space-y-3 @min-[1024px]:space-y-5"
+                    class="min-h-30 h-full bg-muted-2 rounded-lg p-4 @min-[1024px]:p-6 space-y-1.25 @min-[768px]:space-y-3 @min-[1024px]:space-y-5"
                   >
                     <div class="flex items-end gap-1">
                       <span
@@ -3159,10 +3162,10 @@
                     </h3>
                   </div>
                 </li>
+
                 <li>
                   <div
-                    href="#"
-                    class="min-h-30 h-full border border-muted-3 rounded-lg p-4 @min-[1024px]:p-6 space-y-1.25 @min-[768px]:space-y-3 @min-[1024px]:space-y-5"
+                    class="min-h-30 h-full bg-muted-2 rounded-lg p-4 @min-[1024px]:p-6 space-y-1.25 @min-[768px]:space-y-3 @min-[1024px]:space-y-5"
                   >
                     <div class="flex items-end gap-1">
                       <span
@@ -3371,7 +3374,7 @@
                       <p class="flex items-center flex-wrap gap-1">
                         Average Rent Price
                         <span
-                          class="text-xs heading text-third bg-[#FFDFD2] py-0.75 px-2.5 rounded-sm hidden @min-[768px]:inline mt-1"
+                          class="text-xs heading text-third bg-[#FFDFD2] py-0.75 px-2.5 rounded-sm hidden @min-[768px]:inline mt-1 @min-[1024px]:mt-0"
                           >For Sale</span
                         >
                       </p>
@@ -3382,6 +3385,8 @@
             </div>
           </div>
         </section>
+
+        <hr class="separate-line">
 
         <!-- ranking-city section -->
 
@@ -3457,24 +3462,24 @@
               class="border border-muted-3 rounded-lg p-2.5 @min-[1024px]:p-5 grid @min-[1024px]:grid-cols-[auto_1fr] @min-[1536px]:grid-cols-[322px_1fr] gap-2.5 @min-[1536px]:gap-y-5"
             >
               <div
-                class="has-chevron-icon text-white bg-third rounded-md py-2.5 px-4 @min-[768px]:py-5 @min-[768px]:px-5 flex justify-between items-center @min-[1024px]:items-start gap-1 @min-[1024px]:flex-col"
+                class="has-chevron-icon border border-muted-3 rounded-lg py-2.5 px-4 @min-[768px]:py-5 @min-[768px]:px-5 flex justify-between items-center @min-[1024px]:items-start gap-1 @min-[1024px]:flex-col"
               >
                 <div class="@min-[1024px]:order-2">
                   <h3 class="text-base @min-[768px]:text-xl">
                     Home.CA Ranking
                   </h3>
-                  <p class="text-xs leading-tight mt-1 @min-[768px]:mt-2">
+                  <p class="text-xs leading-tight text-muted-1 mt-1 @min-[768px]:mt-2">
                     How are grades calculated? <br />Data Sources
                   </p>
                 </div>
                 <div class="px-3 @min-[1024px]:py-7.5">
                   <span
                     class="text-[2rem] @min-[768px]:text-[2.625rem] @min-[1024px]:text-[4rem] font-semibold"
-                    >A+</span
+                    >95</span
                   >
                 </div>
                 <svg
-                  class="chevron-icon w-28.5 h-28.5 @min-[768px]:w-33.5 @min-[768px]:h-33.5 -top-2 @min-[768px]:-top-1 -right-2.5 @min-[768px]:-right-1 @min-[1024px]:w-69 @min-[1024px]:h-69 @min-[1024px]:-top-4.25 @min-[1024px]:-left-17.5 @min-[1024px]:right-auto fill-third-100"
+                  class="chevron-icon w-28.5 h-28.5 @min-[768px]:w-33.5 @min-[768px]:h-33.5 -top-2 @min-[768px]:-top-1 -right-2.5 @min-[768px]:-right-1 @min-[1024px]:w-69 @min-[1024px]:h-69 @min-[1024px]:-top-4.25 @min-[1024px]:-left-17.5 @min-[1024px]:right-auto fill-muted-2"
                 >
                   <use href="#chevron-icon" />
                 </svg>
@@ -3491,7 +3496,7 @@
                   />
                   <div class="content">
                     <h4>Public Schools</h4>
-                    <p class="ranking a">A</p>
+                    <p class="ranking a">7</p>
                   </div>
                 </div>
 
@@ -3503,7 +3508,7 @@
                   />
                   <div class="content">
                     <h4>Diversity</h4>
-                    <p class="ranking b">B-</p>
+                    <p class="ranking b">7</p>
                   </div>
                 </div>
 
@@ -3515,7 +3520,7 @@
                   />
                   <div class="content">
                     <h4>Health & Fitness</h4>
-                    <p class="ranking b">B+</p>
+                    <p class="ranking b">7</p>
                   </div>
                 </div>
 
@@ -3539,7 +3544,7 @@
                   />
                   <div class="content">
                     <h4>Nightlive</h4>
-                    <p class="ranking c">C+</p>
+                    <p class="ranking c">3</p>
                   </div>
                 </div>
                 <div class="ranking-city-item">
@@ -3550,7 +3555,7 @@
                   />
                   <div class="content">
                     <h4>Good for Families</h4>
-                    <p class="ranking a">A+</p>
+                    <p class="ranking a">10</p>
                   </div>
                 </div>
                 <div class="ranking-city-item">
@@ -3561,7 +3566,7 @@
                   />
                   <div class="content">
                     <h4>Outdoor Activities</h4>
-                    <p class="ranking b">B+</p>
+                    <p class="ranking b">7</p>
                   </div>
                 </div>
 
@@ -3569,7 +3574,7 @@
                   <img src="images/r-c-housing-icon.svg" alt="" class="icon" />
                   <div class="content">
                     <h4>Housing</h4>
-                    <p class="ranking a">A+</p>
+                    <p class="ranking a">9</p>
                   </div>
                 </div>
                 <div class="ranking-city-item">
@@ -3580,14 +3585,14 @@
                   />
                   <div class="content">
                     <h4>Cost of Living</h4>
-                    <p class="ranking a">A-</p>
+                    <p class="ranking a">8</p>
                   </div>
                 </div>
                 <div class="ranking-city-item">
                   <img src="images/r-c-commute-icon.svg" alt="" class="icon" />
                   <div class="content">
                     <h4>Commute</h4>
-                    <p class="ranking b">B+</p>
+                    <p class="ranking b">7</p>
                   </div>
                 </div>
               </div>
@@ -3745,47 +3750,9 @@
             aria-labelledby="tab-all"
           >
             <div class="swiper-wrapper">
-              <div
-                class="swiper-slide pl-5 @min-[768px]:pl-8 @min-[1024px]:pl-24.5"
-              >
-                <div class="display-home-card rooms-card">
-                  <figure>
-                    <img
-                      src="images/rooms-kitchen.webp"
-                      alt="Bedroom with modern decor"
-                    />
-                    <figcaption class="home-badge room-badge">
-                      Main Floor
-                    </figcaption>
-                  </figure>
 
-                  <h3>Kitchen</h3>
-                  <p class="desc">Hardwood Floor, 5 Pc Ensuite, Large Closet</p>
-                  <p class="size">Size 7.25m x 8.78m</p>
-                </div>
-              </div>
 
-              <div class="swiper-slide">
-                <div class="display-home-card rooms-card">
-                  <figure>
-                    <img
-                      src="images/rooms-dining-room.webp"
-                      alt="Bedroom with modern decor"
-                    />
-                    <figcaption class="home-badge room-badge">
-                      2nd Floor
-                    </figcaption>
-                  </figure>
-
-                  <h3>Dining Room</h3>
-                  <p class="desc">
-                    Hardwood Floor, 2 Way Fireplace, Floor/Cell Fireplace
-                  </p>
-                  <p class="size">Size 7.25m x 8.78m</p>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
+               <div class="swiper-slide pl-5 @min-[768px]:pl-8 @min-[1024px]:pl-24.5">
                 <div class="input-file-wrapper h-full">
                   <input
                     class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
@@ -3838,47 +3805,104 @@
                   </div>
                 </div>
               </div>
-
-              <div class="swiper-slide">
-                <div class="display-home-card rooms-card">
+              <div
+                class="swiper-slide "
+              >
+                <div class="display-home-card rooms-card h-full bordered-card rounded-b-lg">
                   <figure>
                     <img
-                      src="images/rooms-badroom.webp"
+                      class="@min-[768px]:h-64.5 object-cover"
+                      src="images/rooms-kitchen.webp"
                       alt="Bedroom with modern decor"
                     />
-                    <figcaption class="home-badge room-badge">
-                      Basement
-                    </figcaption>
-                  </figure>
-
-                  <h3>Badroom</h3>
-                  <p class="desc">Hardwood Floor, 5 Pc Ensuite, Large Closet</p>
-                  <p class="size">Size 7.25m x 8.78m</p>
-                </div>
-              </div>
-
-              <div class="swiper-slide pr-5 @min-[768px]:pr-8">
-                <div class="display-home-card rooms-card">
-                  <figure>
-                    <img
-                      src="images/rooms-living-room.webp"
-                      alt="Bedroom with modern decor"
-                    />
-                    <figcaption class="home-badge room-badge">
+                    <figcaption class="home-badge room-badge @min-[768px]:pt-0.25 pb-0.5">
                       Main Floor
                     </figcaption>
                   </figure>
 
-                  <h3>Living Room</h3>
-                  <p class="desc">
-                    Hardwood Floor, 2 Way Fireplace, Floor/Cell Fireplace
-                  </p>
-                  <p class="size">Size 7.25m x 8.78m</p>
+                  <div class="flex items-center gap-1.25 p-2.5 @min-[768px]:py-4 @min-[768px]:px-5">
+                    <img class="w-10 p-2" src="images/rooms-icon.svg" alt=""/>
+                    <div>
+                      <h3 class="@min-[768px]:text-base">Kitchen</h3>
+                      <p class="size">Size 7.25m x 8.78m</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="display-home-card rooms-card h-full bordered-card rounded-b-lg">
+                  <figure>
+                    <img
+                    class="@min-[768px]:h-64.5 object-cover"
+                      src="images/rooms-dining-room.webp"
+                      alt="Bedroom with modern decor"
+                    />
+                    <figcaption class="home-badge room-badge @min-[768px]:pt-0.25 pb-0.5">
+                      2nd Floor
+                    </figcaption>
+                  </figure>
+
+                  <div class="flex items-center gap-1.25 p-2.5 @min-[768px]:py-4 @min-[768px]:px-5">
+                    <img class="w-10 p-2" src="images/rooms-icon.svg" alt=""/>
+                    <div>
+                      <h3 class="@min-[768px]:text-base">Dining Room</h3>
+                      <p class="size">Size 7.25m x 8.78m</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+             
+
+              <div class="swiper-slide">
+                <div class="display-home-card rooms-card h-full bordered-card rounded-b-lg">
+                  <figure>
+                    <img
+                      class="@min-[768px]:h-64.5 object-cover"
+                      src="images/rooms-badroom.webp"
+                      alt="Bedroom with modern decor"
+                    />
+                    <figcaption class="home-badge room-badge @min-[768px]:pt-0.25 pb-0.5">
+                      Basement
+                    </figcaption>
+                  </figure>
+
+                  <div class="flex items-center gap-1.25 p-2.5 @min-[768px]:py-4 @min-[768px]:px-5">
+                    <img class="w-10 p-2" src="images/rooms-icon.svg" alt=""/>
+                    <div>
+                      <h3 class="@min-[768px]:text-base">Badroom</h3>
+                      <p class="size">Size 7.25m x 8.78m</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide pr-5 @min-[768px]:pr-8">
+                <div class="display-home-card rooms-card h-full bordered-card rounded-b-lg">
+                  <figure>
+                    <img
+                    class="@min-[768px]:h-64.5 object-cover"
+                      src="images/rooms-living-room.webp"
+                      alt="Bedroom with modern decor"
+                    />
+                    <figcaption class="home-badge room-badge @min-[768px]:pt-0.25 @min-[768px]:pb-0.5">
+                      Main Floor
+                    </figcaption>
+                  </figure>
+
+                  <div class="flex items-center gap-1.25 p-2.5 @min-[768px]:py-4 @min-[768px]:px-5">
+                    <img class="w-10 p-2" src="images/rooms-icon.svg" alt=""/>
+                    <div>
+                      <h3 class="@min-[768px]:text-base">Living Room</h3>
+                      <p class="size">Size 7.25m x 8.78m</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
             <div
-              class="hidden @min-[1024px]-flex justify-center gap-2.5 py-2 mt-11.25"
+              class="hidden @min-[1024px]:flex justify-center gap-2.5 py-2 mt-11.25"
             >
               <img
                 class="swiper-button-prev"
@@ -3897,6 +3921,8 @@
             </div>
           </div>
         </section>
+
+
 
         <hr class="separate-line" />
 
@@ -4118,7 +4144,7 @@
                       Thornhill, ON L4J4K6
                     </p>
                   </div>
-                  <figure class="max-h-50.5 @min-[768px]:max-h-none">
+                  <figure class="max-h-50.5 @min-[768px]:max-h-none @min-[768px]:mt-7.5 @min-[1024px]:mt-2">
                     <div
                       class="w-full h-full mb-2.75 @min-[768px]:mb-5.25 @min-[1028px]:mb-10.5"
                       class="chart-line"
@@ -4722,6 +4748,8 @@
                 </div>
               </div>
             </div>
+                <div class="swiper-pagination-mobile flex justify-center  mt-5.25 @[1024px]:hidden" role="navigation"></div>
+
             <div
               class="hidden @min-[1024px]:flex justify-center gap-2.5 py-2 mt-9.5"
             >
@@ -4982,7 +5010,7 @@
                 >
                   <!-- Date marker -->
                   <div
-                    class="w-12.5 flex gap-0.25 text-[0.625rem] @min-[768px]:text-xs @min-[768px]:gap-0.5 @min-[1024px]:text-sm @min-[1024px]:flex-col @min-[1024px]:gap-1"
+                    class="w-12.5 text-xs @min-[1024px]:text-sm flex gap-0.25  @min-[768px]:gap-0.5  @min-[1024px]:flex-col @min-[1024px]:gap-1"
                   >
                     <span
                       class="@min-[1024px]:font-semibold @min-[1024px]:tracking-[-0.03em] text-muted-6 @min-[1024px]:text-body"
@@ -4994,11 +5022,11 @@
                   <div
                     class="flex-1 mt-1.5 @min-[768px]:mt-2 @min-[1024px]:mt-0"
                   >
-                    <h3 class="text-base @min-[768px]:text-2xl">
+                    <h3 class="text-lg @min-[768px]:text-2xl">
                       Kitchen Remodel
                     </h3>
                     <p
-                      class="text-[0.625rem] @min-[768px]:text-xs @min-[1024px]:text-base leading-tight @min-[1024px]:leading-snug text-muted-1 mt-0.5"
+                      class="text-xs @min-[1024px]:text-base leading-tight @min-[1024px]:leading-snug text-muted-1 mt-0.5"
                     >
                       New quartz countertops, stainless steel appliances, custom
                       cabinetry.
@@ -5010,11 +5038,11 @@
                         class="bg-muted-2 p-1.5 pr-2.25 @min-[768px]:p-2 @min-[768px]:pr-3 @min-[1024px]:p-2.5 rounded-md grid"
                       >
                         <span
-                          class="text-[0.625rem] @min-[768px]:text-sm text-muted-1"
+                          class="text-xs @min-[768px]:text-sm text-muted-1"
                           >Cost:</span
                         >
                         <span
-                          class="text-[0.625rem] @min-[768px]:text-sm @min-[1024px]:text-xl heading"
+                          class="text-sm @min-[1024px]:text-xl heading"
                           >$45,000</span
                         >
                       </div>
@@ -5022,11 +5050,11 @@
                         class="bg-muted-2 p-1.5 pr-2.25 @min-[768px]:p-2 @min-[768px]:pr-3 @min-[1024px]:p-2.5 rounded-md grid"
                       >
                         <span
-                          class="text-[0.625rem] @min-[768px]:text-sm text-muted-1"
+                          class="text-xs @min-[768px]:text-sm text-muted-1"
                           >Value Impact:
                         </span>
                         <span
-                          class="text-[0.625rem] @min-[768px]:text-sm @min-[1024px]:text-xl text-third heading"
+                          class="text-sm @min-[1024px]:text-xl text-third heading"
                           >$45,000</span
                         >
                       </div>
@@ -5067,14 +5095,14 @@
                       </div>
                     </div>
                     <img
-                      class="swiper-button-prev"
+                      class="swiper-button-prev !absolute"
                       role="button"
                       aria-label="Previous home image"
                       src="images/prev-slider-white-bg.svg"
                       alt=""
                     />
                     <img
-                      class="swiper-button-next"
+                      class="swiper-button-next !absolute"
                       role="button"
                       aria-label="Next home image"
                       src="images/next-slider-white-bg.svg"
@@ -5091,7 +5119,7 @@
                   class="max-w-58.5 @min-[768px]:max-w-81.5 @min-[1024px]:max-w-250 h-full @min-[1024px]:h-auto border border-muted-3 @min-[1024px]:border-0 rounded-lg @min-[1024px]:rounded-none p-2.5 @min-[768px]:p-4 @min-[1024px]:p-0 @min-[1024px]:pl-3.75 @min-[1024px]:pb-4 @min-[1024px]:!flex items-start gap-2.5 relative @min-[1024px]:before:content-[''] @min-[1024px]:before:absolute @min-[1024px]:before:left-0 @min-[1024px]:before:top-1.5 @min-[1024px]:before:w-2.5 @min-[1024px]:before:h-2.5 @min-[1024px]:before:bg-eighth @min-[1024px]:before:border-2 @min-[1024px]:before:border-white @min-[1024px]:before:z-2 @min-[1024px]:before:rounded-full @min-[1024px]:after:content-[''] @min-[1024px]:after:absolute @min-[1024px]:after:left-1 @min-[1024px]:after:top-1.5 @min-[1024px]:after:w-0.5 @min-[1024px]:after:h-full @min-[1024px]:after:bg-eighth"
                 >
                   <div
-                    class="w-12.5 flex gap-0.25 text-[0.625rem] @min-[768px]:text-xs @min-[768px]:gap-0.5 @min-[1024px]:text-sm @min-[1024px]:flex-col @min-[1024px]:gap-1"
+                    class="w-12.5 text-xs @min-[1024px]:text-sm flex gap-0.25  @min-[768px]:gap-0.5  @min-[1024px]:flex-col @min-[1024px]:gap-1"
                   >
                     <span
                       class="@min-[1024px]:font-semibold @min-[1024px]:tracking-[-0.03em] text-muted-6 @min-[1024px]:text-body"
@@ -5103,11 +5131,11 @@
                   <div
                     class="flex-1 mt-1.5 @min-[768px]:mt-2 @min-[1024px]:mt-0"
                   >
-                    <h3 class="text-base @min-[768px]:text-2xl">
+                    <h3 class="text-lg @min-[768px]:text-2xl">
                       Bathroom Upgrade
                     </h3>
                     <p
-                      class="text-[0.625rem] @min-[768px]:text-xs @min-[1024px]:text-base leading-tight @min-[1024px]:leading-snug text-muted-1 mt-0.5"
+                      class="text-xs @min-[1024px]:text-base leading-tight @min-[1024px]:leading-snug text-muted-1 mt-0.5"
                     >
                       Master ensuite renovation with walk-in shower and heated
                       floors.
@@ -5119,11 +5147,11 @@
                         class="bg-muted-2 p-1.5 pr-2.25 @min-[768px]:p-2 @min-[768px]:pr-3 @min-[1024px]:p-2.5 rounded-md grid"
                       >
                         <span
-                          class="text-[0.625rem] @min-[768px]:text-sm text-muted-1"
+                          class="text-xs @min-[768px]:text-sm text-muted-1"
                           >Cost:</span
                         >
                         <span
-                          class="text-[0.625rem] @min-[768px]:text-sm @min-[1024px]:text-xl heading"
+                          class="text-sm @min-[1024px]:text-xl heading"
                           >$20,000</span
                         >
                       </div>
@@ -5131,11 +5159,11 @@
                         class="bg-muted-2 p-1.5 pr-2.25 @min-[768px]:p-2 @min-[768px]:pr-3 @min-[1024px]:p-2.5 rounded-md grid"
                       >
                         <span
-                          class="text-[0.625rem] @min-[768px]:text-sm text-muted-1"
+                          class="text-xs @min-[768px]:text-sm text-muted-1"
                           >Value Impact:
                         </span>
                         <span
-                          class="text-[0.625rem] @min-[768px]:text-sm @min-[1024px]:text-xl text-third heading"
+                          class="text-sm @min-[1024px]:text-xl text-third heading"
                           >+$35,000</span
                         >
                       </div>
@@ -5176,14 +5204,14 @@
                       </div>
                     </div>
                     <img
-                      class="swiper-button-prev"
+                      class="swiper-button-prev !absolute"
                       role="button"
                       aria-label="Previous home image"
                       src="images/prev-slider-white-bg.svg"
                       alt=""
                     />
                     <img
-                      class="swiper-button-next"
+                      class="swiper-button-next !absolute"
                       role="button"
                       aria-label="Next home image"
                       src="images/next-slider-white-bg.svg"
@@ -5201,7 +5229,7 @@
                 >
                   <!-- Date marker -->
                   <div
-                    class="w-12.5 flex gap-0.25 text-[0.625rem] @min-[768px]:text-xs @min-[768px]:gap-0.5 @min-[1024px]:text-sm @min-[1024px]:flex-col @min-[1024px]:gap-1"
+                    class="w-12.5 text-xs @min-[1024px]:text-sm flex gap-0.25  @min-[768px]:gap-0.5  @min-[1024px]:flex-col @min-[1024px]:gap-1"
                   >
                     <span
                       class="@min-[1024px]:font-semibold @min-[1024px]:tracking-[-0.03em] text-muted-6 @min-[1024px]:text-body"
@@ -5213,11 +5241,11 @@
                   <div
                     class="flex-1 mt-1.5 @min-[768px]:mt-2 @min-[1024px]:mt-0"
                   >
-                    <h3 class="text-base @min-[768px]:text-2xl">
+                    <h3 class="text-lg @min-[768px]:text-2xl">
                       Finising the Basement
                     </h3>
                     <p
-                      class="text-[0.625rem] @min-[768px]:text-xs @min-[1024px]:text-base leading-tight @min-[1024px]:leading-snug text-muted-1 mt-0.5"
+                      class="text-xs @min-[1024px]:text-base leading-tight @min-[1024px]:leading-snug text-muted-1 mt-0.5"
                     >
                       Added recreation room, home office, and 3-piece bathroom.
                     </p>
@@ -5228,11 +5256,11 @@
                         class="bg-muted-2 p-1.5 pr-2.25 @min-[768px]:p-2 @min-[768px]:pr-3 @min-[1024px]:p-2.5 rounded-md grid"
                       >
                         <span
-                          class="text-[0.625rem] @min-[768px]:text-sm text-muted-1"
+                          class="text-xs @min-[768px]:text-sm text-muted-1"
                           >Cost:</span
                         >
                         <span
-                          class="text-[0.625rem] @min-[768px]:text-sm @min-[1024px]:text-xl heading"
+                          class="text-sm @min-[1024px]:text-xl heading"
                           >$37,000</span
                         >
                       </div>
@@ -5240,11 +5268,11 @@
                         class="bg-muted-2 p-1.5 pr-2.25 @min-[768px]:p-2 @min-[768px]:pr-3 @min-[1024px]:p-2.5 rounded-md grid"
                       >
                         <span
-                          class="text-[0.625rem] @min-[768px]:text-sm text-muted-1"
+                          class="text-xs @min-[768px]:text-sm text-muted-1"
                           >Value Impact:
                         </span>
                         <span
-                          class="text-[0.625rem] @min-[768px]:text-sm @min-[1024px]:text-xl text-third heading"
+                          class="text-sm @min-[1024px]:text-xl text-third heading"
                           >+$75,000</span
                         >
                       </div>
@@ -5884,6 +5912,11 @@
             </div>
 
             <div
+              class="swiper-pagination !static mt-2.5 -mb-1.5 @min-[1024px]:hidden"
+             
+            ></div>
+
+            <div
               class="hidden @min-[1024px]:flex justify-center gap-2.5 py-2 mt-11.25"
             >
               <img
@@ -6104,7 +6137,7 @@
             <ul role="tablist" class="filter-tabs">
               <li role="presentation">
                 <button
-                  class="filter-tab filter-room-tab active"
+                  class="filter-tab active"
                   role="tab"
                   aria-selected="true"
                   id="tab-thornhill"
@@ -6115,7 +6148,7 @@
               </li>
               <li role="presentation">
                 <button
-                  class="filter-tab filter-room-tab"
+                  class="filter-tab"
                   role="tab"
                   aria-selected="false"
                   id="tab-richmond"
@@ -6126,7 +6159,7 @@
               </li>
               <li role="presentation">
                 <button
-                  class="filter-tab filter-room-tab"
+                  class="filter-tab"
                   role="tab"
                   aria-selected="false"
                   id="tab-markham"
@@ -6137,7 +6170,7 @@
               </li>
               <li role="presentation">
                 <button
-                  class="filter-tab filter-room-tab"
+                  class="filter-tab"
                   role="tab"
                   aria-selected="false"
                   id="tab-north-york"
@@ -6258,6 +6291,12 @@
                 </div>
               </div>
             </div>
+
+            <div
+              class="swiper-pagination !static mt-2.5 -mb-1.5 @min-[1024px]:hidden"
+              role="navigation"
+            ></div>
+
             <div
               class="hidden @min-[1024px]:flex justify-center gap-2.5 py-2 mt-11.25"
             >
@@ -6363,7 +6402,7 @@
             <ul role="tablist" class="filter-tabs">
               <li role="presentation">
                 <button
-                  class="filter-tab filter-room-tab active"
+                  class="filter-tab active"
                   role="tab"
                   aria-selected="true"
                   id="tab-all"
@@ -6374,7 +6413,7 @@
               </li>
               <li role="presentation">
                 <button
-                  class="filter-tab filter-room-tab"
+                  class="filter-tab"
                   role="tab"
                   aria-selected="false"
                   id="tab-upcoming"
@@ -6385,7 +6424,7 @@
               </li>
               <li role="presentation">
                 <button
-                  class="filter-tab filter-room-tab"
+                  class="filter-tab"
                   role="tab"
                   aria-selected="false"
                   id="tab-done"
@@ -6396,7 +6435,7 @@
               </li>
               <li role="presentation">
                 <button
-                  class="filter-tab filter-room-tab"
+                  class="filter-tab"
                   role="tab"
                   aria-selected="false"
                   id="tab-overdue"
@@ -6582,7 +6621,7 @@
               </div>
             </div>
             <div
-              class="flex justify-center gap-2.5 py-2 mt-8 @min-[1024px]:mt-11.25"
+              class="hidden @min-[1024px]:flex justify-center gap-2.5 py-2 mt-11.25"
             >
               <img
                 class="swiper-button-prev"
@@ -6686,7 +6725,7 @@
             <ul role="tablist" class="filter-tabs">
               <li role="presentation">
                 <button
-                  class="filter-tab filter-room-tab active"
+                  class="filter-tab active"
                   role="tab"
                   aria-selected="true"
                   id="tab-all"
@@ -6697,7 +6736,7 @@
               </li>
               <li role="presentation">
                 <button
-                  class="filter-tab filter-room-tab"
+                  class="filter-tab"
                   role="tab"
                   aria-selected="false"
                   id="tab-opportunities"
@@ -6708,7 +6747,7 @@
               </li>
               <li role="presentation">
                 <button
-                  class="filter-tab filter-room-tab"
+                  class="filter-tab"
                   role="tab"
                   aria-selected="false"
                   id="tab-risks"
@@ -6719,7 +6758,7 @@
               </li>
               <li role="presentation">
                 <button
-                  class="filter-tab filter-room-tab"
+                  class="filter-tab"
                   role="tab"
                   aria-selected="false"
                   id="tab-incentives"
@@ -6730,7 +6769,7 @@
               </li>
               <li role="presentation">
                 <button
-                  class="filter-tab filter-room-tab"
+                  class="filter-tab"
                   role="tab"
                   aria-selected="false"
                   id="tab-rebates"
@@ -6743,22 +6782,101 @@
           </nav>
 
           <div
-            class="swiper swiper-opportunities-risks-incentives-rebates"
+            class="swiper swiper-opportunities-risks-incentives-rebates -mt-6"
             role="tabpanel"
             id="panel-all"
             aria-labelledby="tab-all"
           >
             <div class="swiper-wrapper">
+
               <div
-                class="swiper-slide pt-6 pb-10.5 @min-[768px]:pb-12 flip-card group [perspective:1000px] relative pl-5 @min-[768px]:pl-8 @min-[1024px]:pl-24.5"
+                class="swiper-slide pt-6 pb-10.5 @min-[768px]:pb-12 flip-card group [perspective:1000px] [-webkit-perspective:1000px]
+ relative pl-5 @min-[768px]:pl-8 @min-[1024px]:pl-24.5"
               >
                 <div
-                  class="relative card group-hover:border-0 w-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus:[transform:rotateY(180deg)] peer"
+                  class="relative card transform-gpu [will-change:transform] [-webkit-transform-style:preserve-3d]  border-0 w-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus:[transform:rotateY(180deg)] peer"
                 >
                   <!-- ── FRONT FACE ─────────────────────────────── -->
 
                   <div
-                    class="absolute inset-0 card bg-white bordered-card rounded-[inherit] flex flex-col [backface-visibility:hidden]"
+                  class="card has-chevron-icon  absolute inset-0 card text-white bg-third border border-third rounded-[inherit] flex flex-col [backface-visibility:hidden] [-webkit-backface-visibility:hidden] [transform:translateZ(0.1px)]
+"
+                >
+                  <div class="flex justify-between mb-2.5">
+                    <dl class="heading leading-[1]">
+                      <dt class="text-[2.625rem] @min-[768px]:text-[4rem]">
+                        32
+                      </dt>
+                      <dd class="text-sm @min-[768px]:text-xl">Opportunities</dd>
+                      <dt
+                        class="text-[2.625rem] @min-[768px]:text-[4rem] mt-6 @min-[768px]:mt-5"
+                      >
+                        $4,600
+                      </dt>
+                      <dd class="text-sm @min-[768px]:text-xl">Incentives Value</dd>
+                    </dl>
+                    <span
+                      class="absolute right-0 flex text-[0.625rem] text-third heading leading-[100%] bg-white py-1 px-1.25 rounded  gap-0.5 self-start mt-1.25 @min-[768px]:mt-0 z-[2] [transform:translateZ(2px)] [-webkit-transform:translateZ(2px)]
+"
+                    >
+                      +2 000 points
+                      <svg
+                        class="chevron-icon fill-third-100 w-2.5 h-2.5 static"
+                      >
+                        <use href="#chevron-icon" />
+                      </svg>
+                    </span>
+                  </div>
+
+                  <svg
+                    class="chevron-icon fill-third-100 w-39 h-39 @min-[768px]:w-56 @min-[768px]:h-56 -top-3.5 left-auto -right-9"
+                  >
+                    <use href="#chevron-icon" />
+                  </svg>
+
+                  <div class="more border-[#ffffff22]">
+                    <p>Scroll to Discover</p>
+                    <img
+                      class="uploid-icon filter invert"
+                      src="images/more-icon.svg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                  
+
+                  <!-- ── BACK FACE ──────────────────────────────── -->
+                  <div
+                    class="absolute inset-0 card bg-muted-2 border-muted-2 rounded-[inherit] flex flex-col gap-4 rotate-y-180 [backface-visibility:hidden]"
+                  >
+                    <p class="text-xs @min-[768px]:text-sm mb-2.5">
+                      Make your home more energy-efficient with an interest-free
+                      loan of up to $40,000. Upgrade insulation, windows,
+                      heating systems, and more—while saving on energy costs.
+                      Apply now and invest in a greener future!
+                    </p>
+
+                    <div class="more">
+                      <p>Learn More</p>
+                      <img src="images/more-icon.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              
+              <div
+                class="swiper-slide pt-6 pb-10.5 @min-[768px]:pb-12 flip-card group [perspective:1000px] [-webkit-perspective:1000px]
+ relative"
+              >
+                <div
+                  class="relative card transform-gpu [will-change:transform] [-webkit-transform-style:preserve-3d]  border-0 w-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus:[transform:rotateY(180deg)] peer"
+                >
+                  <!-- ── FRONT FACE ─────────────────────────────── -->
+
+                  <div
+                    class="absolute inset-0 card bg-white bordered-card rounded-[inherit] flex flex-col [backface-visibility:hidden] [-webkit-backface-visibility:hidden] [transform:translateZ(0.1px)]
+"
                   >
                     <img
                       class="absolute w-41.25 top-7.75 left-8.75 @min-[768px]:hidden"
@@ -6772,7 +6890,8 @@
                     />
 
                     <span
-                      class="text-xs text-body bg-muted-2 py-0.5 px-2 rounded self-start z-[1]"
+                      class="text-xs text-body bg-muted-2 py-0.5 px-2 rounded self-start z-[2] [transform:translateZ(2px)] [-webkit-transform:translateZ(2px)]
+"
                       >Opportunity</span
                     >
 
@@ -6799,7 +6918,7 @@
 
                   <!-- ── BACK FACE ──────────────────────────────── -->
                   <div
-                    class="absolute inset-0 card bg-muted-2 rounded-[inherit] flex flex-col gap-4 rotate-y-180 [backface-visibility:hidden]"
+                    class="absolute inset-0 card bg-muted-2 border-muted-2 rounded-[inherit] flex flex-col gap-4 rotate-y-180 [backface-visibility:hidden]"
                   >
                     <p class="text-xs @min-[768px]:text-sm mb-2.5">
                       Make your home more energy-efficient with an interest-free
@@ -6815,66 +6934,20 @@
                   </div>
                 </div>
               </div>
+              
+
               <div
-                class="swiper-slide pt-6 pb-10.5 @min-[768px]:pb-12 flip-card group [perspective:1000px] relative"
+                class="swiper-slide pt-6 pb-10.5 @min-[768px]:pb-12 flip-card group [perspective:1000px] [-webkit-perspective:1000px]
+ relative"
               >
                 <div
-                  class="relative card group-hover:border-0 w-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus:[transform:rotateY(180deg)] peer"
+                  class="relative card transform-gpu [will-change:transform] [-webkit-transform-style:preserve-3d]  border-0 w-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus:[transform:rotateY(180deg)] peer"
                 >
                   <!-- ── FRONT FACE ─────────────────────────────── -->
 
                   <div
-                    class="absolute inset-0 card text-white bg-third bordered-card rounded-[inherit] shadow flex flex-col [backface-visibility:hidden]"
-                  >
-                    <span
-                      class="text-xs text-body bg-white py-0.5 px-2 rounded self-start"
-                      >Incentive</span
-                    >
-                    <h3 class="mt-auto">Up to $3,600</h3>
-                    <p
-                      class="text-xs @min-[768px]:text-sm leading-[1.1] mt-2 @min-[768px]:mt-2.25 mb-2.5"
-                    >
-                      Exterior Wall Insulation
-                    </p>
-                    <div class="more border-[#ffffff22]">
-                      <p>Learn More</p>
-                      <img
-                        class="uploid-icon filter invert"
-                        src="images/more-icon.svg"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-
-                  <!-- ── BACK FACE ──────────────────────────────── -->
-                  <div
-                    class="absolute inset-0 card bg-muted-2 rounded-[inherit] flex flex-col gap-4 rotate-y-180 [backface-visibility:hidden]"
-                  >
-                    <p class="text-xs @min-[768px]:text-sm mb-2.5">
-                      Make your home more energy-efficient with an interest-free
-                      loan of up to $40,000. Upgrade insulation, windows,
-                      heating systems, and more—while saving on energy costs.
-                      Apply now and invest in a greener future!
-                    </p>
-
-                    <div class="more">
-                      <p>Learn More</p>
-                      <img src="images/more-icon.svg" alt="" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="swiper-slide pt-6 pb-10.5 @min-[768px]:pb-12 flip-card group [perspective:1000px] relative"
-              >
-                <div
-                  class="relative card group-hover:border-0 w-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus:[transform:rotateY(180deg)] peer"
-                >
-                  <!-- ── FRONT FACE ─────────────────────────────── -->
-
-                  <div
-                    class="absolute inset-0 card bg-white bordered-card rounded-[inherit] flex flex-col [backface-visibility:hidden]"
+                    class="absolute inset-0 card bg-white bordered-card rounded-[inherit] flex flex-col [backface-visibility:hidden] [-webkit-backface-visibility:hidden] [transform:translateZ(0.1px)]
+"
                   >
                     <img
                       class="absolute w-42 @min-[768px]:w-auto top-6.25 left-7.25 @min-[768px]:inset-2.5 bottom-auto"
@@ -6883,7 +6956,8 @@
                     />
 
                     <span
-                      class="text-xs text-body bg-muted-2 py-0.5 px-2 rounded self-start relative z-2"
+                      class="text-xs text-body bg-muted-2 py-0.5 px-2 rounded self-start relative z-[2] [transform:translateZ(2px)] [-webkit-transform:translateZ(2px)]
+"
                       >Opportunity</span
                     >
                     <h3 class="mt-auto relative">
@@ -6905,7 +6979,7 @@
 
                   <!-- ── BACK FACE ──────────────────────────────── -->
                   <div
-                    class="absolute inset-0 card bg-muted-2 rounded-[inherit] flex flex-col gap-4 rotate-y-180 [backface-visibility:hidden]"
+                    class="absolute inset-0 card bg-muted-2 border-muted-2 rounded-[inherit] flex flex-col gap-4 rotate-y-180 [backface-visibility:hidden]"
                   >
                     <p class="text-xs @min-[768px]:text-sm mb-2.5">
                       Make your home more energy-efficient with an interest-free
@@ -6923,15 +6997,17 @@
               </div>
 
               <div
-                class="swiper-slide pt-6 pb-10.5 @min-[768px]:pb-12 flip-card group [perspective:1000px] relative"
+                class="swiper-slide pt-6 pb-10.5 @min-[768px]:pb-12 flip-card group [perspective:1000px] [-webkit-perspective:1000px]
+ relative"
               >
                 <div
-                  class="relative card group-hover:border-0 w-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus:[transform:rotateY(180deg)] peer"
+                  class="relative card transform-gpu [will-change:transform] [-webkit-transform-style:preserve-3d]  border-0 w-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus:[transform:rotateY(180deg)] peer"
                 >
                   <!-- ── FRONT FACE ─────────────────────────────── -->
 
                   <div
-                    class="absolute inset-0 card bg-white bordered-card rounded-[inherit] flex flex-col [backface-visibility:hidden]"
+                    class="absolute inset-0 card bg-white bordered-card rounded-[inherit] flex flex-col [backface-visibility:hidden] [-webkit-backface-visibility:hidden] [transform:translateZ(0.1px)]
+"
                   >
                     <img
                       class="absolute w-42 @min-[768px]:w-auto top-6.25 left-7.25 @min-[768px]:inset-2.5 bottom-auto"
@@ -6940,7 +7016,8 @@
                     />
 
                     <span
-                      class="text-xs text-body bg-muted-2 py-0.5 px-2 rounded self-start relative z-2"
+                      class="text-xs text-body bg-muted-2 py-0.5 px-2 rounded self-start relative z-[2] [transform:translateZ(2px)] [-webkit-transform:translateZ(2px)]
+"
                       >Opportunity</span
                     >
                     <h3 class="mt-auto relative">
@@ -6962,7 +7039,7 @@
 
                   <!-- ── BACK FACE ──────────────────────────────── -->
                   <div
-                    class="absolute inset-0 card bg-muted-2 rounded-[inherit] flex flex-col gap-4 rotate-y-180 [backface-visibility:hidden]"
+                    class="absolute inset-0 card bg-muted-2 border-muted-2 rounded-[inherit] flex flex-col gap-4 rotate-y-180 [backface-visibility:hidden]"
                   >
                     <p class="text-xs @min-[768px]:text-sm mb-2.5">
                       Make your home more energy-efficient with an interest-free
@@ -6980,15 +7057,17 @@
               </div>
 
               <div
-                class="swiper-slide pt-6 pb-10.5 @min-[768px]:pb-12 flip-card group [perspective:1000px] relative mr-5 @min-[768px]:mr-8"
+                class="swiper-slide pt-6 pb-10.5 @min-[768px]:pb-12 flip-card group [perspective:1000px] [-webkit-perspective:1000px]
+ relative mr-5 @min-[768px]:mr-8"
               >
                 <div
-                  class="relative card group-hover:border-0 w-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus:[transform:rotateY(180deg)] peer"
+                  class="relative card transform-gpu [will-change:transform] [-webkit-transform-style:preserve-3d]  border-0 w-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus:[transform:rotateY(180deg)] peer"
                 >
                   <!-- ── FRONT FACE ─────────────────────────────── -->
 
                   <div
-                    class="absolute inset-0 card bg-white bordered-card rounded-[inherit] flex flex-col [backface-visibility:hidden]"
+                    class="absolute inset-0 card bg-white bordered-card rounded-[inherit] flex flex-col [backface-visibility:hidden] [-webkit-backface-visibility:hidden] [transform:translateZ(0.1px)]
+"
                   >
                     <img
                       class="absolute w-42 @min-[768px]:w-auto top-6.25 left-7.25 @min-[768px]:inset-2.5 bottom-auto"
@@ -6997,7 +7076,8 @@
                     />
 
                     <span
-                      class="text-xs text-body bg-muted-2 py-0.5 px-2 rounded self-start relative z-2"
+                      class="text-xs text-body bg-muted-2 py-0.5 px-2 rounded self-start relative z-[2] [transform:translateZ(2px)] [-webkit-transform:translateZ(2px)]
+"
                       >Opportunity</span
                     >
                     <h3 class="mt-auto relative">
@@ -7019,7 +7099,7 @@
 
                   <!-- ── BACK FACE ──────────────────────────────── -->
                   <div
-                    class="absolute inset-0 card bg-muted-2 rounded-[inherit] flex flex-col gap-4 rotate-y-180 [backface-visibility:hidden]"
+                    class="absolute inset-0 card bg-muted-2 border-muted-2 rounded-[inherit] flex flex-col gap-4 rotate-y-180 [backface-visibility:hidden]"
                   >
                     <p class="text-xs @min-[768px]:text-sm mb-2.5">
                       Make your home more energy-efficient with an interest-free
@@ -7037,7 +7117,7 @@
               </div>
             </div>
             <div
-              class="hidden @min-[1024px]-flex justify-center gap-2.5 py-2 mt-11.25"
+              class="hidden @min-[1024px]:flex justify-center gap-2.5 py-2 mt-11.25"
             >
               <img
                 class="swiper-button-prev"
@@ -7141,7 +7221,7 @@
             <ul role="tablist" class="filter-tabs">
               <li role="presentation">
                 <button
-                  class="filter-tab filter-room-tab active"
+                  class="filter-tab active"
                   role="tab"
                   aria-selected="true"
                   id="tab-all"
@@ -7152,7 +7232,7 @@
               </li>
               <li role="presentation">
                 <button
-                  class="filter-tab filter-room-tab"
+                  class="filter-tab"
                   role="tab"
                   aria-selected="false"
                   id="tab-emergency"
@@ -7163,7 +7243,7 @@
               </li>
               <li role="presentation">
                 <button
-                  class="filter-tab filter-room-tab"
+                  class="filter-tab"
                   role="tab"
                   aria-selected="false"
                   id="tab-utility"
@@ -7174,7 +7254,7 @@
               </li>
               <li role="presentation">
                 <button
-                  class="filter-tab filter-room-tab"
+                  class="filter-tab"
                   role="tab"
                   aria-selected="false"
                   id="tab-shelter"
@@ -7185,7 +7265,7 @@
               </li>
               <li role="presentation">
                 <button
-                  class="filter-tab filter-room-tab"
+                  class="filter-tab"
                   role="tab"
                   aria-selected="false"
                   id="tab-Emergency"
@@ -7425,7 +7505,7 @@
               </div>
             </div>
             <div
-              class="hidden @min-[1024px]-flex justify-center gap-2.5 py-2 mt-11.25"
+              class="hidden @min-[1024px]:flex justify-center gap-2.5 py-2 mt-11.25"
             >
               <img
                 class="swiper-button-prev"
@@ -7816,7 +7896,7 @@
               </div>
             </div>
             <div
-              class="hidden @min-[1024px]-flex justify-center gap-2.5 py-2 mt-11.25"
+              class="hidden @min-[1024px]:flex justify-center gap-2.5 py-2 mt-11.25"
             >
               <img
                 class="swiper-button-prev"
@@ -7992,13 +8072,13 @@
           </header>
 
           <div
-            class="wrapper flex flex-wrap justify-between items-start gap-3 mb-6"
+            class="wrapper flex flex-wrap justify-between items-center gap-3 mb-6"
           >
             <nav class="tabs" aria-label="Filter by Experts or job">
               <ul role="tablist" class="filter-tabs px-0 mb-0">
                 <li role="presentation">
                   <button
-                    class="filter-tab filter-room-tab active"
+                    class="filter-tab active"
                     role="tab"
                     aria-selected="true"
                     id="tab-by-experts"
@@ -8009,7 +8089,7 @@
                 </li>
                 <li role="presentation">
                   <button
-                    class="filter-tab filter-room-tab"
+                    class="filter-tab"
                     role="tab"
                     aria-selected="false"
                     id="tab-by-job"
@@ -8749,254 +8829,10 @@
               </div>
             </div>
 
-            <nav class="swiper swiper-chars-tabes mt-6">
-              <div role="tablist" class="swiper-wrapper">
-                <div
-                  class="swiper-slide pl-5 @min-[768px]:pl-8 @min-[1024px]:pl-24.5"
-                >
-                  <span
-                    class="cursor-pointer filter-tab @min-[768px]:px-3 py-1.75 active block"
-                    role="tab"
-                    aria-selected="true"
-                    id="tab-by-a"
-                    aria-controls="panel-by-a"
-                  >
-                    A
-                  </span>
-                </div>
-
-                <span
-                  class="swiper-slide cursor-pointer filter-tab @min-[768px]:px-3 py-1.75"
-                  role="tab"
-                  aria-selected="false"
-                  id="tab-by-b"
-                  aria-controls="panel-by-b"
-                >
-                  B
-                </span>
-                <span
-                  class="swiper-slide cursor-pointer filter-tab @min-[768px]:px-3 py-1.75"
-                  role="tab"
-                  aria-selected="false"
-                  id="tab-by-c"
-                  aria-controls="panel-by-c"
-                >
-                  C
-                </span>
-                <span
-                  class="swiper-slide cursor-pointer filter-tab @min-[768px]:px-3 py-1.75"
-                  role="tab"
-                  aria-selected="false"
-                  id="tab-by-d"
-                  aria-controls="panel-by-d"
-                >
-                  D
-                </span>
-                <span
-                  class="swiper-slide cursor-pointer filter-tab @min-[768px]:px-3 py-1.75"
-                  role="tab"
-                  aria-selected="false"
-                  id="tab-by-e"
-                  aria-controls="panel-by-e"
-                >
-                  E
-                </span>
-                <span
-                  class="swiper-slide cursor-pointer filter-tab @min-[768px]:px-3 py-1.75"
-                  role="tab"
-                  aria-selected="false"
-                  id="tab-by-f"
-                  aria-controls="panel-by-f"
-                >
-                  F
-                </span>
-                <span
-                  class="swiper-slide cursor-pointer filter-tab @min-[768px]:px-3 py-1.75"
-                  role="tab"
-                  aria-selected="false"
-                  id="tab-by-g"
-                  aria-controls="panel-by-g"
-                >
-                  G
-                </span>
-                <span
-                  class="swiper-slide cursor-pointer filter-tab @min-[768px]:px-3 py-1.75"
-                  role="tab"
-                  aria-selected="false"
-                  id="tab-by-h"
-                  aria-controls="panel-by-h"
-                >
-                  H
-                </span>
-                <span
-                  class="swiper-slide cursor-pointer filter-tab @min-[768px]:px-3 py-1.75"
-                  role="tab"
-                  aria-selected="false"
-                  id="tab-by-i"
-                  aria-controls="panel-by-i"
-                >
-                  I
-                </span>
-                <span
-                  class="swiper-slide cursor-pointer filter-tab @min-[768px]:px-3 py-1.75"
-                  role="tab"
-                  aria-selected="false"
-                  id="tab-by-j"
-                  aria-controls="panel-by-j"
-                >
-                  J
-                </span>
-                <span
-                  class="swiper-slide cursor-pointer filter-tab @min-[768px]:px-3 py-1.75"
-                  role="tab"
-                  aria-selected="false"
-                  id="tab-by-k"
-                  aria-controls="panel-by-k"
-                >
-                  K
-                </span>
-                <span
-                  class="swiper-slide cursor-pointer filter-tab @min-[768px]:px-3 py-1.75"
-                  role="tab"
-                  aria-selected="false"
-                  id="tab-by-l"
-                  aria-controls="panel-by-l"
-                >
-                  L
-                </span>
-                <span
-                  class="swiper-slide cursor-pointer filter-tab @min-[768px]:px-3 py-1.75"
-                  role="tab"
-                  aria-selected="false"
-                  id="tab-by-m"
-                  aria-controls="panel-by-m"
-                >
-                  M
-                </span>
-                <span
-                  class="swiper-slide cursor-pointer filter-tab @min-[768px]:px-3 py-1.75"
-                  role="tab"
-                  aria-selected="false"
-                  id="tab-by-n"
-                  aria-controls="panel-by-n"
-                >
-                  N
-                </span>
-                <span
-                  class="swiper-slide cursor-pointer filter-tab @min-[768px]:px-3 py-1.75"
-                  role="tab"
-                  aria-selected="false"
-                  id="tab-by-o"
-                  aria-controls="panel-by-o"
-                >
-                  O
-                </span>
-                <span
-                  class="swiper-slide cursor-pointer filter-tab @min-[768px]:px-3 py-1.75"
-                  role="tab"
-                  aria-selected="false"
-                  id="tab-by-p"
-                  aria-controls="panel-by-p"
-                >
-                  P
-                </span>
-                <span
-                  class="swiper-slide cursor-pointer filter-tab @min-[768px]:px-3 py-1.75"
-                  role="tab"
-                  aria-selected="false"
-                  id="tab-by-q"
-                  aria-controls="panel-by-q"
-                >
-                  Q
-                </span>
-                <span
-                  class="swiper-slide cursor-pointer filter-tab @min-[768px]:px-3 py-1.75"
-                  role="tab"
-                  aria-selected="false"
-                  id="tab-by-r"
-                  aria-controls="panel-by-r"
-                >
-                  R
-                </span>
-                <span
-                  class="swiper-slide cursor-pointer filter-tab @min-[768px]:px-3 py-1.75"
-                  role="tab"
-                  aria-selected="false"
-                  id="tab-by-s"
-                  aria-controls="panel-by-s"
-                >
-                  S
-                </span>
-                <span
-                  class="swiper-slide cursor-pointer filter-tab @min-[768px]:px-3 py-1.75"
-                  role="tab"
-                  aria-selected="false"
-                  id="tab-by-t"
-                  aria-controls="panel-by-t"
-                >
-                  T
-                </span>
-                <span
-                  class="swiper-slide cursor-pointer filter-tab @min-[768px]:px-3 py-1.75"
-                  role="tab"
-                  aria-selected="false"
-                  id="tab-by-u"
-                  aria-controls="panel-by-u"
-                >
-                  U
-                </span>
-                <span
-                  class="swiper-slide cursor-pointer filter-tab @min-[768px]:px-3 py-1.75"
-                  role="tab"
-                  aria-selected="false"
-                  id="tab-by-v"
-                  aria-controls="panel-by-v"
-                >
-                  V
-                </span>
-                <span
-                  class="swiper-slide cursor-pointer filter-tab @min-[768px]:px-3 py-1.75"
-                  role="tab"
-                  aria-selected="false"
-                  id="tab-by-w"
-                  aria-controls="panel-by-w"
-                >
-                  W
-                </span>
-                <span
-                  class="swiper-slide cursor-pointer filter-tab @min-[768px]:px-3 py-1.75"
-                  role="tab"
-                  aria-selected="false"
-                  id="tab-by-x"
-                  aria-controls="panel-by-x"
-                >
-                  X
-                </span>
-                <span
-                  class="swiper-slide cursor-pointer filter-tab @min-[768px]:px-3 py-1.75"
-                  role="tab"
-                  aria-selected="false"
-                  id="tab-by-y"
-                  aria-controls="panel-by-y"
-                >
-                  Y
-                </span>
-                <div class="swiper-slide pr-5 @min-[768px]:pr-8">
-                  <span
-                    class="swiper-slide cursor-pointer filter-tab @min-[768px]:px-3 py-1.75 block"
-                    role="tab"
-                    aria-selected="false"
-                    id="tab-by-z"
-                    aria-controls="panel-by-z"
-                  >
-                    Z
-                  </span>
-                </div>
-              </div>
-            </nav>
+           
 
             <div
-              class="hidden @min-[1024px]-flex justify-center gap-2.5 py-2 mt-11.25"
+              class="hidden @min-[1024px]:flex justify-center gap-2.5 py-2 mt-11.25"
             >
               <img
                 class="swiper-button-prev"
@@ -9100,7 +8936,7 @@
             <ul role="tablist" class="filter-tabs">
               <li role="presentation">
                 <button
-                  class="filter-tab filter-room-tab active"
+                  class="filter-tab active"
                   role="tab"
                   aria-selected="true"
                   id="tab-monthly-costs"
@@ -9111,7 +8947,7 @@
               </li>
               <li role="presentation">
                 <button
-                  class="filter-tab filter-room-tab"
+                  class="filter-tab"
                   role="tab"
                   aria-selected="false"
                   id="tab-average-ontario"
@@ -9122,7 +8958,7 @@
               </li>
               <li role="presentation">
                 <button
-                  class="filter-tab filter-room-tab"
+                  class="filter-tab"
                   role="tab"
                   aria-selected="false"
                   id="tab-average-canada"
@@ -9351,7 +9187,7 @@
           <div
             class="wrapper relative flex flex-col gap-4 @min-[768px]:flex-row @min-[768px]:items-end @min-[1024px]:gap-8.5"
           >
-          <div class="flex flex-col @min-[768px]:w-1/2 @min-[768px]:h-full @min-[768px]:order-2">
+          <div class=" flex flex-col @min-[768px]:w-1/2 @min-[768px]:h-full @min-[768px]:order-2">
             <div
                       id="utilityCoststBanner"
                       class="self-end text-white grid !m-0 p-1.5 @min-[768px]:p-2.5 bg-third rounded @min-[768px]:rounded-md"
@@ -9368,7 +9204,7 @@
                       </div>
             </div>
             <div
-              class="w-full @min-[768px]:h-50"
+              class="w-full h-50 mt-4"
               id="utilityCostsLineChart"
             ></div>
           </div>
@@ -10499,7 +10335,7 @@
                 class="swiper-slide space-y-6.5 pl-5 @min-[768px]:pl-8 @min-[1024px]:pl-24.5"
               >
                 <div class="display-home-card">
-                  <figure>
+                  <figure class="mb-2 @min-[768px]:mb-3">
                     <img
                       src="images/home-tiles-1.webp"
                       alt="Bedroom with modern decor"
@@ -10515,7 +10351,7 @@
                 </div>
 
                 <div class="display-home-card">
-                  <figure>
+                  <figure class="mb-2 @min-[768px]:mb-3">
                     <img
                       src="images/home-tiles-2.webp"
                       alt="Bedroom with modern decor"
@@ -10533,7 +10369,7 @@
 
               <div class="swiper-slide space-y-6.5">
                 <div class="display-home-card">
-                  <figure>
+                  <figure class="mb-2 @min-[768px]:mb-3">
                     <img
                       src="images/home-tiles-3.webp"
                       alt="Bedroom with modern decor"
@@ -10549,7 +10385,7 @@
                 </div>
 
                 <div class="display-home-card">
-                  <figure>
+                  <figure class="mb-2 @min-[768px]:mb-3">
                     <img
                       src="images/home-tiles-4.webp"
                       alt="Bedroom with modern decor"
@@ -10567,7 +10403,7 @@
 
               <div class="swiper-slide space-y-6.5">
                 <div class="display-home-card">
-                  <figure>
+                  <figure class="mb-2 @min-[768px]:mb-3">
                     <img
                       src="images/home-tiles-5.webp"
                       alt="Bedroom with modern decor"
@@ -10583,7 +10419,7 @@
                 </div>
 
                 <div class="display-home-card">
-                  <figure>
+                  <figure class="mb-2 @min-[768px]:mb-3">
                     <img
                       src="images/home-tiles-6.webp"
                       alt="Bedroom with modern decor"
@@ -10601,7 +10437,7 @@
 
               <div class="swiper-slide space-y-6.5">
                 <div class="display-home-card">
-                  <figure>
+                  <figure class="mb-2 @min-[768px]:mb-3">
                     <img
                       src="images/home-tiles-7.webp"
                       alt="Bedroom with modern decor"
@@ -10617,7 +10453,7 @@
                 </div>
 
                 <div class="display-home-card">
-                  <figure>
+                  <figure class="mb-2 @min-[768px]:mb-3">
                     <img
                       src="images/home-tiles-8.webp"
                       alt="Bedroom with modern decor"
@@ -10635,7 +10471,7 @@
 
               <div class="swiper-slide space-y-6.5 pr-5 @min-[768px]:pr-8">
                 <div class="display-home-card">
-                  <figure>
+                  <figure class="mb-2 @min-[768px]:mb-3">
                     <img
                       src="images/home-tiles-9.webp"
                       alt="Bedroom with modern decor"
@@ -10651,7 +10487,7 @@
                 </div>
 
                 <div class="display-home-card">
-                  <figure>
+                  <figure class="mb-2 @min-[768px]:mb-3">
                     <img
                       src="images/home-tiles-10.webp"
                       alt="Bedroom with modern decor"
@@ -10668,7 +10504,7 @@
               </div>
             </div>
             <div
-              class="hidden @min-[1024px]-flex justify-center gap-2.5 py-2 mt-11.25"
+              class="hidden @min-[1024px]:flex justify-center gap-2.5 py-2 mt-11.25"
             >
               <img
                 class="swiper-button-prev"
@@ -11054,7 +10890,7 @@
                   <div class="text-center flex flex-col items-center mb-2.5">
                     <img
                       class="w-12 @min-[768px]:w-16 pt-3.75 @min-[768px]:pt-11"
-                      src="images/set-renewal-reminders-icon.svg"
+                      src="images/set-renewal-reminders-icon-white.svg"
                       alt=""
                     />
                     <h3
@@ -11068,7 +10904,7 @@
                   </div>
                   <div class="more border-[#ffffff22]">
                     <p>Set Reminders</p>
-                    <img src="images/more-icon.svg" alt="" />
+                    <img class="filter invert" src="images/more-icon.svg" alt="" />
                   </div>
                 </div>
               </div>
@@ -11920,7 +11756,7 @@
               </div>
             </div>
             <div
-              class="flex justify-center gap-2.5 py-2 mt-8 @min-[1024px]:mt-11.25"
+              class="hidden @min-[1024px]:flex justify-center gap-2.5 py-2 mt-11.25"
             >
               <img
                 class="swiper-button-prev"
@@ -12005,7 +11841,7 @@
                     <a
                       class="py-2 @min-[1024px]:py-4 block"
                       data-query="Zoning & Usage"
-                      data-target="#zoning-usage-heading"
+                      data-target="#zoning-usage"
                       href="#chat-block"
                     >
                       <summary
@@ -12100,7 +11936,7 @@
                     class="shadow-[0_9.14px_18.29px_rgba(0,0,0,0.20)] w-8 h-8 @min-[1024px]:w-14 @min-[1024px]:h-14 flex-center bg-white rounded-full"
                   >
                     <img
-                      class="w-5.75 @min-[1024px]:w-6"
+                      class="w-4 h-4 @min-[1024px]:w-6 @min-[1024px]:h-6"
                       src="images/prev-icon.svg"
                       alt=""
                     />
@@ -12121,7 +11957,7 @@
                       >
                         <span class="w-8 h-8 flex-center">
                           <img
-                            class="w-3.5"
+                            class="w-3.5 h-3.5"
                             src="images/prev-icon.svg"
                             alt=""
                           />
@@ -12139,7 +11975,7 @@
                       >
                         <span class="w-8 h-8 flex-center">
                           <img
-                            class="w-3.5"
+                            class="w-3.5 h-3.5"
                             src="images/prev-icon.svg"
                             alt=""
                           />
@@ -12158,7 +11994,7 @@
                       >
                         <span class="w-8 h-8 flex-center">
                           <img
-                            class="w-3.5"
+                            class="w-3.5 h-3.5"
                             src="images/prev-icon.svg"
                             alt=""
                           />
@@ -12167,6 +12003,24 @@
                           >Start pre-sale planning — Explore recommended
                           improvements that could boost value of your
                           home.</span
+                        >
+                      </summary>
+                    </details>
+                  </li>
+                  <li>
+                    <details class="py-2 @min-[1024px]:py-4">
+                      <summary
+                        class="flex items-center gap-2.5 cursor-pointer select-none"
+                      >
+                        <span class="w-8 h-8 flex-center">
+                          <img
+                            class="w-3.5 h-3.5"
+                            src="images/load-more-icon-red.svg"
+                            alt=""
+                          />
+                        </span>
+                        <span class="text-third flex-1"
+                          >Load 23 more</span
                         >
                       </summary>
                     </details>
@@ -12485,7 +12339,7 @@
           <section
             class="main-section section-wrapper dynamic-section hidden pb-12"
             aria-labelledby="zoning-usage-heading"
-            id="zoning-usage-heading"
+            id="zoning-usage"
           >
             <header class="main-header">
               <span class="bubble hidden">
@@ -12495,7 +12349,7 @@
               </span>
               <h2
                 class="typewriter"
-                id="maintenance-and-upkeep-heading"
+                id="zoning-usage-heading"
                 data-text="Zoning & Usage"
               ></h2>
               <div class="dropdown" x-data="{ open: false }">

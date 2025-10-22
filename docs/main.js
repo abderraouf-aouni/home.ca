@@ -15,7 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initMiniMap("mini-map");
   initBaseLayersSidebarToggle();
   loadMoreLayerMapToggles();
-  toggleSideBar();
+  toggleSideBar()
+  toggleNavbigationItems();
   initCookieDialog();
   initChatBox();
   homeSearch();
@@ -46,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // initScrollSpy();
   aiChatCodeCopy()
   generateComponentAnimation();
+  initAiChatSliderInput()
 });
 
 // Cache POIs once (Option A) + a tiny "big-map ready" promise
@@ -665,6 +667,27 @@ function toggleSideBar() {
   });
 }
 
+function toggleNavbigationItems() {
+  // const mutedBg = document.getElementById("muted-bg");
+  const navigationItems = document.querySelectorAll(".main-nav-item");
+
+  navigationItems.forEach(item => item.addEventListener('mousemove', () => {
+    activeModal(item)
+    activeMutedBg()
+  }))
+
+   function activeModal(item) {
+   
+    
+    const navModal = item.querySelector(".nav-modal")
+    navModal.classList.remove("hidden");
+  }
+   function activeMutedBg() {
+    // mutedBg.classList.remove("hidden");
+  }
+
+}
+
 function initCookieDialog() {
   const cookieDialog = document.getElementById("cookieDialog");
   const closeBtn = document.getElementById("closeCookieDialog");
@@ -784,7 +807,8 @@ function initSwipers() {
     {
       selector: ".swiper-nav",
       options: {
-        mousewheel: {},
+        mousewheel: false,
+        
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 15,
@@ -793,15 +817,17 @@ function initSwipers() {
     {
       selector: ".swiper-statistics",
       options: {
+        mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
-        mousewheel: {},
+        
         spaceBetween: 10,
       },
     },
     {
       selector: ".swiper-manage-finances",
       options: {
+        mousewheel: false,
         slidesPerView: "auto",
         // slidesOffsetBefore: 98,
         mousewheel: { forceToAxis: true },
@@ -815,7 +841,8 @@ function initSwipers() {
     {
       selector: ".swiper-intro-photos-sale",
       options: {
-        mousewheel: {},
+        mousewheel: false,
+        
         spaceBetween: 10,
         navigation: {
           nextEl: ".swiper-button-next",
@@ -826,7 +853,8 @@ function initSwipers() {
     {
       selector: ".swiper-intro-photo",
       options: {
-        mousewheel: {},
+        mousewheel: false,
+        
         spaceBetween: 10,
         navigation: {
           nextEl: ".swiper-button-next",
@@ -837,7 +865,8 @@ function initSwipers() {
     {
       selector: ".swiper-intro-video",
       options: {
-        mousewheel: {},
+        mousewheel: false,
+        
         spaceBetween: 10,
         navigation: {
           nextEl: ".swiper-button-next",
@@ -848,7 +877,8 @@ function initSwipers() {
     {
       selector: ".swiper-map-places",
       options: {
-        mousewheel: {},
+        mousewheel: false,
+        
         spaceBetween: 10,
         navigation: {
           nextEl: ".swiper-button-next",
@@ -859,9 +889,10 @@ function initSwipers() {
     {
       selector: ".swiper-calendar",
       options: {
+        mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
-        mousewheel: {},
+        
         spaceBetween: 4,
         slidesOffsetBefore: 16,
         slidesOffsetAfter: 16,
@@ -870,9 +901,10 @@ function initSwipers() {
     {
       selector: ".swiper-calendar-2",
       options: {
+        mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
-        mousewheel: {},
+        
         spaceBetween: 4,
         slidesOffsetBefore: 16,
         slidesOffsetAfter: 16,
@@ -881,7 +913,8 @@ function initSwipers() {
     {
       selector: ".swiper-gallery-mobile",
       options: {
-        mousewheel: {},
+        mousewheel: false,
+        
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -891,7 +924,8 @@ function initSwipers() {
     {
       selector: ".swiper-gallery",
       options: {
-        mousewheel: {},
+        mousewheel: false,
+        
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -901,10 +935,11 @@ function initSwipers() {
     {
       selector: ".swiper-rooms",
       options: {
+        mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
-        mousewheel: {},
+        
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -914,10 +949,11 @@ function initSwipers() {
     {
       selector: ".swiper-home-tiles ",
       options: {
+        mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
-        mousewheel: {},
+        
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -927,9 +963,10 @@ function initSwipers() {
     {
       selector: ".swiper-estimate",
       options: {
+        mousewheel: false,
         slidesPerView: "auto",
 
-        mousewheel: {},
+        
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
@@ -953,6 +990,7 @@ function initSwipers() {
     {
       selector: ".swiper-value-factors",
       options: {
+        mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         direction: "vertical",
@@ -968,9 +1006,10 @@ function initSwipers() {
     {
       selector: ".swiper-renovation-history",
       options: {
+        mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
-        mousewheel: {},
+        
         spaceBetween: 10,
         pagination: { el: ".swiper-pagination" },
       },
@@ -978,6 +1017,7 @@ function initSwipers() {
     {
       selector: ".swiper-kitchen-remodel",
       options: {
+      mousewheel: false,
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -987,6 +1027,7 @@ function initSwipers() {
     {
       selector: ".swiper-bathroom-upgrade",
       options: {
+      mousewheel: false,
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -996,9 +1037,10 @@ function initSwipers() {
     {
       selector: ".swiper-zoning-usage",
       options: {
+      mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
-        mousewheel: {},
+        
         spaceBetween: 10,
         pagination: {
           el: ".swiper-pagination",
@@ -1022,18 +1064,20 @@ function initSwipers() {
     {
       selector: ".swiper-currently-listed-sale",
       options: {
+      mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
-        mousewheel: {},
+        
         spaceBetween: 10,
       },
     },
     {
       selector: ".swiper-service-areas",
       options: {
+      mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
-        mousewheel: {},
+        pagination: { el: ".swiper-pagination" },
         spaceBetween: 10,
         navigation: {
           nextEl: ".swiper-button-next",
@@ -1045,11 +1089,11 @@ function initSwipers() {
     {
       selector: ".swiper-market-trends",
       options: {
+      mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
-
-        mousewheel: {},
+        pagination: { el: ".swiper-pagination" },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -1059,10 +1103,11 @@ function initSwipers() {
     {
       selector: ".swiper-maintenance-and-upkeep",
       options: {
+      mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
-        mousewheel: {},
+        
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -1072,10 +1117,11 @@ function initSwipers() {
     {
       selector: ".swiper-banners",
       options: {
+      mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
-        mousewheel: {},
+        
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -1085,10 +1131,11 @@ function initSwipers() {
     {
       selector: ".swiper-ai-chat-experts-examples-option-1",
       options: {
+      mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
-        mousewheel: {},
+        
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -1098,10 +1145,11 @@ function initSwipers() {
     {
       selector: ".swiper-reward-active",
       options: {
+      mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
-        mousewheel: {},
+        
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -1111,10 +1159,11 @@ function initSwipers() {
     {
       selector: ".swiper-opportunities-risks-incentives-rebates",
       options: {
+      mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
-        mousewheel: {},
+        
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -1124,10 +1173,11 @@ function initSwipers() {
     {
       selector: ".swiper-plan-for-emergencies",
       options: {
+      mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
-        mousewheel: {},
+        
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -1137,10 +1187,11 @@ function initSwipers() {
     {
       selector: ".swiper-monthly-costs-overview",
       options: {
+      mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
-        mousewheel: {},
+        
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -1150,10 +1201,11 @@ function initSwipers() {
     {
       selector: ".swiper-contact-info",
       options: {
+      mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
-        mousewheel: {},
+        
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -1163,10 +1215,11 @@ function initSwipers() {
     {
       selector: ".swiper-top-home-experts",
       options: {
+      mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
-        mousewheel: {},
+        
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -1174,20 +1227,27 @@ function initSwipers() {
       },
     },
     {
-      selector: ".swiper-chars-tabes",
+      selector: ".swiper-places-examples",
       options: {
+      mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
+        
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
       },
     },
     {
       selector: ".swiper-client-reviews",
       options: {
+      mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
-        mousewheel: {},
+        
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -1197,8 +1257,9 @@ function initSwipers() {
     {
       selector: ".swiper-home-improvement-ideas-tabs",
       options: {
+      mousewheel: false,
         slidesPerView: "auto",
-        mousewheel: {},
+        
         freeMode: true,
         spaceBetween: 10,
       },
@@ -1206,9 +1267,10 @@ function initSwipers() {
     {
       selector: ".swiper-home-improvement-ideas",
       options: {
+      mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
-        mousewheel: {},
+        
         spaceBetween: 10,
         navigation: {
           nextEl: ".swiper-button-next",
@@ -1219,9 +1281,10 @@ function initSwipers() {
     {
       selector: ".swiper-social-media-posts",
       options: {
+      mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
-        mousewheel: {},
+        
         spaceBetween: 10,
         navigation: {
           nextEl: ".swiper-button-next",
@@ -1232,18 +1295,20 @@ function initSwipers() {
     {
       selector: ".swiper-main-nav",
       options: {
+      mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
-        mousewheel: {},
+        
         spaceBetween: 10,
       },
     },
     {
       selector: ".swiper-read-more",
       options: {
+      mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
-        mousewheel: {},
+        
         spaceBetween: 10,
       },
     },
@@ -1337,6 +1402,78 @@ function initSwipers() {
       ro.observe(section);
       // container._vf_dir_observer = ro; // optional
     }
+
+    if (selector === ".swiper-estimate") {
+  const section = container.closest("section") || container.parentElement;
+  if (!section) return;
+
+  const desktopEl = container.querySelector(".swiper-pagination");
+  const mobileEl  = container.querySelector(".swiper-pagination-mobile");
+
+  const LABELS = [
+    "Estimate",
+    "Forecast",
+    "Risk of Decline",
+    "Value Factors",
+    "Order Appraisal Report",
+  ];
+
+  let instance = null;  // current Swiper
+  let mode = null;      // 'desktop' | 'mobile'
+
+  const build = (nextMode) => {
+    if (instance) {
+      instance.destroy(true, true); // full cleanup to avoid ghost handlers/styles
+      instance = null;
+    }
+
+    // shallow clone of base options so we can override pagination cleanly
+    const base = { ...options };
+    delete base.pagination;
+
+    if (nextMode === "desktop") {
+      base.pagination = {
+        el: desktopEl, // pass the element, not a selector string (avoids picking wrong one)
+        clickable: true,
+        renderBullet: (index, className) =>
+          `<span class="${className}">${LABELS[index]}</span>`,
+      };
+      mode = "desktop";
+    } else {
+      base.pagination = {
+        el: mobileEl,
+        clickable: true, // default dot bullets
+      };
+      mode = "mobile";
+    }
+
+    instance = new Swiper(container, base);
+  };
+
+  const ensureMode = (width) => {
+    const isDesktop = width >= 1024; // match your @[1024px] container query
+    const want = isDesktop ? "desktop" : "mobile";
+    if (want !== mode) build(want);
+  };
+
+  // init
+  ensureMode(section.clientWidth);
+
+  // watch the <section> width (container-query friendly)
+  const ro = new ResizeObserver((entries) => {
+    const entry = entries[0];
+    const width = entry?.contentBoxSize
+      ? Array.isArray(entry.contentBoxSize)
+        ? entry.contentBoxSize[0].inlineSize
+        : entry.contentBoxSize.inlineSize
+      : section.clientWidth;
+    ensureMode(width);
+  });
+  ro.observe(section);
+
+  // IMPORTANT: stop here so this swiper isn't also initialized below
+  return;
+}
   });
 }
 
@@ -3628,131 +3765,138 @@ function initrankingCityGrid() {
 
   agGrid.createGrid(eGridDiv, gridOptions);
 }
-
 function initMonthlyCostsOverviewGridChart() {
-  // guard: do nothing if AgCharts isn’t loaded
-  if (typeof agCharts === "undefined" || !agCharts.AgCharts) {
-    return;
-  }
+  if (typeof agCharts === "undefined" || !agCharts.AgCharts) return;
+
   const container = document.getElementById("monthlyCostsOverviewChart");
   const containerGrid = document.getElementById("monthlyCostsOverviewGrid");
-  if (!container || !containerGrid) {
-    return;
-  }
-
-  // Read container-controlled font sizes
-  const getFontSizes = () => {
-    const s = getComputedStyle(container);
-    const toNum = (v) => parseFloat(String(v).trim()) || 0;
-    return {
-      sector:
-        toNum(s.getPropertyValue("--monthly-costs-overview-chart-sector-fs")) ||
-        12,
-      innerLabel:
-        toNum(
-          s.getPropertyValue("--monthly-costs-overview-chart-inner-label-fs")
-        ) || 14,
-      innerValue:
-        toNum(
-          s.getPropertyValue("--monthly-costs-overview-chart-inner-value-fs")
-        ) || 16,
-    };
-  };
-
-  // all data & state live here
+  if (!container || !containerGrid) return;
 
   const data = [
-    {
-      category: "Repairs & General Meintenance",
-      value: 168,
-      color: "#FF603F",
-    },
-    { category: "Home Insurance", value: 79, color: "#C94629" },
-    { category: "Private Mortgage Insurance", value: 158, color: "#FF785C" },
-    { category: "Snow Removal & Lawn Care", value: 158, color: "#FFDFD2" },
-    { category: "Property Taxes", value: 130, color: "#5F190B" },
-    { category: "Untility Bills", value: 218, color: "#E5EBFF" },
-    { category: "Internet & TV", value: 201, color: "#293464" },
-    { category: "Home Security", value: 105, color: "#466EFF" },
-    { category: "Pest Control Subscription", value: 200, color: "#98AEFF" },
-    { category: "Homeowners Association Fees", value: 50, color: "#334FCC" },
+    { category: "Repairs & General Meintenance", value: 168, color: "#FF603F" },
+    { category: "Home Insurance",                 value: 79,  color: "#C94629" },
+    { category: "Private Mortgage Insurance",     value: 158, color: "#FF785C" },
+    { category: "Snow Removal & Lawn Care",       value: 158, color: "#FFDFD2" },
+    { category: "Property Taxes",                 value: 130, color: "#5F190B" },
+    { category: "Untility Bills",                 value: 218, color: "#E5EBFF" },
+    { category: "Internet & TV",                  value: 201, color: "#293464" },
+    { category: "Home Security",                  value: 105, color: "#466EFF" },
+    { category: "Pest Control Subscription",      value: 200, color: "#98AEFF" },
+    { category: "Homeowners Association Fees",    value: 50,  color: "#334FCC" },
   ];
 
   const numFormatter = new Intl.NumberFormat("en-US");
-  const total = data.reduce((sum, d) => sum + d.value, 0);
+  const total = data.reduce((s, d) => s + d.value, 0);
 
+  const isLight = (hex) => {
+    const c = hex.replace("#", "");
+    const r = parseInt(c.slice(0, 2), 16) / 255;
+    const g = parseInt(c.slice(2, 4), 16) / 255;
+    const b = parseInt(c.slice(4, 6), 16) / 255;
+    const lin = (u) => (u <= 0.03928 ? u / 12.92 : Math.pow((u + 0.055) / 1.055, 2.4));
+    const L = 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b);
+    return L > 0.6; // tweak if needed
+  };
+
+  const getFontSizes = () => {
+    const s = getComputedStyle(container);
+    const num = (v) => parseFloat(String(v).trim()) || 0;
+    return {
+      sector:     num(s.getPropertyValue("--monthly-costs-overview-chart-sector-fs")) || 12,
+      innerLabel: num(s.getPropertyValue("--monthly-costs-overview-chart-inner-label-fs")) || 14,
+      innerValue: num(s.getPropertyValue("--monthly-costs-overview-chart-inner-value-fs")) || 16,
+    };
+  };
+
+  const transparent = "rgba(0,0,0,0)";
   let chart;
 
   function render() {
     const fs = getFontSizes();
 
-    const options = {
-      container,
-      data,
-      padding: { top: 0, right: 0, bottom: 0, left: 0 },
-      legend: { enabled: false },
+    const base = {
+      type: "donut",
+      data,                       // full data in both series
+      angleKey: "value",
+      sectorLabelKey: "value",
+      rotation: -175,
+      innerRadiusRatio: 0.525,
       tooltip: { enabled: false },
-      series: [
+
+      // 🚫 remove borders/gaps/hover stroke
+      strokeWidth: 0,
+      stroke: "transparent",
+      highlightStyle: { item: { strokeWidth: 0 } },
+      fillOpacity: 1,
+      // sectorSpacing: 0, // default is 0
+
+      sectorLabel: {
+        formatter: ({ datum }) => `${datum.value}$`,
+        fontFamily: "Alber Sans, system-ui, sans-serif",
+        fontSize: fs.sector,
+        fontWeight: "bold",
+      },
+    };
+
+    const seriesDark = {
+      ...base,
+      fills: data.map((d) => (isLight(d.color) ? transparent : d.color)),
+      sectorLabel: {
+        ...base.sectorLabel,
+        color: "#ffffff",
+        formatter: ({ datum }) => (isLight(datum.color) ? "" : `${datum.value}$`),
+      },
+      innerLabels: [
         {
-          type: "donut",
-          angleKey: "value",
-          sectorLabelKey: "value",
-          rotation: -175,
-          sectorLabel: {
-            formatter: ({ datum }) => `${datum.value}$`,
-            fontFamily: "Alber Sans",
-            fontSize: fs.sector, // ← from @container
-            fontWeight: "bold",
-            color: "#fff",
-          },
-          innerRadiusRatio: 0.525,
-          innerLabels: [
-            {
-              text: "Total",
-              fontFamily: "Alber Sans",
-              fontSize: fs.innerLabel, // ← from @container
-              fontWeight: 600,
-              color: "#7C7C7C",
-            },
-            {
-              text: `$${numFormatter.format(total)}`,
-              fontFamily: "Alber Sans",
-              fontSize: fs.innerValue, // ← from @container
-              fontWeight: 600,
-              color: "#1F1F1F",
-            },
-          ],
-          fills: data.map((d) => d.color),
+          text: "Total",
+          fontFamily: "Alber Sans, system-ui, sans-serif",
+          fontSize: fs.innerLabel,
+          fontWeight: 600,
+          color: "#7C7C7C",
+        },
+        {
+          text: `$${numFormatter.format(total)}`,
+          fontFamily: "Alber Sans, system-ui, sans-serif",
+          fontSize: fs.innerValue,
+          fontWeight: 600,
+          color: "#1F1F1F",
         },
       ],
+    };
+
+    const seriesLight = {
+      ...base,
+      fills: data.map((d) => (isLight(d.color) ? d.color : transparent)),
+      sectorLabel: {
+        ...base.sectorLabel,
+        color: "#1F1F1F",
+        formatter: ({ datum }) => (isLight(datum.color) ? `${datum.value}$` : ""),
+      },
+      innerLabels: [],
+    };
+
+    const options = {
+      container,
+      padding: { top: 0, right: 0, bottom: 0, left: 0 },
+      legend: { enabled: false },
+      series: [seriesDark, seriesLight],
     };
 
     chart ? chart.update(options) : (chart = agCharts.AgCharts.create(options));
   }
 
-  // initial draw
   render();
 
-  // re-render on container size changes (Split.js / container queries)
-  const section = container.closest(".section-wrapper");
-  const ro = new ResizeObserver(render);
-  ro.observe(section || container);
-
+  // Grid (unchanged)
   const gridOptions = {
     columnDefs: [
       {
         headerName: "Type",
         field: "category",
         flex: 3.5,
-        cellRenderer: (params) => {
-          // bullet dot + label
-          return `<span style="
-                    display:inline-block;
-                    width:6px;height:6px;
-                    border-radius:50%;
-                    background:${params.data.color};
-                    margin-right:4px;margin-bottom:2px"></span>${params.value}`;
-        },
+        cellRenderer: (p) =>
+          `<span style="display:inline-block;width:6px;height:6px;border-radius:50%;
+           background:${p.data.color};margin-right:6px;margin-bottom:2px"></span>${p.value}`,
       },
       {
         headerName: "Costs",
@@ -3768,7 +3912,13 @@ function initMonthlyCostsOverviewGridChart() {
   };
 
   agGrid.createGrid(containerGrid, gridOptions);
+
+  const ro = new ResizeObserver(render);
+  ro.observe(container.closest(".section-wrapper") || container);
 }
+
+
+
 
 function initInsuranceComparisonGrid() {
   if (typeof agGrid === "undefined") return;
@@ -3955,7 +4105,8 @@ function initInsuranceComparisonGrid() {
         });
 
         const icon = document.createElement("img");
-        icon.src = "images/i-icon-gray.svg";
+        icon.src = "images/i-icon-gray.png";
+        icon.classList.add("w-5") 
         icon.alt = "";
 
         wrapper.appendChild(tagsBlock);
@@ -4256,7 +4407,7 @@ const UtilityCosts = (() => {
     chart = AgCharts.create({
       container,
       data,
-      padding: { top: 0, bottom: 0 },
+      padding: { top: 30, bottom: 0 },
       series: [{
         type: "line",
         xKey: "month",
@@ -4270,7 +4421,7 @@ const UtilityCosts = (() => {
           fontSize: 12,
           fontWeight: 500,
           fontFamily: "Alber Sans",
-          padding: 4,
+          
           formatter: ({ datum }) => `$${datum.value}`,
         },
         showInLegend: false,
@@ -4657,4 +4808,8 @@ function generateComponentAnimation() {
       animateTypewriters(sec);
     }, 500);
   }
+}
+
+function initAiChatSliderInput() {
+
 }
