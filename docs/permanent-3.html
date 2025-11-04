@@ -1,0 +1,1993 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Search all Toronto MLS® real estate listings for sale. Find Toronto houses, townhouses and condo homes for sale—updated daily."
+    />
+    <link rel="canonical" href="https:home.ca/" />
+    <title>Home.ca</title>
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://api.mapbox.com" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <symbol id="chevron-icon" viewBox="0 0 143 143">
+        <path
+          d="M92.271 108.385C104.439 103.623 114.564 94.7647 120.9 83.3371C127.236 71.9095 129.387 58.6292 126.98 45.7861C124.574 32.943 117.761 21.3421 107.717 12.9838C97.6737 4.62551 85.0284 0.0337097 71.9618 0.000184721C58.8952 -0.0333403 46.2264 4.49351 36.1399 12.8002C26.0535 21.1068 19.1816 32.6726 16.7091 45.5032C14.2367 58.3338 16.3188 71.625 22.5963 83.0849C28.8738 94.5448 38.9532 103.455 51.0967 108.28L59.6847 86.6627C52.5742 83.8378 46.6722 78.6204 42.9965 71.9101C39.3207 65.1998 38.1016 57.4173 39.5493 49.9044C40.997 42.3916 45.0208 35.6193 50.9269 30.7554C56.8329 25.8915 64.251 23.2408 71.9021 23.2605C79.5531 23.2801 86.9575 25.9688 92.8386 30.8629C98.7196 35.7571 102.709 42.5499 104.118 50.0701C105.527 57.5903 104.268 65.3665 100.558 72.0578C96.8475 78.7491 90.9189 83.9362 83.794 86.7245L92.271 108.385Z"
+        />
+        <path
+          d="M49.3059 138.052C56.4181 141.166 64.0991 142.771 71.8633 142.765C79.6275 142.759 87.3059 141.141 94.4131 138.016L83.5688 113.359C79.8727 114.984 75.8795 115.825 71.8418 115.828C67.804 115.832 63.8095 114.997 60.1109 113.377L49.3059 138.052Z"
+        />
+      </symbol>
+    </svg>
+
+    <div class="@container">
+      
+       <!-- statistics section -->
+
+        <section
+          class="section-wrapper has-slider relative "
+          aria-labelledby="statistics-heading"
+        >
+          <header class="main-header">
+            <span class="bubble hidden">
+              <svg class="chevron-icon">
+                <use href="#chevron-icon"></use>
+              </svg>
+            </span>
+            <h2 id="statistics-heading">Uplands Statistics</h2>
+            <div class="dropdown" x-data="{ open: false }">
+              <button
+                @click="open = !open"
+                @keydown.escape="open = false"
+                aria-haspopup="true"
+                :aria-expanded="open"
+                aria-label="More options for managing finances Your Home"
+                :class="{ 'bg-muted-7': open }"
+                aria-expanded="false"
+              >
+                <img src="images/three-points-icon.svg" alt="" />
+              </button>
+
+              <ul
+                x-show="open"
+                x-transition=""
+                @click.away="open = false"
+                role="menu"
+                aria-label="Manage Finances options"
+                class="menu"
+                style="display: none"
+              >
+                <li role="none">
+                  <a href="#" role="menuitem" class="menu-item">
+                    <img src="images/add-info-icon.svg" alt="" />
+                    Add info
+                  </a>
+                </li>
+                <li role="none">
+                  <a href="#" role="menuitem" class="menu-item">
+                    <img src="images/edit-icon.svg" alt="" />
+                    Edit
+                  </a>
+                </li>
+                <li role="none">
+                  <a href="#" role="menuitem" class="menu-item">
+                    <img src="images/view-details-icon.svg" alt="" />
+                    View Details
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <p class="base-p" data-readmore="">
+              A stunning property that effortlessly blends style, comfort, and
+              functionality in a highly sought-after neighborhood. Nestled in a
+              serene and
+              <span data-readmore-text="" class="hidden">
+                additional copy goes here.
+              </span>
+              <button href="#" class="show-more" data-readmore-btn="">
+                Read more
+              </button>
+            </p>
+            <div class="header-tags">
+              <span class="tag">#1 in Thornhill</span>
+              <span class="tag">#2 $500k to $750k Range</span>
+              <span class="tag">#3 Real Estate Agents in Vaughan</span>
+            </div>
+          </header>
+          <div class="swiper swiper-statistics">
+            <div class="swiper-wrapper">
+              <div
+                class="swiper-slide @min-[700px]:flex-1 space-y-2.25 pl-5 @min-[768px]:pl-8 @min-[1024px]:pl-24.5"
+              >
+                <div class="know-home-item">
+                  <div>
+                    <img src="images/st-population.svg" alt="" class="icon" />
+                  </div>
+                  <div class="bottom">
+                    <h3>125,000</h3>
+                    <p class="desc">Population</p>
+                  </div>
+                </div>
+                <div class="know-home-item">
+                  <div>
+                    <img src="images/st-for-sale.svg" alt="" class="icon" />
+                  </div>
+                  <div class="bottom">
+                    <div class="h3-ext">
+                      <h3>41</h3>
+                      <span class="ext">2.67% of all homes</span>
+                    </div>
+                    <p class="desc">For Sale</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide @min-[700px]:flex-1 space-y-2.25">
+                <div class="know-home-item">
+                  <div>
+                    <img src="images/st-ownVSrent.svg" alt="" class="icon" />
+                  </div>
+                  <div class="bottom">
+                    <h3>60/40</h3>
+                    <p class="desc">% Own VS Rent</p>
+                  </div>
+                </div>
+                <div class="know-home-item">
+                  <div>
+                    <img src="images/st-for-rent.svg" alt="" class="icon" />
+                  </div>
+                  <div class="bottom">
+                    <div class="h3-ext">
+                      <h3>35</h3>
+                      <span class="ext">2% of all homes</span>
+                    </div>
+                    <p class="desc">For Rent</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide @min-[700px]:flex-1 space-y-2.25">
+                <div class="know-home-item">
+                  <div>
+                    <img src="images/st-total-homes.svg" alt="" class="icon" />
+                  </div>
+                  <div class="bottom">
+                    <h3>45,000</h3>
+                    <p class="desc">Total # of Homes</p>
+                  </div>
+                </div>
+                <div class="know-home-item">
+                  <div>
+                    <img src="images/st-average.svg" alt="" class="icon" />
+                  </div>
+                  <div class="bottom">
+                    <div class="h3-ext">
+                      <h3>$450k</h3>
+                      <span class="ext">$320 /Sqft</span>
+                    </div>
+                    <p class="desc">Average Sale Price</p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="swiper-slide @min-[700px]:flex-1 space-y-2.25 pr-5 @min-[768px]:pr-8"
+              >
+                <div class="know-home-item">
+                  <div>
+                    <img src="images/st-dom.svg" alt="" class="icon" />
+                  </div>
+                  <div class="bottom">
+                    <h3>35 Days</h3>
+                    <p class="desc">DOM</p>
+                  </div>
+                </div>
+                <div class="know-home-item">
+                  <div>
+                    <img
+                      src="images/st-average.svg"
+                      alt=""
+                      class="icon hidden @min-[768px]:inline"
+                    />
+                    <span
+                      class="text-xs heading text-third bg-[#FFDFD2] py-0.75 px-2.5 rounded-sm @min-[768px]:hidden"
+                      >For Sale</span
+                    >
+                  </div>
+                  <div class="bottom">
+                    <div
+                      class="h3-ext @min-[768px]:items-center @min-[768px]:flex-row @min-[768px]:gap-2 @min-[1024px]:gap-4"
+                    >
+                      <h3>$2,500</h3>
+                      <span class="ext">$2.50 /Sqft</span>
+                    </div>
+                    <div class="desc">
+                      <p class="flex items-center flex-wrap gap-1">
+                        Average Rent Price
+                        <span
+                          class="text-xs heading text-third bg-[#FFDFD2] py-0.75 px-2.5 rounded-sm hidden @min-[768px]:inline mt-1 @min-[1024px]:mt-0"
+                          >For Sale</span
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wrapper w-full absolute top-21 @min-[1024px]:top-25 bottom-0 z-2">
+            <div class="has-chevron-icon h-full bg-white/20 backdrop-blur-[20px]  flex flex-col justify-center items-center  text-center">
+             <svg
+                  class="chevron-icon hidden @min-[768px]:block w-56.75 h-58.75 -left-9 -top-4 fill-[rgba(0,0,0,0.05)]"
+                >
+                  <use href="#chevron-icon" />
+                </svg>
+                <div class="flex flex-col items-center gap-4">
+                  <h3 class="text-base max-w-56.25 @min-[768px]:max-w-none">This content is only available to authorized users</h3>
+                  <button class="text-sm text-white bg-third flex items-center gap-1.5 rounded py-2 px-9">
+                    <svg
+                  class="chevron-icon static w-4 h-4 fill-white"
+                >
+                  <use href="#chevron-icon" />
+                </svg>
+                Unlock
+                  </button>
+                </div>
+          </div>
+          </div>
+          
+        </section>
+
+        <hr class="separate-line" />
+
+          <!-- manage-finances section -->
+
+        <section
+        id="manage-finances"
+        class="section-wrapper has-slider main-section pt-8 @min-[1024px]:pt-6"
+        aria-labelledby="manage-finances-heading"
+      >
+        <header class="main-header">
+          <span class="bubble hidden">
+            <svg class="chevron-icon">
+              <use href="#chevron-icon"></use>
+            </svg>
+          </span>
+          <h2 id="manage-finances-heading">Manage Finances</h2>
+          <div class="dropdown" x-data="{ open: false }">
+            <button
+              @click="open = !open"
+              @keydown.escape="open = false"
+              aria-haspopup="true"
+              :aria-expanded="open"
+              aria-label="More options for managing finances Your Home"
+              :class="{ 'bg-muted-7': open }"
+              aria-expanded="false"
+            >
+              <img src="images/three-points-icon.svg" alt="" />
+            </button>
+
+            <ul
+              x-show="open"
+              x-transition=""
+              @click.away="open = false"
+              role="menu"
+              aria-label="Manage Finances options"
+              class="menu"
+              style="display: none"
+            >
+              <li role="none">
+                <a href="#" role="menuitem" class="menu-item">
+                  <img src="images/add-info-icon.svg" alt="" />
+                  Add info
+                </a>
+              </li>
+              <li role="none">
+                <a href="#" role="menuitem" class="menu-item">
+                  <img src="images/edit-icon.svg" alt="" />
+                  Edit
+                </a>
+              </li>
+              <li role="none">
+                <a href="#" role="menuitem" class="menu-item">
+                  <img src="images/view-details-icon.svg" alt="" />
+                  View Details
+                </a>
+              </li>
+            </ul>
+          </div>
+          <p class="base-p" data-readmore>
+            A stunning property that effortlessly blends style, comfort, and
+            functionality in a highly sought-after neighborhood. Nestled in a
+            serene and
+            <span data-readmore-text class="hidden">
+              additional copy goes here.
+            </span>
+            <button href="#" class="show-more" data-readmore-btn>
+              Read more
+            </button>
+          </p>
+          <div class="header-tags">
+            <span class="tag">#1 in Thornhill</span>
+            <span class="tag">#2 $500k to $750k Range</span>
+            <span class="tag">#3 Real Estate Agents in Vaughan</span>
+          </div>
+        </header>
+
+        <div class="swiper-manage-finances swiper">
+          <div class="swiper-wrapper">
+
+            
+
+
+            
+
+         
+
+            <div
+              class="swiper-slide px-5 @min-[768px]:px-8 !w-full @min-[1024px]:!w-186.25 @min-[1024px]:pl-24.5 @min-[1024px]:pr-2.5"
+            >
+              <div class="h-full manage-finance">
+                <header>
+                  <h3 class="text-base @min-[768px]:text-xl">
+                    Your Total Monthly Costs
+                  </h3>
+                  <div class="dropdown" x-data="{ open: false }">
+                    <button
+                      @click="open = !open"
+                      @keydown.escape="open = false"
+                      aria-haspopup="true"
+                      :aria-expanded="open"
+                      aria-label="More options for Total Monthly Costs"
+                      :class="{ 'bg-muted-7': open }"
+                    >
+                      <img src="images/three-points-icon.svg" alt="" />
+                    </button>
+
+                    <!-- Dropdown -->
+                    <ul
+                      x-show="open"
+                      x-transition
+                      @click.away="open = false"
+                      role="menu"
+                      aria-label="Manage Finances options"
+                      class="menu"
+                    >
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/add-info-icon.svg" alt="" />
+                          Add info
+                        </a>
+                      </li>
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/edit-icon.svg" alt="" />
+                          Edit
+                        </a>
+                      </li>
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/view-details-icon.svg" alt="" />
+                          View Details
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </header>
+                <div
+                  class="mt-3.75 @min-[768px]:mt-5 @min-[1024px]:mt-4 @min-[768px]:flex @min-[768px]:items-center @min-[768px]:px-11.75 @min-[1024px]:px-3 @min-[768px]:gap-10 @min-[1024px]:gap-7.75 min-w-0"
+                >
+                  <figure
+                    class="w-50 h-50 @min-[768px]:w-58.75 @min-[768px]:h-58.75 @min-[1024px]:w-70.5 @min-[1024px]:h-70.5 mx-auto"
+                  >
+                    <div
+                      class="w-full h-full manage-finances-chart"
+                      id="manageFinancesChart"
+                    ></div>
+
+                    <figcaption id="monthly-costs-caption" class="sr-only">
+                      Doughnut chart showing percentage breakdown of total
+                      monthly costs.
+                    </figcaption>
+                  </figure>
+
+                  <!-- <div id="myLegend" class="mt-4 "></div> -->
+
+                  <table
+                    class="manage-finance-table basic-table w-full mt-3.5 @min-[768px]:mt-0 @min-[768px]:flex-1"
+                  >
+                    <caption class="sr-only">
+                      Breakdown of monthly costs
+                    </caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">Type</th>
+                        <th scope="col">Costs</th>
+                      </tr>
+                    </thead>
+                    <tbody class="text-sm @min-[768px]:text-base">
+                      <tr>
+                        <td class="@min-[1024px]:py-5 flex-center-v">
+                          <span
+                            class="w-1.5 h-1.5 rounded-full bg-primary mr-1"
+                            aria-hidden="true"
+                          ></span>
+                          Mortgage
+                        </td>
+                        <td>$3,500</td>
+                      </tr>
+                      <tr>
+                        <td class="@min-[1024px]:py-5 flex-center-v">
+                          <span
+                            class="w-1.5 h-1.5 rounded-full bg-fourth mr-1"
+                            aria-hidden="true"
+                          ></span>
+                          Insurance
+                        </td>
+                        <td>$520</td>
+                      </tr>
+                      <tr class="@max-[768px]:border-0">
+                        <td class="@min-[1024px]:py-5 flex-center-v">
+                          <span
+                            class="w-1.5 h-1.5 rounded-full bg-fifth mr-1"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="@min-[768px]:hidden"
+                            >Taxes &amp; Other Fees</span
+                          >
+                          <span class="hidden @min-[768px]:inline"
+                            >Property Taxes</span
+                          >
+                        </td>
+                        <td>
+                          <span class="@min-[768px]:hidden">$1,800</span
+                          ><span class="hidden @min-[768px]:inline"
+                            >$1,000</span
+                          >
+                        </td>
+                      </tr>
+                      <tr class="hidden @min-[768px]:table-row">
+                        <td class="@min-[1024px]:py-5 flex-center-v">
+                          <span
+                            class="w-1.5 h-1.5 rounded-full bg-third-200 mr-1"
+                            aria-hidden="true"
+                          ></span>
+                          Maintenance Fees
+                        </td>
+                        <td>$450</td>
+                      </tr>
+                      <tr class="border-0 hidden more-row">
+                        <td class="@min-[1024px]:py-5 flex-center-v">
+                          <span
+                            class="w-1.5 h-1.5 rounded-full bg-fourth mr-1"
+                            aria-hidden="true"
+                          ></span>
+                          Another tax
+                        </td>
+                        <td>$582</td>
+                      </tr>
+                      <tr class="hidden @min-[768px]:table-row">
+                        <td class="py-0.5" colspan="2">
+                          <button
+                            class="w-full text-third py-3.25 rounded tracking-normal"
+                            id="see-more-monthly-costs-btn"
+                          >
+                            See more
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="swiper-slide px-5 @min-[768px]:px-8 !w-full @min-[1024px]:!w-161.75 @min-[1024px]:pl-0 @min-[1024px]:pr-2.5"
+            >
+              <div class="h-full manage-finance">
+                <header>
+                  <h3 class="text-base @min-[768px]:text-xl">
+                    Your Taxes &amp; Other Costs
+                  </h3>
+                  <div class="dropdown" x-data="{ open: false }">
+                    <button
+                      @click="open = !open"
+                      @keydown.escape="open = false"
+                      aria-haspopup="true"
+                      :aria-expanded="open"
+                      aria-label="Your Taxes & Other Costs"
+                      :class="{ 'bg-muted-7': open }"
+                    >
+                      <img src="images/three-points-icon.svg" alt="" />
+                    </button>
+
+                    <!-- Dropdown -->
+                    <ul
+                      x-show="open"
+                      x-transition
+                      @click.away="open = false"
+                      role="menu"
+                      aria-label="Manage Finances options"
+                      class="menu"
+                    >
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/add-info-icon.svg" alt="" />
+                          Add info
+                        </a>
+                      </li>
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/edit-icon.svg" alt="" />
+                          Edit
+                        </a>
+                      </li>
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/view-details-icon.svg" alt="" />
+                          View Details
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </header>
+                <table
+                  class="manage-finance-table-pl manage-finance-table basic-table w-full mt-5 @min-[1024px]:mt-4"
+                >
+                  <caption class="sr-only">
+                    Breakdown of your taxes and other monthly costs by provider
+                    and payment amount
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th class="text-xs @min-[1024px]:text-sm" scope="col">
+                        Provider
+                      </th>
+                      <th class="text-xs @min-[1024px]:text-sm" scope="col">
+                        Payment
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td
+                        class="table-text-xs py-2 @min-[768px]:py-2.5 @min-[1024px]:py-3.25"
+                      >
+                        Property Taxes
+                      </td>
+                      <td
+                        class="py-2 @min-[768px]:py-2.5 @min-[1024px]:py-3.25"
+                      >
+                        <span class="table-text-sm">$150</span
+                        ><span class="periode">Per Month</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        class="table-text-xs py-2 @min-[768px]:py-2.5 @min-[1024px]:py-3.25"
+                      >
+                        Maintenance Fees
+                      </td>
+                      <td
+                        class="py-2 @min-[768px]:py-2.5 @min-[1024px]:py-3.25"
+                      >
+                        <span class="table-text-sm">$175</span
+                        ><span class="periode">Per Month</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        class="table-text-xs py-2 @min-[768px]:py-2.5 @min-[1024px]:py-3.25"
+                      >
+                        Utilities
+                      </td>
+                      <td
+                        class="py-2 @min-[768px]:py-2.5 @min-[1024px]:py-3.25"
+                      >
+                        <span class="table-text-sm">$200</span
+                        ><span class="periode">Per Month</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        class="table-text-xs py-2 @min-[768px]:py-2.5 @min-[1024px]:py-3.25"
+                      >
+                        Association Fee
+                      </td>
+                      <td
+                        class="py-2 @min-[768px]:py-2.5 @min-[1024px]:py-3.25"
+                      >
+                        <span class="table-text-sm">$22</span
+                        ><span class="periode">Per Month</span>
+                      </td>
+                    </tr>
+                    <tr class="@min-[768px]:hidden">
+                      <td
+                        class="table-text-xs py-2 @min-[768px]:py-2.5 @min-[1024px]:py-3.25"
+                      >
+                        Association Fee
+                      </td>
+                      <td
+                        class="py-2 @min-[768px]:py-2.5 @min-[1024px]:py-3.25"
+                      >
+                        <span class="table-text-sm">$22</span
+                        ><span class="periode">Per Month</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        class="table-text-xs py-2 @min-[768px]:py-2.5 @min-[1024px]:py-3.25"
+                      >
+                        Other Fees
+                      </td>
+                      <td
+                        class="py-2 @min-[768px]:py-2.5 @min-[1024px]:py-3.25"
+                      >
+                        <span class="table-text-sm">$260</span
+                        ><span class="periode">Per Month</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <div class="has-chevron-icon  bg-white/20 backdrop-blur-[20px]  flex flex-col justify-center items-center  text-center  absolute top-0 bottom-0 left-5 right-5  @min-[1024px]:left-0 @min-[1024px]:right-2.25  z-2 rounded-[inherit]">
+             <svg class="chevron-icon hidden @min-[768px]:block w-56.75 h-58.75 -left-9 -top-4 fill-[rgba(0,0,0,0.05)]">
+                  <use href="#chevron-icon"></use>
+                </svg>
+                <div class="flex flex-col items-center gap-4">
+                  <h3 class="text-base max-w-56.25 @min-[768px]:max-w-none">This content is only available to authorized users</h3>
+                  <button class="text-sm text-white bg-third flex items-center gap-1.5 rounded py-2 px-9">
+                    <svg class="chevron-icon static w-4 h-4 fill-white">
+                  <use href="#chevron-icon"></use>
+                </svg>
+                Unlock
+                  </button>
+                </div>
+          </div>
+              </div>
+            </div>
+
+            <div
+              class="swiper-slide px-5 @min-[768px]:px-8 !w-full @min-[1024px]:!w-161.75 @min-[1024px]:pl-0 @min-[1024px]:pr-2.5"
+            >
+              <div class="h-full manage-finance pb-1.5">
+                <header>
+                  <h3 class="text-base @min-[768px]:text-xl">
+                    Compare Mortgage Rates
+                  </h3>
+                  <div class="dropdown" x-data="{ open: false }">
+                    <button
+                      @click="open = !open"
+                      @keydown.escape="open = false"
+                      aria-haspopup="true"
+                      :aria-expanded="open"
+                      aria-label="More options for Compare Mortgage Rates"
+                      :class="{ 'bg-muted-7': open }"
+                    >
+                      <img src="images/three-points-icon.svg" alt="" />
+                    </button>
+
+                    <!-- Dropdown -->
+                    <ul
+                      x-show="open"
+                      x-transition
+                      @click.away="open = false"
+                      role="menu"
+                      aria-label="Manage Finances options"
+                      class="menu"
+                    >
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/add-info-icon.svg" alt="" />
+                          Add info
+                        </a>
+                      </li>
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/edit-icon.svg" alt="" />
+                          Edit
+                        </a>
+                      </li>
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/view-details-icon.svg" alt="" />
+                          View Details
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </header>
+                <table
+                  class="manage-finance-table-pl manage-finance-table basic-table w-full mt-4.75 @min-[1024px]:mt-4"
+                >
+                  <caption class="sr-only">
+                    Mortgage Providers and Rates
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th
+                        class="text-xs @min-[1024px]:text-sm pl-2.5 @min-[1024px]:pl-4"
+                        scope="col"
+                      >
+                        Provider
+                      </th>
+                      <th class="text-xs @min-[1024px]:text-sm" scope=" col">
+                        Rate
+                      </th>
+                      <th
+                        class="text-xs @min-[1024px]:text-sm pr-2.5 lg:pr-4"
+                        scope="col"
+                      >
+                        Payment
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td
+                        class="table-text-xs flex-center-v @min-[1024px]:pl-4"
+                      >
+                        <img src="images/mortgage-company.png" alt="" />
+                        Mortgage
+                        <br class="@min-[1024px]:hidden" />
+                        Company
+                      </td>
+                      <td>
+                        <span class="table-text-sm">4.00%</span
+                        ><span class="periode">Per Month</span>
+                      </td>
+                      <td>
+                        <span class="table-text-sm">$3,000</span
+                        ><span class="periode">Per Month</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        class="table-text-xs flex-center-v @min-[1024px]:pl-4"
+                      >
+                        <img src="images/provider-name.png" alt="" />
+                        Provider
+                        <br class="@min-[1024px]:hidden" />
+                        Name
+                      </td>
+                      <td>
+                        <span class="table-text-sm">4.25%</span
+                        ><span class="periode">Per Month</span>
+                      </td>
+                      <td class="rl-1.25">
+                        <span class="table-text-sm">$3,350</span
+                        ><span class="periode">Per Month</span>
+                      </td>
+                    </tr>
+                    <tr class="active-table-tr">
+                      <td
+                        class="table-text-xs flex-center-v @min-[1024px]:pl-4 py-1.5 @min-[1024px]:py-3.75"
+                      >
+                        <img src="images/rbc.png" alt="" />
+                        <div>
+                          <span>RBC</span>
+                          <span class="periode"
+                            >This is your <br class="@min-[1024px]:hidden" />
+                            mortgage</span
+                          >
+                        </div>
+                      </td>
+                      <td class="py-1.5">
+                        <span class="table-text-sm">4.25%</span
+                        ><span class="periode">Per Month</span>
+                      </td>
+                      <td class="py-1.5">
+                        <span class="table-text-sm">$3,350</span
+                        ><span class="periode">Per Month</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        class="table-text-xs flex-center-v @min-[1024px]:pl-4"
+                      >
+                        <img src="images/wells-fargo.png" alt="" />
+                        Wells Fargo
+                      </td>
+                      <td>
+                        <span class="table-text-sm">4.25%</span
+                        ><span class="periode">Per Month</span>
+                      </td>
+                      <td class="rl-1.25">
+                        <span class="table-text-sm">$3,350</span
+                        ><span class="periode">Per Month</span>
+                      </td>
+                    </tr>
+                    <tr class="@min-[768px]:border-b-0">
+                      <td
+                        class="table-text-xs flex-center-v @min-[1024px]:pl-4"
+                      >
+                        <img src="images/cibc.png" alt="" aria-hidden="true" />
+                        CIBC
+                      </td>
+                      <td>
+                        <span class="table-text-sm">4.25%</span
+                        ><span class="periode">Per Month</span>
+                      </td>
+                      <td class="rl-1.25">
+                        <span class="table-text-sm">$3,350</span
+                        ><span class="periode">Per Month</span>
+                      </td>
+                    </tr>
+                    <tr class="@min-[768px]:hidden">
+                      <td
+                        class="table-text-xs flex-center-v @min-[1024px]:pl-4"
+                      >
+                        <img
+                          src="images/virgin-money.png"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                        Virgin <br />
+                        Money
+                      </td>
+                      <td>
+                        <span class="table-text-sm">4.25%</span
+                        ><span class="periode">Per Month</span>
+                      </td>
+                      <td class="rl-1.25">
+                        <span class="table-text-sm">$3,350</span
+                        ><span class="periode">Per Month</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div
+              class="swiper-slide px-5 @min-[768px]:px-8 !w-full @min-[1024px]:!w-167.25 @min-[1024px]:pl-0 @min-[1024px]:pr-2.5"
+            >
+              <div class="h-full manage-finance">
+                <header>
+                  <h3 class="text-base @min-[768px]:text-xl">
+                    Compare Insurance Rates
+                  </h3>
+
+                  <div class="dropdown" x-data="{ open: false }">
+                    <button
+                      @click="open = !open"
+                      @keydown.escape="open = false"
+                      aria-haspopup="true"
+                      :aria-expanded="open"
+                      aria-label="More options for Compare Insurance Rates"
+                      :class="{ 'bg-muted-7': open }"
+                    >
+                      <img src="images/three-points-icon.svg" alt="" />
+                    </button>
+
+                    <!-- Dropdown -->
+                    <ul
+                      x-show="open"
+                      x-transition
+                      @click.away="open = false"
+                      role="menu"
+                      aria-label="Manage Finances options"
+                      class="menu"
+                    >
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/add-info-icon.svg" alt="" />
+                          Add info
+                        </a>
+                      </li>
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/edit-icon.svg" alt="" />
+                          Edit
+                        </a>
+                      </li>
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/view-details-icon.svg" alt="" />
+                          View Details
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </header>
+                <table
+                  class="manage-finance-table-pl manage-finance-table basic-table w-full mt-4.25 @min-[1024px]:mt-4"
+                >
+                  <caption class="sr-only">
+                    Comparison of insurance rates and monthly payments by
+                    provider
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Provider</th>
+                      <th scope="col">Payment</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="table-text-xs flex-center-v">
+                          <img src="images/sonnet.png" alt="" />
+                          Sonnet
+                        </div>
+                      </td>
+                      <td>
+                        <span class="table-text-sm">$150</span
+                        ><span class="periode">Per Month</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="table-text-xs flex-center-v">
+                          <img src="images/aviva.png" alt="" />
+                          Aviva
+                        </div>
+                      </td>
+                      <td>
+                        <span class="table-text-sm">$175</span
+                        ><span class="periode">Per Month</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="table-text-xs flex-center-v">
+                          <img src="images/manulife.png" alt="" />
+                          Manulife
+                        </div>
+                      </td>
+                      <td>
+                        <span class="table-text-sm">$220</span
+                        ><span class="periode">Per Month</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="table-text-xs flex-center-v">
+                          <img src="images/cibc.png" alt="" />
+                          CIBC
+                        </div>
+                      </td>
+                      <td>
+                        <span class="table-text-sm">$260</span
+                        ><span class="periode">Per Month</span>
+                      </td>
+                    </tr>
+                    <tr class="@min-[768px]:hidden">
+                      <td>
+                        <div class="table-text-xs flex-center-v">
+                          <img src="images/virgin-money.png" alt="" />
+                          Virgin Money
+                        </div>
+                      </td>
+                      <td>
+                        <span class="table-text-sm">$260</span
+                        ><span class="periode">Per Month</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <td class="p-0" colspan="2">
+                      <div class="relative w-full input-file-wrapper">
+                        <input
+                          class="sr-only cursor-pointer"
+                          id="insurance-upload"
+                          name="insuranceDocument"
+                          type="file"
+                        />
+
+                        <label
+                          for="insurance-upload"
+                          class="text-sm @min-[1024px]:text-base text-white flex items-center justify-center gap-2.5 px-2 py-3 @min-[1024px]:py-5.5 bg-third rounded-lg cursor-pointer select-none"
+                        >
+                          <span class="font-semibold"
+                            >Upload – Insurance Document</span
+                          >
+                          <img
+                            class="w-5"
+                            src="images/uploid-icon.svg"
+                            alt=""
+                          />
+                        </label>
+                      </div>
+                    </td>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+
+            <div
+              class="swiper-slide px-5 @min-[768px]:px-8 !w-full @min-[1024px]:!w-167.25 @min-[1024px]:pl-0 @min-[1024px]:pr-2.5"
+            >
+              <div class="h-full manage-finance">
+                <header>
+                  <h3 class="text-base @min-[768px]:text-xl">
+                    Insurance Management
+                  </h3>
+
+                  <div class="dropdown" x-data="{ open: false }">
+                    <button
+                      @click="open = !open"
+                      @keydown.escape="open = false"
+                      aria-haspopup="true"
+                      :aria-expanded="open"
+                      aria-label="More options for Insurance Management"
+                      :class="{ 'bg-muted-7': open }"
+                    >
+                      <img src="images/three-points-icon.svg" alt="" />
+                    </button>
+
+                    <!-- Dropdown -->
+                    <ul
+                      x-show="open"
+                      x-transition
+                      @click.away="open = false"
+                      role="menu"
+                      aria-label="Manage Finances options"
+                      class="menu"
+                    >
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/add-info-icon.svg" alt="" />
+                          Add info
+                        </a>
+                      </li>
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/edit-icon.svg" alt="" />
+                          Edit
+                        </a>
+                      </li>
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/view-details-icon.svg" alt="" />
+                          View Details
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </header>
+                <div
+                  class="flex flex-col @min-[1024px]:flex-row @min-[1024px]:gap-1.75 border border-muted-2 @min-[1024px]:border-0 mt-2.5 @min-[1024px]:mt-4.25 p-4 pb-2.5 @min-[1024px]:p-0 rounded-lg"
+                >
+                  <div
+                    class="flex flex-col @min-[1024px]:border @min-[1024px]:border-muted-2 @min-[1024px]:rounded-lg @min-[1024px]:p-4"
+                  >
+                    <img
+                      class="w-14 @min-[1024px]:w-52.5"
+                      src="images/aviva-logo.webp"
+                      alt="Aviva logo"
+                    />
+                    <button
+                      class="hidden @min-[1024px]:block w-full text-sm lg:text-base heading leading-[100%] text-white py-2 rounded bg-third mt-auto"
+                    >
+                      Contact Aviva
+                    </button>
+                  </div>
+                  <div
+                    class="grid grid-cols-2 gap-1.75 mt-2.5 @min-[1024px]:mt-0 @min-[1024px]:flex-1"
+                  >
+                    <div
+                      class="flex flex-col bg-muted-2 pt-2.5 pr-1.25 pb-1.25 pl-2.5 @min-[1024px]:min-h-28.5"
+                    >
+                      <span
+                        class="text-xs @min-[1024px]:text-2xl heading leading-[100%]"
+                        >$350K</span
+                      >
+                      <p
+                        class="text-[0.625rem] @min-[1024px]:text-xs @min-[1024px]:mt-1.25 text-muted-6"
+                      >
+                        Your Home Value
+                      </p>
+                      <div
+                        class="flex justify-between items-center mt-1 @min-[1024px]:mt-auto"
+                      >
+                        <span class="text-[0.625rem]">See Estimate</span>
+                        <img class="w-6" src="images/more-icon.svg" alt="" />
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex flex-col bg-muted-2 pt-2.5 pr-1.25 pb-1.25 pl-2.5 @min-[1024px]:min-h-28.5"
+                    >
+                      <span
+                        class="text-xs @min-[1024px]:text-2xl heading leading-[100%]"
+                        >$210K</span
+                      >
+                      <p
+                        class="text-[0.625rem] @min-[1024px]:text-xs @min-[1024px]:mt-1.25 text-muted-6"
+                      >
+                        Remaining Balance
+                      </p>
+                      <div
+                        class="flex justify-between items-center mt-1 @min-[1024px]:mt-auto"
+                      >
+                        <span class="text-[0.625rem]">See Balance</span>
+                        <img class="w-6" src="images/more-icon.svg" alt="" />
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex flex-col bg-muted-2 pt-2.5 pr-1.25 pb-1.25 pl-2.5 @min-[1024px]:min-h-28.5"
+                    >
+                      <span
+                        class="text-xs @min-[1024px]:text-2xl heading leading-[100%]"
+                        >$140K</span
+                      >
+                      <p
+                        class="text-[0.625rem] @min-[1024px]:text-xs @min-[1024px]:mt-1.25 text-muted-6"
+                      >
+                        Your Home Equity
+                      </p>
+                      <div
+                        class="flex justify-between items-center mt-1 @min-[1024px]:mt-auto"
+                      >
+                        <span class="text-[0.625rem]">See Equity</span>
+                        <img class="w-6" src="images/more-icon.svg" alt="" />
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex flex-col bg-muted-2 pt-2.5 pr-1.25 pb-1.25 pl-2.5 @min-[1024px]:min-h-28.5"
+                    >
+                      <span
+                        class="text-xs @min-[1024px]:text-2xl heading leading-[100%]"
+                        >$1,800</span
+                      >
+                      <p
+                        class="text-[0.625rem] @min-[1024px]:text-xs @min-[1024px]:mt-1.25 text-muted-6"
+                      >
+                        Monthly Payment
+                      </p>
+                      <div
+                        class="flex justify-between items-center mt-1 @min-[1024px]:mt-auto"
+                      >
+                        <span class="text-[0.625rem]">See Payment</span>
+                        <img class="w-6" src="images/more-icon.svg" alt="" />
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex flex-col bg-muted-2 pt-2.5 pr-1.25 pb-1.25 pl-2.5 @min-[1024px]:min-h-28.5"
+                    >
+                      <span
+                        class="text-xs @min-[1024px]:text-2xl heading leading-[100%]"
+                        >$3.45</span
+                      >
+                      <p
+                        class="text-[0.625rem] @min-[1024px]:text-xs @min-[1024px]:mt-1.25 text-muted-6"
+                      >
+                        Mortgage Rate
+                      </p>
+                      <div
+                        class="flex justify-between items-center mt-1 @min-[1024px]:mt-auto"
+                      >
+                        <span class="text-[0.625rem]">See Rate</span>
+                        <img class="w-6" src="images/more-icon.svg" alt="" />
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex flex-col bg-muted-2 pt-2.5 pr-1.25 pb-1.25 pl-2.5 @min-[1024px]:min-h-28.5"
+                    >
+                      <span
+                        class="text-xs @min-[1024px]:text-2xl heading leading-[100%]"
+                        >3</span
+                      >
+                      <p
+                        class="text-[0.625rem] @min-[1024px]:text-xs @min-[1024px]:mt-1.25 text-muted-6"
+                      >
+                        Mortgage Opportunities
+                      </p>
+                      <div
+                        class="flex justify-between items-center mt-1 @min-[1024px]:mt-auto"
+                      >
+                        <span class="text-[0.625rem]">See Opportunities</span>
+                        <img class="w-6" src="images/more-icon.svg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    class="w-full text-sm lg:text-base heading leading-[100%] text-white py-1.25 rounded bg-third mt-3.75 @min-[1024px]:hidden"
+                  >
+                    Contact Aviva
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="swiper-slide px-5 @min-[768px]:px-8 !w-full @min-[1024px]:!w-167.25 @min-[1024px]:pl-0 @min-[1024px]:pr-2.5"
+            >
+              <div class="h-full manage-finance">
+                <header>
+                  <h3 class="text-base @min-[768px]:text-xl">
+                    Mortgage Management
+                  </h3>
+
+                  <div class="dropdown" x-data="{ open: false }">
+                    <button
+                      @click="open = !open"
+                      @keydown.escape="open = false"
+                      aria-haspopup="true"
+                      :aria-expanded="open"
+                      aria-label="More options for Mortgage Management"
+                      :class="{ 'bg-muted-7': open }"
+                    >
+                      <img src="images/three-points-icon.svg" alt="" />
+                    </button>
+
+                    <!-- Dropdown -->
+                    <ul
+                      x-show="open"
+                      x-transition
+                      @click.away="open = false"
+                      role="menu"
+                      aria-label="Manage Finances options"
+                      class="menu"
+                    >
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/add-info-icon.svg" alt="" />
+                          Add info
+                        </a>
+                      </li>
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/edit-icon.svg" alt="" />
+                          Edit
+                        </a>
+                      </li>
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/view-details-icon.svg" alt="" />
+                          View Details
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </header>
+                <div
+                  class="flex flex-col @min-[1024px]:flex-row @min-[1024px]:gap-1.75 border border-muted-2 @min-[1024px]:border-0 mt-2.5 @min-[1024px]:mt-4.25 p-4 pb-2.5 @min-[1024px]:p-0 rounded-lg"
+                >
+                  <div
+                    class="flex flex-col @min-[1024px]:border @min-[1024px]:border-muted-2 @min-[1024px]:rounded-lg @min-[1024px]:p-4"
+                  >
+                    <img
+                      class="w-14 @min-[1024px]:w-67"
+                      src="images/rbc-lg.png"
+                      alt="RBC logo"
+                    />
+                    <button
+                      class="hidden @min-[1024px]:block w-full text-sm lg:text-base heading leading-[100%] text-white py-2 rounded bg-third mt-auto"
+                    >
+                      Contact RBC
+                    </button>
+                  </div>
+                  <div
+                    class="grid grid-cols-2 gap-1.75 mt-2.5 @min-[1024px]:mt-0 @min-[1024px]:flex-1"
+                  >
+                    <div
+                      class="flex flex-col bg-muted-2 pt-2.5 pr-1.25 pb-1.25 pl-2.5 @min-[1024px]:min-h-28.5"
+                    >
+                      <span
+                        class="text-xs @min-[1024px]:text-2xl heading leading-[100%]"
+                        >$350K</span
+                      >
+                      <p
+                        class="text-[0.625rem] @min-[1024px]:text-xs @min-[1024px]:mt-1.25 text-muted-6"
+                      >
+                        Your Home Value
+                      </p>
+                      <div
+                        class="flex justify-between items-center mt-1 @min-[1024px]:mt-auto"
+                      >
+                        <span class="text-[0.625rem]">See Estimate</span>
+                        <img class="w-6" src="images/more-icon.svg" alt="" />
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex flex-col bg-muted-2 pt-2.5 pr-1.25 pb-1.25 pl-2.5 @min-[1024px]:min-h-28.5"
+                    >
+                      <span
+                        class="text-xs @min-[1024px]:text-2xl heading leading-[100%]"
+                        >$210K</span
+                      >
+                      <p
+                        class="text-[0.625rem] @min-[1024px]:text-xs @min-[1024px]:mt-1.25 text-muted-6"
+                      >
+                        Remaining Balance
+                      </p>
+                      <div
+                        class="flex justify-between items-center mt-1 @min-[1024px]:mt-auto"
+                      >
+                        <span class="text-[0.625rem]">See Balance</span>
+                        <img class="w-6" src="images/more-icon.svg" alt="" />
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex flex-col bg-muted-2 pt-2.5 pr-1.25 pb-1.25 pl-2.5 @min-[1024px]:min-h-28.5"
+                    >
+                      <span
+                        class="text-xs @min-[1024px]:text-2xl heading leading-[100%]"
+                        >$140K</span
+                      >
+                      <p
+                        class="text-[0.625rem] @min-[1024px]:text-xs @min-[1024px]:mt-1.25 text-muted-6"
+                      >
+                        Your Home Equity
+                      </p>
+                      <div
+                        class="flex justify-between items-center mt-1 @min-[1024px]:mt-auto"
+                      >
+                        <span class="text-[0.625rem]">See Equity</span>
+                        <img class="w-6" src="images/more-icon.svg" alt="" />
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex flex-col bg-muted-2 pt-2.5 pr-1.25 pb-1.25 pl-2.5 @min-[1024px]:min-h-28.5"
+                    >
+                      <span
+                        class="text-xs @min-[1024px]:text-2xl heading leading-[100%]"
+                        >$1,800</span
+                      >
+                      <p
+                        class="text-[0.625rem] @min-[1024px]:text-xs @min-[1024px]:mt-1.25 text-muted-6"
+                      >
+                        Monthly Payment
+                      </p>
+                      <div
+                        class="flex justify-between items-center mt-1 @min-[1024px]:mt-auto"
+                      >
+                        <span class="text-[0.625rem]">See Payment</span>
+                        <img class="w-6" src="images/more-icon.svg" alt="" />
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex flex-col bg-muted-2 pt-2.5 pr-1.25 pb-1.25 pl-2.5 @min-[1024px]:min-h-28.5"
+                    >
+                      <span
+                        class="text-xs @min-[1024px]:text-2xl heading leading-[100%]"
+                        >$3.45</span
+                      >
+                      <p
+                        class="text-[0.625rem] @min-[1024px]:text-xs @min-[1024px]:mt-1.25 text-muted-6"
+                      >
+                        Mortgage Rate
+                      </p>
+                      <div
+                        class="flex justify-between items-center mt-1 @min-[1024px]:mt-auto"
+                      >
+                        <span class="text-[0.625rem]">See Rate</span>
+                        <img class="w-6" src="images/more-icon.svg" alt="" />
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex flex-col bg-muted-2 pt-2.5 pr-1.25 pb-1.25 pl-2.5 @min-[1024px]:min-h-28.5"
+                    >
+                      <span
+                        class="text-xs @min-[1024px]:text-2xl heading leading-[100%]"
+                        >3</span
+                      >
+                      <p
+                        class="text-[0.625rem] @min-[1024px]:text-xs @min-[1024px]:mt-1.25 text-muted-6"
+                      >
+                        Mortgage Opportunities
+                      </p>
+                      <div
+                        class="flex justify-between items-center mt-1 @min-[1024px]:mt-auto"
+                      >
+                        <span class="text-[0.625rem]">See Opportunities</span>
+                        <img class="w-6" src="images/more-icon.svg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    class="w-full text-sm lg:text-base heading leading-[100%] text-white py-1.25 rounded bg-third mt-3.75 @min-[1024px]:hidden"
+                  >
+                    Contact RBC
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="swiper-slide px-5 @min-[768px]:px-8 !w-full @min-[1024px]:!w-167.25 @min-[1024px]:pl-0 @min-[1024px]:pr-2.5"
+            >
+              <div class="h-full manage-finance">
+                <header>
+                  <h3 class="text-base @min-[768px]:text-xl">
+                    Financial accounts
+                  </h3>
+
+                  <div class="dropdown" x-data="{ open: false }">
+                    <button
+                      @click="open = !open"
+                      @keydown.escape="open = false"
+                      aria-haspopup="true"
+                      :aria-expanded="open"
+                      aria-label="More options for Mortgage Management"
+                      :class="{ 'bg-muted-7': open }"
+                    >
+                      <img src="images/three-points-icon.svg" alt="" />
+                    </button>
+
+                    <!-- Dropdown -->
+                    <ul
+                      x-show="open"
+                      x-transition
+                      @click.away="open = false"
+                      role="menu"
+                      aria-label="Manage Finances options"
+                      class="menu"
+                    >
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/add-info-icon.svg" alt="" />
+                          Add info
+                        </a>
+                      </li>
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/edit-icon.svg" alt="" />
+                          Edit
+                        </a>
+                      </li>
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/view-details-icon.svg" alt="" />
+                          View Details
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </header>
+
+                <div class="space-y-2 mt-1.25 @min-[1024px]:mt-4.25">
+                  <ul class="space-y-2">
+                    <li>
+                      <label
+                        class="relative flex items-center p-2.5 cursor-pointer rounded"
+                      >
+                        <input
+                          type="radio"
+                          name="payment"
+                          class="sr-only peer"
+                          checked=""
+                        />
+                        <span
+                          class="w-full h-full absolute top-0 left-0 rounded-[inherit] bg-muted-2 peer-checked:bg-transparent peer-checked:border peer-checked:border-third pee z-0"
+                        ></span>
+                        <span
+                          class="w-6 h-6 rounded-full border-2 border-muted-7 peer-checked:border-6 peer-checked:border-eighth relative"
+                        ></span>
+
+                        <img
+                          class="w-11 ml-2 relative"
+                          src="images/visa-logo.svg"
+                          alt="Visa logo"
+                        />
+                        <span class="font-medium ml-4 relative"
+                          >***** 2334</span
+                        >
+                        <div class="dropdown ml-auto" x-data="{ open: false }">
+                          <button
+                            @click="open = !open"
+                            @keydown.escape="open = false"
+                            aria-haspopup="true"
+                            :aria-expanded="open"
+                            aria-label="More options for Knowing Your Home"
+                            :class="{ 'bg-muted-7': open }"
+                            aria-expanded="false"
+                            class=""
+                          >
+                            <img src="images/three-points-icon.svg" alt="" />
+                          </button>
+
+                          <!-- Dropdown -->
+                          <ul
+                            x-show="open"
+                            x-transition=""
+                            @click.away="open = false"
+                            role="menu"
+                            aria-label="Manage Finances options"
+                            class="menu"
+                            style="display: none"
+                          >
+                            <li role="none">
+                              <a href="#" role="menuitem" class="menu-item">
+                                <img src="images/add-info-icon.svg" alt="" />
+                                Add info
+                              </a>
+                            </li>
+                            <li role="none">
+                              <a href="#" role="menuitem" class="menu-item">
+                                <img src="images/edit-icon.svg" alt="" />
+                                Edit
+                              </a>
+                            </li>
+                            <li role="none">
+                              <a href="#" role="menuitem" class="menu-item">
+                                <img
+                                  src="images/view-details-icon.svg"
+                                  alt=""
+                                />
+                                View Details
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </label>
+                    </li>
+                    <li>
+                      <label
+                        class="relative flex items-center p-2.5 cursor-pointer rounded"
+                      >
+                        <input
+                          type="radio"
+                          name="payment"
+                          class="sr-only peer"
+                        />
+                        <span
+                          class="w-full h-full absolute top-0 left-0 rounded-[inherit] bg-muted-2 peer-checked:bg-transparent peer-checked:border peer-checked:border-third pee z-0"
+                        ></span>
+                        <span
+                          class="w-6 h-6 rounded-full border-2 border-muted-7 peer-checked:border-6 peer-checked:border-eighth relative"
+                        ></span>
+
+                        <img
+                          class="w-11 ml-2 relative"
+                          src="images/master-card-logo.svg"
+                          alt="Mastercard logo"
+                        />
+                        <span class="font-medium ml-4 relative"
+                          >***** 3774</span
+                        >
+                        <div class="dropdown ml-auto" x-data="{ open: false }">
+                          <button
+                            @click="open = !open"
+                            @keydown.escape="open = false"
+                            aria-haspopup="true"
+                            :aria-expanded="open"
+                            aria-label="More options for Knowing Your Home"
+                            :class="{ 'bg-muted-7': open }"
+                            aria-expanded="false"
+                          >
+                            <img src="images/three-points-icon.svg" alt="" />
+                          </button>
+
+                          <!-- Dropdown -->
+                          <ul
+                            x-show="open"
+                            x-transition=""
+                            @click.away="open = false"
+                            role="menu"
+                            aria-label="Manage Finances options"
+                            class="menu"
+                            style="display: none"
+                          >
+                            <li role="none">
+                              <a href="#" role="menuitem" class="menu-item">
+                                <img src="images/add-info-icon.svg" alt="" />
+                                Add info
+                              </a>
+                            </li>
+                            <li role="none">
+                              <a href="#" role="menuitem" class="menu-item">
+                                <img src="images/edit-icon.svg" alt="" />
+                                Edit
+                              </a>
+                            </li>
+                            <li role="none">
+                              <a href="#" role="menuitem" class="menu-item">
+                                <img
+                                  src="images/view-details-icon.svg"
+                                  alt=""
+                                />
+                                View Details
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </label>
+                    </li>
+                    <li>
+                      <label
+                        class="relative flex items-center p-2.5 cursor-pointer rounded"
+                      >
+                        <input
+                          type="radio"
+                          name="payment"
+                          class="sr-only peer"
+                        />
+                        <span
+                          class="w-full h-full absolute top-0 left-0 rounded-[inherit] bg-muted-2 peer-checked:bg-transparent peer-checked:border peer-checked:border-third pee z-0"
+                        ></span>
+                        <span
+                          class="w-6 h-6 rounded-full border-2 border-muted-7 peer-checked:border-6 peer-checked:border-eighth relative"
+                        ></span>
+
+                        <img
+                          class="w-11 ml-2 relative"
+                          src="images/paypal-logo.svg"
+                          alt="Visa logo"
+                        />
+                        <span class="font-medium ml-4 relative"
+                          >***** 2334</span
+                        >
+                        <div class="dropdown ml-auto" x-data="{ open: false }">
+                          <button
+                            @click="open = !open"
+                            @keydown.escape="open = false"
+                            aria-haspopup="true"
+                            :aria-expanded="open"
+                            aria-label="More options for Knowing Your Home"
+                            :class="{ 'bg-muted-7': open }"
+                            aria-expanded="false"
+                          >
+                            <img src="images/three-points-icon.svg" alt="" />
+                          </button>
+
+                          <!-- Dropdown -->
+                          <ul
+                            x-show="open"
+                            x-transition=""
+                            @click.away="open = false"
+                            role="menu"
+                            aria-label="Manage Finances options"
+                            class="menu"
+                            style="display: none"
+                          >
+                            <li role="none">
+                              <a href="#" role="menuitem" class="menu-item">
+                                <img src="images/add-info-icon.svg" alt="" />
+                                Add info
+                              </a>
+                            </li>
+                            <li role="none">
+                              <a href="#" role="menuitem" class="menu-item">
+                                <img src="images/edit-icon.svg" alt="" />
+                                Edit
+                              </a>
+                            </li>
+                            <li role="none">
+                              <a href="#" role="menuitem" class="menu-item">
+                                <img
+                                  src="images/view-details-icon.svg"
+                                  alt=""
+                                />
+                                View Details
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </label>
+                    </li>
+                  </ul>
+
+                  <button
+                    class="w-full text-sm font-semibold text-white flex justify-center items-center gap-1.5 rounded bg-third py-2 @min-[1024px]:w-auto @min-[1024px]:px-6.25 @min-[1024px]:ml-auto"
+                  >
+                    <img class="w-4" src="images/plus-icon-white.svg" alt="" />
+                    Add new card
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="swiper-slide px-5 @min-[768px]:px-8 !w-full @min-[1024px]:!w-167.25 @min-[1024px]:pl-0 @min-[1024px]:pr-2.5"
+            >
+              <div
+                class="h-full manage-finance flex justify-center items-center"
+              >
+                <div class="flex flex-col items-center text-center">
+                  <div class="flex gap-1.75">
+                    <span class="bg-muted-2 rounded-lg p-2.5">
+                      <img
+                        class="w-11"
+                        src="images/visa-logo.svg"
+                        alt="Visa logo"
+                      />
+                    </span>
+                    <span class="bg-muted-2 rounded-lg p-2.5">
+                      <img
+                        class="w-11"
+                        src="images/master-card-logo.svg"
+                        alt="Mastercard logo"
+                      />
+                    </span>
+                    <span class="bg-muted-2 rounded-lg p-2.5">
+                      <img
+                        class="w-11"
+                        src="images/paypal-logo.svg"
+                        alt="Visa logo"
+                      />
+                    </span>
+                  </div>
+                  <h3 class="mt-2.5 @min-[1024px]:mt-6">
+                    Connect you Financial accounts
+                  </h3>
+                  <p class="text-sm text-muted-6 mt-2">
+                    Let’s get you set up so you’re ready to roll — add a payment
+                    method now!
+                  </p>
+                  <button
+                    type="button"
+                    class="text-sm font-semibold text-white flex items-center gap-1.5 rounded bg-third px-6.25 py-2 mt-2"
+                  >
+                    <img class="w-4" src="images/plus-icon-white.svg" alt="" />
+                    Add new card
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="swiper-slide px-5 @min-[768px]:px-8 !w-full @min-[1024px]:!w-167.25 @min-[1024px]:pl-0 @min-[1024px]:pr-2.5"
+            >
+              <div
+                class="h-full manage-finance text-white bg-third flex flex-col relative overflow-hidden"
+              >
+                <header class="relative z-2">
+                  <h3 class="text-base @min-[768px]:text-xl">
+                    Your Total Monthly Costs
+                  </h3>
+
+                  <div class="dropdown text-body" x-data="{ open: false }">
+                    <button
+                      @click="open = !open"
+                      @keydown.escape="open = false"
+                      aria-haspopup="true"
+                      :aria-expanded="open"
+                      aria-label="More options for Mortgage Management"
+                      :class="{ 'bg-body': open }"
+                    >
+                      <img src="images/three-points-icon-white.svg" alt="" />
+                    </button>
+
+                    <!-- Dropdown -->
+                    <ul
+                      x-show="open"
+                      x-transition
+                      @click.away="open = false"
+                      role="menu"
+                      aria-label="Manage Finances options"
+                      class="menu"
+                    >
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/add-info-icon.svg" alt="" />
+                          Add info
+                        </a>
+                      </li>
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/edit-icon.svg" alt="" />
+                          Edit
+                        </a>
+                      </li>
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/view-details-icon.svg" alt="" />
+                          View Details
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </header>
+
+                <label
+                  class="flex-1 flex flex-col items-center text-center gap-3 relative overflow-hidden z-2"
+                >
+                  <span
+                    class="text-[0.625rem] text-third heading leading-[100%] bg-white py-1 px-1.25 rounded flex gap-0.5 mt-auto"
+                  >
+                    +2 000 points
+                    <svg class="chevron-icon fill-third-100 w-2.5 h-2.5 static">
+                      <use href="#chevron-icon"></use>
+                    </svg>
+                  </span>
+                  <h4 class="@min-[1024px]:text-[2rem]">Add Monthly Costs</h4>
+                  <p
+                    class="max-w-61.5 @min-[1024px]:max-w-83.25 text-xs leading-[normal] @min-[1024px]:text-base"
+                  >
+                    Add your expenses to see a clear breakdown of your
+                    property’s monthly costs
+                  </p>
+                  <div
+                    class="w-full border-t border-[#ffffff22] mt-auto font-semibold flex justify-between items-center pt-4.5"
+                  >
+                    <p class="text-sm">Upload Your Room Photos</p>
+                    <img
+                      class="uploid-icon"
+                      src="images/uploid-icon.svg"
+                      alt=""
+                    />
+                  </div>
+                  <input
+                    class="hidden cursor-pointer"
+                    type="file"
+                  />
+                </label>
+                <img
+                  class="w-full absolute top-12 left-0 @min-[1024px]:top-14.5 z-0"
+                  src="images/add-monthly-costs-pie-chart.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+
+               <div
+              class="swiper-slide px-5 @min-[768px]:px-8 !w-full @min-[1024px]:!w-167.25 @min-[1024px]:pl-0 @min-[1024px]:pr-8"
+            >
+              <div
+                class="h-full manage-finance text-white bg-third has-chevron-icon flex flex-col relative overflow-hidden"
+              >
+                <header class="relative z-2">
+                  <h3 class="text-base @min-[768px]:text-xl">
+                    Upload Documents
+                  </h3>
+
+                  <div class="dropdown text-body" x-data="{ open: false }">
+                    <button
+                      @click="open = !open"
+                      @keydown.escape="open = false"
+                      aria-haspopup="true"
+                      :aria-expanded="open"
+                      aria-label="More options for Mortgage Management"
+                      :class="{ 'bg-body': open }"
+                    >
+                      <img src="images/three-points-icon-white.svg" alt="" />
+                    </button>
+
+                    <!-- Dropdown -->
+                    <ul
+                      x-show="open"
+                      x-transition
+                      @click.away="open = false"
+                      role="menu"
+                      aria-label="Manage Finances options"
+                      class="menu"
+                    >
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/add-info-icon.svg" alt="" />
+                          Add info
+                        </a>
+                      </li>
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/edit-icon.svg" alt="" />
+                          Edit
+                        </a>
+                      </li>
+                      <li role="none">
+                        <a href="#" role="menuitem" class="menu-item">
+                          <img src="images/view-details-icon.svg" alt="" />
+                          View Details
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </header>
+
+                <label
+                  class="flex-1 flex flex-col text-center gap-4 relative z-2 @min-[1024px]:items-end @min-[1024px]:pr-1.75"
+                >
+                <div class="flex flex-col gap-4 mt-auto @min-[1024px]:mt-6">
+                  <span
+                    class="text-[0.625rem] text-third heading leading-[100%] bg-white py-1 px-1.25 rounded flex gap-0.5 self-start "
+                  >
+                    +2 000 points
+                    <svg class="chevron-icon fill-third-100 w-2.5 h-2.5 static">
+                      <use href="#chevron-icon"></use>
+                    </svg>
+                  </span>
+                  <ul class="space-y-3 @min-[1024px]:space-y-4">
+                    <li class="flex items-center gap-1.25">
+                      <img src="images/white-check-mark.svg" alt="">
+                      <span class="text-sm @min-[1024px]:text-base">Unlock Lower Rates</span>
+                    </li>
+                    <li class="flex items-center gap-1.25">
+                      <img src="images/white-check-mark.svg" alt="">
+                      <span class="text-sm @min-[1024px]:text-base">Boost Your Home Equity Insights</span>
+                    </li>
+                    <li class="flex items-center gap-1.25">
+                      <img src="images/white-check-mark.svg" alt="">
+                      <span class="text-sm @min-[1024px]:text-base">Get Matched with Mortgage Experts</span>
+                    </li>
+                    <li class="flex items-center gap-1.25">
+                      <img src="images/white-check-mark.svg" alt="">
+                      <span class="text-sm @min-[1024px]:text-base">Get Smart Mortgage Recommendations</span>
+                    </li>
+                    <li class="flex items-center gap-1.25">
+                      <img src="images/white-check-mark.svg" alt="">
+                      <span class="text-sm @min-[1024px]:text-base">It's Secure & Private</span>
+                    </li>
+                    <li class="flex items-center gap-1.25">
+                      <img src="images/white-check-mark.svg" alt="">
+                      <span class="text-sm @min-[1024px]:text-base">Faster Approvals, Switching or Refinancing</span>
+                    </li>
+                   
+                  </ul>
+                </div>
+                  <div
+                    class="w-full border-t border-[#ffffff22] mt-6.25 @min-[1024px]:mt-auto font-semibold flex justify-between items-center pt-4.5"
+                  >
+                    <p class="text-sm">Upload Your Room Photos</p>
+                    <img
+                      class="uploid-icon"
+                      src="images/uploid-icon.svg"
+                      alt=""
+                    />
+                  </div>
+
+                  <input
+                    class="hidden cursor-pointer"
+                    type="file"
+                  />
+                </label>
+
+
+                <svg class="chevron-icon w-75.5 h-75.5 -top-11.75 -right-17.25  @min-[1024px]:w-100.25 @min-[1024px]:h-100.25 @min-[1024px]:right-auto @min-[1024px]:-left-23.5 fill-third-100">
+                      <use href="#chevron-icon"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="swiper-pagination !static mt-2.5 -mb-1.5 @min-[1024px]:hidden"
+            role="navigation"
+          ></div>
+
+          <div
+            class="hidden @min-[1024px]:flex justify-center gap-2.5 py-2 mt-9.5"
+          >
+            <img
+              class="swiper-button-prev"
+              role="button"
+              aria-label="Previous manage finance"
+              src="images/prev-slider.svg"
+              alt=""
+            />
+            <img
+              class="swiper-button-next"
+              role="button"
+              aria-label="Next manage finance"
+              src="images/next-slider.svg"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/ag-charts-enterprise@11.3.1/dist/umd/ag-charts-enterprise.js?t=1748412693015"></script>
+
+    <script src="main.js"></script>
+  </body>
+</html>

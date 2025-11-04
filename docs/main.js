@@ -15,9 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
   initMiniMap("mini-map");
   initBaseLayersSidebarToggle();
   loadMoreLayerMapToggles();
-  toggleSideBar()
+  toggleSideBar();
   toggleNavbigationItems();
   initCookieDialog();
+  initNavigationHoverZindex()
   initChatBox();
   homeSearch();
   otherPagesSearch();
@@ -37,17 +38,17 @@ document.addEventListener("DOMContentLoaded", () => {
   initrankingCityGrid();
   initMonthlyCostsOverviewGridChart();
   initInsuranceComparisonGrid();
-  initUtilityCosts()
-  flipCards()
+  initUtilityCosts();
+  flipCards();
   recentTransactionsGrid();
   topHomeExpertCardClicks();
   initTriggerZoningUsage();
   initSeeMoreTables();
   initReadMoreToggles();
   // initScrollSpy();
-  aiChatCodeCopy()
+  aiChatCodeCopy();
   generateComponentAnimation();
-  initAiChatSliderInput()
+  initAiChatSliderInput();
 });
 
 // Cache POIs once (Option A) + a tiny "big-map ready" promise
@@ -124,7 +125,7 @@ function switchViews() {
     pane2.classList.remove("hidden");
     container.classList.add("flex");
     splitter = Split(["#pane-1", "#pane-2"], {
-      sizes: [70, 30],
+      sizes: [50, 50],
       minSize: [375, 460],
       gutterSize: 16,
       onDrag: () => {
@@ -603,18 +604,22 @@ function initMiniMap(containerId) {
 function initBaseLayersSidebarToggle() {
   const layersToggle = document.getElementById("layers-toggle");
   const sidebar = document.getElementById("base-layers-sidebar");
-  const closeSidebarBtn = document.getElementById("base-layers-close");
+  const closeSidebarBtns = document.querySelectorAll(".base-layers-close");
 
-  if (!layersToggle || !sidebar || !closeSidebarBtn) return;
+  if (!layersToggle || !sidebar || closeSidebarBtns.length < 0 ) return;
 
   layersToggle.addEventListener("click", () => {
     sidebar.classList.toggle("hidden");
   });
 
-  // always hide when you click the X
-  closeSidebarBtn.addEventListener("click", () => {
+  closeSidebarBtns.forEach(btn => {
+btn.addEventListener("click", () => {
     sidebar.classList.add("hidden");
   });
+  })
+
+  // always hide when you click the X
+  
 }
 
 function loadMoreLayerMapToggles() {
@@ -669,23 +674,20 @@ function toggleSideBar() {
 
 function toggleNavbigationItems() {
   // const mutedBg = document.getElementById("muted-bg");
-  const navigationItems = document.querySelectorAll(".main-nav-item");
-
-  navigationItems.forEach(item => item.addEventListener('mousemove', () => {
-    activeModal(item)
-    activeMutedBg()
-  }))
-
-   function activeModal(item) {
-   
-    
-    const navModal = item.querySelector(".nav-modal")
-    navModal.classList.remove("hidden");
-  }
-   function activeMutedBg() {
-    // mutedBg.classList.remove("hidden");
-  }
-
+  // const navigationItems = document.querySelectorAll(".main-nav-item");
+  // navigationItems.forEach(item => item.addEventListener('mousemove', () => {
+  //   activeModal(item)
+  //   // activeMutedBg()
+  // }))
+  //  function activeModal(item) {
+  //   const navModal = item.querySelector(".nav-modal")
+  //   console.log(item);
+  //   navModal.classList.remove("hidden");
+  //   navModal.classList.add("opacity-100");
+  // }
+  //  function activeMutedBg() {
+  //   mutedBg.classList.remove("hidden");
+  // }
 }
 
 function initCookieDialog() {
@@ -697,6 +699,23 @@ function initCookieDialog() {
   closeBtn.addEventListener("click", (e) => {
     e.preventDefault(); // stop form from submitting
     cookieDialog.classList.add("hidden");
+  });
+}
+
+function initNavigationHoverZindex() {
+const navItems = document.querySelectorAll('.main-nav-item');
+  const section = document.querySelector('.section-wrapper');
+
+  if (!navItems || !section) return;
+  
+  navItems.forEach(item => {
+    item.addEventListener('mouseenter', function() {
+      section.classList.add('@min-[1024px]:pb-100', '@min-[1024px]:-mb-100');
+    });
+    
+    item.addEventListener('mouseleave', function() {
+      section.classList.remove('@min-[1024px]:pb-100', '@min-[1024px]:-mb-100');
+    });
   });
 }
 
@@ -808,7 +827,7 @@ function initSwipers() {
       selector: ".swiper-nav",
       options: {
         mousewheel: false,
-        
+
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 15,
@@ -820,7 +839,7 @@ function initSwipers() {
         mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
-        
+
         spaceBetween: 10,
       },
     },
@@ -842,7 +861,7 @@ function initSwipers() {
       selector: ".swiper-intro-photos-sale",
       options: {
         mousewheel: false,
-        
+
         spaceBetween: 10,
         navigation: {
           nextEl: ".swiper-button-next",
@@ -854,7 +873,7 @@ function initSwipers() {
       selector: ".swiper-intro-photo",
       options: {
         mousewheel: false,
-        
+
         spaceBetween: 10,
         navigation: {
           nextEl: ".swiper-button-next",
@@ -866,7 +885,7 @@ function initSwipers() {
       selector: ".swiper-intro-video",
       options: {
         mousewheel: false,
-        
+
         spaceBetween: 10,
         navigation: {
           nextEl: ".swiper-button-next",
@@ -878,7 +897,7 @@ function initSwipers() {
       selector: ".swiper-map-places",
       options: {
         mousewheel: false,
-        
+
         spaceBetween: 10,
         navigation: {
           nextEl: ".swiper-button-next",
@@ -892,7 +911,7 @@ function initSwipers() {
         mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
-        
+
         spaceBetween: 4,
         slidesOffsetBefore: 16,
         slidesOffsetAfter: 16,
@@ -904,7 +923,7 @@ function initSwipers() {
         mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
-        
+
         spaceBetween: 4,
         slidesOffsetBefore: 16,
         slidesOffsetAfter: 16,
@@ -914,7 +933,7 @@ function initSwipers() {
       selector: ".swiper-gallery-mobile",
       options: {
         mousewheel: false,
-        
+
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -925,7 +944,7 @@ function initSwipers() {
       selector: ".swiper-gallery",
       options: {
         mousewheel: false,
-        
+
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -939,7 +958,21 @@ function initSwipers() {
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
-        
+        pagination: { el: ".swiper-pagination" },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      },
+    },
+    {
+      selector: ".swiper-your-documents",
+      options: {
+        mousewheel: false,
+        slidesPerView: "auto",
+        freeMode: true,
+        spaceBetween: 10,
+        pagination: { el: ".swiper-pagination" },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -953,7 +986,7 @@ function initSwipers() {
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
-        
+        pagination: { el: ".swiper-pagination" },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -965,22 +998,20 @@ function initSwipers() {
       options: {
         mousewheel: false,
         slidesPerView: "auto",
-
-        
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-          renderBullet: function (index, className) {
-            const labels = [
-              "Estimate",
-              "Forecast",
-              "Risk of Decline",
-              "Value Factors",
-              "Order Appraisal Report",
-            ];
-            return `<span class="${className}">${labels[index]}</span>`;
-          },
-        },
+        // pagination: {
+        //   el: ".swiper-pagination",
+        //   clickable: true,
+        //   renderBullet: function (index, className) {
+        //     const labels = [
+        //       "Estimate",
+        //       "Forecast",
+        //       "Risk of Decline",
+        //       "Value Factors",
+        //       "Order Appraisal Report",
+        //     ];
+        //     return `<span class="${className}">${labels[index]}</span>`;
+        //   },
+        // },
         navigation: {
           nextEl: ".swiper-button-estimate-next",
           prevEl: ".swiper-button-estimate-prev",
@@ -1009,7 +1040,7 @@ function initSwipers() {
         mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
-        
+
         spaceBetween: 10,
         pagination: { el: ".swiper-pagination" },
       },
@@ -1017,7 +1048,7 @@ function initSwipers() {
     {
       selector: ".swiper-kitchen-remodel",
       options: {
-      mousewheel: false,
+        mousewheel: false,
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -1027,7 +1058,7 @@ function initSwipers() {
     {
       selector: ".swiper-bathroom-upgrade",
       options: {
-      mousewheel: false,
+        mousewheel: false,
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -1037,10 +1068,10 @@ function initSwipers() {
     {
       selector: ".swiper-zoning-usage",
       options: {
-      mousewheel: false,
+        mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
-        
+
         spaceBetween: 10,
         pagination: {
           el: ".swiper-pagination",
@@ -1064,17 +1095,17 @@ function initSwipers() {
     {
       selector: ".swiper-currently-listed-sale",
       options: {
-      mousewheel: false,
+        mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
-        
+
         spaceBetween: 10,
       },
     },
     {
       selector: ".swiper-service-areas",
       options: {
-      mousewheel: false,
+        mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         pagination: { el: ".swiper-pagination" },
@@ -1089,7 +1120,7 @@ function initSwipers() {
     {
       selector: ".swiper-market-trends",
       options: {
-      mousewheel: false,
+        mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
@@ -1103,11 +1134,12 @@ function initSwipers() {
     {
       selector: ".swiper-maintenance-and-upkeep",
       options: {
-      mousewheel: false,
+        mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
-        
+                pagination: { el: ".swiper-pagination" },
+
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -1117,11 +1149,11 @@ function initSwipers() {
     {
       selector: ".swiper-banners",
       options: {
-      mousewheel: false,
+        mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
-        
+        pagination: { el: ".swiper-pagination" },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -1131,11 +1163,11 @@ function initSwipers() {
     {
       selector: ".swiper-ai-chat-experts-examples-option-1",
       options: {
-      mousewheel: false,
+        mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
-        
+
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -1145,11 +1177,11 @@ function initSwipers() {
     {
       selector: ".swiper-reward-active",
       options: {
-      mousewheel: false,
+        mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
-        
+
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -1159,11 +1191,11 @@ function initSwipers() {
     {
       selector: ".swiper-opportunities-risks-incentives-rebates",
       options: {
-      mousewheel: false,
+        mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
-        
+        pagination: { el: ".swiper-pagination" },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -1173,11 +1205,11 @@ function initSwipers() {
     {
       selector: ".swiper-plan-for-emergencies",
       options: {
-      mousewheel: false,
+        mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
-        
+        pagination: { el: ".swiper-pagination" },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -1187,11 +1219,11 @@ function initSwipers() {
     {
       selector: ".swiper-monthly-costs-overview",
       options: {
-      mousewheel: false,
+        mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
-        
+
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -1201,11 +1233,11 @@ function initSwipers() {
     {
       selector: ".swiper-contact-info",
       options: {
-      mousewheel: false,
+        mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
-        
+        pagination: { el: ".swiper-pagination" },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -1215,11 +1247,11 @@ function initSwipers() {
     {
       selector: ".swiper-top-home-experts",
       options: {
-      mousewheel: false,
+        mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
-        
+        pagination: { el: ".swiper-pagination" },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -1229,11 +1261,11 @@ function initSwipers() {
     {
       selector: ".swiper-places-examples",
       options: {
-      mousewheel: false,
+        mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
-        
+
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -1243,11 +1275,11 @@ function initSwipers() {
     {
       selector: ".swiper-client-reviews",
       options: {
-      mousewheel: false,
+        mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
         spaceBetween: 10,
-        
+                pagination: { el: ".swiper-pagination" },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -1257,9 +1289,9 @@ function initSwipers() {
     {
       selector: ".swiper-home-improvement-ideas-tabs",
       options: {
-      mousewheel: false,
+        mousewheel: false,
         slidesPerView: "auto",
-        
+
         freeMode: true,
         spaceBetween: 10,
       },
@@ -1267,10 +1299,10 @@ function initSwipers() {
     {
       selector: ".swiper-home-improvement-ideas",
       options: {
-      mousewheel: false,
+        mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
-        
+
         spaceBetween: 10,
         navigation: {
           nextEl: ".swiper-button-next",
@@ -1281,10 +1313,10 @@ function initSwipers() {
     {
       selector: ".swiper-social-media-posts",
       options: {
-      mousewheel: false,
+        mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
-        
+                pagination: { el: ".swiper-pagination" },
         spaceBetween: 10,
         navigation: {
           nextEl: ".swiper-button-next",
@@ -1295,20 +1327,48 @@ function initSwipers() {
     {
       selector: ".swiper-main-nav",
       options: {
-      mousewheel: false,
+        mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
-        
+
         spaceBetween: 10,
       },
     },
     {
       selector: ".swiper-read-more",
       options: {
-      mousewheel: false,
+        mousewheel: false,
         slidesPerView: "auto",
         freeMode: true,
-        
+
+        spaceBetween: 10,
+      },
+    },
+    {
+      selector: ".swiper-calculator-m",
+      options: {
+        mousewheel: false,
+        slidesPerView: "auto",
+        freeMode: true,
+        pagination: { el: ".swiper-pagination" },
+         navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        spaceBetween: 10,
+      },
+    },
+    {
+      selector: ".swiper-calculator-s",
+      options: {
+        mousewheel: false,
+        slidesPerView: "auto",
+        freeMode: true,
+        pagination: { el: ".swiper-pagination" },
+         navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
         spaceBetween: 10,
       },
     },
@@ -1403,77 +1463,77 @@ function initSwipers() {
       // container._vf_dir_observer = ro; // optional
     }
 
-    if (selector === ".swiper-estimate") {
-  const section = container.closest("section") || container.parentElement;
-  if (!section) return;
+    if (selector === ".swiper-estimate" || selector === ".swiper-zoning-usage") {
+      const section = container.closest("section") || container.parentElement;
+      if (!section) return;
 
-  const desktopEl = container.querySelector(".swiper-pagination");
-  const mobileEl  = container.querySelector(".swiper-pagination-mobile");
+      const desktopEl = container.querySelector(".swiper-pagination-desk");
+      const mobileEl = container.querySelector(".swiper-pagination-mobile");
 
-  const LABELS = [
-    "Estimate",
-    "Forecast",
-    "Risk of Decline",
-    "Value Factors",
-    "Order Appraisal Report",
-  ];
+      const LABELS = [
+        "Estimate",
+        "Forecast",
+        "Risk of Decline",
+        "Value Factors",
+        "Order Appraisal Report",
+      ];
 
-  let instance = null;  // current Swiper
-  let mode = null;      // 'desktop' | 'mobile'
+      let instance = null; // current Swiper
+      let mode = null; // 'desktop' | 'mobile'
 
-  const build = (nextMode) => {
-    if (instance) {
-      instance.destroy(true, true); // full cleanup to avoid ghost handlers/styles
-      instance = null;
-    }
+      const build = (nextMode) => {
+        if (instance) {
+          instance.destroy(true, true); // full cleanup to avoid ghost handlers/styles
+          instance = null;
+        }
 
-    // shallow clone of base options so we can override pagination cleanly
-    const base = { ...options };
-    delete base.pagination;
+        // shallow clone of base options so we can override pagination cleanly
+        const base = { ...options };
+        delete base.pagination;
 
-    if (nextMode === "desktop") {
-      base.pagination = {
-        el: desktopEl, // pass the element, not a selector string (avoids picking wrong one)
-        clickable: true,
-        renderBullet: (index, className) =>
-          `<span class="${className}">${LABELS[index]}</span>`,
+        if (nextMode === "desktop") {
+          base.pagination = {
+            el: desktopEl, // pass the element, not a selector string (avoids picking wrong one)
+            clickable: true,
+            renderBullet: (index, className) =>
+              `<span class="${className}">${LABELS[index]}</span>`,
+          };
+          mode = "desktop";
+        } else {
+          base.pagination = {
+            el: mobileEl,
+            clickable: true, // default dot bullets
+          };
+          mode = "mobile";
+        }
+
+        instance = new Swiper(container, base);
       };
-      mode = "desktop";
-    } else {
-      base.pagination = {
-        el: mobileEl,
-        clickable: true, // default dot bullets
+
+      const ensureMode = (width) => {
+        const isDesktop = width >= 1024; // match your @[1024px] container query
+        const want = isDesktop ? "desktop" : "mobile";
+        if (want !== mode) build(want);
       };
-      mode = "mobile";
+
+      // init
+      ensureMode(section.clientWidth);
+
+      // watch the <section> width (container-query friendly)
+      const ro = new ResizeObserver((entries) => {
+        const entry = entries[0];
+        const width = entry?.contentBoxSize
+          ? Array.isArray(entry.contentBoxSize)
+            ? entry.contentBoxSize[0].inlineSize
+            : entry.contentBoxSize.inlineSize
+          : section.clientWidth;
+        ensureMode(width);
+      });
+      ro.observe(section);
+
+      // IMPORTANT: stop here so this swiper isn't also initialized below
+      return;
     }
-
-    instance = new Swiper(container, base);
-  };
-
-  const ensureMode = (width) => {
-    const isDesktop = width >= 1024; // match your @[1024px] container query
-    const want = isDesktop ? "desktop" : "mobile";
-    if (want !== mode) build(want);
-  };
-
-  // init
-  ensureMode(section.clientWidth);
-
-  // watch the <section> width (container-query friendly)
-  const ro = new ResizeObserver((entries) => {
-    const entry = entries[0];
-    const width = entry?.contentBoxSize
-      ? Array.isArray(entry.contentBoxSize)
-        ? entry.contentBoxSize[0].inlineSize
-        : entry.contentBoxSize.inlineSize
-      : section.clientWidth;
-    ensureMode(width);
-  });
-  ro.observe(section);
-
-  // IMPORTANT: stop here so this swiper isn't also initialized below
-  return;
-}
   });
 }
 
@@ -1848,7 +1908,7 @@ function initForecastChart() {
       container,
       data: fullData,
       padding: { top: 8, right: 18, bottom: 0, left: 18 },
-      tooltip: { enabled: false }, 
+      tooltip: { enabled: false },
       series: [
         {
           ...baseSeries,
@@ -1897,8 +1957,6 @@ function initForecastChart() {
   render();
   new ResizeObserver(render).observe(container);
 }
-
-
 
 function initComprarablePropertiesGrid() {
   if (typeof agGrid === "undefined") return;
@@ -3476,7 +3534,7 @@ function initrankingCityGrid() {
       autoHeight: true,
       wrapText: true,
       flex: 2,
-      minWidth: 220,
+      minWidth: 250,
       cellClass: "link-cell",
     },
     {
@@ -3774,15 +3832,15 @@ function initMonthlyCostsOverviewGridChart() {
 
   const data = [
     { category: "Repairs & General Meintenance", value: 168, color: "#FF603F" },
-    { category: "Home Insurance",                 value: 79,  color: "#C94629" },
-    { category: "Private Mortgage Insurance",     value: 158, color: "#FF785C" },
-    { category: "Snow Removal & Lawn Care",       value: 158, color: "#FFDFD2" },
-    { category: "Property Taxes",                 value: 130, color: "#5F190B" },
-    { category: "Untility Bills",                 value: 218, color: "#E5EBFF" },
-    { category: "Internet & TV",                  value: 201, color: "#293464" },
-    { category: "Home Security",                  value: 105, color: "#466EFF" },
-    { category: "Pest Control Subscription",      value: 200, color: "#98AEFF" },
-    { category: "Homeowners Association Fees",    value: 50,  color: "#334FCC" },
+    { category: "Home Insurance", value: 79, color: "#C94629" },
+    { category: "Private Mortgage Insurance", value: 158, color: "#FF785C" },
+    { category: "Snow Removal & Lawn Care", value: 158, color: "#FFDFD2" },
+    { category: "Property Taxes", value: 130, color: "#5F190B" },
+    { category: "Untility Bills", value: 218, color: "#E5EBFF" },
+    { category: "Internet & TV", value: 201, color: "#293464" },
+    { category: "Home Security", value: 105, color: "#466EFF" },
+    { category: "Pest Control Subscription", value: 200, color: "#98AEFF" },
+    { category: "Homeowners Association Fees", value: 50, color: "#334FCC" },
   ];
 
   const numFormatter = new Intl.NumberFormat("en-US");
@@ -3793,7 +3851,8 @@ function initMonthlyCostsOverviewGridChart() {
     const r = parseInt(c.slice(0, 2), 16) / 255;
     const g = parseInt(c.slice(2, 4), 16) / 255;
     const b = parseInt(c.slice(4, 6), 16) / 255;
-    const lin = (u) => (u <= 0.03928 ? u / 12.92 : Math.pow((u + 0.055) / 1.055, 2.4));
+    const lin = (u) =>
+      u <= 0.03928 ? u / 12.92 : Math.pow((u + 0.055) / 1.055, 2.4);
     const L = 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b);
     return L > 0.6; // tweak if needed
   };
@@ -3802,9 +3861,17 @@ function initMonthlyCostsOverviewGridChart() {
     const s = getComputedStyle(container);
     const num = (v) => parseFloat(String(v).trim()) || 0;
     return {
-      sector:     num(s.getPropertyValue("--monthly-costs-overview-chart-sector-fs")) || 12,
-      innerLabel: num(s.getPropertyValue("--monthly-costs-overview-chart-inner-label-fs")) || 14,
-      innerValue: num(s.getPropertyValue("--monthly-costs-overview-chart-inner-value-fs")) || 16,
+      sector:
+        num(s.getPropertyValue("--monthly-costs-overview-chart-sector-fs")) ||
+        12,
+      innerLabel:
+        num(
+          s.getPropertyValue("--monthly-costs-overview-chart-inner-label-fs")
+        ) || 14,
+      innerValue:
+        num(
+          s.getPropertyValue("--monthly-costs-overview-chart-inner-value-fs")
+        ) || 16,
     };
   };
 
@@ -3816,7 +3883,7 @@ function initMonthlyCostsOverviewGridChart() {
 
     const base = {
       type: "donut",
-      data,                       // full data in both series
+      data, // full data in both series
       angleKey: "value",
       sectorLabelKey: "value",
       rotation: -175,
@@ -3844,7 +3911,8 @@ function initMonthlyCostsOverviewGridChart() {
       sectorLabel: {
         ...base.sectorLabel,
         color: "#ffffff",
-        formatter: ({ datum }) => (isLight(datum.color) ? "" : `${datum.value}$`),
+        formatter: ({ datum }) =>
+          isLight(datum.color) ? "" : `${datum.value}$`,
       },
       innerLabels: [
         {
@@ -3870,7 +3938,8 @@ function initMonthlyCostsOverviewGridChart() {
       sectorLabel: {
         ...base.sectorLabel,
         color: "#1F1F1F",
-        formatter: ({ datum }) => (isLight(datum.color) ? `${datum.value}$` : ""),
+        formatter: ({ datum }) =>
+          isLight(datum.color) ? `${datum.value}$` : "",
       },
       innerLabels: [],
     };
@@ -3916,9 +3985,6 @@ function initMonthlyCostsOverviewGridChart() {
   const ro = new ResizeObserver(render);
   ro.observe(container.closest(".section-wrapper") || container);
 }
-
-
-
 
 function initInsuranceComparisonGrid() {
   if (typeof agGrid === "undefined") return;
@@ -4106,7 +4172,7 @@ function initInsuranceComparisonGrid() {
 
         const icon = document.createElement("img");
         icon.src = "images/i-icon-gray.png";
-        icon.classList.add("w-5") 
+        icon.classList.add("w-5");
         icon.alt = "";
 
         wrapper.appendChild(tagsBlock);
@@ -4379,19 +4445,33 @@ function recentTransactionsGrid() {
 
 /* ------------ Shared store & helpers ------------ */
 const UtilityCosts = (() => {
-  const months = ["Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec","Jan","Feb"];
+  const months = [
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+    "Jan",
+    "Feb",
+  ];
   const dataByType = {
-    "Electricity":    [12,18,22,24,26,27,25,30,32,34,36,40],
-    "Internet & Cable":[30,30,31,31,32,32,32,33,33,34,35,36],
-    "Water":          [18,20,21,21,22,22,21,22,23,24,25,26],
-    "Parking":        [40,45,48,50,50,50,45,48,50,54,58,62],
-    "Total Selected": [20,40,55,60,60,60,51,70,77,88,99,121],
+    Electricity: [12, 18, 22, 24, 26, 27, 25, 30, 32, 34, 36, 40],
+    "Internet & Cable": [30, 30, 31, 31, 32, 32, 32, 33, 33, 34, 35, 36],
+    Water: [18, 20, 21, 21, 22, 22, 21, 22, 23, 24, 25, 26],
+    Parking: [40, 45, 48, 50, 50, 50, 45, 48, 50, 54, 58, 62],
+    "Total Selected": [20, 40, 55, 60, 60, 60, 51, 70, 77, 88, 99, 121],
   };
 
   const makeSeries = (vals) =>
     months.map((m, i) => ({ month: m, value: vals[i], date: `${m} 01` }));
 
-  const getSeriesFor = (type) => makeSeries(dataByType[type] ?? dataByType["Electricity"]);
+  const getSeriesFor = (type) =>
+    makeSeries(dataByType[type] ?? dataByType["Electricity"]);
 
   let chart = null;
 
@@ -4401,47 +4481,66 @@ const UtilityCosts = (() => {
     const container = document.getElementById("utilityCostsLineChart");
     if (!container) return;
 
-
     const data = getSeriesFor(initialType);
 
     chart = AgCharts.create({
       container,
       data,
       padding: { top: 30, bottom: 0 },
-      series: [{
-        type: "line",
-        xKey: "month",
-        yKey: "value",
-        stroke: "#FF603F",
-        strokeWidth: 2,
-        marker: { enabled: true, size: 8, fill: "#FF603F", stroke: "white", strokeWidth: 1 },
-        label: {
-          enabled: true,
-          color: "#9E9E9E",
-          fontSize: 12,
-          fontWeight: 500,
-          fontFamily: "Alber Sans",
-          
-          formatter: ({ datum }) => `$${datum.value}`,
+      series: [
+        {
+          type: "line",
+          xKey: "month",
+          yKey: "value",
+          stroke: "#FF603F",
+          strokeWidth: 2,
+          marker: {
+            enabled: true,
+            size: 8,
+            fill: "#FF603F",
+            stroke: "white",
+            strokeWidth: 1,
+          },
+          label: {
+            enabled: true,
+            color: "#9E9E9E",
+            fontSize: 12,
+            fontWeight: 500,
+            fontFamily: "Alber Sans",
+
+            formatter: ({ datum }) => `$${datum.value}`,
+          },
+          showInLegend: false,
+          nodeClickRange: "nearest",
+          tooltip: { enabled: false },
         },
-        showInLegend: false,
-        nodeClickRange: "nearest",
-        tooltip: { enabled: false }, 
-      }],
+      ],
       axes: [
-        { type: "category", position: "bottom", gridLine: { enabled: false },
-          label: { fontWeight: 500, fontSize: 12, fontFamily: "Alber Sans", color: "#B6B6B6" } },
-        { type: "number", position: "left", label: { enabled: false }, gridLine: { enabled: false } },
+        {
+          type: "category",
+          position: "bottom",
+          gridLine: { enabled: false },
+          label: {
+            fontWeight: 500,
+            fontSize: 12,
+            fontFamily: "Alber Sans",
+            color: "#B6B6B6",
+          },
+        },
+        {
+          type: "number",
+          position: "left",
+          label: { enabled: false },
+          gridLine: { enabled: false },
+        },
       ],
     });
-
   }
 
   function setType(type) {
     if (!chart || !agCharts?.AgCharts) return; // if chart isn't ready, do nothing
 
-    const data = getSeriesFor(type).map(d => ({ ...d })); // fresh objects
-    
+    const data = getSeriesFor(type).map((d) => ({ ...d })); // fresh objects
 
     // Update the series' own data so labels refresh
     const s = chart.series?.[0];
@@ -4450,54 +4549,63 @@ const UtilityCosts = (() => {
     // Keep chart.data in sync and force a redraw
     chart.data = data;
     chart.update();
-  }function setType(type) {
-  const lib = agCharts?.AgCharts;
-  if (!chart || !lib) return;
-
-  const data = getSeriesFor(type).map(d => ({ ...d })); // fresh objects
-
-
-  // 1) Try a deep update so labels + data refresh reliably
-  try {
-    lib.update(chart, {
-      data,
-      series: [{
-        type: "line",
-        xKey: "month",
-        yKey: "value",
-        stroke: "#FF603F",
-        strokeWidth: 2,
-        marker: { enabled: true, size: 8, fill: "#FF603F", stroke: "white", strokeWidth: 1 },
-        label: {
-          enabled: true,
-          color: "#9E9E9E",
-          fontSize: 12,
-          fontWeight: 500,
-          fontFamily: "Alber Sans",
-          padding: 4,
-          formatter: ({ datum }) => `$${datum.value}`,
-        },
-        showInLegend: false,
-        nodeClickRange: "nearest",
-        tooltip: {
-          range: Infinity,
-          delay: 0,
-          renderer: ({ datum }) => (lastHovered = datum, setBanner(datum), ""),
-        },
-      }],
-    });
-    return;
-  } catch (e) {
-    // fall through to recreate
   }
+  function setType(type) {
+    const lib = agCharts?.AgCharts;
+    if (!chart || !lib) return;
 
-  // 2) Fallback: destroy & recreate with the new dataset
-  try {
-    chart.destroy?.();
-  } catch {}
-  UtilityCosts.createChart(type);
-}
+    const data = getSeriesFor(type).map((d) => ({ ...d })); // fresh objects
 
+    // 1) Try a deep update so labels + data refresh reliably
+    try {
+      lib.update(chart, {
+        data,
+        series: [
+          {
+            type: "line",
+            xKey: "month",
+            yKey: "value",
+            stroke: "#FF603F",
+            strokeWidth: 2,
+            marker: {
+              enabled: true,
+              size: 8,
+              fill: "#FF603F",
+              stroke: "white",
+              strokeWidth: 1,
+            },
+            label: {
+              enabled: true,
+              color: "#9E9E9E",
+              fontSize: 12,
+              fontWeight: 500,
+              fontFamily: "Alber Sans",
+              padding: 4,
+              formatter: ({ datum }) => `$${datum.value}`,
+            },
+            showInLegend: false,
+            nodeClickRange: "nearest",
+            tooltip: {
+              range: Infinity,
+              delay: 0,
+              renderer: ({ datum }) => (
+                (lastHovered = datum), setBanner(datum), ""
+              ),
+            },
+          },
+        ],
+      });
+      return;
+    } catch (e) {
+      // fall through to recreate
+    }
+
+    // 2) Fallback: destroy & recreate with the new dataset
+    try {
+      chart.destroy?.();
+    } catch {}
+    UtilityCosts.createChart(type);
+  }
 
   return { createChart, setType };
 })();
@@ -4521,84 +4629,93 @@ function initUtilityCosts() {
   ];
 
   const gridOptions = {
-  columnDefs: [
-    { headerName: "Type", field: "type", flex: 1 },
-    { headerName: "Avg. Costs", field: "cost", width: 120,
-      valueFormatter: (p) => `$${p.value}`, cellClass: "main-ag-cell" },
-  ],
-  rowData,
-  rowSelection: 'single',
-  suppressRowClickSelection: false,
-  domLayout: "autoHeight",
+    columnDefs: [
+      { headerName: "Type", field: "type", flex: 1 },
+      {
+        headerName: "Avg. Costs",
+        field: "cost",
+        width: 120,
+        valueFormatter: (p) => `$${p.value}`,
+        cellClass: "main-ag-cell",
+      },
+    ],
+     defaultColDef: {
+      headerClass: "header-cell-text",
+        autoHeight: true,
 
-  // select initially active row
-  onGridReady: (params) => {
-    params.api.forEachNode((n) => { if (n.data?.active) n.setSelected(true); });
-  },
+     },
+    rowData,
+    rowSelection: "single",
+    suppressRowClickSelection: false,
+    domLayout: "autoHeight",
 
-  // clicking a row selects it (gives us the orange bg) and updates the chart
-  onRowClicked: (e) => {
-    e.node.setSelected(true);
-    UtilityCosts.setType(e.data.type);
-  },
-};
 
+    // select initially active row
+    onGridReady: (params) => {
+      params.api.forEachNode((n) => {
+        if (n.data?.active) n.setSelected(true);
+      });
+    },
+
+    // clicking a row selects it (gives us the orange bg) and updates the chart
+    onRowClicked: (e) => {
+      e.node.setSelected(true);
+      UtilityCosts.setType(e.data.type);
+    },
+  };
 
   agGrid.createGrid(container, gridOptions);
 }
 
-
-
-
-
 function flipCards() {
   // Detect if device is touch-enabled
-  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-  
-  const flipCards = document.querySelectorAll('.flip-card');
-  
+  const isTouchDevice =
+    "ontouchstart" in window || navigator.maxTouchPoints > 0;
+
+  const flipCards = document.querySelectorAll(".flip-card");
+
   flipCards.forEach((flipCard) => {
-    const cardInner = flipCard.querySelector('.card');
+    const cardInner = flipCard.querySelector(".card");
     let isFlipped = false;
-    
+
     if (isTouchDevice) {
       // Mobile: Click to flip
-      flipCard.addEventListener('click', (e) => {
+      flipCard.addEventListener("click", (e) => {
         e.preventDefault();
-        
+
         // If clicking on "Learn More" link, don't flip - let it navigate
-        if (e.target.closest('.more')) {
+        if (e.target.closest(".more")) {
           return;
         }
-        
+
         // Close all other flipped cards first
         flipCards.forEach((otherCard) => {
           if (otherCard !== flipCard) {
-            const otherCardInner = otherCard.querySelector('.card');
-            otherCardInner.style.transform = 'rotateY(0deg)';
-            otherCard.dataset.flipped = 'false';
+            const otherCardInner = otherCard.querySelector(".card");
+            otherCardInner.style.transform = "rotateY(0deg)";
+            otherCard.dataset.flipped = "false";
           }
         });
-        
+
         // Toggle current card
-        isFlipped = flipCard.dataset.flipped === 'true';
-        
+        isFlipped = flipCard.dataset.flipped === "true";
+
         if (isFlipped) {
-          cardInner.style.transform = 'rotateY(0deg)';
-          flipCard.dataset.flipped = 'false';
+          cardInner.style.transform = "rotateY(0deg)";
+          flipCard.dataset.flipped = "false";
         } else {
-          cardInner.style.transform = 'rotateY(180deg)';
-          flipCard.dataset.flipped = 'true';
+          cardInner.style.transform = "rotateY(180deg)";
+          flipCard.dataset.flipped = "true";
         }
       });
-      
+
       // Optional: Close card when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!e.target.closest('.flip-card')) {
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest(".flip-card")) {
           flipCards.forEach((card) => {
-            const cardInner = card.querySelector('.card');
-            cardInner.style.transform = 'rotateY(0deg)';
-            card.dataset.flipped = 'false';
+            const cardInner = card.querySelector(".card");
+            cardInner.style.transform = "rotateY(0deg)";
+            card.dataset.flipped = "false";
           });
         }
       });
@@ -4608,8 +4725,6 @@ function flipCards() {
     }
   });
 }
-
-
 
 function initTriggerZoningUsage() {
   const modal = document.getElementById("itemModal");
@@ -4738,23 +4853,23 @@ function show35MoreImages() {
 }
 
 function aiChatCodeCopy() {
-document.addEventListener("click", async (e) => {
-  const btn = e.target.closest("[data-copy]");
-  if (!btn) return;
-  const btnText = btn.querySelector('.txt');
+  document.addEventListener("click", async (e) => {
+    const btn = e.target.closest("[data-copy]");
+    if (!btn) return;
+    const btnText = btn.querySelector(".txt");
 
-  const target = document.querySelector(btn.dataset.copy);
-  if (!target) return;
+    const target = document.querySelector(btn.dataset.copy);
+    if (!target) return;
 
-  try {
-    await navigator.clipboard.writeText(target.textContent);
-    const old = btnText.textContent;
-    btnText.textContent = "Copied!";
-    setTimeout(() => (btnText.textContent = old), 1200);
-  } catch (err) {
-    console.error("Copy failed:", err);
-  }
-});
+    try {
+      await navigator.clipboard.writeText(target.textContent);
+      const old = btnText.textContent;
+      btnText.textContent = "Copied!";
+      setTimeout(() => (btnText.textContent = old), 1200);
+    } catch (err) {
+      console.error("Copy failed:", err);
+    }
+  });
 }
 
 function generateComponentAnimation() {
@@ -4810,6 +4925,4 @@ function generateComponentAnimation() {
   }
 }
 
-function initAiChatSliderInput() {
-
-}
+function initAiChatSliderInput() {}

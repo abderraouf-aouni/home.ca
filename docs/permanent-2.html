@@ -740,14 +740,14 @@
 
         <!-- ai-chat code example section -->
 
-<section class="section-wrapper" aria-labelledby="ai-chat-code-example">
+<section class="section-wrapper" aria-labelledby="ai-chat-code-example-heading">
     <header class="main-header">
             <span class="bubble hidden">
               <svg class="chevron-icon">
                 <use href="#chevron-icon"></use>
               </svg>
             </span>
-            <h2 id="ai-chat-code-example">Is this your home?</h2>
+            <h2 id="ai-chat-code-example-heading">Is this your home?</h2>
             <button
         type="button"
         class="text-sm font-semibold bg-muted-2 flex items-center gap-1.5 rounded-full @min-[1024px]:rounded px-2 py-2  @min-[1024px]:px-2.5"
@@ -2031,16 +2031,17 @@ class="section-wrapper"
   <hr class="separate-line" />
 
 
+ <!-- ai-chat slider input section -->
 
 
-<section x-data="rangeUI()" x-init="init()" class="section-wrapper">
+<section x-data="rangeUI()" x-init="init()" class="section-wrapper" aria-labelledby="ai-chat-slider-input-heading">
    <header class="main-header">
             <span class="bubble hidden">
               <svg class="chevron-icon">
                 <use href="#chevron-icon"></use>
               </svg>
             </span>
-            <h2 id="ai-chat-interactive-widgets-heading">Is this your home?</h2>
+            <h2 id="ai-chat-slider-input-heading">Is this your home?</h2>
             <div class="dropdown" x-data="{ open: false }">
               <button
                 @click="open = !open"
@@ -2170,10 +2171,7 @@ class="section-wrapper"
      </div>
    </div>
 
-
-</section>
-
-<script>
+   <script>
 function rangeUI(){
   return {
     // Domain (dollars):
@@ -2272,6 +2270,10 @@ function rangeUI(){
   }
 }
 </script>
+
+</section>
+
+
 
   <hr class="separate-line" />
 
@@ -2602,11 +2604,11 @@ function rangeUI(){
 
         <hr class="separate-line" />
 
-        <!-- ai-chat services tablet section -->
+        <!-- ai-chat services section -->
 
         <section
           class="section-wrapper"
-          aria-labelledby="ai-chat-services-tablet-heading"
+          aria-labelledby="ai-chat-services-heading"
         >
           <header class="main-header">
             <span class="bubble hidden">
@@ -2614,7 +2616,7 @@ function rangeUI(){
                 <use href="#chevron-icon"></use>
               </svg>
             </span>
-            <h2 id="ai-chat-services-tablet-heading">Title - Placeholder</h2>
+            <h2 id="ai-chat-services-heading">Title - Placeholder</h2>
             <div class="dropdown" x-data="{ open: false }">
               <button
                 @click="open = !open"
@@ -2851,7 +2853,7 @@ function rangeUI(){
 
         <section
           class="section-wrapper"
-          aria-labelledby="ai-chat-score-heading"
+          aria-labelledby="ai-chat-score-rating-heading"
         >
           <header class="main-header">
             <span class="bubble hidden">
@@ -2859,7 +2861,7 @@ function rangeUI(){
                 <use href="#chevron-icon"></use>
               </svg>
             </span>
-            <h2 id="ai-chat-score-heading">Title - Placeholder</h2>
+            <h2 id="ai-chat-score-rating-heading">Title - Placeholder</h2>
             <div class="dropdown" x-data="{ open: false }">
               <button
                 @click="open = !open"
@@ -3113,9 +3115,8 @@ function rangeUI(){
       </div>
     </div>
   </div>
-</section>
 
-<script>
+  <script>
 (() => {
   const LABELS = ['Awful','Bad','Okay','Good','Great'];
 
@@ -3154,6 +3155,9 @@ function rangeUI(){
   });
 })();
 </script>
+</section>
+
+
 
 
          <hr class="separate-line" />
@@ -3517,7 +3521,7 @@ function rangeUI(){
               </svg>
             </span>
             <h2 id="places-examples-rebates-heading">
-              Top Home Experts Update
+              Places examples
             </h2>
             <div class="dropdown" x-data="{ open: false }">
               <button
@@ -3628,7 +3632,7 @@ function rangeUI(){
           </div>
 
           <div
-            class="swiper swiper-top-home-experts"
+            class="swiper swiper-places-examples"
             role="tabpanel"
             id="panel-all"
             aria-labelledby="tab-all"
